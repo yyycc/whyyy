@@ -6,6 +6,10 @@
 
 // NOTE: initialState constant is necessary so that Rekit could auto add initial state when creating async actions.
 const initialState = {
+  titles: [{ title: 'javaScript', menu: [] },
+    { title: 'database', menu: [] },
+    { title: 'webService', menu: [] },
+    { title: 'linux', menu: [] }],
 };
 
 export default initialState;
