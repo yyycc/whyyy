@@ -1,0 +1,2 @@
+export const BLOG_CHANGE_PAGE = 'BLOG_CHANGE_PAGE';
+export const BLOG_CHANGE_IMAGE = 'BLOG_CHANGE_IMAGE';

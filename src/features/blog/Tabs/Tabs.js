@@ -17,6 +17,9 @@ export class Tabs extends Component {
     const menus = [(
       <Menu>
         <Menu.Item>
+          <Link to="/blog/js/javaScript">javaScript</Link>
+        </Menu.Item>
+        <Menu.Item>
           <Link to="/blog/js/vue">vue</Link>
         </Menu.Item>
         <Menu.Item>
@@ -60,6 +63,9 @@ export class Tabs extends Component {
 
     return (
       <div className="blog-tabs">
+        <Button>
+          <Link to='/blog/homePage'>主页</Link>
+        </Button>
         {titles.map((ele, index) => {
           const to = '/blog/' + ele.title;
           return <Dropdown key={index} overlay={menus[index]} placement="bottomCenter">
