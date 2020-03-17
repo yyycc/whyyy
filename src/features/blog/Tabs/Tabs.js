@@ -22,13 +22,14 @@ export class Tabs extends Component {
 
   render() {
     const { titles, top } = this.props.blog;
+    const { queryPosts } = this.props.actions;
     const menus = [(
       <Menu>
         <Menu.Item>
           <Link to="/blog/javaScript/promote">promote</Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/blog/javaScript/vue">vue</Link>
+          <Link to="/blog/javaScript/array">array</Link>
         </Menu.Item>
         <Menu.Item>
           <Link to="/blog/javaScript/react">react</Link>
@@ -55,7 +56,7 @@ export class Tabs extends Component {
           <Link to="/blog/webService/cxf">cxf</Link>
         </Menu.Item>
       </Menu>
-    ),(
+    ), (
       <Menu>
         <Menu.Item>
           <Link to="/blog/linux/command">command</Link>
@@ -67,20 +68,22 @@ export class Tabs extends Component {
     ), (
       <Menu>
         <Menu.Item>
-          <Link to="/blog/server/docker">docker</Link>
+          <a onClick={(e) => queryPosts(e)}>
+            <Link to="/blog/server/docker">docker</Link>
+          </a>
         </Menu.Item>
       </Menu>
     )];
 
     return (
       <div className="blog-tabs" style={{ marginTop: `${top}px` }}>
-        <Button>
+        <Button onClick={queryPosts}>
           <Link to='/blog'>主页</Link>
         </Button>
         {titles.map((ele, index) => {
           const to = '/blog/' + ele.title;
           return <Dropdown key={index} overlay={menus[index]} placement="bottomCenter">
-            <Button>
+            <Button onClick={() => queryPosts(ele.title)}>
               <Link to={to}>{ele.name}</Link>
             </Button>
           </Dropdown>;

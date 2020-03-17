@@ -13,7 +13,7 @@ export function changeTabsMarginTop() {
   }
   return {
     type: BLOG_CHANGE_TABS_MARGIN_TOP,
-    top: top
+    top: top,
   };
 }
 
@@ -22,7 +22,7 @@ export function reducer(state, action) {
     case BLOG_CHANGE_TABS_MARGIN_TOP:
       return {
         ...state,
-        top: action.top
+        top: action.top,
       };
 
     default:

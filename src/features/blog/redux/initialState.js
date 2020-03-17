@@ -20,60 +20,66 @@ const initialState = {
   top: 40,
   tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', '版本控制', '前端', 'docker'],
   posts: [{
-    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'javaScript(1): 变量、函数的声明提升', date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'docker(1): 其实就为了装oracle数据库', date: '2019-11-08', tag: ['server', 'docker'], route: '/blog/server/dockerA',
+    title: 'docker(1): 其实就为了装oracle数据库',
+    date: '2019-11-08',
+    tag: ['server', 'docker'],
+    route: '/blog/server/docker/dockerA',
     summary: '现在做个项目，哪儿哪儿都是oracle数据库，都在服务器上，服务器还仅限内网访问，你高兴就好，我不搭个本地数据库就太难了呀。。。',
   }, {
-    title: 'docker(2): 又想装一个tomcat了', date: '2019-11-11', tag: ['server', 'docker'], route: '/blog/server/dockerB',
+    title: 'docker(2): 又想装一个tomcat了',
+    date: '2019-11-11',
+    tag: ['server', 'docker'],
+    route: '/blog/server/docker/dockerB',
     summary: '我想在里面装一个tomcat，把我的axis服务部署在上面。。。',
   }, {
-    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'javaScript(2): 数组', date: '2020-03-09', tag: ['javaScript', 'Array'], route: '/blog/javaScript/array',
+    summary: 'js的文档也看了好多遍了，怎么每次碰到数组的操作，还是要bd。。。',
+  }, {
+    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: '10', date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: '10', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'cyy', date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'cyy', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'test', date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'test', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'oracle', date: '2020-03-09', tag: ['database', 'oracle'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'test', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'linux2', date: '2020-03-09', tag: ['linux'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'test', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'webService', date: '2020-03-09', tag: ['webService'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'test', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'database', date: '2020-03-09', tag: ['database'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'test', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
-    summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
-  }, {
-    title: 'test', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
+    title: 'linux', date: '2020-03-09', tag: ['linux'], route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }],
+  postsToDisplay: [],
+  postsQueried: [],
   current: 1,
-  start: 0,
-  end: 10,
   images: [Luffy, linux, javaScript],
   imageRoutes: ['luffy', 'linux', 'javaScript'],
   index: 0, // 当前图片序号

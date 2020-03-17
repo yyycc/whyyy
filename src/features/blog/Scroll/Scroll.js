@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
+
 // import { UpOutlined } from 'antd';
 
 export class Scroll extends Component {
@@ -14,14 +15,14 @@ export class Scroll extends Component {
   scrollToTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }
 
   scrollToBottom() {
     window.scrollTo({
       top: 99999,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   }
 
@@ -29,11 +30,11 @@ export class Scroll extends Component {
     return (
       <div className="blog-scroll">
         <a className="scroll-top" onClick={this.scrollToTop}>
-          <i className="fa fa-angle-up">&#xf106;</i>
+          <i className="fa fa-angle-up"/>
           {/*<UpOutlined />*/}
         </a>
         <a className="scroll-bottom" onClick={this.scrollToBottom}>
-          <i className="fa fa-angle-down">&#xf107;</i>
+          <i className="fa fa-angle-down"/>
         </a>
       </div>
     );

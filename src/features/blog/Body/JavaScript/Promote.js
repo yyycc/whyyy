@@ -14,7 +14,7 @@ export class Promote extends Component {
   render() {
     return (
       <div className="blog-java-script">
-        <h1>javaScript —————— 变量、函数的声明提升</h1>
+        <h1>javaScript(1): 变量、函数的声明提升</h1>
         <div className="blog-java-script-img">
           <img src={promote} alt="promote"/>
           <p>图1. function</p>

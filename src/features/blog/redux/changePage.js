@@ -24,8 +24,7 @@ export function reducer(state, action) {
       return {
         ...state,
         current: action.current,
-        start: action.start,
-        end: action.end
+        postsToDisplay: state.posts.slice(action.start, action.end),
       };
 
     default:

@@ -11,3 +11,4 @@ export { default as Scroll } from './Scroll/Scroll';
 export { default as BreadCrumb } from './BreadCrumb/BreadCrumb';
 export { default as DockerA } from './Body/docker/DockerA';
 export { default as DockerB } from './Body/docker/DockerB';
+export { default as Array } from './Body/JavaScript/Array';

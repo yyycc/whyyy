@@ -15,27 +15,37 @@ export class HomePage extends Component {
   };
 
   render() {
-    const { posts, current, start, end } = this.props.blog;
+    const { posts, current } = this.props.blog;
+    let { postsToDisplay, postsQueried } = this.props.blog;
     const { changePage } = this.props.actions;
+    if (postsToDisplay.length === 0) {
+      postsToDisplay = posts.slice(0, 10);
+    }
+    if (postsQueried.length === 0) {
+      postsQueried = posts;
+    }
     return (
       <div className="blog-home-page">
         <div className="blog-home-page-left">
           <div className="blog-home-page-carousel">
-            <CarouselIndex blog={this.props.blog} actions={this.props.actions} props={this.props} />
+            <CarouselIndex blog={this.props.blog} actions={this.props.actions} props={this.props}/>
           </div>
           <div className="blog-home-page-lists">
-            {posts.map((ele, index) => {
-              if (index >= start && index < end) {
+            {
+              postsToDisplay.map((ele, index) => {
                 return <Post key={index} post={ele}/>;
-              }
-              return null;
-            })}
-            <Pagination size='small' current={current} onChange={changePage} total={posts.length}/>
+              })
+            }
+            {/*分页*/}
+            <div className="blog-home-page-lists-pagination">
+              <Pagination size='small' current={current} onChange={changePage} total={postsQueried.length}/>
+              <p>共{postsQueried.length}条</p>
+            </div>
           </div>
         </div>
 
         <div className="blog-home-page-right">
-          <TagsIndex blog={this.props.blog} actions={this.props.actions} />
+          <TagsIndex blog={this.props.blog} actions={this.props.actions}/>
           <div className="blog-home-page-right-lists">
 
           </div>

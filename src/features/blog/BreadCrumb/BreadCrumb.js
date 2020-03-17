@@ -21,7 +21,7 @@ export class BreadCrumb extends Component {
       <div className="blog-bread-crumb">
         <div>
           <li>
-            <i className="fa fa-home">&#xf105;</i>
+            <i className="fa fa-home"/>
           </li>
         </div>
         {routes.map((ele, index) => {
@@ -29,7 +29,7 @@ export class BreadCrumb extends Component {
           ele = ele + ' >';
           const newRoutes = routes.slice(0, index + 1);
           const url = '/' + newRoutes.join('/');
-          return <div key={index}>
+          return <div className="blog-bread-crumb-routes" key={index}>
             <li key={index}>
               <Link to={url}>{ele}</Link>
             </li>

@@ -17,7 +17,7 @@ export class TagsIndex extends Component {
       <div className="blog-tags-index">
         <h3>
           <li>
-            <i className="fa fa-bars">&#xf8ff;</i>
+            <i className="fa fa-bars"/>
           </li>
           标签
         </h3>

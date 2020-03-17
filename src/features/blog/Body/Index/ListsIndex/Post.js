@@ -7,24 +7,28 @@ import { Link } from 'react-router-dom';
 export class Post extends Component {
 
   render() {
-    const post = this.props.post;
+    const { title, date, tag, summary, route } = this.props.post;
     return (
       <div className="blog-post">
         <div>
           <span className="blog-post-mark"> </span>
-          <h1>{post.title}</h1>
+          <h1>{title}</h1>
         </div>
         <div className="blog-post-info">
-          <p>{post.date}</p>
+          <p>{date}</p>
           <div className="blog-post-info-tag">
-            <p>{post.tag}</p>
+            {
+              tag.map((ele, index) => {
+                return <p>{ele}</p>;
+              })
+            }
           </div>
         </div>
         <div>
-          <p>{post.summary}</p>
+          <p>{summary}</p>
         </div>
         <div>
-          <Link to={post.route}>阅读全文</Link>
+          <Link to={route}>阅读全文</Link>
         </div>
       </div>
     );
