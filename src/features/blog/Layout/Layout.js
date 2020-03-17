@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
-import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 import Tabs from '../Tabs/Tabs';
-import CarouselIndex from '../Body/Index/CarouselIndex/CarouselIndex';
+import Scroll from '../Scroll/Scroll';
+import BreadCrumb from '../BreadCrumb/BreadCrumb';
 
 export default class Layout extends Component {
-  static propTypes = {
-
-  };
+  static propTypes = {};
 
   render() {
     return (
       <div className="blog-layout">
-        <Header />
-        <Tabs />
+        <Header/>
+        <div className="blog-layout-fix">
+          <Tabs/>
+        </div>
         <div className="blog-layout-container">
+          <BreadCrumb props={this.props}/>
           {this.props.children}
         </div>
-        <Footer />
+        <Footer/>
+        <Scroll/>
       </div>
     );
   }

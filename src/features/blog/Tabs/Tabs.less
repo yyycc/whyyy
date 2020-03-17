@@ -1,13 +1,24 @@
 @import '../../../styles/mixins';
 
 .blog-tabs {
+  // problem：当用fix布局，又想把它固定，直接添加position: fixed之后页面跑偏
+  // solution: 添加  width: 100%;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+
   display: flex;
   justify-content: center;
   background-color: black;
+
   button {
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     border-color: black;
     background-color: black;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }

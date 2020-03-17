@@ -2,7 +2,7 @@
 // Learn more from: http://rekit.js.org/docs/routing.html
 
 import {
-  Layout, JavaScript
+  Layout, Promote
 } from './';
 import HomePage from './Body/Index/HomePage';
 
@@ -11,7 +11,7 @@ export default {
   name: 'Blog',
   component: Layout,
   childRoutes: [
-    { path: 'js/javaScript', name: 'javaScript', component: JavaScript, isIndex: false },
-    { path: 'homePage', name: 'homePage', component: HomePage, isIndex: true },
+    { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
+    { path: '/', name: 'homePage', component: HomePage, isIndex: true },
   ],
 };

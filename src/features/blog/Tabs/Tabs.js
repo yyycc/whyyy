@@ -12,39 +12,48 @@ export class Tabs extends Component {
     actions: PropTypes.object.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    debugger
+    window.addEventListener('scroll', this.props.actions.changeTabsMarginTop);
+  }
+
   render() {
-    const { titles } = this.props.blog;
+    const { titles, top } = this.props.blog;
     const menus = [(
       <Menu>
         <Menu.Item>
-          <Link to="/blog/js/javaScript">javaScript</Link>
+          <Link to="/blog/javaScript/promote">promote</Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/blog/js/vue">vue</Link>
+          <Link to="/blog/javaScript/vue">vue</Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/blog/js/react">react</Link>
+          <Link to="/blog/javaScript/react">react</Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/blog/js/jQuery">jQuery</Link>
-        </Menu.Item>
-      </Menu>
-    ), (
-      <Menu>
-        <Menu.Item>
-          <Link to="/blog/db/oracle">oracle</Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link to="/blog/db/mysql">mysql</Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link to="/blog/db/sqlServer">sqlServer</Link>
+          <Link to="/blog/javaScript/jQuery">jQuery</Link>
         </Menu.Item>
       </Menu>
     ), (
       <Menu>
         <Menu.Item>
-          <Link to="/blog/ws/cxf">cxf</Link>
+          <Link to="/blog/database/oracle">oracle</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/blog/database/mysql">mysql</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/blog/database/sqlServer">sqlServer</Link>
+        </Menu.Item>
+      </Menu>
+    ), (
+      <Menu>
+        <Menu.Item>
+          <Link to="/blog/webService/cxf">cxf</Link>
         </Menu.Item>
       </Menu>
     ), (
@@ -62,9 +71,9 @@ export class Tabs extends Component {
     )];
 
     return (
-      <div className="blog-tabs">
+      <div className="blog-tabs" style={{ marginTop: `${top}px` }}>
         <Button>
-          <Link to='/blog/homePage'>主页</Link>
+          <Link to='/blog'>主页</Link>
         </Button>
         {titles.map((ele, index) => {
           const to = '/blog/' + ele.title;

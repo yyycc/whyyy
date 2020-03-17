@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
-import { CarouselIndex } from './CarouselIndex/CarouselIndex';
+import { CarouselIndex } from '../Index/CarouselIndex/CarouselIndex';
 import { Post } from './ListsIndex/Post';
 import { Pagination } from 'antd';
+import { TagsIndex } from './TagsIndex/TagsIndex';
 
 export class HomePage extends Component {
   static propTypes = {
@@ -15,13 +16,12 @@ export class HomePage extends Component {
 
   render() {
     const { posts, current, start, end } = this.props.blog;
-    const { src, alt, images } = this.props.blog;
-    const { changePage, changeImage } = this.props.actions;
+    const { changePage } = this.props.actions;
     return (
       <div className="blog-home-page">
         <div className="blog-home-page-left">
           <div className="blog-home-page-carousel">
-            <CarouselIndex changeImage={(i) => changeImage(images, i)} src={src} alt={alt} />
+            <CarouselIndex blog={this.props.blog} actions={this.props.actions} props={this.props} />
           </div>
           <div className="blog-home-page-lists">
             {posts.map((ele, index) => {
@@ -35,7 +35,7 @@ export class HomePage extends Component {
         </div>
 
         <div className="blog-home-page-right">
-          <p>where should I go</p>
+          <TagsIndex blog={this.props.blog} actions={this.props.actions} />
         </div>
       </div>
     );

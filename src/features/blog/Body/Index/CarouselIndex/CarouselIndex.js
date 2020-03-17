@@ -10,27 +10,26 @@ export class CarouselIndex extends Component {
     actions: PropTypes.object.isRequired,
   };
 
+  jump(e, route) {
+    e.props.history.push('/blog/' + route);
+  }
+
   render() {
-    const src = this.props.src;
-    const alt = this.props.alt;
+    const { index, images, imageRoutes } = this.props.blog;
+    const src = images[index];
+    const { changeImage } = this.props.actions;
     return (
       <div className="blog-carousel-index">
         <div>
-          <img src={src} alt={alt}/>
+          <img src={src} alt='pictures' onClick={() => this.jump(this.props, imageRoutes[index])}/>
         </div>
         <ul className="blog-carousel-index-dots">
-          <li className="blog-carousel-index-dots-active">
-            <button>1</button>
-          </li>
-          <li>
-            <button>2</button>
-          </li>
-          <li>
-            <button>3</button>
-          </li>
-          <li>
-            <button>4</button>
-          </li>
+          {images.map((ele, index) => {
+            const className = ele === src ? 'blog-carousel-index-dots-active' : '';
+            return <li key={index} className={className}>
+              <button onMouseOver={() => changeImage(images, index)}>{index}</button>
+            </li>;
+          })}
         </ul>
       </div>
     );

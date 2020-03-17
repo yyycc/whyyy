@@ -9,10 +9,12 @@
 import initialState from './initialState';
 import { reducer as changePageReducer } from './changePage';
 import { reducer as changeImageReducer } from './changeImage';
+import { reducer as changeTabsMarginTopReducer } from './changeTabsMarginTop';
 
 const reducers = [
   changePageReducer,
   changeImageReducer,
+  changeTabsMarginTopReducer,
 ];
 
 export default function reducer(state = initialState, action) {

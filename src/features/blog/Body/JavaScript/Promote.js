@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import promote from '../../../../images/promote.png';
 
-export class JavaScript extends Component {
+export class Promote extends Component {
   static propTypes = {
     blog: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
@@ -46,11 +46,6 @@ export class JavaScript extends Component {
         <p>这个时候a的值是undefined，因为上面我们说了，函数中的a跟外面的a其实不是同一个，只不过名字一样而已</p>
         <p>函数中var a;是重新定义了一个变量</p>
         <p>所以此时运行console.log(a),打印的值即undefined。</p>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
         </body>
       </div>
     );
@@ -74,4 +69,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(JavaScript);
+)(Promote);
