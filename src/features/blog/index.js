@@ -9,3 +9,5 @@ export { default as Post } from './Body/Index/ListsIndex/Post';
 export { default as TagsIndex } from './Body/Index/TagsIndex/TagsIndex';
 export { default as Scroll } from './Scroll/Scroll';
 export { default as BreadCrumb } from './BreadCrumb/BreadCrumb';
+export { default as DockerA } from './Body/docker/DockerA';
+export { default as DockerB } from './Body/docker/DockerB';

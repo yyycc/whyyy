@@ -36,6 +36,9 @@ export class HomePage extends Component {
 
         <div className="blog-home-page-right">
           <TagsIndex blog={this.props.blog} actions={this.props.actions} />
+          <div className="blog-home-page-right-lists">
+
+          </div>
         </div>
       </div>
     );

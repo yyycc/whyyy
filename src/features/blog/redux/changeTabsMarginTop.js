@@ -7,7 +7,6 @@ import {
 } from './constants';
 
 export function changeTabsMarginTop() {
-  debugger
   let top = 40;
   if (document.documentElement.scrollTop > 0) {
     top = 0;

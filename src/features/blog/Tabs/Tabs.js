@@ -17,7 +17,6 @@ export class Tabs extends Component {
   }
 
   componentDidMount() {
-    debugger
     window.addEventListener('scroll', this.props.actions.changeTabsMarginTop);
   }
 
@@ -56,16 +55,19 @@ export class Tabs extends Component {
           <Link to="/blog/webService/cxf">cxf</Link>
         </Menu.Item>
       </Menu>
-    ), (
+    ),(
       <Menu>
         <Menu.Item>
           <Link to="/blog/linux/command">command</Link>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/blog/linux/docker">docker</Link>
-        </Menu.Item>
-        <Menu.Item>
           <Link to="/blog/linux/ssh">ssh</Link>
+        </Menu.Item>
+      </Menu>
+    ), (
+      <Menu>
+        <Menu.Item>
+          <Link to="/blog/server/docker">docker</Link>
         </Menu.Item>
       </Menu>
     )];
@@ -79,7 +81,7 @@ export class Tabs extends Component {
           const to = '/blog/' + ele.title;
           return <Dropdown key={index} overlay={menus[index]} placement="bottomCenter">
             <Button>
-              <Link to={to}>{ele.title}</Link>
+              <Link to={to}>{ele.name}</Link>
             </Button>
           </Dropdown>;
         })}

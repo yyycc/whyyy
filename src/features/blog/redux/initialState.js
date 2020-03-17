@@ -5,26 +5,29 @@
 // a quick view about what data is used for the feature, at any time.
 
 // NOTE: initialState constant is necessary so that Rekit could auto add initial state when creating async actions.
-import Luffy from '../../../images/index.png';
-import javaScript from '../../../images/index-js.png';
+// import Luffy from '../../../images/index.png';
+// import javaScript from '../../../images/index-js.png';
+import javaScript from '../../../images/index.png';
+import Luffy from '../../../images/index-js.png';
 import linux from '../../../images/index-linux.jpg';
 
 const initialState = {
-  titles: [{ title: 'javaScript', menu: [] },
-    { title: 'database', menu: [] },
-    { title: 'webService', menu: [] },
-    { title: 'linux', menu: [] }],
+  titles: [{ title: 'javaScript', name: 'javaScript', menu: [] },
+    { title: 'database', name: '数据库', menu: [] },
+    { title: 'webService', name: 'webService', menu: [] },
+    { title: 'linux', name: 'linux', menu: [] },
+    { title: 'server', name: '服务端', menu: [] }],
   top: 40,
-  tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', '版本控制', '前端'],
+  tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', '版本控制', '前端', 'docker'],
   posts: [{
     title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
   }, {
-    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
-    summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
+    title: 'docker(1): 其实就为了装oracle数据库', date: '2019-11-08', tag: ['server', 'docker'], route: '/blog/server/dockerA',
+    summary: '现在做个项目，哪儿哪儿都是oracle数据库，都在服务器上，服务器还仅限内网访问，你高兴就好，我不搭个本地数据库就太难了呀。。。',
   }, {
-    title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
-    summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
+    title: 'docker(2): 又想装一个tomcat了', date: '2019-11-11', tag: ['server', 'docker'], route: '/blog/server/dockerB',
+    summary: '我想在里面装一个tomcat，把我的axis服务部署在上面。。。',
   }, {
     title: 'javaScript —————— 变量、函数的声明提升', date: '2020-03-09', tag: 'javaScript', route: '/blog/javaScript/promote',
     summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
@@ -79,7 +82,8 @@ const initialState = {
     'javaScript': 'javaScript',
     'database': '数据库',
     'linux': 'linux',
-    'promote': '声明提升'
+    'promote': '声明提升',
+    'server': '服务端'
   },
 };
 
