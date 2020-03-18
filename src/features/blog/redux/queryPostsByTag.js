@@ -6,8 +6,7 @@ import {
   BLOG_QUERY_POSTS,
 } from './constants';
 
-export function queryPosts(e) {
-  debugger
+export function queryPostsByTag(e) {
   let tag = 'all';
   if (e && e.target) {
     tag = e.target.text;

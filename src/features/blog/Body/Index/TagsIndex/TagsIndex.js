@@ -12,7 +12,8 @@ export class TagsIndex extends Component {
   };
 
   render() {
-    const { tags } = this.props.blog;
+    const { tags, international } = this.props.blog;
+    const { queryPostsByTag } = this.props.actions;
     return (
       <div className="blog-tags-index">
         <h3>
@@ -24,11 +25,13 @@ export class TagsIndex extends Component {
         <div className="blog-tags-index-lists">
           {
             tags.map((ele, index) => {
+              const name = international[ele] ? international[ele] : ele;
               const route = '/blog/' + ele;
               return <div key={index} className="blog-tags-index-div">
-                <li className="blog-tags-index-tag">
-                  <Link to={route}>{ele}</Link>
-                </li></div>;
+                <li onClick={() => queryPostsByTag(ele)} className="blog-tags-index-tag">
+                  <Link to={route}>{name}</Link>
+                </li>
+              </div>;
             })
           }
         </div>

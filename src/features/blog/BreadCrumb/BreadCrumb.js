@@ -14,7 +14,7 @@ export class BreadCrumb extends Component {
   render() {
     const props = this.props.props;
     const route = props.location.pathname;
-    const { breadCrumb } = this.props.blog;
+    const { international } = this.props.blog;
     let routes = route.split('/');
     routes.shift();
     return (
@@ -25,7 +25,7 @@ export class BreadCrumb extends Component {
           </li>
         </div>
         {routes.map((ele, index) => {
-          ele = breadCrumb[ele] ? breadCrumb[ele] : ele;
+          ele = international[ele] ? international[ele] : ele;
           ele = ele + ' >';
           const newRoutes = routes.slice(0, index + 1);
           const url = '/' + newRoutes.join('/');

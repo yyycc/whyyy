@@ -22,7 +22,7 @@ export class Tabs extends Component {
 
   render() {
     const { titles, top } = this.props.blog;
-    const { queryPosts } = this.props.actions;
+    const { queryPostsByTag } = this.props.actions;
     const menus = [(
       <Menu>
         <Menu.Item>
@@ -68,7 +68,7 @@ export class Tabs extends Component {
     ), (
       <Menu>
         <Menu.Item>
-          <a onClick={(e) => queryPosts(e)}>
+          <a onClick={(e) => queryPostsByTag(e)}>
             <Link to="/blog/server/docker">docker</Link>
           </a>
         </Menu.Item>
@@ -77,13 +77,13 @@ export class Tabs extends Component {
 
     return (
       <div className="blog-tabs" style={{ marginTop: `${top}px` }}>
-        <Button onClick={queryPosts}>
+        <Button onClick={queryPostsByTag}>
           <Link to='/blog'>主页</Link>
         </Button>
         {titles.map((ele, index) => {
           const to = '/blog/' + ele.title;
           return <Dropdown key={index} overlay={menus[index]} placement="bottomCenter">
-            <Button onClick={() => queryPosts(ele.title)}>
+            <Button onClick={() => queryPostsByTag(ele.title)}>
               <Link to={to}>{ele.name}</Link>
             </Button>
           </Dropdown>;

@@ -3,13 +3,13 @@ import {
 } from '../../../../src/features/blog/redux/constants';
 
 import {
-  queryPosts,
+  queryPostsByTag,
   reducer,
-} from '../../../../src/features/blog/redux/queryPosts';
+} from '../../../../src/features/blog/redux/queryPostsByTag';
 
-describe('blog/redux/queryPosts', () => {
-  it('returns correct action by queryPosts', () => {
-    expect(queryPosts()).toHaveProperty('type', BLOG_QUERY_POSTS);
+describe('blog/redux/queryPostsByTag', () => {
+  it('returns correct action by queryPostsByTag', () => {
+    expect(queryPostsByTag()).toHaveProperty('type', BLOG_QUERY_POSTS);
   });
 
   it('handles action type BLOG_QUERY_POSTS correctly', () => {

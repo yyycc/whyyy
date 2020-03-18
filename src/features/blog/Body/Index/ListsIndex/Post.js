@@ -8,6 +8,7 @@ export class Post extends Component {
 
   render() {
     const { title, date, tag, summary, route } = this.props.post;
+    const { queryPostsByTag } = this.props.actions;
     return (
       <div className="blog-post">
         <div>
@@ -19,7 +20,9 @@ export class Post extends Component {
           <div className="blog-post-info-tag">
             {
               tag.map((ele, index) => {
-                return <p>{ele}</p>;
+                return <li onClick={() => queryPostsByTag(ele)} key={index}><i className="fa fa-snowflake-o">
+                </i>{ele}
+                </li>;
               })
             }
           </div>

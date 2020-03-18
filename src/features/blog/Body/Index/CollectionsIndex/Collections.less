@@ -1,8 +1,12 @@
 @import '../../../../../styles/mixins';
 
-.blog-tags-index {
+.blog-collections {
   display: flex;
   flex-direction: column;
+
+  li {
+    list-style-type: none;
+  }
 
   h3 {
     background-color: #f8f8f8;
@@ -12,7 +16,6 @@
     line-height: 40px;
 
     li {
-      list-style-type: none;
       float: left;
       width: 40px;
       height: 40px;
@@ -31,35 +34,26 @@
     }
   }
 
-  .blog-tags-index-lists {
-    padding-top: 10px;
+  .blog-collections-lists {
+    font-size: 16px;
+    padding: 0 10px 5px 10px;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     background-color: white;
 
-    .blog-tags-index-div {
-      float: left;
-      margin: 5px 4px 15px 10px;
-    }
-
     li {
-      list-style-type: none;
-      padding: 4px 4px 4px 4px;
-    }
-
-    a {
       color: black;
+      cursor: pointer;
+      margin-top: 5px;
     }
 
-    a:hover {
+    li:hover {
       color: #c40000;
     }
-  }
 
-  .blog-tags-index-tag {
-    border-radius: 3px;
-    border: 1px solid #ddd;
-    background-color: white;
+    i {
+      margin-right: 10px;
+    }
   }
 }

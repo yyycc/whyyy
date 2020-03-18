@@ -7,6 +7,7 @@ import { CarouselIndex } from '../Index/CarouselIndex/CarouselIndex';
 import { Post } from './ListsIndex/Post';
 import { Pagination } from 'antd';
 import { TagsIndex } from './TagsIndex/TagsIndex';
+import Collections from './CollectionsIndex/Collections';
 
 export class HomePage extends Component {
   static propTypes = {
@@ -33,7 +34,7 @@ export class HomePage extends Component {
           <div className="blog-home-page-lists">
             {
               postsToDisplay.map((ele, index) => {
-                return <Post key={index} post={ele}/>;
+                return <Post key={index} post={ele} actions={this.props.actions}/>;
               })
             }
             {/*分页*/}
@@ -46,9 +47,10 @@ export class HomePage extends Component {
 
         <div className="blog-home-page-right">
           <TagsIndex blog={this.props.blog} actions={this.props.actions}/>
-          <div className="blog-home-page-right-lists">
+          <Collections blog={this.props.blog} actions={this.props.actions}/>
+          {/*<div className="blog-home-page-right-lists">
 
-          </div>
+          </div>*/}
         </div>
       </div>
     );

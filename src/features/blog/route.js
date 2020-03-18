@@ -14,8 +14,10 @@ export default {
     { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
     { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
 
+    // 链接到HomePage的路由 待优化 TODO
     { path: '/', name: 'homePage', component: HomePage, isIndex: true },
     { path: 'server/docker', name: 'homePage', component: HomePage, isIndex: false },
+    { path: 'docker', name: 'homePage', component: HomePage, isIndex: false },
     { path: 'javaScript', name: 'homePage', component: HomePage, isIndex: false },
     { path: 'linux', name: 'homePage', component: HomePage, isIndex: false },
     { path: 'database', name: 'homePage', component: HomePage, isIndex: false },
