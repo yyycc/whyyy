@@ -7,11 +7,12 @@
 // NOTE: initialState constant is necessary so that Rekit could auto add initial state when creating async actions.
 // import Luffy from '../../../images/index.png';
 // import javaScript from '../../../images/index-js.png';
-import javaScript from '../../../images/index.png';
-import Luffy from '../../../images/index-js.png';
+import Luffy from '../../../images/index.png';
+import javaScript from '../../../images/index-js.png';
 import linux from '../../../images/index-linux.jpg';
 
 const initialState = {
+  title: 'whyyy his blog',
   titles: [{ title: 'javaScript', name: 'javaScript', menu: [] },
     { title: 'database', name: '数据库', menu: [] },
     { title: 'webService', name: 'webService', menu: [] },
@@ -62,7 +63,7 @@ const initialState = {
     {
       title: 'web service -- spring + cxf 发布web service(1)',
       date: '2019-11-13',
-      tag: ['webService'],
+      tag: ['webService', 'cxf'],
       route: '/blog/webService/cxf',
       summary: '今天又差点被web service搞崩溃，起因是在跟客户联调的时候报错：',
     },
@@ -76,7 +77,7 @@ const initialState = {
     {
       title: 'web service -- spring + cxf 发布web service(2)',
       date: '2020-01-03',
-      tag: ['webService'],
+      tag: ['webService', 'cxf'],
       route: '/blog/webService/cxf',
       summary: '这个项目的接口，断断续续做了3个月了，从一开始的一脸懵逼，到现在的一知半解。。。',
     },
@@ -97,12 +98,12 @@ const initialState = {
       summary: '记录一下linux中常用的指令',
     },
     {
-      title: 'javaScript(2): 数组',
-      date: '2020-03-02', tag: ['javaScript', 'Array'], route: '/blog/javaScript/array',
+      title: 'javaScript(1): 数组',
+      date: '2020-03-02', tag: ['javaScript', 'array'], route: '/blog/javaScript/array',
       summary: 'js的文档也看了好多遍了，怎么每次碰到数组的操作，还是要bd。。。',
     },
     {
-      title: 'javaScript(1): 变量、函数的声明提升',
+      title: 'javaScript(2): 变量、函数的声明提升',
       date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
       summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
     },
@@ -121,7 +122,10 @@ const initialState = {
     'promote': '声明提升',
     'server': '服务端',
     'array': '数组',
+    'about': '关于',
+    'fLinks': '友链',
   },
+  fontSize: 14,
 };
 
 export default initialState;

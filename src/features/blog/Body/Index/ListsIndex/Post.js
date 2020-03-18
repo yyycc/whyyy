@@ -13,7 +13,7 @@ export class Post extends Component {
       <div className="blog-post">
         <div>
           <span className="blog-post-mark"> </span>
-          <h1>{title}</h1>
+          <h2>{title}</h2>
         </div>
         <div className="blog-post-info">
           <p>{date}</p>

@@ -29,7 +29,7 @@ export class TagsIndex extends Component {
               const route = '/blog/' + ele;
               return <div key={index} className="blog-tags-index-div">
                 <li onClick={() => queryPostsByTag(ele)} className="blog-tags-index-tag">
-                  <Link to={route}>{name}</Link>
+                  {name}
                 </li>
               </div>;
             })

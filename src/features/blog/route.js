@@ -24,7 +24,7 @@ export default {
     { path: 'server', name: 'homePage', component: HomePage, isIndex: false },
     { path: 'webService', name: 'homePage', component: HomePage, isIndex: false },
 
-    { path: 'server/docker/dockerA', name: 'dockerA', component: DockerA, isIndex: false },
-    { path: 'server/docker/dockerB', name: 'dockerB', component: DockerB, isIndex: false },
+    { path: 'server/docker/dockerA', name: 'dockerA', component: DockerA, isIndex: false, title: 'docker' },
+    { path: 'server/docker/dockerB', name: 'dockerB', component: DockerB, isIndex: false, title: 'docker' },
   ],
 };

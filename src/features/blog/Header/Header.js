@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 import { Link } from 'react-router-dom';
+
 export class Header extends Component {
   static propTypes = {
     blog: PropTypes.object.isRequired,
@@ -17,10 +18,12 @@ export class Header extends Component {
         <div className="blog-header-motto"> 每天都努力地搬砖</div>
         <div className="blog-header-menu">
           <div className="blog-header-menu-about">
-            <Link to="/blog/default-page">关于</Link>
+            <i className="fa fa-anchor"></i>
+            <Link to="/blog/about">关于</Link>
           </div>
           <div className="blog-header-menu-links">
-            <Link to="/blog/about">友链</Link>
+            <i className="fa fa-handshake-o"></i>
+            <Link to="/blog/fLinks">友链</Link>
           </div>
         </div>
       </header>

@@ -12,6 +12,7 @@ export class Array extends Component {
   };
 
   render() {
+    const { fontSize } = this.props.blog;
     const columns = [
       {
         title: '方法',
@@ -104,7 +105,7 @@ export class Array extends Component {
     return (
       <div className="blog-array">
         <h1>javaScript(2): 数组</h1>
-        <body>
+        <body style={{ fontSize: `${fontSize}px` }}>
         <h2>1. 初始化</h2>
         <p>两种初始化的方式，第一种是使用构造函数</p>
         <pre>var arr = new Array();</pre>

@@ -12,6 +12,8 @@ import { reducer as changeImageReducer } from './changeImage';
 import { reducer as changeTabsMarginTopReducer } from './changeTabsMarginTop';
 import { reducer as queryPostsByTagReducer } from './queryPostsByTag';
 import { reducer as queryPostsByDateReducer } from './queryPostsByDate';
+import { reducer as addFontSizeReducer } from './addFontSize';
+import { reducer as minusFontSIzeReducer } from './minusFontSIze';
 
 const reducers = [
   changePageReducer,
@@ -19,6 +21,8 @@ const reducers = [
   changeTabsMarginTopReducer,
   queryPostsByTagReducer,
   queryPostsByDateReducer,
+  addFontSizeReducer,
+  minusFontSIzeReducer,
 ];
 
 export default function reducer(state = initialState, action) {

@@ -26,50 +26,70 @@ export class Tabs extends Component {
     const menus = [(
       <Menu>
         <Menu.Item>
-          <Link to="/blog/javaScript/promote">promote</Link>
+          <a onClick={() => queryPostsByTag('promote')}>
+            <li>promote</li>
+          </a>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/blog/javaScript/array">array</Link>
+          <a onClick={() => queryPostsByTag('array')}>
+            <li>array</li>
+          </a>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/blog/javaScript/react">react</Link>
+          <a onClick={() => queryPostsByTag('react')}>
+            <li>react</li>
+          </a>
         </Menu.Item>
         <Menu.Item>
-          <Link to="/blog/javaScript/jQuery">jQuery</Link>
-        </Menu.Item>
-      </Menu>
-    ), (
-      <Menu>
-        <Menu.Item>
-          <Link to="/blog/database/oracle">oracle</Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link to="/blog/database/mysql">mysql</Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link to="/blog/database/sqlServer">sqlServer</Link>
+          <a onClick={() => queryPostsByTag('jQuery')}>
+            <li>jQuery</li>
+          </a>
         </Menu.Item>
       </Menu>
     ), (
       <Menu>
         <Menu.Item>
-          <Link to="/blog/webService/cxf">cxf</Link>
+          <a onClick={() => queryPostsByTag('oracle')}>
+            <li>oracle</li>
+          </a>
+        </Menu.Item>
+        <Menu.Item>
+          <a onClick={() => queryPostsByTag('mysql')}>
+            <li>mysql</li>
+          </a>
+        </Menu.Item>
+        <Menu.Item>
+          <a onClick={() => queryPostsByTag('sqlServer')}>
+            <li>sqlServer</li>
+          </a>
         </Menu.Item>
       </Menu>
     ), (
       <Menu>
         <Menu.Item>
-          <Link to="/blog/linux/command">command</Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link to="/blog/linux/ssh">ssh</Link>
+          <a onClick={() => queryPostsByTag('cxf')}>
+            <li>cxf</li>
+          </a>
         </Menu.Item>
       </Menu>
     ), (
       <Menu>
         <Menu.Item>
-          <a onClick={(e) => queryPostsByTag(e)}>
-            <Link to="/blog/server/docker">docker</Link>
+          <a onClick={() => queryPostsByTag('command')}>
+            <li>command</li>
+          </a>
+        </Menu.Item>
+        <Menu.Item>
+          <a onClick={() => queryPostsByTag('ssh')}>
+            <li>ssh</li>
+          </a>
+        </Menu.Item>
+      </Menu>
+    ), (
+      <Menu>
+        <Menu.Item>
+          <a onClick={() => queryPostsByTag('docker')}>
+            <li>docker</li>
           </a>
         </Menu.Item>
       </Menu>

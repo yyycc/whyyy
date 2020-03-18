@@ -12,14 +12,15 @@ export class Promote extends Component {
   };
 
   render() {
+    const { fontSize } = this.props.blog;
     return (
       <div className="blog-java-script">
         <h1>javaScript(1): 变量、函数的声明提升</h1>
+        <body style={{ fontSize: `${fontSize}px` }}>
         <div className="blog-java-script-img">
           <img src={promote} alt="promote"/>
           <p>图1. function</p>
         </div>
-        <body>
         <p>搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。</p>
         <h2>1. 运行结果</h2>
         <p>首先，运行结束后a的值是多少：</p>

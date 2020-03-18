@@ -7,7 +7,6 @@ import {
 } from './constants';
 
 export function queryPostsByDate(date) {
-  debugger
   return {
     type: BLOG_QUERY_POSTS_BY_DATE,
     date: date,

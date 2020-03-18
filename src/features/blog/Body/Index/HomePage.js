@@ -33,7 +33,7 @@ export class HomePage extends Component {
           </div>
           <div className="blog-home-page-lists">
             {
-              postsToDisplay.map((ele, index) => {
+              postsToDisplay.reverse().map((ele, index) => {
                 return <Post key={index} post={ele} actions={this.props.actions}/>;
               })
             }

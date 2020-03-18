@@ -11,6 +11,11 @@ export class BreadCrumb extends Component {
     actions: PropTypes.object.isRequired,
   };
 
+  componentDidUpdate() {
+    debugger
+    // 修改title
+  }
+
   render() {
     const props = this.props.props;
     const route = props.location.pathname;
