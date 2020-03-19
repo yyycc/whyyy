@@ -21,15 +21,22 @@ function renderRouteConfigV3(routes, contextPath) {
     newContextPath = newContextPath.replace(/\/+/g, '/');
     if (item.component && item.childRoutes) {
       const childRoutes = renderRouteConfigV3(item.childRoutes, newContextPath);
+      history.listen((location) => {
+        setTimeout(() => {
+          if (location.action === 'POP') return;
+          window.scrollTo(0, 0);
+          console.log('Back to top', location);
+        });
+      });
       children.push(
         <Route
           key={newContextPath}
           render={props => <item.component {...props}>{childRoutes}</item.component>}
           path={newContextPath}
-        />
+        />,
       );
     } else if (item.component) {
-      children.push(<Route key={newContextPath} component={item.component} path={newContextPath} exact />);
+      children.push(<Route key={newContextPath} component={item.component} path={newContextPath} exact/>);
     } else if (item.childRoutes) {
       item.childRoutes.forEach(r => renderRoute(r, newContextPath));
     }
@@ -46,11 +53,12 @@ export default class Root extends React.Component {
     store: PropTypes.object.isRequired,
     routeConfig: PropTypes.array.isRequired,
   };
+
   render() {
     const children = renderRouteConfigV3(this.props.routeConfig, '/');
     return (
       <Provider store={this.props.store}>
-        <ConnectedRouter history={history}>{children}</ConnectedRouter>
+        <ConnectedRouter onUpdate={() => window.scrollTo(0, 0)} history={history}>{children}</ConnectedRouter>
       </Provider>
     );
   }
