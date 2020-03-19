@@ -17,14 +17,14 @@ export class Promote extends Component {
     const { fontSize } = this.props.blog;
     return (
       <div className="blog-java-script">
-        <h1>javaScript(1): 变量、函数的声明提升</h1>
+        <h1>javaScript(2): 变量、函数的声明提升</h1>
         <body style={{ fontSize: `${fontSize}px` }}>
         <div className="blog-java-script-img">
           <img src={promote} alt="promote"/>
           <p>图1. function</p>
         </div>
         <p>搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。</p>
-        <h2 id="promote-1">1. 运行结果</h2>
+        <h2 id="javaScript-2-1">1. 运行结果</h2>
         <p>首先，运行结束后a的值是多少：</p>
         <p>我的第一反应是5。。。居然是5，哎，傻*</p>
         <p>显然是1，因为函数中是 var a = 5 而不是 a = 5</p>
@@ -33,7 +33,7 @@ export class Promote extends Component {
         <p>所以运行完 var a = 5，函数内部作用域里面其实存在两个a</p>
         <p>一个 a = 5，另一个 window.a = 1</p>
         <p>而函数运行完后，所有局部变量都会被回收，只剩下了window.a = 1</p>
-        <h2 id="promote-2">2. 提升</h2>
+        <h2 id="javaScript-2-2">2. 提升</h2>
         <p>那么为什么console.log(a)是undefined，换言之，为什么进入函数后a是undefined了呢</p>
         <p>这就涉及另一个知识，叫做提升</p>
         <pre>b = 2;<br/>

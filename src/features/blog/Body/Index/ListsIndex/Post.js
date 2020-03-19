@@ -7,13 +7,14 @@ import { Link } from 'react-router-dom';
 export class Post extends Component {
 
   render() {
-    const { title, date, tag, summary, route } = this.props.post;
+    const { title, date, tag, summary, route, order } = this.props.post;
+    const to = route + '/' + order;
     const { queryPostsByTag } = this.props.actions;
     return (
       <div className="blog-post">
         <div className="blog-post-title">
           <span className="blog-post-title-mark"> </span>
-          <h2><Link to={route}>{title}</Link></h2>
+          <h2><Link to={to}>{title}</Link></h2>
         </div>
         <div className="blog-post-info">
           <p>{date}</p>
@@ -31,7 +32,7 @@ export class Post extends Component {
           <p>{summary}</p>
         </div>
         <div>
-          <Link to={route}>阅读全文</Link>
+          <Link to={to}>阅读全文</Link>
         </div>
       </div>
     );

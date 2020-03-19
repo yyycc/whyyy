@@ -2,29 +2,27 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
-import { Anchor } from 'antd';
+import * as actions from '../../../redux/actions';
+import { Input } from 'antd';
 
-export class AnchorIndex extends Component {
+export class SearchIndex extends Component {
   static propTypes = {
     blog: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
   render() {
-    const { Link } = Anchor;
-    const pathname = this.props.pathname.split('/');
-    const order = pathname[pathname.length - 1];
-    const name = pathname[pathname.length - 2];
-    const titles = this.props.blog.h2[name][order - 1];
+    const { Search } = Input;
+    const { fuzzyQueryPosts } = this.props.actions;
     return (
-      <div className="blog-anchor-index">
-        <Anchor>
-          {titles.map((ele, index) => {
-            const href = '#' + name + '-' + order + '-' + (index + 1);
-            return <Link href={href} title={ele}></Link>;
-          })}
-        </Anchor>
+      <div className="blog-search-index">
+        <h3>
+          <li>
+            <i className="fa fa-search"/>
+          </li>
+          全站搜索
+        </h3>
+        <Search placeholder="搜索文章标题" onSearch={value => fuzzyQueryPosts(value)} enterButton/>
       </div>
     );
   }
@@ -47,4 +45,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(AnchorIndex);
+)(SearchIndex);

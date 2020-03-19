@@ -13,8 +13,14 @@ import linux from '../../../images/index-linux.jpg';
 
 const initialState = {
   h2: {
-    array: ['1. 初始化', '2. 实例方法'],
-    promote: ['1. 运行结果', '2. 提升'],
+    javaScript: [
+      ['1. 初始化', '2. 实例方法'],
+      ['1. 运行结果', '2. 提升'],
+    ],
+    docker: [
+      ['1. ', '2. '],
+      ['1. ', '2. '],
+    ],
   },
   title: 'whyyy his blog',
   titles: [{ title: 'javaScript', name: 'javaScript', menu: [] },
@@ -22,13 +28,21 @@ const initialState = {
     { title: 'webService', name: 'webService', menu: [] },
     { title: 'linux', name: 'linux', menu: [] },
     { title: 'server', name: '服务端', menu: [] }],
-  top: 40,
+  tabFixed: false,
+  top: 0, // 面包屑的margin-top
   tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', 'docker', 'git'],
   posts: [
     {
+      title: 'font-awesome',
+      date: '2020-03-19', tag: ['frontEnd', 'css'], route: '/blog/css',
+      summary: '一个非常好用的icon库。。。',
+      order: 2,
+    },
+    {
       title: '如何让img居中显示',
-      date: '2020-03-18', tag: ['frontEnd', 'css'], route: '/blog/frontEnd/css',
+      date: '2020-03-18', tag: ['frontEnd', 'css'], route: '/blog/css',
       summary: '今天画blog的时候遇见了一个小问题，记录一下。。。',
+      order: 1,
     },
     {
       title: 'Paragon NTFS For Mac',
@@ -37,13 +51,15 @@ const initialState = {
     },
     {
       title: 'javaScript(2): 变量、函数的声明提升',
-      date: '2020-03-09', tag: ['javaScript'], route: '/blog/javaScript/promote',
+      date: '2020-03-09', tag: ['frontEnd', 'javaScript'], route: '/blog/javaScript',
       summary: '搜console控制台如何换行的时候(shift + enter),看到这样一张图，乍一看就很懵〇。。。',
+      order: 2,
     },
     {
       title: 'javaScript(1): 数组',
-      date: '2020-03-02', tag: ['javaScript', 'array'], route: '/blog/javaScript/array',
+      date: '2020-03-02', tag: ['frontEnd', 'javaScript', 'array'], route: '/blog/javaScript',
       summary: 'js的文档也看了好多遍了，怎么每次碰到数组的操作，还是要bd。。。',
+      order: 1,
     },
     {
       title: 'linux 指令 -- 常用指令',
@@ -86,15 +102,17 @@ const initialState = {
       title: 'docker(2): 又想装一个tomcat了',
       date: '2019-11-11',
       tag: ['server', 'docker'],
-      route: '/blog/server/docker/dockerB',
+      route: '/blog/server/docker',
       summary: '我想在里面装一个tomcat，把我的axis服务部署在上面。。。',
+      order: 2,
     },
     {
       title: 'docker(1): 其实就为了装oracle数据库',
       date: '2019-11-08',
       tag: ['server', 'docker'],
-      route: '/blog/server/docker/dockerA',
+      route: '/blog/server/docker',
       summary: '现在做个项目，哪儿哪儿都是oracle数据库，都在服务器上，服务器还仅限内网访问，你高兴就好，我不搭个本地数据库就太难了呀。。。',
+      order: 1,
     },
     {
       title: 'mysql安装',

@@ -8,6 +8,7 @@ import { Post } from './ListsIndex/Post';
 import { Pagination } from 'antd';
 import { TagsIndex } from './TagsIndex/TagsIndex';
 import Collections from './CollectionsIndex/Collections';
+import { SearchIndex } from './SearchIndex/SearchIndex';
 
 export class HomePage extends Component {
   static propTypes = {
@@ -46,6 +47,7 @@ export class HomePage extends Component {
         </div>
 
         <div className="blog-home-page-right">
+          <SearchIndex blog={this.props.blog} actions={this.props.actions}/>
           <TagsIndex blog={this.props.blog} actions={this.props.actions}/>
           <Collections blog={this.props.blog} actions={this.props.actions}/>
           {/*<div className="blog-home-page-right-lists">

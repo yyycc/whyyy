@@ -23,7 +23,6 @@ function renderRouteConfigV3(routes, contextPath) {
       const childRoutes = renderRouteConfigV3(item.childRoutes, newContextPath);
       history.listen((location) => {
         setTimeout(() => {
-          if (location.action === 'POP') return;
           window.scrollTo(0, 0);
           console.log('Back to top', location);
         });

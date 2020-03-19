@@ -3,10 +3,7 @@
 .blog-tabs {
   // problem：当用fix布局，又想把它固定，直接添加position: fixed之后页面跑偏
   // solution: 添加  width: 100%;
-  position: fixed;
   width: 100%;
-  left: 0;
-  top: 0;
   z-index: 100;
 
   display: flex;
@@ -28,4 +25,10 @@
     border-color: black;
     background-color: black;
   }
+}
+
+.blog-tabs-fixes {
+  position: fixed;
+  top: 0;
+  left: 0;
 }

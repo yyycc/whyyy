@@ -16,13 +16,14 @@ export class BreadCrumb extends Component {
   }
 
   render() {
+    debugger
     const props = this.props.props;
     const route = props.location.pathname;
     const { international } = this.props.blog;
     let routes = route.split('/');
     routes.shift();
     return (
-      <div className="blog-bread-crumb">
+      <div className="blog-bread-crumb" style={{ marginTop: `${this.props.blog.top}px` }}>
         <div>
           <li>
             <i className="fa fa-home"/>

@@ -9,22 +9,24 @@
 import initialState from './initialState';
 import { reducer as changePageReducer } from './changePage';
 import { reducer as changeImageReducer } from './changeImage';
-import { reducer as changeTabsMarginTopReducer } from './changeTabsMarginTop';
+import { reducer as changeTabsPositionReducer } from './changeTabsPosition';
 import { reducer as queryPostsByTagReducer } from './queryPostsByTag';
 import { reducer as queryPostsByDateReducer } from './queryPostsByDate';
 import { reducer as addFontSizeReducer } from './addFontSize';
 import { reducer as minusFontSizeReducer } from './minusFontSize';
 import { reducer as defaultFontSizeReducer } from './defaultFontSize';
+import { reducer as fuzzyQueryPostsReducer } from './fuzzyQueryPosts';
 
 const reducers = [
   changePageReducer,
   changeImageReducer,
-  changeTabsMarginTopReducer,
+  changeTabsPositionReducer,
   queryPostsByTagReducer,
   queryPostsByDateReducer,
   addFontSizeReducer,
   minusFontSizeReducer,
   defaultFontSizeReducer,
+  fuzzyQueryPostsReducer,
 ];
 
 export default function reducer(state = initialState, action) {

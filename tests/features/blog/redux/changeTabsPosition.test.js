@@ -3,20 +3,20 @@ import {
 } from '../../../../src/features/blog/redux/constants';
 
 import {
-  changeTabsMarginTop,
+  changeTabsPosition,
   reducer,
-} from '../../../../src/features/blog/redux/changeTabsMarginTop';
+} from '../../../../src/features/blog/redux/changeTabsPosition';
 
-describe('blog/redux/changeTabsMarginTop', () => {
-  it('returns correct action by changeTabsMarginTop', () => {
-    expect(changeTabsMarginTop()).toHaveProperty('type', BLOG_CHANGE_TABS_MARGIN_TOP);
+describe('blog/redux/changeTabsPosition', () => {
+  it('returns correct action by changeTabsPosition', () => {
+    expect(changeTabsPosition()).toHaveProperty('type', BLOG_CHANGE_TABS_MARGIN_TOP);
   });
 
   it('handles action type BLOG_CHANGE_TABS_MARGIN_TOP correctly', () => {
     const prevState = {};
     const state = reducer(
       prevState,
-      { type: BLOG_CHANGE_TABS_MARGIN_TOP }
+      { type: BLOG_CHANGE_TABS_MARGIN_TOP },
     );
     // Should be immutable
     expect(state).not.toBe(prevState);

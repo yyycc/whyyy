@@ -15,3 +15,5 @@ export { default as Array } from './Body/JavaScript/Array';
 export { default as Collections } from './Body/Index/CollectionsIndex/Collections';
 export { default as ChangeFont } from './Body/Index/ChangeFont';
 export { default as AnchorIndex } from './Body/Index/AnchorIndex';
+export { default as PostFooter } from './Body/Index/PostFooter';
+export { default as SearchIndex } from './Body/Index/SearchIndex/SearchIndex';

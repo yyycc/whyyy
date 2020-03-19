@@ -11,18 +11,11 @@ export default {
   name: 'Blog',
   component: Layout,
   childRoutes: [
-    { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
-    { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
+    { path: 'javaScript/2', name: 'promote', component: Promote, isIndex: false },
+    { path: 'javaScript/1', name: 'array', component: Array, isIndex: false },
 
     // 链接到HomePage的路由 待优化 TODO
     { path: '/', name: 'homePage', component: HomePage, isIndex: true },
-    { path: 'server/docker', name: 'homePage', component: HomePage, isIndex: false },
-    { path: 'docker', name: 'homePage', component: HomePage, isIndex: false },
-    { path: 'javaScript', name: 'homePage', component: HomePage, isIndex: false },
-    { path: 'linux', name: 'homePage', component: HomePage, isIndex: false },
-    { path: 'database', name: 'homePage', component: HomePage, isIndex: false },
-    { path: 'server', name: 'homePage', component: HomePage, isIndex: false },
-    { path: 'webService', name: 'homePage', component: HomePage, isIndex: false },
 
     { path: 'server/docker/dockerA', name: 'dockerA', component: DockerA, isIndex: false, title: 'docker' },
     { path: 'server/docker/dockerB', name: 'dockerB', component: DockerB, isIndex: false, title: 'docker' },

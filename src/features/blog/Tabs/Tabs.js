@@ -17,11 +17,11 @@ export class Tabs extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.props.actions.changeTabsMarginTop);
+    window.addEventListener('scroll', this.props.actions.changeTabsPosition);
   }
 
   render() {
-    const { titles, top } = this.props.blog;
+    const { titles, tabFixed } = this.props.blog;
     const { queryPostsByTag } = this.props.actions;
     const menus = [(
       <Menu>
@@ -96,7 +96,7 @@ export class Tabs extends Component {
     )];
 
     return (
-      <div className="blog-tabs" style={{ marginTop: `${top}px` }}>
+      <div className={['blog-tabs', tabFixed ? 'blog-tabs-fixes' : null].join(' ')}>
         <Button onClick={queryPostsByTag}>
           <Link to='/blog'>主页</Link>
         </Button>
@@ -104,7 +104,7 @@ export class Tabs extends Component {
           const to = '/blog/' + ele.title;
           return <Dropdown key={index} overlay={menus[index]} placement="bottomCenter">
             <Button onClick={() => queryPostsByTag(ele.title)}>
-              <Link to={to}>{ele.name}</Link>
+              {ele.name}
             </Button>
           </Dropdown>;
         })}
@@ -113,6 +113,7 @@ export class Tabs extends Component {
     );
   }
 }
+
 
 /* istanbul ignore next */
 function mapStateToProps(state) {

@@ -1,0 +1,43 @@
+@import '../../../../styles/mixins';
+
+.blog-post-footer {
+
+  p {
+    background-color: white;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    user-select: none;
+
+    img {
+      -webkit-user-drag: none;
+      width: 160px;
+      height: 100px;
+    }
+  }
+
+  .blog-post-footer-page-turn {
+    display: flex;
+    margin-top: 10px;
+
+    .blog-post-footer-page-up,
+    .blog-post-footer-page-down {
+      text-align: center;
+      background-color: white;
+      width: 49%;
+
+      p {
+        padding: 10px 0 10px 0;
+      }
+    }
+
+    p:hover {
+      background-color: #c40000;
+      color: white;
+    }
+
+    .blog-post-footer-page-down {
+      margin-left: 2%;
+    }
+  }
+}
