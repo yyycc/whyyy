@@ -106,13 +106,13 @@ export class Array extends Component {
       <div className="blog-array">
         <h1>javaScript(2): 数组</h1>
         <body style={{ fontSize: `${fontSize}px` }}>
-        <h2>1. 初始化</h2>
+        <h2 id="array-1">1. 初始化</h2>
         <p>两种初始化的方式，第一种是使用构造函数</p>
         <pre>var arr = new Array();</pre>
         <p>括号里面可以给参数，但是不同的参数，会导致它的行为不一致。</p>
         <p>所以，建议使用另一种方式，也就是数组字面量</p>
         <pre>var arr = [1, 2, 3];</pre>
-        <h2>2. 实例方法</h2>
+        <h2 id="array-2">2. 实例方法</h2>
         <p>数组的示例方法真的有好多，这里我把它分成两种：</p>
         <p>会改变原数组的 & 不会改变原数组的</p>
         <p>本来想一一列举的，但是好像没啥意义</p>

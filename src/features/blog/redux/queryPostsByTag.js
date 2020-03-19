@@ -7,7 +7,6 @@ import {
 } from './constants';
 
 export function queryPostsByTag(e) {
-  debugger
   let tag = 'all';
   if (e && e.target) {
     tag = e.target.text;

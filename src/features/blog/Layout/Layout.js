@@ -5,11 +5,14 @@ import Tabs from '../Tabs/Tabs';
 import Scroll from '../Scroll/Scroll';
 import BreadCrumb from '../BreadCrumb/BreadCrumb';
 import ChangeFont from '../Body/Index/ChangeFont';
+import AnchorIndex from '../Body/Index/AnchorIndex';
 
 export default class Layout extends Component {
   static propTypes = {};
 
   render() {
+    const pathname = this.props.location.pathname.split('/');
+    const display = pathname.length > 3;
     return (
       <div className="blog-layout">
         <Header/>
@@ -18,7 +21,10 @@ export default class Layout extends Component {
         </div>
         <div className="blog-layout-container">
           <BreadCrumb props={this.props}/>
-          <ChangeFont props={this.props}/>
+          {display && <ChangeFont props={this.props}/>}
+          {display && <div className="blog-layout-container-anchor">
+            <AnchorIndex pathname={this.props.location.pathname}/>
+          </div>}
           <div className="blog-layout-container-post">
             {this.props.children}
           </div>

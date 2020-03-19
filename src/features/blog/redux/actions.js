@@ -4,4 +4,5 @@ export { changeTabsMarginTop } from './changeTabsMarginTop';
 export { queryPostsByTag } from './queryPostsByTag';
 export { queryPostsByDate } from './queryPostsByDate';
 export { addFontSize } from './addFontSize';
-export { minusFontSIze } from './minusFontSIze';
+export { minusFontSize } from './minusFontSize';
+export { defaultFontSize } from './defaultFontSize';

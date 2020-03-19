@@ -3,22 +3,27 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
+import { Anchor } from 'antd';
 
-export class ChangeFont extends Component {
+export class AnchorIndex extends Component {
   static propTypes = {
     blog: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
   render() {
-    const { addFontSize, minusFontSize, defaultFontSize } = this.props.actions;
+    const { Link } = Anchor;
+    const pathname = this.props.pathname.split('/');
+    const name = pathname[pathname.length - 1];
+    const titles = this.props.blog.h2[name];
     return (
-      <div className="blog-change-font">
-        <ul className="blog-change-font-lists">
-          <li onClick={addFontSize} className="blog-change-font-add">A+</li>
-          <li onClick={minusFontSize} className="blog-change-font-minus">A-</li>
-          <li onClick={defaultFontSize} className="blog-change-font-minus">A</li>
-        </ul>
+      <div className="blog-anchor-index">
+        <Anchor>
+          {titles.map((ele, index) => {
+            const href = '#' + name + '-' + (index + 1);
+            return <Link href={href} title={ele}></Link>;
+          })}
+        </Anchor>
       </div>
     );
   }
@@ -41,4 +46,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ChangeFont);
+)(AnchorIndex);

@@ -6,7 +6,7 @@ import {
   BLOG_MINUS_FONT_S_IZE,
 } from './constants';
 
-export function minusFontSIze() {
+export function minusFontSize() {
   return {
     type: BLOG_MINUS_FONT_S_IZE,
   };

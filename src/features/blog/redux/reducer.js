@@ -13,7 +13,8 @@ import { reducer as changeTabsMarginTopReducer } from './changeTabsMarginTop';
 import { reducer as queryPostsByTagReducer } from './queryPostsByTag';
 import { reducer as queryPostsByDateReducer } from './queryPostsByDate';
 import { reducer as addFontSizeReducer } from './addFontSize';
-import { reducer as minusFontSIzeReducer } from './minusFontSIze';
+import { reducer as minusFontSizeReducer } from './minusFontSize';
+import { reducer as defaultFontSizeReducer } from './defaultFontSize';
 
 const reducers = [
   changePageReducer,
@@ -22,7 +23,8 @@ const reducers = [
   queryPostsByTagReducer,
   queryPostsByDateReducer,
   addFontSizeReducer,
-  minusFontSIzeReducer,
+  minusFontSizeReducer,
+  defaultFontSizeReducer,
 ];
 
 export default function reducer(state = initialState, action) {

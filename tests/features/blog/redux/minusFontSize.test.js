@@ -3,13 +3,13 @@ import {
 } from '../../../../src/features/blog/redux/constants';
 
 import {
-  minusFontSIze,
+  minusFontSize,
   reducer,
-} from '../../../../src/features/blog/redux/minusFontSIze';
+} from '../../../../src/features/blog/redux/minusFontSize';
 
-describe('blog/redux/minusFontSIze', () => {
-  it('returns correct action by minusFontSIze', () => {
-    expect(minusFontSIze()).toHaveProperty('type', BLOG_MINUS_FONT_S_IZE);
+describe('blog/redux/minusFontSize', () => {
+  it('returns correct action by minusFontSize', () => {
+    expect(minusFontSize()).toHaveProperty('type', BLOG_MINUS_FONT_S_IZE);
   });
 
   it('handles action type BLOG_MINUS_FONT_S_IZE correctly', () => {

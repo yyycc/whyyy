@@ -14,3 +14,4 @@ export { default as DockerB } from './Body/docker/DockerB';
 export { default as Array } from './Body/JavaScript/Array';
 export { default as Collections } from './Body/Index/CollectionsIndex/Collections';
 export { default as ChangeFont } from './Body/Index/ChangeFont';
+export { default as AnchorIndex } from './Body/Index/AnchorIndex';

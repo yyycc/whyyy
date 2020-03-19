@@ -12,7 +12,6 @@ export class BreadCrumb extends Component {
   };
 
   componentDidUpdate() {
-    debugger
     // 修改title
   }
 

@@ -12,6 +12,10 @@ import javaScript from '../../../images/index-js.png';
 import linux from '../../../images/index-linux.jpg';
 
 const initialState = {
+  h2: {
+    array: ['1. 初始化', '2. 实例方法'],
+    promote: ['1. 运行结果', '2. 提升'],
+  },
   title: 'whyyy his blog',
   titles: [{ title: 'javaScript', name: 'javaScript', menu: [] },
     { title: 'database', name: '数据库', menu: [] },
