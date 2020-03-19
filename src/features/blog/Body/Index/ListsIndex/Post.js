@@ -11,9 +11,9 @@ export class Post extends Component {
     const { queryPostsByTag } = this.props.actions;
     return (
       <div className="blog-post">
-        <div>
-          <span className="blog-post-mark"> </span>
-          <h2>{title}</h2>
+        <div className="blog-post-title">
+          <span className="blog-post-title-mark"> </span>
+          <h2><Link to={route}>{title}</Link></h2>
         </div>
         <div className="blog-post-info">
           <p>{date}</p>
