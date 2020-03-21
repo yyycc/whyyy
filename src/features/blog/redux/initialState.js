@@ -21,6 +21,11 @@ const initialState = {
       ['1. ', '2. '],
       ['1. ', '2. '],
     ],
+    webService: [
+      ['1. 准备', ['2. 搭建',
+        ['2.1. 创建maven项目', '2.2. 导入jar包', '2.3. 接口类', '2.4. 注解', '2.5. 配置web.xml', '2.6. 配置cxf', '2.7. 部署启动'], true]],
+      ['1. ', '2. '],
+    ],
   },
   title: 'whyyy his blog',
   titles: [{ title: 'javaScript', name: 'javaScript', menu: [] },
@@ -81,8 +86,9 @@ const initialState = {
       title: 'web service -- spring + cxf 发布web service(2)',
       date: '2020-01-03',
       tag: ['webService', 'cxf'],
-      route: '/blog/webService/cxf',
+      route: '/blog/webService',
       summary: '这个项目的接口，断断续续做了3个月了，从一开始的一脸懵逼，到现在的一知半解。。。',
+      order: 2,
     },
     {
       title: 'react',
@@ -95,8 +101,9 @@ const initialState = {
       title: 'web service -- spring + cxf 发布web service(1)',
       date: '2019-11-13',
       tag: ['webService', 'cxf'],
-      route: '/blog/webService/cxf',
+      route: '/blog/webService',
       summary: '今天又差点被web service搞崩溃，起因是在跟客户联调的时候报错：',
+      order: 1,
     },
     {
       title: 'docker(2): 又想装一个tomcat了',

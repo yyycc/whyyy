@@ -16,7 +16,6 @@ export class BreadCrumb extends Component {
   }
 
   render() {
-    debugger
     const props = this.props.props;
     const route = props.location.pathname;
     const { international } = this.props.blog;

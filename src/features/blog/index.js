@@ -17,3 +17,7 @@ export { default as ChangeFont } from './Body/Index/ChangeFont';
 export { default as AnchorIndex } from './Body/Index/AnchorIndex';
 export { default as PostFooter } from './Body/Index/PostFooter';
 export { default as SearchIndex } from './Body/Index/SearchIndex/SearchIndex';
+export { default as WebServiceA } from './Body/webService/WebServiceA';
+export { default as WebServiceB } from './Body/webService/WebServiceB';
+export { default as SimpleTable } from './Body/component/SimpleTable';
+export { default as PreFormat } from './Body/component/PreFormat';

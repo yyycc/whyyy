@@ -24,7 +24,7 @@ export default class Layout extends Component {
           <BreadCrumb props={this.props}/>
           {display && <ChangeFont props={this.props}/>}
           {display && <div className="blog-layout-container-anchor">
-            <AnchorIndex pathname={this.props.location.pathname}/>
+            <AnchorIndex pathname={this.props.location.pathname} actions={this.props.actions}/>
           </div>}
           <div className="blog-layout-container-post">
             {this.props.children}

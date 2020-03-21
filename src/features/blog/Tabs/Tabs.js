@@ -104,7 +104,7 @@ export class Tabs extends Component {
           const to = '/blog/' + ele.title;
           return <Dropdown key={index} overlay={menus[index]} placement="bottomCenter">
             <Button onClick={() => queryPostsByTag(ele.title)}>
-              {ele.name}
+              <Link to={to}>{ele.name}</Link>
             </Button>
           </Dropdown>;
         })}
@@ -113,7 +113,6 @@ export class Tabs extends Component {
     );
   }
 }
-
 
 /* istanbul ignore next */
 function mapStateToProps(state) {
