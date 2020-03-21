@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import { Table } from 'antd';
+import tableCode from './tableCode';
 
 export class Array extends Component {
   static propTypes = {
@@ -12,6 +13,7 @@ export class Array extends Component {
   };
 
   render() {
+    const { array } = tableCode;
     const { fontSize } = this.props.blog;
     const columns = [
       {
