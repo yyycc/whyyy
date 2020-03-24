@@ -6,7 +6,9 @@ import * as actions from '../../redux/actions';
 import { PreFormat } from '../component/PreFormat';
 import code from './code';
 import tableCode from './tableCode';
+import urls from './urls';
 import SimpleTable from '../component/SimpleTable';
+import { Link } from 'react-router-dom';
 
 export class WebServiceB extends Component {
   static propTypes = {
@@ -23,7 +25,9 @@ export class WebServiceB extends Component {
       inInterceptorTitles, inInterceptor, inInterceptorName,
       outInterceptorTitles, outInterceptor, outInterceptorName,
     } = tableCode;
-    const { fontSize } = this.props.blog;
+    const { urlStates } = urls;
+    const { fontSize, leaveConfirm } = this.props.blog;
+    debugger
     return (
       <div className="blog-web-service-b">
         <h1>web service(2): spring + cxf 发布web service相关问题解决</h1>
@@ -92,6 +96,12 @@ export class WebServiceB extends Component {
         <PreFormat content={outPreStreamInterceptor}/>
         <p>从exchange中取出请求报文，记录日志。</p>
         <h2 id="Z-参考">Z. 参考</h2>
+        {leaveConfirm && <p>
+          <Link to={urlStates[0]}>1. cxf拦截器，实现对接收到的报文和发送出去的报文格式自定义</Link><br/>
+          <Link to={urlStates[1]}>2. CXF 入门：创建一个基于SOAPHeader的安全验证(CXF拦截器使用)</Link><br/>
+          <Link to={urlStates[2]}>3. CXF实战之拦截器Interceptor(四)</Link><br/>
+        </p>}
+        {!leaveConfirm &&
         <p>
           <a href="https://blog.csdn.net/zhaofuqiangmycomm/article/details/78702125" target="_blank" rel="noopener">
             1. cxf拦截器，实现对接收到的报文和发送出去的报文格式自定义</a><br/>
@@ -100,6 +110,7 @@ export class WebServiceB extends Component {
           <a href="https://blog.csdn.net/accountwcx/article/details/47102319" target="_blank" rel="noopener">
             3. CXF实战之拦截器Interceptor(四)</a>
         </p>
+        }
 
         </body>
       </div>

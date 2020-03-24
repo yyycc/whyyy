@@ -27,9 +27,9 @@ export class AnchorIndex extends Component {
             if (typeof ele === 'string') {
               return <Link href={href} title={ele}></Link>;
             } else {
-              return <Link href={href} title={ele[0]}><i
-                onClick={() => changeSubAnchorDisplay(index, name, order - 1, h2)}
-                className={['fa', ele[2] ? 'fa-angle-down' : 'fa-angle-right'].join(' ')}/>
+              return <Link href={href} title={ele[0]}>
+                {/*<i onClick={() => changeSubAnchorDisplay(index, name, order - 1, h2)}
+                className={['fa', ele[2] ? 'fa-angle-down' : 'fa-angle-right'].join(' ')}/>*/}
                 <div className={[ele[2] ? null : 'blog-anchor-index-block']}>
                   {
                     ele[1].map((e, i) => {
