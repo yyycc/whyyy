@@ -2,7 +2,7 @@
 // Learn more from: http://rekit.js.org/docs/routing.html
 
 import {
-  Layout, Promote, DockerA, DockerB, Array, WebServiceA, WebServiceB,
+  Layout, Promote, DockerA, DockerB, Array, WebServiceA, WebServiceB, NginxA,
 } from './';
 import HomePage from './Body/Index/HomePage';
 
@@ -16,6 +16,8 @@ export default {
 
     { path: 'webService/2', name: 'webServiceB', component: WebServiceB, isIndex: false },
     { path: 'webService/1', name: 'webServiceA', component: WebServiceA, isIndex: false },
+
+    { path: 'nginx/1', name: 'nginxA', component: NginxA, isIndex: false },
 
     // 链接到HomePage的路由 待优化 TODO
     { path: '/', name: 'homePage', component: HomePage, isIndex: true },

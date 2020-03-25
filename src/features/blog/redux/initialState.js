@@ -35,6 +35,13 @@ const initialState = {
         // ['Z. 参考']
       ],
     ],
+    nginx: [
+      [
+        ['1. 搭建nginx',
+          ['1.1. mac', '1.2. centos', '1.3. RedHat 6'], true],
+        '2. nginx部署前端项目',
+        '3. 转发'],
+    ],
   },
   title: 'whyyy his blog',
   titles: [{ title: 'javaScript', name: 'javaScript', menu: [] },
@@ -152,8 +159,9 @@ const initialState = {
     },
     {
       title: 'nginx',
-      date: '2019-10-17', tag: ['nginx', 'server'], route: '/blog/server/nginx',
+      date: '2019-10-17', tag: ['nginx', 'server'], route: '/blog/nginx',
       summary: '那些年我用nginx做过的事。。。',
+      order: 1,
     },
   ],
   postsToDisplay: [],
