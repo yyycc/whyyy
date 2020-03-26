@@ -23,3 +23,4 @@ export { default as SimpleTable } from './Body/component/SimpleTable';
 export { default as PreFormat } from './Body/component/PreFormat';
 export { default as NginxA } from './Body/nginx/NginxA';
 export { default as OracleA } from './Body/oracle/OracleA';
+export { default as SecureShellA } from './Body/ssh/SecureShellA';

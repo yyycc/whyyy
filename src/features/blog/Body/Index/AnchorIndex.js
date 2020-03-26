@@ -21,7 +21,7 @@ export class AnchorIndex extends Component {
     const { changeSubAnchorDisplay } = this.props.actions;
     return (
       <div className="blog-anchor-index">
-        <Anchor>
+        <Anchor affix={false}>
           {titles.map((ele, index) => {
             const href = '#' + name + '-' + order + '-' + (index + 1);
             if (typeof ele === 'string') {

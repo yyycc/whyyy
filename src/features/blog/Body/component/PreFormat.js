@@ -18,6 +18,10 @@ export class PreFormat extends Component {
       <div className="blog-pre-format">
         {
           contents.map((ele, index) => {
+            if (index === 0 && index === lastLine) {
+              return <pre
+                className='only-class'>{ele}<br/></pre>;
+            }
             return <pre
               className={[index === 0 ? 'first-class' : null, index === lastLine ? 'last-class' : null].join(' ')}>{ele}<br/>
             </pre>;

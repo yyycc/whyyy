@@ -32,8 +32,14 @@ const initialState = {
           ['2.1. 命名空间', '2.2. 节点要求', '2.3. header'], true],
         ['3. 拦截器',
           ['3.1 定义', '3.2 输入阶段', '3.3 输入拦截器', '3.4 输出阶段', '3.5 输出拦截器'], true],
-        // ['Z. 参考']
       ],
+    ],
+    ssh: [
+      ['1. 配置文件', '2. 生成ssh key', '3. 将公钥导入认证文件', '4. 本地配置'],
+    ],
+    oracle: [
+      ['1. 启动', '2. 连接数据库', '3. 一些sql', '4. 数据的导入导出', '5. 创建表空间、用户', '6. 授权', '7. 删除用户、表空间', '8. 表备份'
+        , '9. 执行脚本文件', '10. sql结果导入excel', '11. 实例启动', '12. 监听'],
     ],
     nginx: [
       [
@@ -146,6 +152,7 @@ const initialState = {
       title: 'ssh免密钥登录',
       date: '2019-10-21', tag: ['linux', 'ssh'], route: '/blog/linux/ssh',
       summary: '大清早，先偷会儿懒，把昨天弄好的ssh免密钥登录记录一哈，免得过两天忘记了。。。。',
+      order: 1,
     },
     {
       title: 'git',
@@ -156,6 +163,7 @@ const initialState = {
       title: 'oracle',
       date: '2019-10-17', tag: ['database', 'oracle'], route: '/blog/database/oracle',
       summary: 'oracle 那些我记不住的东西。。。',
+      order: 1,
     },
     {
       title: 'nginx',
