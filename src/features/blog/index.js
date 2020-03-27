@@ -24,3 +24,4 @@ export { default as PreFormat } from './Body/component/PreFormat';
 export { default as NginxA } from './Body/nginx/NginxA';
 export { default as OracleA } from './Body/oracle/OracleA';
 export { default as SecureShellA } from './Body/ssh/SecureShellA';
+export { default as RecommendedPost } from './Body/Index/RecommendIndex/RecommendedPost';

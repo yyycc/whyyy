@@ -14,8 +14,11 @@ export default {
     { path: 'javaScript/2', name: 'promote', component: Promote, isIndex: false },
     { path: 'javaScript/1', name: 'array', component: Array, isIndex: false },
 
-    { path: 'webService/2', name: 'webServiceB', component: WebServiceB, isIndex: false },
-    { path: 'webService/1', name: 'webServiceA', component: WebServiceA, isIndex: false },
+    { path: 'docker/2', name: 'docker', component: DockerB, isIndex: false },
+    { path: 'docker/1', name: 'docker', component: DockerA, isIndex: false },
+
+    { path: 'webService/2', name: 'webService', component: WebServiceB, isIndex: false },
+    { path: 'webService/1', name: 'webService', component: WebServiceA, isIndex: false },
 
     { path: 'nginx/1', name: 'nginxA', component: NginxA, isIndex: false },
     { path: 'database/oracle/1', name: 'oracleA', component: OracleA, isIndex: false },
