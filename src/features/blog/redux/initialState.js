@@ -10,6 +10,7 @@
 import Luffy from '../../../images/index.png';
 import javaScript from '../../../images/index-js.png';
 import linux from '../../../images/index-linux.jpg';
+import React from 'react';
 
 const initialState = {
   h2: {
@@ -34,8 +35,14 @@ const initialState = {
           ['3.1 定义', '3.2 输入阶段', '3.3 输入拦截器', '3.4 输出阶段', '3.5 输出拦截器'], true],
       ],
     ],
+    spring: [
+      ['1. 启动', '2. 注意事项', '3. Propagation'],
+    ],
     ssh: [
       ['1. 配置文件', '2. 生成ssh key', '3. 将公钥导入认证文件', '4. 本地配置'],
+    ],
+    mysql: [
+      ['1. yum源', '2. 安装mysql', '3. 开机自启', '4. 访问mysql', '5. 初始密码', '6. 修改密码', '7. 创建数据库', '8. 远程连接'],
     ],
     oracle: [
       ['1. 启动', '2. 连接数据库', '3. 一些sql', '4. 数据的导入导出', '5. 创建表空间、用户', '6. 授权', '7. 删除用户、表空间', '8. 表备份'
@@ -106,6 +113,7 @@ const initialState = {
       date: '2020-01-07', tag: ['java', 'spring'], route: '/blog/java/spring',
       summary: 'service中存在众多业务逻辑，往往一个方法中就涉及多个增删改，当一个ddl报错，我们肯定希望之前执行的回滚，之后的不再执行，\n' +
         '这样才能保证事务的一致性。不然我只记录账上少了100，没有记录这个100的去处，账就崩了',
+      order: 1,
     },
     {
       title: 'web service -- spring + cxf 发布web service(2)',
@@ -150,6 +158,7 @@ const initialState = {
       title: 'mysql安装',
       date: '2019-10-22', tag: ['database', 'mysql'], route: '/blog/database/mysql',
       summary: '好久都没用mysql了，赶紧肥来看看。。。',
+      order: 1,
     },
     {
       title: 'ssh免密钥登录',

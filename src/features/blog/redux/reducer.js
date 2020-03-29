@@ -17,6 +17,7 @@ import { reducer as minusFontSizeReducer } from './minusFontSize';
 import { reducer as defaultFontSizeReducer } from './defaultFontSize';
 import { reducer as fuzzyQueryPostsReducer } from './fuzzyQueryPosts';
 import { reducer as changeSubAnchorDisplayReducer } from './changeSubAnchorDisplay';
+import { reducer as autoChangeImagesReducer } from './autoChangeImages';
 
 const reducers = [
   changePageReducer,
@@ -29,6 +30,7 @@ const reducers = [
   defaultFontSizeReducer,
   fuzzyQueryPostsReducer,
   changeSubAnchorDisplayReducer,
+  autoChangeImagesReducer,
 ];
 
 export default function reducer(state = initialState, action) {

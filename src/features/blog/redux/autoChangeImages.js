@@ -3,22 +3,22 @@
 // https://medium.com/@nate_wang/a-new-approach-for-managing-redux-actions-91c26ce8b5da
 
 import {
-  BLOG_CHANGE_IMAGE,
+  BLOG_AUTO_CHANGE_IMAGES,
 } from './constants';
 
-export function changeImage(index) {
+export function autoChangeImages(max) {
   return {
-    type: BLOG_CHANGE_IMAGE,
-    index: index,
+    type: BLOG_AUTO_CHANGE_IMAGES,
+    max: max - 1,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case BLOG_CHANGE_IMAGE:
+    case BLOG_AUTO_CHANGE_IMAGES:
       return {
         ...state,
-        index: action.index,
+        index: state.index === action.max ? 0 : ++state.index,
       };
 
     default:

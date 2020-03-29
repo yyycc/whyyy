@@ -17,7 +17,14 @@ export class Tabs extends Component {
   }
 
   componentDidMount() {
+    this.interval = setInterval((props) => {
+      props.actions.autoChangeImages(props.blog.images.length);
+    }, 5000, this.props);
     window.addEventListener('scroll', this.props.actions.changeTabsPosition);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {

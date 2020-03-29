@@ -2,7 +2,7 @@
 // Learn more from: http://rekit.js.org/docs/routing.html
 
 import {
-  Layout, Promote, DockerA, DockerB, Array, WebServiceA, WebServiceB, NginxA, OracleA, SecureShellA,
+  Layout, Promote, DockerA, DockerB, Array, WebServiceA, WebServiceB, NginxA, OracleA, SecureShellA, MysqlA, SpringA,
 } from './';
 import HomePage from './Body/Index/HomePage';
 
@@ -20,9 +20,12 @@ export default {
     { path: 'webService/2', name: 'webService', component: WebServiceB, isIndex: false },
     { path: 'webService/1', name: 'webService', component: WebServiceA, isIndex: false },
 
-    { path: 'nginx/1', name: 'nginxA', component: NginxA, isIndex: false },
-    { path: 'database/oracle/1', name: 'oracleA', component: OracleA, isIndex: false },
-    { path: 'linux/ssh/1', name: 'sshA', component: SecureShellA, isIndex: false },
+    { path: 'java/spring/1', name: 'spring', component: SpringA, isIndex: false },
+
+    { path: 'database/mysql/1', name: 'mysql', component: MysqlA, isIndex: false },
+    { path: 'nginx/1', name: 'nginx', component: NginxA, isIndex: false },
+    { path: 'database/oracle/1', name: 'oracle', component: OracleA, isIndex: false },
+    { path: 'linux/ssh/1', name: 'ssh', component: SecureShellA, isIndex: false },
 
     // 链接到HomePage的路由 待优化 TODO
     { path: '/', name: 'homePage', component: HomePage, isIndex: true },
@@ -34,7 +37,5 @@ export default {
     { path: 'server', name: 'homePage', component: HomePage, isIndex: false },
     { path: 'webService', name: 'homePage', component: HomePage, isIndex: false },
 
-    { path: 'server/docker/dockerA', name: 'dockerA', component: DockerA, isIndex: false, title: 'docker' },
-    { path: 'server/docker/dockerB', name: 'dockerB', component: DockerB, isIndex: false, title: 'docker' },
   ],
 };

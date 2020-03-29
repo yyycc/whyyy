@@ -8,7 +8,7 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="blog-footer">
-        Copyright © 2020 cyy
+        Copyright © 2020 yyycc
       </footer>
     );
   }

@@ -8,3 +8,4 @@ export { minusFontSize } from './minusFontSize';
 export { defaultFontSize } from './defaultFontSize';
 export { fuzzyQueryPosts } from './fuzzyQueryPosts';
 export { changeSubAnchorDisplay } from './changeSubAnchorDisplay';
+export { autoChangeImages } from './autoChangeImages';
