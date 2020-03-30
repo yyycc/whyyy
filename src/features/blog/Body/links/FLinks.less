@@ -1,0 +1,55 @@
+@import '../../../../styles/mixins';
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.blog-f-links {
+  p {
+    text-align: center;
+  }
+
+  ul {
+
+    list-style: none;
+  }
+
+  span {
+    float: left;
+    padding: 2px;
+    width: 14.2%;
+
+    a {
+      color: black;
+      background: #fff;
+      text-align: center;
+      padding: 12px 5px;
+      display: block;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      transition-duration: .5s;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+      -webkit-transition: -webkit-transform 0.5s; // 逐渐恢复
+    }
+
+    a:hover {
+      color: #fff !important;
+      background: #c40000;
+      border: 1px solid #c40000;
+      transform: scale(0.9); //缩小
+      transition: all 0.1s ease-in 0s;
+    }
+  }
+}

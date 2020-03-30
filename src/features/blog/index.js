@@ -34,4 +34,5 @@ export { default as CssA } from './Body/css/CssA';
 export { default as CssB } from './Body/css/CssB';
 export { default as Ntfs } from './Body/mac/Ntfs';
 export { default as LinuxB } from './Body/linux/LinuxB';
-export { default as About } from './About';
+export { default as About } from './Body/about/About';
+export { default as FLinks } from './Body/links/FLinks';

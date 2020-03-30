@@ -3,7 +3,7 @@
 
 import {
   Layout, Promote, DockerA, DockerB, Array, WebServiceA, WebServiceB, NginxA, OracleA, SecureShellA, MysqlA, SpringA,
-  CssA, CssB, ReactA, Ntfs, LinuxA, LinuxB, GitA,
+  CssA, CssB, ReactA, Ntfs, LinuxA, LinuxB, GitA, About, FLinks,
 } from './';
 import HomePage from './Body/Index/HomePage';
 
@@ -40,6 +40,8 @@ export default {
     { path: 'database/oracle/1', name: 'oracle', component: OracleA, isIndex: false },
     { path: 'linux/ssh/1', name: 'ssh', component: SecureShellA, isIndex: false },
 
+    { path: 'about', name: 'about', component: About, isIndex: false },
+    { path: 'fLinks', name: 'links', component: FLinks, isIndex: false },
     // 链接到HomePage的路由 待优化 TODO
     { path: '/', name: 'homePage', component: HomePage, isIndex: true },
     { path: 'server/docker', name: 'homePage', component: HomePage, isIndex: false },
