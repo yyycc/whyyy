@@ -16,11 +16,33 @@ const initialState = {
   h2: {
     javaScript: [
       ['1. 初始化', '2. 实例方法'],
-      ['1. 运行结果', '2. 提升'],
+      ['1. 运行结果', '2. 提升', '3. react中使用'],
+    ],
+    css: [
+      ['1. 问题', '2. 解决办法一', '3. 解决办法二', '4. 解决办法三'],
+      ['1. 问题', '2. 解决', '3. react中使用'],
     ],
     docker: [
       ['1. docker中启动数据库', '2. 进入容器', '3. 配置ssh免密登录', '4. docker cp'],
       ['1. 拉镜像', '2. 运行', '3. 端口映射', '4. 进入容器'],
+    ],
+    linux: [
+      ['1. vi', '2. cp', '3. tail'],
+      ['1. netstat', '2. find', '3. env', '4. whereis', '5. which', '6. lsnrctl', '7. tar', '8. >', '9. echo'],
+    ],
+    git: [
+      ['1. mumbling', '2. preparation',
+        ['3. config',
+          ['3.1. user', '3.2. core', '3.3. alias', '3.4 diff & merge'], true],
+        ['4. command',
+          ['4.1. git init', '4.2. git add', '4.3 git commit', '4.4. 4个区和4种状态', '4.5. git clone'], true],
+      ],
+    ],
+    react: [
+      ['1. 环境',
+        ['2. 目录结构', [
+          '2.1. package.json', '2.2. /src'], true],
+      ],
     ],
     webService: [
       ['1. 准备',
@@ -34,6 +56,9 @@ const initialState = {
         ['3. 拦截器',
           ['3.1 定义', '3.2 输入阶段', '3.3 输入拦截器', '3.4 输出阶段', '3.5 输出拦截器'], true],
       ],
+    ],
+    ntfs: [
+      ['1. 问题', '2. 原因', '3. 解决', '4. NTFS'],
     ],
     spring: [
       ['1. 启动', '2. 注意事项', '3. Propagation'],
@@ -80,8 +105,9 @@ const initialState = {
     },
     {
       title: 'Paragon NTFS For Mac',
-      date: '2020-03-17', tag: ['mac'], route: '/blog/mac/ntfs',
+      date: '2020-03-17', tag: ['mac', 'ntfs'], route: '/blog/mac/ntfs',
       summary: 'MacBook连移动硬盘发现文件复制不进去，拖也拖不进去。。。',
+      order: 1,
     },
     {
       title: 'javaScript(2): 变量、函数的声明提升',
@@ -98,15 +124,17 @@ const initialState = {
     },
     {
       title: 'linux 指令 -- 常用指令',
-      date: '2020-01-13', tag: ['linux'], route: '/blog/linux/command',
+      date: '2020-01-13', tag: ['linux'], route: '/blog/linux',
       summary: '记录一下linux中常用的指令',
       recommended: true,
+      order: 2,
     },
     {
       title: 'linux 指令 -- 常用指令扩展(vi、cp、tail)',
-      date: '2020-01-07', tag: ['linux'], route: '/blog/linux/command',
+      date: '2020-01-07', tag: ['linux'], route: '/blog/linux',
       summary: 'linux指令万万千，用一个百度一个，百度一个忘一个。。。',
       recommended: true,
+      order: 1,
     },
     {
       title: 'spring 事务配置',
@@ -125,10 +153,11 @@ const initialState = {
     },
     {
       title: 'react',
-      date: '2019-12-31', tag: ['react'], route: '/blog/frontEnd/react',
+      date: '2019-12-31', tag: ['react'], route: '/blog/react',
       summary: '2019年的最后一天。\n' +
         '好久没写博客了，真的是从善如流，从恶如崩。\n' +
         '今年最大的收获应该是学习了react吧，虽然才入了个门，不记录一下，可能过完年就忘光了。。。',
+      order: 1,
     },
     {
       title: 'web service -- spring + cxf 发布web service(1)',
@@ -168,9 +197,10 @@ const initialState = {
     },
     {
       title: 'git',
-      date: '2019-10-18', tag: ['git'], route: '/blog/git/git',
+      date: '2019-10-18', tag: ['git'], route: '/blog/git',
       summary: 'git status git status git status git status git status。。。',
       recommended: true,
+      order: 1,
     },
     {
       title: 'oracle',

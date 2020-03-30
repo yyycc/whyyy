@@ -58,8 +58,8 @@ export class PostFooter extends Component {
       down = '下一篇 >';
       downTitle = postsOfName[order]['title'];
       upTitle = postsOfName[order - 2]['title'];
-      upRoute = name + (order - 1);
-      downRoute = name + (order + 1);
+      upRoute = name + '/' + (order - 1);
+      downRoute = name + '/' + (order + 1);
     }
 
     return (

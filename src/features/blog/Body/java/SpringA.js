@@ -50,8 +50,8 @@ export class SpringA extends Component {
 
         <h2 id="Z-参考">Z. 参考</h2>
         {leaveConfirm && <p>
-          <Link to={urlStates[0]}>1. cxf拦截器，实现对接收到的报文和发送出去的报文格式自定义</Link><br/>
-          <Link to={urlStates[1]}>2. CXF 入门：创建一个基于SOAPHeader的安全验证(CXF拦截器使用)</Link><br/>
+          <Link to={urlStates[0]}>1. Spring中propagation的7种事务配置</Link><br/>
+          <Link to={urlStates[1]}>2. @Transactional事务几点注意</Link><br/>
         </p>}
         {!leaveConfirm &&
         <p>

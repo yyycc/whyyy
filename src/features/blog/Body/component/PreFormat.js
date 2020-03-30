@@ -19,11 +19,11 @@ export class PreFormat extends Component {
         {
           contents.map((ele, index) => {
             if (index === 0 && index === lastLine) {
-              return <pre
-                className='only-class'>{ele}<br/></pre>;
+              return <pre key={index}
+                          className='only-class'>{ele}<br/></pre>;
             }
-            return <pre
-              className={[index === 0 ? 'first-class' : null, index === lastLine ? 'last-class' : null].join(' ')}>{ele}<br/>
+            return <pre key={index}
+                        className={[index === 0 ? 'first-class' : null, index === lastLine ? 'last-class' : null].join(' ')}>{ele}<br/>
             </pre>;
           })
         }

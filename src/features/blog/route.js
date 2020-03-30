@@ -3,6 +3,7 @@
 
 import {
   Layout, Promote, DockerA, DockerB, Array, WebServiceA, WebServiceB, NginxA, OracleA, SecureShellA, MysqlA, SpringA,
+  CssA, CssB, ReactA, Ntfs, LinuxA, LinuxB, GitA,
 } from './';
 import HomePage from './Body/Index/HomePage';
 
@@ -14,13 +15,25 @@ export default {
     { path: 'javaScript/2', name: 'promote', component: Promote, isIndex: false },
     { path: 'javaScript/1', name: 'array', component: Array, isIndex: false },
 
+    { path: 'css/2', name: 'css', component: CssB, isIndex: false },
+    { path: 'css/1', name: 'css', component: CssA, isIndex: false },
+
+    { path: 'linux/1', name: 'linux', component: LinuxA, isIndex: false },
+    { path: 'linux/2', name: 'linux', component: LinuxB, isIndex: false },
+
     { path: 'docker/2', name: 'docker', component: DockerB, isIndex: false },
     { path: 'docker/1', name: 'docker', component: DockerA, isIndex: false },
+
+    { path: 'react/1', name: 'react', component: ReactA, isIndex: false },
+
+    { path: 'git/1', name: 'git', component: GitA, isIndex: false },
 
     { path: 'webService/2', name: 'webService', component: WebServiceB, isIndex: false },
     { path: 'webService/1', name: 'webService', component: WebServiceA, isIndex: false },
 
     { path: 'java/spring/1', name: 'spring', component: SpringA, isIndex: false },
+
+    { path: 'mac/ntfs/1', name: 'ntfs', component: Ntfs, isIndex: false },
 
     { path: 'database/mysql/1', name: 'mysql', component: MysqlA, isIndex: false },
     { path: 'nginx/1', name: 'nginx', component: NginxA, isIndex: false },

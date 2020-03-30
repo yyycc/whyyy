@@ -27,7 +27,6 @@ export class WebServiceB extends Component {
     } = tableCode;
     const { urlStates } = urls;
     const { fontSize, leaveConfirm } = this.props.blog;
-    debugger
     return (
       <div className="blog-web-service-b">
         <h1>web service(2): spring + cxf 发布web service相关问题解决</h1>
@@ -111,7 +110,6 @@ export class WebServiceB extends Component {
             3. CXF实战之拦截器Interceptor(四)</a>
         </p>
         }
-
         </body>
       </div>
     );
