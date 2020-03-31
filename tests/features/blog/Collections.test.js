@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Collections } from '../../../src/features/blog/Collections';
+import { Collections } from '../../../src/features/blog/Body/Index/CollectionsIndex/Collections';
 
 describe('blog/Collections', () => {
   it('renders node with correct class name', () => {

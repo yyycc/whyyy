@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { About } from '../../../src/features/blog/About';
+import { About } from '../../../src/features/blog/Body/about/About';
 
-describe('blog/About', () => {
+describe('blog/Body/about/About', () => {
   it('renders node with correct class name', () => {
     const props = {
       blog: {},

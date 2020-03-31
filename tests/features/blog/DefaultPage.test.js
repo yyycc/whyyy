@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { DefaultPage } from '../../../src/features/blog/DefaultPage';
+import { DefaultPage } from '../../../src/features/home/DefaultPage';
 
 describe('blog/DefaultPage', () => {
   it('renders node with correct class name', () => {

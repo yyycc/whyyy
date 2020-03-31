@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ChangeFont } from '../../../src/features/blog/ChangeFont';
+import { ChangeFont } from '../../../src/features/blog/Body/Index/ChangeFont';
 
 describe('blog/ChangeFont', () => {
   it('renders node with correct class name', () => {

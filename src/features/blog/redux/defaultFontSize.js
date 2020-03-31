@@ -3,18 +3,18 @@
 // https://medium.com/@nate_wang/a-new-approach-for-managing-redux-actions-91c26ce8b5da
 
 import {
-  BLOG_DEFAULT_FONT_S_IZE,
+  BLOG_DEFAULT_FONT_SIZE,
 } from './constants';
 
 export function defaultFontSize() {
   return {
-    type: BLOG_DEFAULT_FONT_S_IZE,
+    type: BLOG_DEFAULT_FONT_SIZE,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case BLOG_DEFAULT_FONT_S_IZE:
+    case BLOG_DEFAULT_FONT_SIZE:
       return {
         ...state,
         fontSize: 14,

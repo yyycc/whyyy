@@ -1,5 +1,5 @@
 import {
-  BLOG_DEFAULT_FONT_S_IZE,
+  BLOG_DEFAULT_FONT_SIZE,
 } from '../../../../src/features/blog/redux/constants';
 
 import {
@@ -9,14 +9,14 @@ import {
 
 describe('blog/redux/defaultFontSize', () => {
   it('returns correct action by defaultFontSize', () => {
-    expect(defaultFontSize()).toHaveProperty('type', BLOG_DEFAULT_FONT_S_IZE);
+    expect(defaultFontSize()).toHaveProperty('type', BLOG_DEFAULT_FONT_SIZE);
   });
 
-  it('handles action type BLOG_DEFAULT_FONT_S_IZE correctly', () => {
+  it('handles action type BLOG_DEFAULT_FONT_SIZE correctly', () => {
     const prevState = {};
     const state = reducer(
       prevState,
-      { type: BLOG_DEFAULT_FONT_S_IZE },
+      { type: BLOG_DEFAULT_FONT_SIZE },
     );
     // Should be immutable
     expect(state).not.toBe(prevState);
