@@ -3,7 +3,7 @@
 
 import {
   Layout, Promote, DockerA, DockerB, Array, WebServiceA, WebServiceB, NginxA, OracleA, SecureShellA, MysqlA, SpringA,
-  CssA, CssB, ReactA, Ntfs, LinuxA, LinuxB, GitA, About, FLinks,
+  CssA, CssB, ReactA, Ntfs, LinuxA, LinuxB, GitA, About, FLinks, ScrollBanner,
 } from './';
 import HomePage from './Body/Index/HomePage';
 
@@ -32,6 +32,8 @@ export default {
     { path: 'webService/1', name: 'webService', component: WebServiceA, isIndex: false },
 
     { path: 'java/spring/1', name: 'spring', component: SpringA, isIndex: false },
+
+    { path: 'scroll/1', name: 'scroll', component: ScrollBanner, isIndex: false },
 
     { path: 'mac/ntfs/1', name: 'ntfs', component: Ntfs, isIndex: false },
 

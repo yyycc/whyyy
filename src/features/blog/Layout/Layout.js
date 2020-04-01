@@ -21,7 +21,7 @@ export default class Layout extends Component {
           <Tabs/>
         </div>
         <div className="blog-layout-container">
-          <BreadCrumb props={this.props}/>
+          {display && <BreadCrumb props={this.props}/>}
           {display && <ChangeFont props={this.props}/>}
           {display && <div className="blog-layout-container-anchor">
             <AnchorIndex pathname={this.props.location.pathname} actions={this.props.actions}/>

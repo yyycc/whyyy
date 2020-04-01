@@ -14,6 +14,9 @@ import React from 'react';
 
 const initialState = {
   h2: {
+    scroll: [
+      ['1. html', '2. css', '3. js'],
+    ],
     javaScript: [
       ['1. 初始化', '2. 实例方法'],
       ['1. 运行结果', '2. 提升', '3. react中使用'],
@@ -92,6 +95,12 @@ const initialState = {
   tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', 'docker', 'git'],
   posts: [
     {
+      title: 'react实现文字公告滚动轮播',
+      date: '2020-04-01', tag: ['frontEnd', 'javascript', 'css', 'react'], route: '/blog/scroll',
+      summary: '如何在react中实现滚动轮播',
+      order: 1,
+    },
+    {
       title: 'font-awesome',
       date: '2020-03-19', tag: ['frontEnd', 'css'], route: '/blog/css',
       summary: '一个非常好用的icon库。。。',
@@ -153,7 +162,7 @@ const initialState = {
     },
     {
       title: 'react',
-      date: '2019-12-31', tag: ['react'], route: '/blog/react',
+      date: '2019-12-31', tag: ['frontEnd', 'react'], route: '/blog/react',
       summary: '2019年的最后一天。\n' +
         '好久没写博客了，真的是从善如流，从恶如崩。\n' +
         '今年最大的收获应该是学习了react吧，虽然才入了个门，不记录一下，可能过完年就忘光了。。。',
@@ -236,6 +245,15 @@ const initialState = {
   },
   fontSize: 14,
   leaveConfirm: true,
+  sentences: [
+    'The most important thing in life will always be the people right there, right now.',
+  ],
+  texts: [
+    { route: '/blog/online', content: 'whyyy his blog上线啦～～' },
+    { route: '/blog/maintain', content: '维护公告' },
+    { route: '/blog/sentences', content: '每日一句: You\'re going to the top of this mountain, broken legs and all.' },
+  ],
+  animate: false,
 };
 
 export default initialState;

@@ -15,7 +15,6 @@ export class LeaveConfirm extends Component {
   }
 
   render() {
-    debugger
     return (
       <div className="common-leave-confirm">
         <div className="common-leave-confirm-tip">

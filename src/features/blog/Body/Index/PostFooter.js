@@ -36,7 +36,7 @@ export class PostFooter extends Component {
     );
     let upPoint = true;
     let downPoint = true;
-    if (postsOfName.length === 1) {
+    if (postsOfName.length <= 1) {
       upTitle = '已是第一篇';
       downTitle = '已是最后一篇';
       upPoint = false;

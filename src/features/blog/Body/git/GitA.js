@@ -20,7 +20,6 @@ export class GitA extends Component {
   };
 
   render() {
-    debugger;
     const { urlStates } = urls;
     const { codes, user, alias, add, commit } = code;
     const { config, configTitles, configName } = tableCode;

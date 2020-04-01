@@ -1,0 +1,43 @@
+@import '../../../styles/mixins';
+
+.blog-scroll-text {
+  display: flex;
+
+  .blog-scroll-text-volume {
+    margin-right: 10px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    cursor: pointer;
+    height: 25px;
+  }
+
+  a {
+    color: black;
+  }
+
+  a:hover {
+    color: #c40000;
+  }
+
+  p {
+    margin-left: 10px;
+    margin-bottom: 2px;
+  }
+
+  .blog-scroll-text-scroll {
+    height: 25px;
+    overflow: hidden; // 不然滚上去的会被看见
+    // ul的动画
+    .blog-scroll-text-scroll-animate {
+      transition: all 0.5s linear;
+      margin-top: -25px;
+    }
+  }
+}
