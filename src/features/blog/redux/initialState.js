@@ -254,6 +254,7 @@ const initialState = {
     { route: '/blog/sentences', content: '每日一句: You\'re going to the top of this mountain, broken legs and all.' },
   ],
   animate: false,
+  visible: false,
 };
 
 export default initialState;

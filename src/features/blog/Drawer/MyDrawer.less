@@ -1,12 +1,12 @@
 @import '../../../styles/mixins';
 
-.blog-scroll {
+.blog-my-drawer {
   display: flex;
   flex-direction: column;
   position: fixed;
   z-index: 99999;
   right: 20px;
-  bottom: 96px;
+  bottom: 60px;
   width: 32px;
 
   .fa {
@@ -22,12 +22,25 @@
     line-height: 28px;
     text-align: center;
     vertical-align: middle;
-    margin-top: 4px;
     display: block;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.6);
     border: 1px solid #ddd;
     border-radius: 2px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.ant-drawer-content-wrapper {
+  width: 320px !important;
+}
+
+.ant-drawer-body {
+  ol {
+    padding: 5px !important;
+
+    li {
+      margin: 5px;
+    }
   }
 }

@@ -4,12 +4,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import { CarouselIndex } from '../Index/CarouselIndex/CarouselIndex';
+import { Carousel } from 'antd';
 import { Post } from './ListsIndex/Post';
 import { Pagination } from 'antd';
 import { TagsIndex } from './TagsIndex/TagsIndex';
 import Collections from './CollectionsIndex/Collections';
 import { SearchIndex } from './SearchIndex/SearchIndex';
 import RecommendedPost from './RecommendIndex/RecommendedPost';
+import { ScrollText } from '../../scrollText/ScrollText';
+import Scroll from '../../Layout/Layout';
+import { MyDrawer } from '../../Drawer/MyDrawer';
 
 export class HomePage extends Component {
   static propTypes = {
@@ -18,7 +22,7 @@ export class HomePage extends Component {
   };
 
   render() {
-    const { posts, current } = this.props.blog;
+    const { posts, current, images } = this.props.blog;
     let { postsToDisplay, postsQueried } = this.props.blog;
     const { changePage } = this.props.actions;
     if (postsToDisplay.length === 0) {
@@ -30,8 +34,25 @@ export class HomePage extends Component {
     return (
       <div className="blog-home-page">
         <div className="blog-home-page-left">
+          <div>
+            <ScrollText blog={this.props.blog} actions={this.props.actions}/>
+          </div>
           <div className="blog-home-page-carousel">
             <CarouselIndex blog={this.props.blog} actions={this.props.actions} props={this.props}/>
+            {/*<Carousel>
+              <div>
+                <img src={images[0]} alt='pictures'/>
+              </div>
+              <div>
+                <img src={images[1]} alt='pictures'/>
+              </div>
+              <div>
+                <img src={images[2]} alt='pictures'/>
+              </div>
+              <div>
+                <img src={images[0]} alt='pictures'/>
+              </div>
+            </Carousel>*/}
           </div>
           <div className="blog-home-page-lists">
             {

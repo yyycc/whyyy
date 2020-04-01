@@ -19,6 +19,8 @@ import { reducer as fuzzyQueryPostsReducer } from './fuzzyQueryPosts';
 import { reducer as changeSubAnchorDisplayReducer } from './changeSubAnchorDisplay';
 import { reducer as autoChangeImagesReducer } from './autoChangeImages';
 import { reducer as scrollBannerReducer } from './scrollBanner';
+import { reducer as showDrawerReducer } from './showDrawer';
+import { reducer as onDrawerCloseReducer } from './onDrawerClose';
 
 const reducers = [
   changePageReducer,
@@ -33,6 +35,8 @@ const reducers = [
   changeSubAnchorDisplayReducer,
   autoChangeImagesReducer,
   scrollBannerReducer,
+  showDrawerReducer,
+  onDrawerCloseReducer,
 ];
 
 export default function reducer(state = initialState, action) {

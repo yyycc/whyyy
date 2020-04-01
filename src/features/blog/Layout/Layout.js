@@ -7,6 +7,7 @@ import BreadCrumb from '../BreadCrumb/BreadCrumb';
 import ChangeFont from '../Body/Index/ChangeFont';
 import AnchorIndex from '../Body/Index/AnchorIndex';
 import PostFooter from '../Body/Index/PostFooter';
+import MyDrawer from '../Drawer/MyDrawer';
 
 export default class Layout extends Component {
   static propTypes = {};
@@ -29,6 +30,7 @@ export default class Layout extends Component {
           <div className="blog-layout-container-post">
             {this.props.children}
             {display && <PostFooter props={this.props}/>}
+            {display && <MyDrawer/>}
           </div>
         </div>
         <Footer/>

@@ -10,3 +10,5 @@ export { fuzzyQueryPosts } from './fuzzyQueryPosts';
 export { changeSubAnchorDisplay } from './changeSubAnchorDisplay';
 export { autoChangeImages } from './autoChangeImages';
 export { scrollBanner } from './scrollBanner';
+export { showDrawer } from './showDrawer';
+export { onDrawerClose } from './onDrawerClose';
