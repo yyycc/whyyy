@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import theEnd from '../../../../images/theEnd.png';
-import { Link } from 'react-router-dom';
 
 export class PostFooter extends Component {
   static propTypes = {

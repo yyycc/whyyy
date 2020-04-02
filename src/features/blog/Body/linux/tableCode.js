@@ -1,5 +1,3 @@
-import React from 'react';
-
 const vi = [
   ['vi + [file_name]', '进入编辑器'],
   ['i', '进入编辑状态'],

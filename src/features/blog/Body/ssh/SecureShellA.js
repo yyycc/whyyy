@@ -13,7 +13,7 @@ export class SecureShellA extends Component {
   };
 
   render() {
-    const { config, localConfig, occupy, grand, drop, sql, pkg, excel, oracle, codes, listen } = code;
+    const { config, localConfig, codes } = code;
     const { fontSize } = this.props.blog;
     return (
       <div className="blog-secure-shell-a">

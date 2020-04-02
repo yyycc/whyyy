@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import promote from '../../../../images/promote.png';
-import { Anchor } from 'antd';
 
 export class Promote extends Component {
   static propTypes = {
@@ -13,7 +12,6 @@ export class Promote extends Component {
   };
 
   render() {
-    const { Link } = Anchor;
     const { fontSize } = this.props.blog;
     return (
       <div className="blog-java-script">

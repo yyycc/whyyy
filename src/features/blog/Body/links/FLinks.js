@@ -24,12 +24,12 @@ export class FLinks extends Component {
           <ul>
             <li>
               <span>
-                <a href="https://lovesy.org.cn/" target="_blank" rel="noopener">儿女意向来痴</a>
+                <a href="https://lovesy.org.cn/" target="_blank" rel="noopener noreferrer">儿女意向来痴</a>
               </span>
             </li>
             <li>
               <span>
-                <a href="http://www.zsythink.net/" target="_blank" rel="noopener">朱双印的个人博客</a>
+                <a href="http://www.zsythink.net/" target="_blank" rel="noopener noreferrer">朱双印的个人博客</a>
               </span>
             </li>
           </ul>

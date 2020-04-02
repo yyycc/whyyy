@@ -1,5 +1,3 @@
-import React from 'react';
-
 const config = [
   ['local', '.git/config', '在本地仓库路径下'],
   ['global', '~/.gitconfig', 'macos: /Users/ever      centos: /home/ever'],

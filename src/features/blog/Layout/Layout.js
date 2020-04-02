@@ -17,6 +17,7 @@ export default class Layout extends Component {
     const display = pathname.length > 3;
     return (
       <div className="blog-layout">
+        {this.props.children}
         <Header/>
         <div className="blog-layout-fix">
           <Tabs/>

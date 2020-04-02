@@ -102,11 +102,12 @@ export class WebServiceB extends Component {
         </p>}
         {!leaveConfirm &&
         <p>
-          <a href="https://blog.csdn.net/zhaofuqiangmycomm/article/details/78702125" target="_blank" rel="noopener">
+          <a href="https://blog.csdn.net/zhaofuqiangmycomm/article/details/78702125" target="_blank"
+             rel="noopener noreferrer">
             1. cxf拦截器，实现对接收到的报文和发送出去的报文格式自定义</a><br/>
           <a href="https://www.iteye.com/blog/jyao-1343722" target="_blank"
-             rel="noopener">2. CXF 入门：创建一个基于SOAPHeader的安全验证(CXF拦截器使用)</a><br/>
-          <a href="https://blog.csdn.net/accountwcx/article/details/47102319" target="_blank" rel="noopener">
+             rel="noopener noreferrer">2. CXF 入门：创建一个基于SOAPHeader的安全验证(CXF拦截器使用)</a><br/>
+          <a href="https://blog.csdn.net/accountwcx/article/details/47102319" rel="noopener noreferrer" target="_blank">
             3. CXF实战之拦截器Interceptor(四)</a>
         </p>
         }

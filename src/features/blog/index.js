@@ -36,6 +36,6 @@ export { default as Ntfs } from './Body/mac/Ntfs';
 export { default as LinuxB } from './Body/linux/LinuxB';
 export { default as About } from './Body/about/About';
 export { default as FLinks } from './Body/links/FLinks';
-export { default as ScrollText } from './scrollText/ScrollText';
+export { default as ScrollText } from './Components/ScrollText/ScrollText';
 export { default as ScrollBanner } from './Body/banner/ScrollBanner';
 export { default as MyDrawer } from './Drawer/MyDrawer';

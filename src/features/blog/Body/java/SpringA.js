@@ -55,10 +55,10 @@ export class SpringA extends Component {
         </p>}
         {!leaveConfirm &&
         <p>
-          <a href="https://blog.csdn.net/sayoko06/article/details/79164858" target="_blank" rel="noopener">
+          <a href="https://blog.csdn.net/sayoko06/article/details/79164858" target="_blank" rel="noopener noreferrer">
             1. Spring中propagation的7种事务配置</a><br/>
           <a href="https://www.cnblogs.com/happyday56/p/8906443.html" target="_blank"
-             rel="noopener">2. @Transactional事务几点注意</a>
+             rel="noopener noreferrer">2. @Transactional事务几点注意</a>
         </p>
         }
         </body>

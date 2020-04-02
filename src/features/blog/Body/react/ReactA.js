@@ -118,7 +118,8 @@ export class ReactA extends Component {
         </p>}
         {!leaveConfirm &&
         <p>
-          <a href="https://blog.csdn.net/zhaofuqiangmycomm/article/details/78702125" target="_blank" rel="noopener">
+          <a href="https://blog.csdn.net/zhaofuqiangmycomm/article/details/78702125" target="_blank"
+             rel="noopener noreferrer">
             1. 配置package.json 使一次npm run start 执行两个指令或者多个指令</a><br/>
         </p>
         }

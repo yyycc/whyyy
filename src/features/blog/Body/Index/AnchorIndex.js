@@ -16,9 +16,7 @@ export class AnchorIndex extends Component {
     const pathname = this.props.pathname.split('/');
     const order = pathname[pathname.length - 1];
     const name = pathname[pathname.length - 2];
-    const h2 = this.props.blog.h2;
     const titles = this.props.blog.h2[name][order - 1];
-    const { changeSubAnchorDisplay } = this.props.actions;
     return (
       <div className="blog-anchor-index">
         <Anchor affix={false}>

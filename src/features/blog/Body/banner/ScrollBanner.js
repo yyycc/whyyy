@@ -65,7 +65,7 @@ export class ScrollBanner extends Component {
         <p>
           <a
             href="https://blog.csdn.net/weixin_33682719/article/details/88007334?depth_1-utm_source=distribute.pc_relevant_right.none-task&utm_source=distribute.pc_relevant_right.none-task"
-            target="_blank" rel="noopener">
+            target="_blank" rel="noopener noreferrer">
             1. React 原生实现新闻播报上下滚动效果</a><br/>
         </p>
         }

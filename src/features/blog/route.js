@@ -2,15 +2,16 @@
 // Learn more from: http://rekit.js.org/docs/routing.html
 
 import {
-  Layout, Promote, DockerA, DockerB, Array, WebServiceA, WebServiceB, NginxA, OracleA, SecureShellA, MysqlA, SpringA,
+  Promote, DockerA, DockerB, Array, WebServiceA, WebServiceB, NginxA, OracleA, SecureShellA, MysqlA, SpringA,
   CssA, CssB, ReactA, Ntfs, LinuxA, LinuxB, GitA, About, FLinks, ScrollBanner,
 } from './';
 import HomePage from './Body/Index/HomePage';
+import { PageNotFound } from '../common';
 
 export default {
   path: 'blog',
   name: 'Blog',
-  component: Layout,
+  // component: Layout,
   childRoutes: [
     { path: 'javaScript/2', name: 'promote', component: Promote, isIndex: false },
     { path: 'javaScript/1', name: 'array', component: Array, isIndex: false },
@@ -54,5 +55,6 @@ export default {
     { path: 'server', name: 'homePage', component: HomePage, isIndex: false },
     { path: 'webService', name: 'homePage', component: HomePage, isIndex: false },
 
+    { path: '*', name: 'Page not found', component: PageNotFound },
   ],
 };

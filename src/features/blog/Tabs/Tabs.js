@@ -12,9 +12,9 @@ export class Tabs extends Component {
     actions: PropTypes.object.isRequired,
   };
 
-  constructor(props) {
+  /*constructor(props) {
     super(props);
-  }
+  }*/
 
   componentDidMount() {
     this.interval = setInterval((props) => {

@@ -10,8 +10,9 @@
 import Luffy from '../../../images/index.png';
 import javaScript from '../../../images/index-js.png';
 import linux from '../../../images/index-linux.jpg';
-import React from 'react';
+import initial from '../Components/ScrollText/initial';
 
+const { texts, animate } = initial;
 const initialState = {
   h2: {
     scroll: [
@@ -248,12 +249,8 @@ const initialState = {
   sentences: [
     'The most important thing in life will always be the people right there, right now.',
   ],
-  texts: [
-    { route: '/blog/online', content: 'whyyy his blog上线啦～～' },
-    { route: '/blog/maintain', content: '维护公告' },
-    { route: '/blog/sentences', content: '每日一句: You\'re going to the top of this mountain, broken legs and all.' },
-  ],
-  animate: false,
+  texts: texts,
+  animate: animate,
   visible: false,
 };
 

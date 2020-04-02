@@ -74,7 +74,7 @@ export class LinuxB extends Component {
         </p>}
         {!leaveConfirm &&
         <p>
-          <a href="https://www.runoob.com/linux/linux-comm-xargs.html" target="_blank" rel="noopener">
+          <a href="https://www.runoob.com/linux/linux-comm-xargs.html" rel="noopener noreferrer" target="_blank">
             1. Linux xargs 命令</a><br/>
         </p>
         }

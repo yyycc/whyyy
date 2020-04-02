@@ -1,13 +1,3 @@
-const codes = [
-  'git config --list --local',
-  'git config --list --global',
-  'git config --list --system',
-  'git config --global core.editor \'subl -w\'',
-  'git commit',
-  'git init',
-  'git clone https://github.com/yyycc/ever.git',
-];
-
 const html = '<div className="blog-scroll-text-scroll">\n' +
   '  <ul className={animate ? \'blog-scroll-text-scroll-animate\' : \'\'}>\n' +
   '    {texts.map((text, index) => {\n' +

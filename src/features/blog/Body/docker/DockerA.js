@@ -30,7 +30,7 @@ export class DockerA extends Component {
         <p>还有需要导入数据库的时候</p>
         <PreFormat content={ssh}/>
         <p>然后执行一系列oracle命令</p><br/>
-        <p>从来也没有仔细研究过docker，这样一想，还是蛮对不起这只可爱的小鲸鱼🐳的。</p><br/>
+        <p>从来也没有仔细研究过docker，这样一想，还是蛮对不起这只可爱的小鲸鱼的。</p><br/>
         <p>然而今天我连上docker之后，突然看到了这句话(以前一直没注意，我是瞎么)</p><br/>
         <p>Welcome to Ubuntu 14.04.1 LTS</p><br/>
         <p>哇，我家docker的操作系统是Ubuntu啊,怪不得我一直应ssh连接。。。</p><br/>

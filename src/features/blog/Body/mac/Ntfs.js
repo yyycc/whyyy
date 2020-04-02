@@ -65,12 +65,12 @@ export class Ntfs extends Component {
         </p>}
         {!leaveConfirm &&
         <p>
-          <a href="https://blog.csdn.net/sayoko06/article/details/79164858" target="_blank" rel="noopener">
+          <a href="https://blog.csdn.net/sayoko06/article/details/79164858" target="_blank" rel="noopener noreferrer">
             1.Mac上挂载移动硬盘出现"Read-only file system"问题</a><br/>
           <a href="https://www.cnblogs.com/happyday56/p/8906443.html" target="_blank"
-             rel="noopener">1.macbook为什么无法向移动硬盘复制文件？因为你缺少这个软件！</a>
+             rel="noopener noreferrer">1.macbook为什么无法向移动硬盘复制文件？因为你缺少这个软件！</a>
           <a href="https://aibotech.cn/ad/ntfs-mac.html" target="_blank"
-             rel="noopener">3.赤友NTFS助手</a>
+             rel="noopener noreferrer">3.赤友NTFS助手</a>
         </p>
         }
         </body>

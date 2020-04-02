@@ -27,7 +27,7 @@ export class GitA extends Component {
     return (
       <div className="blog-git-a">
         <h1>git(1): rekit搭建react项目</h1>
-        <body style={{ fontSize: `${fontSize}px` }}>
+        <article style={{ fontSize: `${fontSize}px` }}>
 
         <h2 id="git-1-1">1. mumbling</h2>
         <p>I was just mumbling. Skip it please</p>
@@ -59,7 +59,7 @@ export class GitA extends Component {
         <h2 id="git-1-3">3. config</h2>
         <p>安装就不说了，直接从配置开始吧。</p>
         <p>为什么开头要写那么多遍git status呢，因为这真的是git所有指令里(well，我用到的指令里)最难打的一个了。。。</p>
-        <p>然而其实通过配置，我完全可以用一个字母替代他。。。两年了，想到这个不觉有些心酸💔</p>
+          <p>然而其实通过配置，我完全可以用一个字母替代他。。。两年了，想到这个不觉有些心酸</p>
         <p>前面提到git是分布式的，每个本地都可以作为一个服务器，实现完整的版本管理。</p>
         <p>比如在我的laptop上，我就可以在目录a建一个远程裸仓库A，在目录b分支master开发，在目录c分支dev开发，然后都push到A，从A再pull。</p>
         <p>这个b和c就是两个local，local级别的配置优先级最高，用下面的命令，就可以看到不同本地仓库的配置。</p>
@@ -193,13 +193,13 @@ export class GitA extends Component {
         </p>}
         {!leaveConfirm &&
         <p>
-          <a href="https://www.cnblogs.com/qdhxhz/p/9757390.html" target="_blank" rel="noopener">
+          <a href="https://www.cnblogs.com/qdhxhz/p/9757390.html" target="_blank" rel="noopener noreferrer">
             1.【Git】(1)---工作区、暂存区、版本库、远程仓库</a><br/>
-          <a href="https://git-scm.com/" target="_blank" rel="noopener">
+          <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
             2. Git官网</a><br/>
         </p>
         }
-        </body>
+        </article>
       </div>
     )
       ;
