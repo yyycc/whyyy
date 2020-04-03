@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { CarouselIndex } from '../../../src/features/blog/Body/Index/CarouselIndex/CarouselIndex';
+import { CarouselIndex } from '../../../src/features/blog/Components/CarouselIndex/CarouselIndex';
 
 describe('blog/CarouselIndex', () => {
   it('renders node with correct class name', () => {

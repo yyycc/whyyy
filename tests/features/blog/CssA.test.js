@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { CssA } from '../../../src/features/blog/Body/css/CssA';
+import { CssA } from '../../../src/features/blog/Articles/Css/CssA';
 
 describe('blog/CssA', () => {
   it('renders node with correct class name', () => {

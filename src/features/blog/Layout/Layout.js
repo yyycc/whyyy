@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Tabs from '../Tabs/Tabs';
-import Scroll from '../Scroll/Scroll';
+import Scroll from '../Components/Scroll/Scroll';
 import BreadCrumb from '../BreadCrumb/BreadCrumb';
-import ChangeFont from '../Body/Index/ChangeFont';
-import AnchorIndex from '../Body/Index/AnchorIndex';
-import PostFooter from '../Body/Index/PostFooter';
-import MyDrawer from '../Drawer/MyDrawer';
+import ChangeFont from '../Components/ChangeFont/ChangeFont';
+import AnchorIndex from '../Components/AnchorIndex/AnchorIndex';
+import PostFooter from '../Components/PostFooter/PostFooter';
+import MyDrawer from '../Components/Drawer/MyDrawer';
 
 export default class Layout extends Component {
   static propTypes = {};
@@ -17,8 +17,11 @@ export default class Layout extends Component {
     const display = pathname.length > 3;
     return (
       <div className="blog-layout">
-        {this.props.children}
         <Header/>
+        <div className="blog-layout-container">
+          {this.props.children}
+        </div>
+        {/*<Header/>
         <div className="blog-layout-fix">
           <Tabs/>
         </div>
@@ -33,7 +36,7 @@ export default class Layout extends Component {
             {display && <PostFooter props={this.props}/>}
             {display && <MyDrawer/>}
           </div>
-        </div>
+        </div>*/}
         <Footer/>
         <Scroll/>
       </div>

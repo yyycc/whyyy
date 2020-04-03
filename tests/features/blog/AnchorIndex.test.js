@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { AnchorIndex } from '../../../src/features/blog/Body/Index/AnchorIndex';
+import { AnchorIndex } from '../../../src/features/blog/Components/AnchorIndex/AnchorIndex';
 
 describe('blog/AnchorIndex', () => {
   it('renders node with correct class name', () => {

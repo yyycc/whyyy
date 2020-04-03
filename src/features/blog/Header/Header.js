@@ -17,6 +17,10 @@ export class Header extends Component {
         <div className="blog-header-name"> whyyy his blog</div>
         <div className="blog-header-motto"> 每天都努力地搬砖</div>
         <div className="blog-header-menu">
+          <div className="blog-header-menu-home">
+            <i className="fa fa-home"></i>
+            <Link to="/blog">首页</Link>
+          </div>
           <div className="blog-header-menu-about">
             <i className="fa fa-anchor"></i>
             <Link to="/blog/about">关于</Link>

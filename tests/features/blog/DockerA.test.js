@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { DockerA } from '../../../src/features/blog/Body/docker/DockerA';
+import { DockerA } from '../../../src/features/blog/Articles/Docker/DockerA';
 
 describe('blog/DockerA', () => {
   it('renders node with correct class name', () => {

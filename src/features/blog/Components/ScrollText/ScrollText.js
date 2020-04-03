@@ -40,7 +40,7 @@ export class ScrollText extends Component {
       props.actions.scrollBanner('animate');
       setTimeout(() => {
         props.actions.scrollBanner('scroll', props.blog);
-      }, 1000);
+      }, 500);
     }, 5000, this.props);
   }
 
