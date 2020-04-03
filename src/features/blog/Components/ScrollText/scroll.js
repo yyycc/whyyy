@@ -13,9 +13,9 @@ const texts =
 
 const animate = false;
 
-const initial = {
+const scroll = {
   texts,
   animate,
 };
 
-export default initial;
+export default scroll;

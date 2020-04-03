@@ -5,14 +5,12 @@
 // a quick view about what data is used for the feature, at any time.
 
 // NOTE: initialState constant is necessary so that Rekit could auto add initial state when creating async actions.
-// import Luffy from '../../../images/index.png';
-// import javaScript from '../../../images/index-js.png';
-import Luffy from '../../../images/index.png';
-import javaScript from '../../../images/index-js.png';
-import linux from '../../../images/index-linux.jpg';
-import initial from '../Components/ScrollText/initial';
 
-const { texts, animate } = initial;
+import scroll from '../Components/ScrollText/scroll';
+import carousel from '../Components/CarouselIndex/carousel';
+
+const { texts, animate } = scroll;
+const { imageIndex, images, imageRoutes } = carousel;
 const initialState = {
   h2: {
     scroll: [
@@ -230,9 +228,9 @@ const initialState = {
   postsToDisplay: [],
   postsQueried: [],
   current: 1,
-  images: [Luffy, linux, javaScript],
-  imageRoutes: ['luffy', 'linux', 'javaScript'],
-  index: 0, // 当前图片序号
+  images: images,
+  imageRoutes: imageRoutes,
+  imageIndex: imageIndex,
   international: {
     'blog': '首页',
     'javaScript': 'javaScript',

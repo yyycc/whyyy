@@ -24,6 +24,7 @@ import {
   GitA,
   About,
   FLinks,
+  Maintain,
   ScrollBanner,
 } from './';
 import HomePage from './HomePage/HomePage';
@@ -71,6 +72,7 @@ export default {
     },
     { path: 'about', name: 'about', component: About, isIndex: false },
     { path: 'fLinks', name: 'links', component: FLinks, isIndex: false },
+    { path: 'maintain', name: 'maintain', component: Maintain, isIndex: false },
     // 链接到HomePage的路由 待优化 TODO
     { path: 'server/docker', name: 'homePage', component: HomePage, isIndex: false },
     { path: 'docker', name: 'homePage', component: HomePage, isIndex: false },

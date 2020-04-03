@@ -1,10 +1,19 @@
 @import '../../../styles/mixins';
 
 .blog-articles {
-  border-radius: 5px;
+  position: relative;
   background-color: white !important;
+
+  .blog-articles-img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.blog-articles-footer {
   margin-bottom: 40px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);;
 }
 
 article {

@@ -4,6 +4,13 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 
+/*
+ * @name: 归档
+ * @description: 按月份统计、按归类统计
+ * @arg1: posts  所有博客
+ * @arg2: 方法  queryPostsByDate, queryPostsByTag 根据日期/标签查询文章
+ */
+
 export class Collections extends Component {
   static propTypes = {
     blog: PropTypes.object.isRequired,
@@ -12,8 +19,8 @@ export class Collections extends Component {
 
   render() {
     const { posts } = this.props.blog;
-    const { queryPostsByDate } = this.props.actions;
-    const dates = posts.map((ele, index) => ele['date'].slice(0, 7)).sort();
+    const { queryPostsByDate, queryPostsByTag } = this.props.actions;
+    const dates = posts.map((ele) => ele['date'].slice(0, 7)).sort(); // 获取年月
     let datesCount = {};
     let lastDate = dates[0];
     let count = 1;
@@ -70,11 +77,11 @@ export class Collections extends Component {
             }
           </div>
           <div className="blog-collections-lists-type">
-            <li><i className="fa fa-bookmark-o"/>前端(6)</li>
-            <li><i className="fa fa-bookmark-o"/>后端(3)</li>
-            <li><i className="fa fa-bookmark-o"/>linux(3)</li>
-            <li><i className="fa fa-bookmark-o"/>数据库(2)</li>
-            <li><i className="fa fa-bookmark-o"/>版本管理(1)</li>
+            <li onClick={() => queryPostsByTag('frontEnd')}><i className="fa fa-bookmark-o"/>前端(6)</li>
+            <li onClick={() => queryPostsByTag('java')}><i className="fa fa-bookmark-o"/>后端(3)</li>
+            <li onClick={() => queryPostsByTag('linux')}><i className="fa fa-bookmark-o"/>linux(3)</li>
+            <li onClick={() => queryPostsByTag('database')}><i className="fa fa-bookmark-o"/>数据库(2)</li>
+            <li onClick={() => queryPostsByTag('git')}><i className="fa fa-bookmark-o"/>版本管理(1)</li>
           </div>
         </div>
       </div>

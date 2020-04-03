@@ -2,28 +2,23 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../redux/actions';
-import ChangeFont from '../Components/ChangeFont/ChangeFont';
-import PostFooter from '../Components/PostFooter/PostFooter';
-// import frame from '../../../images/frame-1.jpeg'
-import frame from '../../../images/frame-2.jpeg';
+import * as actions from '../../redux/actions';
 
-export class Articles extends Component {
+export class Maintain extends Component {
   static propTypes = {
     blog: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
   render() {
+    const { fontSize } = this.props.blog;
     return (
-      <div>
-        <div className="blog-articles">
-          <img className="blog-articles-img" src={frame}/>
-          <ChangeFont props={this.props}/>
-          {this.props.children}
-        </div>
-        <div className="blog-articles-footer">
-          <PostFooter props={this.props}/>
+      <div className="blog-articles">
+        <div className="blog-maintain">
+          <h1>维护公告</h1>
+          <article style={{ fontSize: `${fontSize}px` }}>
+            <p>不定期维护</p>
+          </article>
         </div>
       </div>
     );
@@ -47,4 +42,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Articles);
+)(Maintain);

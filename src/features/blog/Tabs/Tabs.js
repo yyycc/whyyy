@@ -12,21 +12,6 @@ export class Tabs extends Component {
     actions: PropTypes.object.isRequired,
   };
 
-  /*constructor(props) {
-    super(props);
-  }*/
-
-  componentDidMount() {
-    this.interval = setInterval((props) => {
-      props.actions.autoChangeImages(props.blog.images.length);
-    }, 5000, this.props);
-    window.addEventListener('scroll', this.props.actions.changeTabsPosition);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
   render() {
     const { titles, tabFixed } = this.props.blog;
     const { queryPostsByTag } = this.props.actions;

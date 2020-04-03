@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 export class Post extends Component {
 
   render() {
-    debugger;
     const { title, date, tag, summary, route, order } = this.props.post;
     const to = route + '/' + order;
     const { queryPostsByTag } = this.props.actions;

@@ -18,7 +18,7 @@ export function reducer(state, action) {
     case BLOG_AUTO_CHANGE_IMAGES:
       return {
         ...state,
-        index: state.index === action.max ? 0 : ++state.index,
+        imageIndex: state.imageIndex === action.max ? 0 : ++state.imageIndex,
       };
 
     default:
