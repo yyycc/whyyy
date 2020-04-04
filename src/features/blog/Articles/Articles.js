@@ -6,7 +6,10 @@ import * as actions from '../redux/actions';
 import ChangeFont from '../Components/ChangeFont/ChangeFont';
 import PostFooter from '../Components/PostFooter/PostFooter';
 // import frame from '../../../images/frame-1.jpeg'
-import frame from '../../../images/frame-2.jpeg';
+// import frame from '../../../images/frame-2.jpeg';
+// import frame from '../../../images/frame-3.jpg';
+// import frame from '../../../images/frame-4.jpg';
+import frame from '../../../images/frame-5.jpg';
 
 export class Articles extends Component {
   static propTypes = {

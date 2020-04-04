@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 export default class Footer extends Component {
-  static propTypes = {
-
-  };
+  static propTypes = {};
 
   /*
    * @name: 页脚
@@ -12,9 +10,11 @@ export default class Footer extends Component {
    */
   render() {
     return (
-      <footer className="blog-footer">
-        Copyright © 2020 yyycc
-      </footer>
+      <div>
+        <footer className="blog-footer">
+          Copyright © 2020 yyycc
+        </footer>
+      </div>
     );
   }
 }

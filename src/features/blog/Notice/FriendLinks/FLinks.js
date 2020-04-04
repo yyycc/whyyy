@@ -14,27 +14,25 @@ export class FLinks extends Component {
   render() {
     const { fontSize } = this.props.blog;
     return (
-      <div className="blog-articles">
-        <div className="blog-f-links">
-          <h1>友请链接</h1>
-          <article style={{ fontSize: `${fontSize}px` }}>
-            <p>反正链接都在这儿了，自己看吧</p>
-            <p><img src={friends} alt='friends'/></p>
-          </article>
-          <div style={{ backgroundColor: 'white', marginTop: '20px' }}>
-            <ul>
-              <li>
+      <div className="blog-f-links">
+        <h1>友请链接</h1>
+        <article style={{ fontSize: `${fontSize}px` }}>
+          <p>反正链接都在这儿了，自己看吧</p>
+          <p><img src={friends} alt='friends'/></p>
+        </article>
+        <div style={{ backgroundColor: 'white', marginTop: '20px' }}>
+          <ul>
+            <li>
               <span>
                 <a href="https://lovesy.org.cn/" target="_blank" rel="noopener noreferrer">儿女意向来痴</a>
               </span>
-              </li>
-              <li>
+            </li>
+            <li>
               <span>
                 <a href="http://www.zsythink.net/" target="_blank" rel="noopener noreferrer">朱双印的个人博客</a>
               </span>
-              </li>
-            </ul>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
     );

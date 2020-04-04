@@ -18,7 +18,7 @@ export function reducer(state, action) {
     case BLOG_CHANGE_IMAGE:
       return {
         ...state,
-        index: action.index,
+        imageIndex: action.index,
       };
 
     default:

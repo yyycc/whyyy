@@ -13,13 +13,11 @@ export class Maintain extends Component {
   render() {
     const { fontSize } = this.props.blog;
     return (
-      <div className="blog-articles">
-        <div className="blog-maintain">
-          <h1>维护公告</h1>
-          <article style={{ fontSize: `${fontSize}px` }}>
-            <p>不定期维护</p>
-          </article>
-        </div>
+      <div className="blog-maintain">
+        <h1>维护公告</h1>
+        <article style={{ fontSize: `${fontSize}px` }}>
+          <p>不定期维护</p>
+        </article>
       </div>
     );
   }
