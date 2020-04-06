@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import theEnd from '../../../../images/theEnd.png';
+import { Link } from 'react-router-dom';
 
 export class PostFooter extends Component {
   static propTypes = {
@@ -11,74 +12,66 @@ export class PostFooter extends Component {
     actions: PropTypes.object.isRequired,
   };
 
-  upPage(e, route, up) {
-    if (up)
-      e.props.history.push('/blog/' + route);
-  }
-
-  downPage(e, route, down) {
-    if (down)
-      e.props.history.push('/blog/' + route);
-  }
-
   render() {
-    let up = '上一篇', upTitle, upRoute;
-    let down = '下一篇', downTitle, downRoute;
-    const pathname = this.props.props.location.pathname.split('/');
-    const order = Number(pathname[pathname.length - 1]);
-    const name = pathname[pathname.length - 2];
+    let up = '<上一篇', upTitle, upRoute;
+    let down = '下一篇>', downTitle, downRoute;
     const { posts } = this.props.blog;
-    const postsOfName = posts.filter((ele) => {
-      return ele.tag.indexOf(name) > -1;
-    }).sort((cur, last) =>
-      cur.order - last.order,
-    );
+    let postsInOrder = posts.concat();
+    postsInOrder.sort((cur, last) =>
+      cur.key - last.key);
+    const location = this.props.props.location;
+    const order = location.state;
     let upPoint = true;
     let downPoint = true;
-    if (postsOfName.length <= 1) {
-      upTitle = '已是第一篇';
-      downTitle = '已是最后一篇';
-      upPoint = false;
-      downPoint = false;
-    } else if (order === 1) {
+
+    if (order === 1) {
       upTitle = '已是第一篇';
       down = '下一篇 >';
       upPoint = false;
-      downTitle = postsOfName[order]['title'];
-      downRoute = name + '/' + (order + 1);
-    } else if (order === postsOfName.length) {
+      downTitle = postsInOrder[order]['title'];
+      downRoute = postsInOrder[order - 2]['route'];
+    } else if (order === posts.length) {
       downTitle = '已是最后一篇';
       up = '< 上一篇';
-      upTitle = postsOfName[order - 2]['title'];
+      upTitle = postsInOrder[order - 2]['title'];
       downPoint = false;
-      upRoute = name + '/' + (order - 1);
+      upRoute = postsInOrder[order - 2]['route'];
     } else {
-      up = '< 上一篇';
-      down = '下一篇 >';
-      downTitle = postsOfName[order]['title'];
-      upTitle = postsOfName[order - 2]['title'];
-      upRoute = name + '/' + (order - 1);
-      downRoute = name + '/' + (order + 1);
+      downTitle = postsInOrder[order]['title'];
+      upTitle = postsInOrder[order - 2]['title'];
+      upRoute = postsInOrder[order - 2]['route'];
+      downRoute = postsInOrder[order]['route'];
     }
+    const urlStatesDown = {
+      pathname: downRoute,
+      state: order + 1,
+    };
+    const urlStatesUp = {
+      pathname: upRoute,
+      state: order - 1,
+    };
 
     return (
       <div className="blog-post-footer">
         <p><img src={theEnd} alt="The End"/></p>
         <div className="blog-post-footer-page-turn">
-          <div onClick={() => this.upPage(this.props, upRoute, upPoint)}
-               style={{ cursor: upPoint ? 'pointer' : 'auto' }}
-               className="blog-post-footer-page-up">
-            <p>{up}
-              <br/>{upTitle}
-            </p>
-          </div>
-          <div onClick={() => this.downPage(this.props, downRoute, downPoint)}
-               style={{ cursor: downPoint ? 'pointer' : 'auto' }}
-               className="blog-post-footer-page-down">
-            <p>{down}
-              <br/>{downTitle}
-            </p>
-          </div>
+          <Link to={urlStatesUp}>
+            <div style={{ cursor: upPoint ? 'pointer' : 'auto' }}
+                 className="blog-post-footer-page-up">
+              <p>{up}
+                <br/>{upTitle}
+              </p>
+            </div>
+          </Link>
+          <Link to={urlStatesDown}>
+            <div
+              style={{ cursor: downPoint ? 'pointer' : 'auto' }}
+              className="blog-post-footer-page-down">
+              <p>{down}
+                <br/>{downTitle}
+              </p>
+            </div>
+          </Link>
         </div>
       </div>
     );

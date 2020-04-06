@@ -39,35 +39,35 @@ export default {
     {
       path: 'articles', name: 'homePage', component: Articles, isIndex: false,
       childRoutes: [
-        { path: 'javaScript/2', name: 'promote', component: Promote, isIndex: false },
-        { path: 'javaScript/1', name: 'array', component: Array, isIndex: false },
+        { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
+        { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
 
-        { path: 'css/2', name: 'css', component: CssB, isIndex: false },
-        { path: 'css/1', name: 'css', component: CssA, isIndex: false },
+        { path: 'css/fontAwesome', name: 'css', component: CssB, isIndex: false },
+        { path: 'css/img-center', name: 'css', component: CssA, isIndex: false },
 
-        { path: 'linux/1', name: 'linux', component: LinuxA, isIndex: false },
-        { path: 'linux/2', name: 'linux', component: LinuxB, isIndex: false },
+        { path: 'linux/commands', name: 'linux', component: LinuxA, isIndex: false },
+        { path: 'linux/vi', name: 'linux', component: LinuxB, isIndex: false },
 
-        { path: 'docker/2', name: 'docker', component: DockerB, isIndex: false },
-        { path: 'docker/1', name: 'docker', component: DockerA, isIndex: false },
+        { path: 'docker/tomcat', name: 'docker', component: DockerB, isIndex: false },
+        { path: 'docker/oracle', name: 'docker', component: DockerA, isIndex: false },
 
-        { path: 'react/1', name: 'react', component: ReactA, isIndex: false },
+        { path: 'react/rekit', name: 'react', component: ReactA, isIndex: false },
 
-        { path: 'git/1', name: 'git', component: GitA, isIndex: false },
+        { path: 'git', name: 'git', component: GitA, isIndex: false },
 
-        { path: 'webService/2', name: 'webService', component: WebServiceB, isIndex: false },
-        { path: 'webService/1', name: 'webService', component: WebServiceA, isIndex: false },
+        { path: 'webService/interceptor', name: 'webService', component: WebServiceB, isIndex: false },
+        { path: 'webService/cxf', name: 'webService', component: WebServiceA, isIndex: false },
 
-        { path: 'java/spring/1', name: 'spring', component: SpringA, isIndex: false },
+        { path: 'java/spring/propagation', name: 'spring', component: SpringA, isIndex: false },
 
-        { path: 'scroll/1', name: 'scroll', component: ScrollBanner, isIndex: false },
+        { path: 'scroll', name: 'scroll', component: ScrollBanner, isIndex: false },
 
-        { path: 'mac/ntfs/1', name: 'ntfs', component: Ntfs, isIndex: false },
+        { path: 'mac/ntfs', name: 'ntfs', component: Ntfs, isIndex: false },
 
-        { path: 'database/mysql/1', name: 'mysql', component: MysqlA, isIndex: false },
-        { path: 'nginx/1', name: 'nginx', component: NginxA, isIndex: false },
-        { path: 'database/oracle/1', name: 'oracle', component: OracleA, isIndex: false },
-        { path: 'linux/ssh/1', name: 'ssh', component: SecureShellA, isIndex: false },
+        { path: 'database/mysql', name: 'mysql', component: MysqlA, isIndex: false },
+        { path: 'nginx', name: 'nginx', component: NginxA, isIndex: false },
+        { path: 'database/oracle', name: 'oracle', component: OracleA, isIndex: false },
+        { path: 'linux/ssh', name: 'ssh', component: SecureShellA, isIndex: false },
       ],
     },
     { path: 'about', name: 'about', component: About, isIndex: false },
