@@ -26,6 +26,7 @@ import {
   FLinks,
   Maintain,
   ScrollBanner,
+  ArticlesList,
 } from './';
 import HomePage from './HomePage/HomePage';
 import { PageNotFound } from '../common';
@@ -37,16 +38,18 @@ export default {
   childRoutes: [
     { path: '/', name: 'homePage', component: HomePage, isIndex: true },
     {
-      path: 'articles', name: 'homePage', component: Articles, isIndex: false,
+      path: 'articles', name: 'articles', component: Articles, isIndex: false,
       childRoutes: [
+        { path: '/', name: 'article', component: ArticlesList, isIndex: true },
+
         { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
         { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
 
         { path: 'css/fontAwesome', name: 'css', component: CssB, isIndex: false },
         { path: 'css/img-center', name: 'css', component: CssA, isIndex: false },
 
-        { path: 'linux/commands', name: 'linux', component: LinuxA, isIndex: false },
-        { path: 'linux/vi', name: 'linux', component: LinuxB, isIndex: false },
+        { path: 'linux/commands', name: 'linux', component: LinuxB, isIndex: false },
+        { path: 'linux/vi', name: 'linux', component: LinuxA, isIndex: false },
 
         { path: 'docker/tomcat', name: 'docker', component: DockerB, isIndex: false },
         { path: 'docker/oracle', name: 'docker', component: DockerA, isIndex: false },
@@ -68,6 +71,7 @@ export default {
         { path: 'nginx', name: 'nginx', component: NginxA, isIndex: false },
         { path: 'database/oracle', name: 'oracle', component: OracleA, isIndex: false },
         { path: 'linux/ssh', name: 'ssh', component: SecureShellA, isIndex: false },
+        { path: '*', name: 'Page not found', component: PageNotFound },
       ],
     },
     { path: 'about', name: 'about', component: About, isIndex: false },

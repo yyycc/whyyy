@@ -7,6 +7,10 @@ export default class PageNotFound extends PureComponent {
     props.history.goBack();
   }
 
+  goHome(props) {
+    props.history.push('/blog');
+  }
+
   render() {
     return (
       <div className="common-page-not-found">
@@ -17,7 +21,13 @@ export default class PageNotFound extends PureComponent {
             <div className="common-page-not-found-back">
               <a onClick={() => this.goBack(this.props)}>
                 返回上一层</a>
-              <li><i className="fa fa-level-down"></i></li>
+              <li><i className="fa fa-level-down"> </i></li>
+            </div>
+
+            <div className="common-page-not-found-home">
+              <a onClick={() => this.goHome(this.props)}>
+                返回主页</a>
+              <li><i className="fa fa-home"> </i></li>
             </div>
           </div>
         </div>

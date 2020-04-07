@@ -26,7 +26,7 @@ export class GitA extends Component {
     const { fontSize, leaveConfirm } = this.props.blog;
     return (
       <div className="blog-git-a">
-        <h1>git(1): rekit搭建react项目</h1>
+        <h1>git(1): git的三种级别配置以及常用配置</h1>
         <article style={{ fontSize: `${fontSize}px` }}>
 
           <h2 id="git-1-1">1. mumbling</h2>

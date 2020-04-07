@@ -21,7 +21,7 @@ export class ReactA extends Component {
     const { fontSize, leaveConfirm } = this.props.blog;
     return (
       <div className="blog-react-a">
-        <h1>react(1): rekit搭建react项目</h1>
+        <h1>react(1): 利用rekit脚手架搭建react项目</h1>
         <article style={{ fontSize: `${fontSize}px` }}>
           <p>2019年的最后一天。</p>
           <p>好久没写博客了，真的是从善如流，从恶如崩。</p>

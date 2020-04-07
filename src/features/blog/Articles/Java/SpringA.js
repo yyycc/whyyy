@@ -23,7 +23,7 @@ export class SpringA extends Component {
     const { urlStates } = urls;
     return (
       <div className="blog-spring-a">
-        <h1>oracle</h1>
+        <h1>spring 事务配置</h1>
         <article style={{ fontSize: `${fontSize}px` }}>
           <h2 id="oracle-1-1">1. 启动</h2>
           <p>service中存在众多业务逻辑，往往一个方法中就涉及多个增删改，当一个ddl报错，我们肯定希望之前执行的回滚，之后的不再执行，</p>

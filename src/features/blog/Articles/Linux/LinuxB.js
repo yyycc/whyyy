@@ -20,7 +20,7 @@ export class LinuxB extends Component {
     const { urlStates } = urls;
     return (
       <div className="blog-linux-b">
-        <h1>linux指令(2): 常用指令</h1>
+        <h1>linux指令(2): 常用指令介绍</h1>
         <article style={{ fontSize: `${fontSize}px` }}>
           <p>记录一下linux中常用的指令</p><p></p>
 

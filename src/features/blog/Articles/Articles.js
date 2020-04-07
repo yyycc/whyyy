@@ -17,6 +17,8 @@ export class Articles extends Component {
   };
 
   render() {
+    const pathname = this.props.location.pathname;
+    const display = pathname !== '/blog/articles';
     return (
       <div>
         <div className="blog-articles">
@@ -24,9 +26,9 @@ export class Articles extends Component {
           <ChangeFont props={this.props}/>
           {this.props.children}
         </div>
-        <div className="blog-articles-footer">
+        {display && <div className="blog-articles-footer">
           <PostFooter props={this.props}/>
-        </div>
+        </div>}
       </div>
     );
   }

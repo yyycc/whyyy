@@ -17,7 +17,7 @@ export class CssB extends Component {
     const { codes, link, i } = code;
     return (
       <div className="blog-css-b">
-        <h1>css(2): font-awesome</h1>
+        <h1>css(2): 如何使用font-awesome</h1>
         <article style={{ fontSize: `${fontSize}px` }}>
           <p>一个非常好用的icon库。。。</p>
           <p>其实很久之前就用到过，只是当时不知道这个是font-awesome。</p>

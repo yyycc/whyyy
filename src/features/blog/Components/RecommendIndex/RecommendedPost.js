@@ -33,7 +33,7 @@ export class RecommendedPost extends Component {
               return <li key={index}>
                 <span className="blog-recommended-post-lists-image"><img src={images[index]} alt="array"/></span>
                 <span className="blog-recommended-post-lists-content">
-                  <Link to={ele.route + '/' + ele.order}>{ele.title}</Link>
+                  <Link to={ele.route}>{ele.title}</Link>
                   <p>{ele.date}</p>
                 </span>
               </li>;

@@ -17,7 +17,7 @@ export class OracleA extends Component {
     const { fontSize } = this.props.blog;
     return (
       <div className="blog-oracle-a">
-        <h1>oracle</h1>
+        <h1>oracle(1)：数据导入导出以及一些常用指令</h1>
         <article style={{ fontSize: `${fontSize}px` }}>
           <h2 id="oracle-1-1">1. 启动</h2>
           <p>我的oracle是安装在docker容器里面的，所以。。。</p>

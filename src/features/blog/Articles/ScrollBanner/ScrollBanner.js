@@ -21,7 +21,7 @@ export class ScrollBanner extends Component {
     const { fontSize, leaveConfirm } = this.props.blog;
     return (
       <div className="blog-scroll-banner">
-        <h1>react实现文字公告滚动轮播</h1>
+        <h1>react(2): react实现文字公告滚动轮播</h1>
         <article style={{ fontSize: `${fontSize}px` }}>
           <p>先上效果图</p>
           <div className="blog-scroll-banner-img">

@@ -14,6 +14,10 @@ export class LeaveConfirm extends Component {
     props.history.goBack();
   }
 
+  goHome(props) {
+    props.history.push('/blog');
+  }
+
   render() {
     return (
       <div className="common-leave-confirm">
@@ -27,6 +31,8 @@ export class LeaveConfirm extends Component {
               继续访问</a>
             <a onClick={() => this.goBack(this.props)}>
               返回上一层</a>
+            <a onClick={() => this.goHome(this.props)}>
+              返回主页</a>
           </div>
         </div>
       </div>

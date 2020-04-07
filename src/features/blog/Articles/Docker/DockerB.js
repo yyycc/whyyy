@@ -17,7 +17,7 @@ export class DockerB extends Component {
     const { rm, codes } = code;
     return (
       <div className="blog-docker-b">
-        <h1>Docker(1): 变量、函数的声明提升</h1>
+        <h1>docker(2): 又想装一个tomcat了</h1>
         <article style={{ fontSize: `${fontSize}px` }}>
 
           <h2 id="docker-2-1">1. 拉镜像</h2>
