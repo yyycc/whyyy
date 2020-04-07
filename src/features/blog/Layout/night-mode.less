@@ -5,11 +5,13 @@ body.reader-night-mode {
   background-color: #2d2d2d !important;
 }
 
-body.reader-night-mode .blog-scroll a {
+body.reader-night-mode .blog-scroll a,
+body.reader-night-mode .blog-scroll-top a,
+body.reader-night-mode .blog-scroll-bottom a {
   background-color: #404040;
 }
 
-body.reader-night-mode h3 {
+body.reader-night-mode .blog-home-page-right h3 {
   background-color: #333;
   border: 1px solid #2f2f2f;
 
@@ -35,7 +37,10 @@ body.reader-night-mode .blog-tags-index .blog-tags-index-lists .blog-tags-index-
 body.reader-night-mode .blog-header,
 body.reader-night-mode .blog-footer,
 body.reader-night-mode .blog-articles,
-body.reader-night-mode .blog-post {
+body.reader-night-mode .blog-articles-footer p,
+body.reader-night-mode .blog-post,
+body.reader-night-mode .common-page-not-found,
+body.reader-night-mode .blog-f-links span a {
   background-color: #3d3d3d;
 }
 
@@ -47,21 +52,49 @@ body.reader-night-mode .blog-recommended-post-lists li {
   border-bottom: 1px solid #2f2f2f;
 }
 
-body.reader-night-mode .blog-post {
-  border: 1px solid #2f2f2f;
+body.reader-night-mode .blog-post,
+body.reader-night-mode .blog-header-search .ant-input-affix-wrapper,
+body.reader-night-mode .blog-f-links span a {
+  border: 1px solid #4f4f4f;
+}
+
+body.reader-night-mode .blog-header-search .ant-input-affix-wrapper-focused,
+body.reader-night-mode .blog-header-search .ant-input-affix-wrapper:focus {
+  box-shadow: 0 0 0 2px rgba(236, 114, 89, 0.2);
+}
+
+body.reader-night-mode .blog-header-search .ant-input-affix-wrapper,
+body.reader-night-mode .blog-header-search .ant-input-affix-wrapper input {
+  background-color: #4f4f4f;
 }
 
 body.reader-night-mode h1, body.reader-night-mode h2, body.reader-night-mode h3,
 body.reader-night-mode h4, body.reader-night-mode h5, body.reader-night-mode h6,
 body.reader-night-mode .blog-post .blog-post-title a,
 body.reader-night-mode .blog-post .blog-post-summary,
-body.reader-night-mode .blog-scroll-text .blog-scroll-text-scroll a {
+body.reader-night-mode .blog-scroll-text .blog-scroll-text-scroll a,
+body.reader-night-mode .common-page-not-found-back a,
+body.reader-night-mode .blog-f-links span a,
+body.reader-night-mode .blog-collections-lists li,
+body.reader-night-mode .blog-tags-index-lists li,
+body.reader-night-mode .blog-post-footer-page-turn p {
   color: #b3b3b3
+}
+
+body.reader-night-mode .blog-f-links span a:hover {
+  background-color: #c40000;
+  border: 1px solid #c40000;
 }
 
 body.reader-night-mode .blog-header .blog-header-name,
 body.reader-night-mode .blog-post .blog-post-read a,
 body.reader-night-mode .blog-header .blog-header-menu a,
-body.reader-night-mode .blog-header .blog-header-menu i {
+body.reader-night-mode .blog-header .blog-header-menu i,
+body.reader-night-mode .blog-articles a {
   color: #ec7259;
+}
+
+body.reader-night-mode .blog-search-index .ant-btn-primary {
+  background-color: #ec7259;
+  border-color: #ec7259;
 }

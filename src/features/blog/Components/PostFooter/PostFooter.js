@@ -29,7 +29,7 @@ export class PostFooter extends Component {
       down = '下一篇 >';
       upPoint = false;
       downTitle = postsInOrder[order]['title'];
-      downRoute = postsInOrder[order - 2]['route'];
+      downRoute = postsInOrder[order]['route'];
     } else if (order === posts.length) {
       downTitle = '已是最后一篇';
       up = '< 上一篇';
@@ -53,7 +53,7 @@ export class PostFooter extends Component {
 
     return (
       <div className="blog-post-footer">
-        <p><img src={theEnd} alt="The End"/></p>
+        <p><img className="blog-post-footer-img" src={theEnd} alt="The End"/></p>
         <div className="blog-post-footer-page-turn">
           <Link to={urlStatesUp}>
             <div style={{ cursor: upPoint ? 'pointer' : 'auto' }}

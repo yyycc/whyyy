@@ -41,3 +41,5 @@ export { default as ScrollBanner } from './Articles/ScrollBanner/ScrollBanner';
 export { default as MyDrawer } from './Components/Drawer/MyDrawer';
 export { default as Articles } from './Articles/Articles';
 export { default as Maintain } from './Notice/Maintain/Maintain';
+export { default as ScrollTop } from './Components/Scroll/ScrollTop';
+export { default as ScrollBottom } from './Components/Scroll/ScrollBottom';

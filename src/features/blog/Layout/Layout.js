@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import Tabs from '../Tabs/Tabs';
-import Scroll from '../Components/Scroll/Scroll';
-import BreadCrumb from '../BreadCrumb/BreadCrumb';
-import ChangeFont from '../Components/ChangeFont/ChangeFont';
-import AnchorIndex from '../Components/AnchorIndex/AnchorIndex';
-import PostFooter from '../Components/PostFooter/PostFooter';
-import MyDrawer from '../Components/Drawer/MyDrawer';
+import ScrollTop from '../Components/Scroll/ScrollTop';
+import ScrollBottom from '../Components/Scroll/ScrollBottom';
 
 export default class Layout extends Component {
   static propTypes = {};
 
   render() {
-    const pathname = this.props.location.pathname.split('/');
-    const display = pathname.length > 3;
+    /*const pathname = this.props.location.pathname.split('/');
+    const display = pathname.length > 3;*/
     return (
       <div className="blog-layout">
         <Header/>
@@ -38,7 +33,8 @@ export default class Layout extends Component {
           </div>
         </div>*/}
         <Footer/>
-        <Scroll/>
+        <ScrollTop/>
+        <ScrollBottom/>
       </div>
     );
   }

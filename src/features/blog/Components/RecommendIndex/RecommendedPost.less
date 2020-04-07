@@ -33,15 +33,24 @@
     }
 
     img {
-      height: 60px;
-      width: 120px;
+      height: 100%;
+      width: 100%;
+      transition: all 1s;
+    }
+
+    img:hover {
+      transform: scale(1.2);
     }
 
     .blog-recommended-post-lists-image {
+      height: 60px;
+      width: 120px;
       margin: 8px 8px 8px 3px;
+      overflow: hidden;
     }
 
     .blog-recommended-post-lists-content {
+      width: 50%;
       margin: 5px 0 0 5px;
 
       p {

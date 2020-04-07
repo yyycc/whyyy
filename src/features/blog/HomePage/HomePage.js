@@ -8,14 +8,12 @@ import { Post } from '../Components/PostsIndex/Post';
 import { Pagination } from 'antd';
 import { TagsIndex } from '../Components/TagsIndex/TagsIndex';
 import Collections from '../Components/CollectionsIndex/Collections';
-import { SearchIndex } from '../Components/SearchIndex/SearchIndex';
 import RecommendedPost from '../Components/RecommendIndex/RecommendedPost';
 import { ScrollText } from '../Components/ScrollText/ScrollText';
 
 /*
  * @name: 首页
  * @description: 包括轮播公告、轮播图片、博客列表、全站搜索、标签、归档、本站推荐
- * 不要参数！！
  */
 
 export class HomePage extends Component {
@@ -61,7 +59,6 @@ export class HomePage extends Component {
           </div>
 
           <div className="blog-home-page-right">
-            <SearchIndex blog={this.props.blog} actions={this.props.actions}/>
             <TagsIndex blog={this.props.blog} actions={this.props.actions}/>
             <Collections blog={this.props.blog} actions={this.props.actions}/>
             <RecommendedPost blog={this.props.blog} actions={this.props.actions}/>

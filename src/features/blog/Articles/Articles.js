@@ -5,11 +5,10 @@ import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 import ChangeFont from '../Components/ChangeFont/ChangeFont';
 import PostFooter from '../Components/PostFooter/PostFooter';
-// import frame from '../../../images/frame-1.jpeg'
-// import frame from '../../../images/frame-2.jpeg';
-// import frame from '../../../images/frame-3.jpg';
-// import frame from '../../../images/frame-4.jpg';
-import frame from '../../../images/frame-5.jpg';
+// import frame from '../../../images/flower-2.png';
+import frame from '../../../images/willow.png';
+
+// import frame from '../../../images/maple.png';
 
 export class Articles extends Component {
   static propTypes = {
@@ -21,7 +20,7 @@ export class Articles extends Component {
     return (
       <div>
         <div className="blog-articles">
-          <img className="blog-articles-img" src={frame}/>
+          <img className="blog-articles-img" src={frame} alt=""/>
           <ChangeFont props={this.props}/>
           {this.props.children}
         </div>

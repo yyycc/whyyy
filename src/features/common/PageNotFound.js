@@ -13,7 +13,7 @@ export default class PageNotFound extends PureComponent {
         <div className="common-page-not-found-tip">
           <h1>404</h1>
           <div>
-            <h3>不是我搬家了，就是你迷路啦</h3>
+            <h2>不是我搬家了，就是你迷路啦</h2>
             <div className="common-page-not-found-back">
               <a onClick={() => this.goBack(this.props)}>
                 返回上一层</a>

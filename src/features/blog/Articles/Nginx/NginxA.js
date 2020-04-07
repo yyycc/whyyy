@@ -20,7 +20,7 @@ export class NginxA extends Component {
     return (
       <div className="blog-nginx-a">
         <h1>nginx(1)：搭建以及项目部署和转发</h1>
-        <body style={{ fontSize: `${fontSize}px` }}>
+        <article style={{ fontSize: `${fontSize}px` }}>
         <h2 id="nginx-1-1">1. 搭建nginx</h2>
         <h3 id="nginx-1-1-1">1.1. mac</h3>
         <p>我的机子是mac的，我本地装了homebrew，所以我本地的nginx使用homebrew安装的</p>
@@ -61,7 +61,7 @@ export class NginxA extends Component {
         <p>之前项目上有一个任务，是调接口的时候要做一个转发，因为生产服务器在内网，访问不了外网，要调用的服务在外网。</p>
         <p>需要从生产先发请求到中间区域，从中间区域接受请求转发到外网服务。</p>
         <PreFormat content={transfer}/>
-        </body>
+        </article>
       </div>
     );
   }
