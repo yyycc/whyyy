@@ -52,7 +52,17 @@ export class Header extends Component {
     return (
       <header className="blog-header">
         <div className="blog-header-name"> whyyy his blog</div>
-        <div className="blog-header-motto"> |每天都努力地搬砖</div>
+        {/*<div className="blog-header-motto"> |每天都努力地搬砖</div>*/}
+        <div className="blog-header-home">
+          <div className="blog-header-home-page">
+            <i className="fa fa-home"> </i>
+            <Link to="/blog">首页</Link>
+          </div>
+          <div className="blog-header-home-map">
+            <i className="fa fa-map-marker"> </i>
+            <Link to="/blog/articles">站内地图</Link>
+          </div>
+        </div>
         <div className="blog-header-search">
           <Search
             placeholder="搜索文章标题"
@@ -63,11 +73,6 @@ export class Header extends Component {
         <div className="blog-header-menu">
           <div className="blog-header-menu-mode" onClick={() => this.changeMode()}>
             <i className="fa fa-moon-o"> </i>
-          </div>
-
-          <div className="blog-header-menu-home">
-            <i className="fa fa-home"> </i>
-            <Link to="/blog">首页</Link>
           </div>
           <div className="blog-header-menu-about">
             <i className="fa fa-anchor"> </i>

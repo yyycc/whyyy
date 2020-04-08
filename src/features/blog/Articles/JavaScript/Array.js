@@ -30,10 +30,9 @@ export class Array extends Component {
           <p>会改变原数组的 & 不会改变原数组的</p>
           <p>本来想一一列举的，但是好像没啥意义</p>
           <p>就画个表格吧～～</p>
-          {/*<Table columns={columns} dataSource={data}/>*/}
           <SimpleTable titles={arrayTitle} data={array} name={arrayName}/>
           <p>[1]. 如果数组成员包括对象，concat方法返回当前数组的一个浅拷贝。新数组拷贝的是对象的引用。</p>
-          <p>[2]. 将类数组转化为真正的数组: Array.prototype.slice.call(document.querySelectorAll(“div”));</p>
+          <p>[2]. 将类数组转化为真正的数组: Array.prototype.slice.call(document.querySelectorAll("div"));</p>
           <p>[3.1]. push: 在最后一个位置添加。</p>
           <p>[3.2]. unshift: 在第一个位置添加。</p>
           <p>[4.1]. pop: 删除最后一个元素。</p>

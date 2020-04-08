@@ -18,7 +18,7 @@ export class MysqlA extends Component {
     return (
       <div className="blog-mysql-a">
         <h1>mysql(1): centos 7的服务器下安装mysql</h1>
-        <body style={{ fontSize: `${fontSize}px` }}>
+        <article style={{ fontSize: `${fontSize}px` }}>
 
         <h2 id="mysql-1-1">1. yum源</h2>
         <p>下载mysql源安装包</p>
@@ -58,7 +58,7 @@ export class MysqlA extends Component {
         <PreFormat content={codes[10]}/>
         <p>如果访问不了，那就是端口没开放，mysql默认端口是3306</p>
         <PreFormat content={firewall}/>
-        </body>
+        </article>
       </div>
     );
   }

@@ -44,3 +44,6 @@ export { default as Maintain } from './Notice/Maintain/Maintain';
 export { default as ScrollTop } from './Components/Scroll/ScrollTop';
 export { default as ScrollBottom } from './Components/Scroll/ScrollBottom';
 export { default as ArticlesList } from './Articles/ArticlesList';
+export { default as Sentences } from './Notice/Sentences/Sentences';
+export { default as Online } from './Notice/Online/Online';
+export { default as DrawerBar } from './Components/Drawer/DrawerBar';

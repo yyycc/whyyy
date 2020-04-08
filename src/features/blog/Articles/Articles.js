@@ -18,7 +18,8 @@ export class Articles extends Component {
 
   render() {
     const pathname = this.props.location.pathname;
-    const display = pathname !== '/blog/articles';
+    const { posts } = this.props.blog;
+    const display = posts.some((ele) => ele.route === pathname);
     return (
       <div>
         <div className="blog-articles">

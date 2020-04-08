@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 import { Link } from 'react-router-dom';
-import bg from '../../../images/hearts.png';
 
 export class ArticlesList extends Component {
   static propTypes = {

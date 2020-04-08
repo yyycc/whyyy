@@ -37,7 +37,7 @@ export class About extends Component {
 
           <h2>关于博客</h2>
           <p>旨在记录日常遇到的问题以及一些学习心得</p>
-          <p>还有一些中年程序员的碎碎念。。。</p>
+          <p>还有一些碎碎念。。。</p>
           <p>文章内容均经过验证，如果错漏，请不吝告知</p>
           <p><img src={luffy} alt='yeah~'/></p>
         </article>

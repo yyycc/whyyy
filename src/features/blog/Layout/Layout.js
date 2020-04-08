@@ -3,6 +3,8 @@ import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import ScrollTop from '../Components/Scroll/ScrollTop';
 import ScrollBottom from '../Components/Scroll/ScrollBottom';
+import { DrawerBar } from '../Components/Drawer/DrawerBar';
+import { MyDrawer } from '../Components/Drawer/MyDrawer';
 
 export default class Layout extends Component {
   static propTypes = {};
@@ -33,8 +35,12 @@ export default class Layout extends Component {
           </div>
         </div>*/}
         <Footer/>
-        <ScrollTop/>
-        <ScrollBottom/>
+        <MyDrawer from='right'/>
+        <div className="blog-layout-right-bottom-fix">
+          <ScrollTop/>
+          <DrawerBar/>
+          <ScrollBottom/>
+        </div>
       </div>
     );
   }

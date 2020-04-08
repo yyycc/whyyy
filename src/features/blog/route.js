@@ -27,6 +27,8 @@ import {
   Maintain,
   ScrollBanner,
   ArticlesList,
+  Sentences,
+  Online,
 } from './';
 import HomePage from './HomePage/HomePage';
 import { PageNotFound } from '../common';
@@ -71,12 +73,14 @@ export default {
         { path: 'nginx', name: 'nginx', component: NginxA, isIndex: false },
         { path: 'database/oracle', name: 'oracle', component: OracleA, isIndex: false },
         { path: 'linux/ssh', name: 'ssh', component: SecureShellA, isIndex: false },
-        { path: '*', name: 'Page not found', component: PageNotFound },
+        { path: '*', name: 'Page not found', component: ArticlesList },
       ],
     },
     { path: 'about', name: 'about', component: About, isIndex: false },
     { path: 'fLinks', name: 'links', component: FLinks, isIndex: false },
     { path: 'maintain', name: 'maintain', component: Maintain, isIndex: false },
+    { path: 'online', name: 'online', component: Online, isIndex: false },
+    { path: 'sentences', name: 'sentences', component: Sentences, isIndex: false },
     // 链接到HomePage的路由 待优化 TODO
     { path: 'server/docker', name: 'homePage', component: HomePage, isIndex: false },
     { path: 'docker', name: 'homePage', component: HomePage, isIndex: false },
@@ -86,6 +90,6 @@ export default {
     { path: 'server', name: 'homePage', component: HomePage, isIndex: false },
     { path: 'webService', name: 'homePage', component: HomePage, isIndex: false },
 
-    { path: '*', name: 'Page not found', component: PageNotFound },
+    { path: '*', name: 'Page not found', component: PageNotFound }, //blog/*
   ],
 };

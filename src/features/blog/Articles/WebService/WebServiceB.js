@@ -39,7 +39,7 @@ export class WebServiceB extends Component {
           <p>首先我们这个系统简称有点长，有6个字母，生成的报文前缀直接给我截取成了3个字母。。。</p>
           <p>其次就是每个节点前都要加命名空间前缀，让我好一番折腾</p>
           <h3 id="webService-2-1-2">1.2. 节点要求</h3>
-          <p>Body中第一层应使用输入数据模型根节点信息，即服务方法名+”Request”。</p>
+          <p>Body中第一层应使用输入数据模型根节点信息，即服务方法名+"Request"。</p>
           <p>而我生成的第一层永远是方法名，第二层才是数据模型。</p>
           <h3 id="webService-2-1-3">1.3. header</h3>
           <p>服务请求报文在Header中添加服务安全验证信息</p>
@@ -54,14 +54,14 @@ export class WebServiceB extends Component {
           <p>先说说这样的是怎么生成的</p>
           <h3 id="webService-2-2-1">2.1. 命名空间</h3>
           <p>在接口方法上加注释(这样就会有xmlns，security，request前面会有命名空间)</p>
-          <p>@WebService(targetNamespace = “http://qwerty.com")</p><br/>
+          <p>@WebService(targetNamespace = "http://qwerty.com")</p><br/>
           <p>在方法参数上加注释(这样方法名前面就会有命名空间)</p>
           <p>@XmlElement(required = true, namespace = "http://qwerty.com") @WebParam(name = "functionNameRequest",
             partName = "functionNameRequest")</p>
           <p>FunctionNameRequest functionNameRequest</p><br/>
           <p>要在对象每个属性前面加命名空间前缀有两个方法：</p>
           <p>在属性的get方法上加</p>
-          <p>@XmlElement(namespace = “http://qwerty.com")</p>
+          <p>@XmlElement(namespace = "http://qwerty.com")</p>
           <p>但是必须每个都加，才能实现每个节点都有</p><br/>
           <p>或者FunctionNameRequest对象目录下新增文件 package-info.java</p>
           <PreFormat content={packageInfo}/>
@@ -69,7 +69,7 @@ export class WebServiceB extends Component {
           <p>。。。失败了</p>
           <h3 id="webService-2-2-3">2.3. header</h3>
           <p>在请求接口方法中添加</p>
-          <p>@XmlElement(required = true) @WebParam(name = “security”, header = true) InHeaderMessage
+          <p>@XmlElement(required = true) @WebParam(name = "security", header = true) InHeaderMessage
             inHeaderMessage</p>
           <p>加了@XmlElement(required = true)就不会有被注释了的 Optional: 了。</p>
           <h2 id="webService-2-3">3. 拦截器</h2>
