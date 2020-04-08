@@ -1,6 +1,7 @@
 @import '../../../styles/mixins';
 
 .blog-header {
+  user-select: none;
   position: fixed;
   top: 0;
   width: 100%;
@@ -9,11 +10,10 @@
   border-bottom: 1px solid #f0f0f0;
   height: 55px;
   background-color: white;
-  z-index: 99999;
+  z-index: 999;
   box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
 
   .blog-header-name {
-    user-select: none;
     font-family: fantasy;
     font-size: 30px;
     color: #1890ff;;

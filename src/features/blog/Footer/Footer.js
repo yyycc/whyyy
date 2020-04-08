@@ -10,11 +10,9 @@ export default class Footer extends Component {
 
   render() {
     return (
-      <div>
-        <footer className="blog-footer">
-          Copyright © 2020 yyycc
-        </footer>
-      </div>
+      <footer className="blog-footer">
+        <p>Copyright © 2020 yyycc</p>
+      </footer>
     );
   }
 }

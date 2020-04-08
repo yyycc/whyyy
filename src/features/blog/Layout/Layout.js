@@ -35,10 +35,10 @@ export default class Layout extends Component {
           </div>
         </div>*/}
         <Footer/>
-        <MyDrawer from='right'/>
+        <MyDrawer from='right' title='文章目录'/>
         <div className="blog-layout-right-bottom-fix">
           <ScrollTop/>
-          <DrawerBar/>
+          <DrawerBar from='right'/>
           <ScrollBottom/>
         </div>
       </div>

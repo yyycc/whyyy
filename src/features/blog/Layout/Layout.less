@@ -3,9 +3,23 @@
 .blog-layout {
   height: 100%;
 
-  .blog-layout-container-drawer {
-    margin-right: 260px !important;
-    margin-left: 40px !important;
+  // 实现主体内容平易效果
+  .blog-layout-container-drawer-open-right {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    transform: translateX(-120px);
+  }
+
+  .blog-layout-container-drawer-open-left {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    transform: translateX(170px);
+  }
+
+  .blog-layout-container-drawer-close {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    transform: translateX(0);
   }
 
   .blog-layout-container {
@@ -31,6 +45,29 @@
       flex-direction: column;
       border-radius: 3px;
 
+    }
+  }
+
+  .blog-my-drawer-content-close {
+    position: fixed;
+    z-index: 999;
+    right: 40px;
+    bottom: 136px;
+    width: 32px;
+
+    .fa {
+      color: #c40000;
+    }
+
+    a {
+      font-size: 16px;
+      width: 32px;
+      height: 32px;
+      line-height: 28px;
+      text-align: center;
+      vertical-align: middle;
+      display: block;
+      cursor: pointer;
     }
   }
 
