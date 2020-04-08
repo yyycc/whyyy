@@ -28,6 +28,7 @@ export class MyDrawer extends Component {
               <p>{title}</p>
             </div>
             <div className="blog-my-drawer-content-body">
+              {this.props.children}
             </div>
             <div className="blog-my-drawer-content-close">
               <a className="blog-my-drawer-a" onClick={() => this.closeDrawer(from)}>

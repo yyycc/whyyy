@@ -4,10 +4,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import { Link } from 'react-router-dom';
-import array from '../../../../images/array.jpeg';
-import linux from '../../../../images/linux.jpeg';
-import git from '../../../../images/git.jpg';
-import oracle from '../../../../images/oracle.png';
+// import array from '../../../../images/array.jpeg';
+// import linux from '../../../../images/linux.jpeg';
+// import git from '../../../../images/git.jpg';
+// import oracle from '../../../../images/oracle.png';
+
+import array from '../../../../images/tree.png';
+import linux from '../../../../images/cute-penguin.png';
+import linux2 from '../../../../images/scraf-penguin.png';
+import git from '../../../../images/snow-cat.png';
+import oracle from '../../../../images/underline.png';
 
 export class RecommendedPost extends Component {
   static propTypes = {
@@ -16,7 +22,7 @@ export class RecommendedPost extends Component {
   };
 
   render() {
-    const images = [array, linux, linux, git, oracle];
+    const images = [array, linux, linux2, git, oracle];
     const { posts } = this.props.blog;
     const recommendedPosts = posts.filter((ele) => !!ele.recommended);
     return (

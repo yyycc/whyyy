@@ -25,7 +25,6 @@ export class SpringA extends Component {
       <div className="blog-spring-a">
         <h1>spring 事务配置</h1>
         <article style={{ fontSize: `${fontSize}px` }}>
-          <h2 id="oracle-1-1">1. 启动</h2>
           <p>service中存在众多业务逻辑，往往一个方法中就涉及多个增删改，当一个ddl报错，我们肯定希望之前执行的回滚，之后的不再执行，</p>
           <p>这样才能保证事务的一致性。不然我只记录账上少了100，没有记录这个100的去处，账就崩了。</p>
 
