@@ -13,31 +13,30 @@ export class AnchorIndex extends Component {
 
   render() {
     const { Link } = Anchor;
-    const pathname = this.props.pathname.split('/');
+    const h2 = Array.prototype.slice.call(document.getElementsByTagName('h2'));
+    const h3 = Array.prototype.slice.call(document.getElementsByTagName('h3'));
+    /*const pathname = this.props.pathname.split('/');
     const order = pathname[pathname.length - 1];
     const name = pathname[pathname.length - 2];
-    const titles = this.props.blog.h2[name][order - 1];
+    const titles = this.props.blog.h2[name][order - 1];*/
     return (
       <div className="blog-anchor-index">
         <Anchor affix={false}>
-          {titles.map((ele, index) => {
-            const href = '#' + name + '-' + order + '-' + (index + 1);
-            if (typeof ele === 'string') {
-              return <Link href={href} title={ele}></Link>;
-            } else {
-              return <Link href={href} title={ele[0]}>
-                {/*<i onClick={() => changeSubAnchorDisplay(index, name, order - 1, h2)}
-                className={['fa', ele[2] ? 'fa-angle-down' : 'fa-angle-right'].join(' ')}/>*/}
-                <div className={[ele[2] ? null : 'blog-anchor-index-block']}>
-                  {
-                    ele[1].map((e, i) => {
-                      const subHref = '#' + name + '-' + order + '-' + (index + 1) + '-' + (i + 1);
-                      return <Link href={subHref} title={e}/>;
-                    })
-                  }
-                </div>
-              </Link>;
-            }
+          {h2.map((ele, index) => {
+            let href = '#' + ele.id;
+            return <Link key={index} href={href} title={ele.innerText}>
+              {/*<i onClick={() => changeSubAnchorDisplay(index, name, order - 1, h2)}
+                 className={['fa', ele[2] ? 'fa-angle-down' : 'fa-angle-right'].join(' ')}/>
+              <div className={[ele[2] ? null : 'blog-anchor-index-block']}>*/}
+              {h3.map((e, i) => {
+                if (e.id.indexOf(ele.id) > -1) {
+                  href = '#' + e.id;
+                  return <Link key={i} href={href} title={e.innerText}/>;
+                } else {
+                  return null;
+                }
+              })}
+            </Link>;
           })}
         </Anchor>
       </div>

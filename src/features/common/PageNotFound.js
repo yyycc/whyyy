@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import lost from '../../images/lost.jpeg';
+// import lost from '../../images/lost.jpeg';
+import lost from '../../images/cute-girl.png';
 
 export default class PageNotFound extends PureComponent {
 

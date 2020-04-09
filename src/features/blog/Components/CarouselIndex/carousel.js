@@ -1,9 +1,10 @@
 import Luffy from '../../../../images/index.png';
 import linux from '../../../../images/index-linux.jpg';
 import javaScript from '../../../../images/index-js.png';
+import react from '../../../../images/react-1.png';
 
-const images = [Luffy, linux, javaScript];
-const imageRoutes = ['luffy', 'linux', 'javaScript'];
+const images = [Luffy, linux, react];
+const imageRoutes = ['luffy', 'linux', 'react'];
 
 const imageIndex = 0;// 当前图片序号
 

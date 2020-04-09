@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import theEnd from '../../../../images/theEnd.png';
+import theEndNight from '../../../../images/theEndNight.jpg';
 import { Link } from 'react-router-dom';
 
 export class PostFooter extends Component {
@@ -15,7 +16,7 @@ export class PostFooter extends Component {
   render() {
     let up = '<上一篇', upTitle, upRoute;
     let down = '下一篇>', downTitle, downRoute;
-    const { posts } = this.props.blog;
+    const { posts, mode } = this.props.blog;
     let postsInOrder = posts.concat();
     postsInOrder.sort((cur, last) =>
       cur.key - last.key);
@@ -65,7 +66,7 @@ export class PostFooter extends Component {
 
     return (
       <div className="blog-post-footer">
-        <p><img className="blog-post-footer-img" src={theEnd} alt="The End"/></p>
+        <p><img className="blog-post-footer-img" src={mode === 'day' ? theEnd : theEndNight} alt="The End"/></p>
         <div className="blog-post-footer-page-turn">
           <Link to={urlStatesUp}>
             <div style={{ cursor: upPoint ? 'pointer' : 'auto' }}

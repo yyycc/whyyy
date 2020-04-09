@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../redux/actions';
 import { Link } from 'react-router-dom';
-import theEnd from '../../../images/theEnd.png';
-import theEndNight from '../../../images/theEndNight.jpg';
-// import day from '../../../images/flower-2.png';
-import day from '../../../images/willow.png';
-import night from '../../../images/sakura.png';
 import { Input } from 'antd';
 
 /*
@@ -18,45 +9,38 @@ import { Input } from 'antd';
 
 export class Header extends Component {
   static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
   };
 
-  changeMode() {
+  change(changeMode) {
     let list = document.getElementsByTagName('body')[0].classList;
-    let mode = 'reader-night-mode';
-    let img = document.getElementsByClassName('blog-post-footer-img');
-    let imgA = document.getElementsByClassName('blog-articles-img');
+    let nightMode = 'reader-night-mode';
     if (list.contains('reader-night-mode')) {
-      list.remove(mode);
-      if (img.length > 0) {
-        img[0].src = theEnd;
-      }
-      if (imgA.length > 0) {
-        imgA[0].src = day;
-      }
+      list.remove(nightMode);
+      changeMode('day');
     } else {
-      list.add(mode);
-      if (img.length > 0) {
-        img[0].src = theEndNight;
-      }
-      if (imgA.length > 0) {
-        imgA[0].src = night;
-      }
+      list.add(nightMode);
+      changeMode('night');
     }
+  }
+
+  home(e, fuzzyQueryPosts) {
+    debugger;
+    fuzzyQueryPosts('all');
+    e.props.history.push('/blog');
   }
 
   render() {
     const { Search } = Input;
-    const { fuzzyQueryPosts } = this.props.actions;
+    const { fuzzyQueryPosts, changeMode } = this.props.props.actions;
     return (
       <header className="blog-header">
         <div className="blog-header-name"> whyyy his blog</div>
         {/*<div className="blog-header-motto"> |每天都努力地搬砖</div>*/}
         <div className="blog-header-home">
-          <div className="blog-header-home-page">
+          <div className="blog-header-home-page" onClick={() => this.home(this.props, fuzzyQueryPosts)}>
             <i className="fa fa-home"> </i>
-            <Link to="/blog">首页</Link>
+            <a>首页</a>
+            {/*<Link to="/blog">首页</Link>*/}
           </div>
           <div className="blog-header-home-map">
             <i className="fa fa-map-marker"> </i>
@@ -71,7 +55,7 @@ export class Header extends Component {
           />
         </div>
         <div className="blog-header-menu">
-          <div className="blog-header-menu-mode" onClick={() => this.changeMode()}>
+          <div className="blog-header-menu-mode" onClick={() => this.change(changeMode)}>
             <i className="fa fa-moon-o"> </i>
           </div>
           <div className="blog-header-menu-about">
@@ -88,21 +72,4 @@ export class Header extends Component {
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Header);
+export default Header;

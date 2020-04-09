@@ -22,7 +22,7 @@ export class RecommendedPost extends Component {
   };
 
   render() {
-    const images = [array, linux, linux2, git, oracle];
+    const images = [git, array, linux, linux2, git, oracle];
     const { posts } = this.props.blog;
     const recommendedPosts = posts.filter((ele) => !!ele.recommended);
     return (

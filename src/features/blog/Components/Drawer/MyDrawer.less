@@ -1,5 +1,7 @@
 @import '../../../../styles/mixins';
 
+
+//.blog-my-drawer-id-
 .blog-my-drawer {
   position: fixed;
 
@@ -12,12 +14,39 @@
       width: 100%;
       margin-top: 55px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+      position: relative;
 
       .blog-my-drawer-content-header {
         p {
           text-align: center;
           font-size: 20px;
           padding-top: 10px;
+          text-decoration: underline;
+        }
+      }
+
+      .blog-my-drawer-content-body {
+        //height: 50%;
+
+        .blog-my-drawer-content-body-image-top {
+          right: -15px;
+          position: absolute;
+          top: 0;
+
+          img {
+            width: 150px;
+            height: auto;
+          }
+        }
+
+        .blog-my-drawer-content-body-image-bottom {
+          position: absolute;
+          bottom: 100px;
+
+          img {
+            width: 300px;
+            height: auto;
+          }
         }
       }
 
@@ -45,6 +74,7 @@
 
   .blog-my-drawer-wrapper {
     transform: none;
+    //background: url("../../../../images/spring-top.png");
   }
 }
 
@@ -57,7 +87,7 @@
   .blog-my-drawer-wrapper {
     height: 100%;
     transform: translateX(-100%);
-    width: 320px;
+    width: 300px;
     left: 0;
   }
 }
@@ -71,7 +101,7 @@
   .blog-my-drawer-wrapper {
     height: 100%;
     transform: translateX(100%);
-    width: 320px;
+    width: 300px;
     right: 0;
   }
 }

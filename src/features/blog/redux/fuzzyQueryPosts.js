@@ -8,7 +8,7 @@ import {
 
 function fuzzyQuery(posts, value) {
   return posts.filter((ele) => {
-    return ele.title.indexOf(value) > -1;
+    return ele.title.indexOf(value) > -1 || value === 'all';
   });
 }
 

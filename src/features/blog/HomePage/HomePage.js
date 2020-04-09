@@ -22,6 +22,23 @@ export class HomePage extends Component {
     actions: PropTypes.object.isRequired,
   };
 
+  scroll() {
+    let a = document.getElementsByClassName('blog-home-page-right-fix')[0];
+    if (!!a) {
+      if (window.scrollY > 440) {
+        a.style.position = 'fixed';
+        a.style.top = '34px';
+        a.style.width = 'inherit';
+      } else {
+        a.style.position = 'static';
+      }
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.scroll);
+  }
+
   render() {
     const { posts, current } = this.props.blog;
     let { postsToDisplay, postsQueried } = this.props.blog;
@@ -57,11 +74,12 @@ export class HomePage extends Component {
               </div>
             </div>
           </div>
-
           <div className="blog-home-page-right">
             <TagsIndex blog={this.props.blog} actions={this.props.actions}/>
             <Collections blog={this.props.blog} actions={this.props.actions}/>
-            <RecommendedPost blog={this.props.blog} actions={this.props.actions}/>
+            <div className="blog-home-page-right-fix">
+              <RecommendedPost blog={this.props.blog} actions={this.props.actions}/>
+            </div>
           </div>
         </div>
       </div>

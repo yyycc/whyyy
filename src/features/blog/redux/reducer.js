@@ -21,6 +21,9 @@ import { reducer as autoChangeImagesReducer } from './autoChangeImages';
 import { reducer as scrollBannerReducer } from './scrollBanner';
 import { reducer as showDrawerReducer } from './showDrawer';
 import { reducer as onDrawerCloseReducer } from './onDrawerClose';
+import { reducer as changeAnchorReducer } from './changeAnchor';
+import { reducer as changeDrawerReducer } from './changeDrawer';
+import { reducer as changeModeReducer } from './changeMode';
 
 const reducers = [
   changePageReducer,
@@ -37,6 +40,9 @@ const reducers = [
   scrollBannerReducer,
   showDrawerReducer,
   onDrawerCloseReducer,
+  changeAnchorReducer,
+  changeDrawerReducer,
+  changeModeReducer,
 ];
 
 export default function reducer(state = initialState, action) {

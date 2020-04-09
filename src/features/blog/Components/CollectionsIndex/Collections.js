@@ -81,7 +81,7 @@ export class Collections extends Component {
             <li onClick={() => queryPostsByTag('java')}><i className="fa fa-bookmark-o"/>后端(1)</li>
             <li onClick={() => queryPostsByTag('linux')}><i className="fa fa-bookmark-o"/>linux(3)</li>
             <li onClick={() => queryPostsByTag('database')}><i className="fa fa-bookmark-o"/>数据库(2)</li>
-            <li onClick={() => queryPostsByTag('git')}><i className="fa fa-bookmark-o"/>版本管理(1)</li>
+            <li onClick={() => queryPostsByTag('git')}><i className="fa fa-bookmark-o"/>版本管理(2)</li>
           </div>
         </div>
       </div>

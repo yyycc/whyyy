@@ -22,6 +22,7 @@ import {
   LinuxA,
   LinuxB,
   GitA,
+  GitB,
   About,
   FLinks,
   Maintain,
@@ -29,8 +30,8 @@ import {
   ArticlesList,
   Sentences,
   Online,
+  HomePage,
 } from './';
-import HomePage from './HomePage/HomePage';
 import { PageNotFound } from '../common';
 
 export default {
@@ -58,7 +59,8 @@ export default {
 
         { path: 'react/rekit', name: 'react', component: ReactA, isIndex: false },
 
-        { path: 'git', name: 'git', component: GitA, isIndex: false },
+        { path: 'git/config', name: 'git', component: GitA, isIndex: false },
+        { path: 'git/commands', name: 'git', component: GitB, isIndex: false },
 
         { path: 'webService/interceptor', name: 'webService', component: WebServiceB, isIndex: false },
         { path: 'webService/cxf', name: 'webService', component: WebServiceA, isIndex: false },

@@ -12,3 +12,6 @@ export { autoChangeImages } from './autoChangeImages';
 export { scrollBanner } from './scrollBanner';
 export { showDrawer } from './showDrawer';
 export { onDrawerClose } from './onDrawerClose';
+export { changeAnchor } from './changeAnchor';
+export { changeDrawer } from './changeDrawer';
+export { changeMode } from './changeMode';

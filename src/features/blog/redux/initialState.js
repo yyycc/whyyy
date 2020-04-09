@@ -94,6 +94,13 @@ const initialState = {
   tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', 'docker', 'git'],
   posts: [
     {
+      title: 'git(2): git的基本指令',
+      date: '2020-04-09', tag: ['git'], route: '/blog/articles/git/commands',
+      summary: 'git多种指令及其功能介绍',
+      recommended: true,
+      key: 20,
+    },
+    {
       title: 'react(2): react实现文字公告滚动轮播',
       date: '2020-04-01', tag: ['frontEnd', 'javascript', 'css', 'react'], route: '/blog/articles/scroll',
       summary: '如何在react中实现滚动轮播',
@@ -205,7 +212,7 @@ const initialState = {
     },
     {
       title: 'git(1): git的三种级别配置以及常用配置',
-      date: '2019-10-18', tag: ['git'], route: '/blog/articles/git',
+      date: '2019-10-18', tag: ['git'], route: '/blog/articles/git/config',
       summary: 'git status git status git status git status git status。。。',
       recommended: true,
       key: 3,
@@ -242,6 +249,7 @@ const initialState = {
     'array': '数组',
     'about': '关于',
     'fLinks': '友链',
+    'articles': '文章',
   },
   fontSize: 14,
   leaveConfirm: true,
@@ -249,6 +257,9 @@ const initialState = {
   animate: animate,
   visible: false,
   dayNightColor: {},
+  drawer: false,
+  mode: 'day',
+  anchorTitle: '',
 };
 
 export default initialState;
