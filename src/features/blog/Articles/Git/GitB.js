@@ -16,7 +16,7 @@ export class GitB extends Component {
   };
 
   render() {
-    const { fontSize leaveConfirm } = this.props.blog;
+    const { fontSize } = this.props.blog;
     const { codes, add, commit } = code;
     return (
       <div className="blog-git-b">
