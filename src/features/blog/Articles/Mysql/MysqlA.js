@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import code from './code';
 import { PreFormat } from '../../Components/PreFormat/PreFormat';
 
 export class MysqlA extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
+    static propTypes = {};
 
   render() {
     const { codes, systemctl, firewall } = code;
-    const { fontSize } = this.props.blog;
     return (
       <div className="blog-mysql-a">
-        <h1>mysql(1): centos 7的服务器下安装mysql</h1>
-        <article style={{ fontSize: `${fontSize}px` }}>
-
         <h2 id="mysql-1-1">1. yum源</h2>
         <p>下载mysql源安装包</p>
         <PreFormat content={codes[0]}/>
@@ -58,27 +47,9 @@ export class MysqlA extends Component {
         <PreFormat content={codes[10]}/>
         <p>如果访问不了，那就是端口没开放，mysql默认端口是3306</p>
         <PreFormat content={firewall}/>
-        </article>
       </div>
     );
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(MysqlA);
+export default MysqlA;

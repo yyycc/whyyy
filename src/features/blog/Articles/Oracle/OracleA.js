@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import { PreFormat } from '../../Components/PreFormat/PreFormat';
 import code from './code';
 
 export class OracleA extends Component {
   static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
   };
 
   render() {
     const { start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls, listen } = code;
-    const { fontSize } = this.props.blog;
     return (
       <div className="blog-oracle-a">
-        <h1>oracle(1)：数据导入导出以及一些常用指令</h1>
-        <article style={{ fontSize: `${fontSize}px` }}>
           <h2 id="oracle-1-1">1. 启动</h2>
           <p>我的oracle是安装在docker容器里面的，所以。。。</p>
           <PreFormat content={start}/>
@@ -79,27 +70,9 @@ export class OracleA extends Component {
           <h2 id="oracle-1-12">12. 监听</h2>
           <p>监听的启动、结束指令</p>
           <PreFormat content={listen}/>
-        </article>
       </div>
     );
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(OracleA);
+export default OracleA;

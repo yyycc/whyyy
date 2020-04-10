@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 
 export class DockerA extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
+    static propTypes = {};
 
   render() {
-    const { fontSize } = this.props.blog;
     const { docker, ssh, codes, yum } = code;
     return (
       <div className="blog-docker-a">
-        <h1>docker(1): 其实就为了装oracle数据库</h1>
-        <article style={{ fontSize: `${fontSize}px` }}>
 
           <h2 id="docker-1-1">1. docker中启动数据库</h2>
           <p>今天早上，um。。。又是无所事事的一个早上，研究了一些乱七八糟的东西，研着研着就到了docker</p>
@@ -66,27 +56,9 @@ export class DockerA extends Component {
           <p>这边提一下docker容器和本地复制文件的命令</p>
           <PreFormat content={codes[4]}/>
           <p>这里的oracle是我的容器的名字</p>
-        </article>
       </div>
     );
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(DockerA);
+export default DockerA;

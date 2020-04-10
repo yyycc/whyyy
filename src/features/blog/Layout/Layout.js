@@ -12,11 +12,26 @@ import MyDrawer from '../Components/Drawer/MyDrawer';
 import AnchorIndex from '../Components/AnchorIndex/AnchorIndex';
 import BlogDetail from '../Components/Drawer/BlogDetail';
 
+/*
+ * @name: layout
+ * @description: 显示header、footer、抽屉、右下角图标等组件
+ */
+
 export class Layout extends Component {
   static propTypes = {
     blog: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
+
+  componentDidMount() {
+    // 监听路由变化
+    // 当路由变换时，把抽屉关掉(我也不想关的，但是我又不知道怎么重新渲染anchor。。。只能暂时先关一关了，呜)//TODO
+    let { changeDrawer } = this.props.actions;
+    this.props.history.listen((e) => {
+      console.log(e);
+      changeDrawer(false);
+    });
+  }
 
   render() {
     const pathname = this.props.location.pathname;
@@ -44,15 +59,10 @@ export class Layout extends Component {
         </div>
         {/*<div className="blog-layout-fix">
           <Tabs/>
-        </div>
-        <div className="blog-layout-container">
-          {display && <div className="blog-layout-container-anchor">
-            <AnchorIndex pathname={this.props.location.pathname} actions={this.props.actions}/>
-          </div>}
         </div>*/}
         <Footer/>
         <MyDrawer id={id} from='right' title={title} action={this.props.actions} blog={this.props.blog}>
-          {(id === 'article' && anchor) && <AnchorIndex anchorTitle={this.props.blog}/>}
+          {(id === 'article' && anchor) && <AnchorIndex/>}
           {(id === 'home') && <BlogDetail/>}
         </MyDrawer>
 

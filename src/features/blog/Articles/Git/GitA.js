@@ -1,34 +1,21 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import urls from './urls';
 import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 import tableCode from './tableCode';
 import { SimpleTable } from '../../Components/SimpleTable/SimpleTable';
-import status from '../../../../images/git_status.png';
-import transfer from '../../../../images/status_transfer.jpeg';
-import zones from '../../../../images/git_zones.jpg';
 import { Link } from 'react-router-dom';
 
 export class GitA extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
+    static propTypes = {};
 
   render() {
     const { urlStates } = urls;
     const { codes, user, alias } = code;
     const { config, configTitles, configName } = tableCode;
-    const { fontSize, leaveConfirm } = this.props.blog;
+      let leaveConfirm = true;
     return (
       <div className="blog-git-a">
-        <h1>git(1): git的三种级别配置以及常用配置</h1>
-        <article style={{ fontSize: `${fontSize}px` }}>
-
           <h2 id="git-1-1">1. mumbling</h2>
           <p>I was just mumbling. Skip it please</p>
           <p>自从开始工作，就开始用git，我记得第一个国庆的时候的任务，就是看git，还记得当时看的是廖雪峰老师的教程。</p>
@@ -40,7 +27,7 @@ export class GitA extends Component {
           <p>当时我们是多分支开发的，有一次我用master merge我的本地分支，但我的本地分支并不是最新的，导致好多提交都丢失了，经过了一上午才修复。</p>
           <p>那之后我一般就先本地merge master再push，再在master下merge远程分支了。。。</p>
           <p>再后来买了git的课程看，了解到它是分布式版本管理(*Distributed Version Control
-            Systems*)，本地就可以是一个完整的仓库，没有远程也可以正常工作等等虽然是分布式的，但不是去中心化的，每个分布还是需要通过中心进行代码交换的。</p>
+              Systems*)，本地就可以是一个完整的仓库，没有远程也可以正常工作等等虽然是分布式的，但不是去中心化的，每个分布还是需要通过中心进行代码交换的。</p>
           <p>但是中心宕机不会影响本地，本地还是可以继续开发，等中心修复再push就可以了。</p>
           <p>后来小哥哥又给我讲了很多，基本上可以覆盖项目所需了。</p>
           <p>最近开始写blog，git总不能落下，好好梳理一下记录下来吧(我觉得这将会是搭blog以来，最长的一篇文了)。</p>
@@ -91,38 +78,17 @@ export class GitA extends Component {
           <h3 id="git-1-3-4">3.4 diff & merge</h3>
 
           {leaveConfirm && <p>
-            <Link to={urlStates[0]}>1.【Git】(1)---工作区、暂存区、版本库、远程仓库</Link><br/>
-            <Link to={urlStates[1]}>2. Git官网</Link><br/>
+              <Link to={urlStates[1]}>1. Git官网</Link><br/>
           </p>}
           {!leaveConfirm &&
           <p>
-            <a href="https://www.cnblogs.com/qdhxhz/p/9757390.html" target="_blank" rel="noopener noreferrer">
-              1.【Git】(1)---工作区、暂存区、版本库、远程仓库</a><br/>
-            <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
-              2. Git官网</a><br/>
+              <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
+                  1. Git官网</a><br/>
           </p>
           }
-        </article>
       </div>
     );
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(GitA);
+export default GitA;

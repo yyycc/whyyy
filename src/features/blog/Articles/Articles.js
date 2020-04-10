@@ -5,12 +5,13 @@ import { connect } from 'react-redux';
 import * as actions from '../redux/actions';
 import ChangeFont from '../Components/ChangeFont/ChangeFont';
 import PostFooter from '../Components/PostFooter/PostFooter';
-// import frame from '../../../images/flower-2.png';
 import BreadCrumb from '../BreadCrumb/BreadCrumb';
-import day from '../../../images/willow.png';
-import night from '../../../images/sakura.png';
+import willow from '../../../images/willow.png';
 
-// import frame from '../../../images/maple.png';
+/*
+ * @name: 文章layout
+ * @description: 显示改编字体、右上角图片、翻页等组件
+ */
 
 export class Articles extends Component {
   static propTypes = {
@@ -19,17 +20,32 @@ export class Articles extends Component {
   };
 
   render() {
-    debugger;
     const pathname = this.props.location.pathname;
-    const { posts, mode, fontSize } = this.props.blog;
-    const display = posts.some((ele) => ele.route === pathname);
+    const { posts, fontSize } = this.props.blog;
+    let articleTitle = '';
+    const display = posts.some((ele) => {
+      if (ele.route === pathname) {
+        articleTitle = ele.title;
+        return true;
+      }
+      return false;
+    });
+    if (!display && pathname === '/blog/articles') {
+      articleTitle = '站内地图';
+    }
     return (
       <div>
         <BreadCrumb props={this.props}/>
         <div className="blog-articles">
-          <img className="blog-articles-img" src={mode === 'day' ? day : night} alt=""/>
-          <ChangeFont props={this.props}/>
-          {React.cloneElement(this.props.children, { fontSize: fontSize })}
+          <img className="blog-articles-img" src={willow} alt=""/>
+          <ChangeFont actions={this.props.actions}/>
+          {/*{this.props.children}*/}
+          <div className="blog-articles-content">
+            <h1>{articleTitle}</h1>
+            <article style={{ fontSize: `${fontSize}px` }}>
+              {this.props.children}
+            </article>
+          </div>
         </div>
         {display && <div className="blog-articles-footer">
           <PostFooter props={this.props}/>

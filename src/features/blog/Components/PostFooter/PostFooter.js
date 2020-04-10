@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import theEnd from '../../../../images/theEnd.png';
 import theEndNight from '../../../../images/theEndNight.jpg';
 import { Link } from 'react-router-dom';
 
+/*
+ * @name: 翻页
+ * @description: 根据传过来的order参数/路径(没有参数是)来找到上下一条数据
+ * @args: this.props
+ */
+
 export class PostFooter extends Component {
   static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
   };
 
   render() {
     let up = '<上一篇', upTitle, upRoute;
     let down = '下一篇>', downTitle, downRoute;
-    const { posts, mode } = this.props.blog;
+    const { posts, mode } = this.props.props.blog;
     let postsInOrder = posts.concat();
     postsInOrder.sort((cur, last) =>
       cur.key - last.key);
@@ -91,21 +91,4 @@ export class PostFooter extends Component {
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(PostFooter);
+export default PostFooter;

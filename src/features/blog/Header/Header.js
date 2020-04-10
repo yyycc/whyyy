@@ -24,7 +24,6 @@ export class Header extends Component {
   }
 
   home(e, fuzzyQueryPosts) {
-    debugger;
     fuzzyQueryPosts('all');
     e.props.history.push('/blog');
   }

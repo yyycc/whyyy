@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 import code from './code';
 
 export class DockerB extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
+    static propTypes = {};
 
   render() {
-    const { fontSize } = this.props.blog;
     const { rm, codes } = code;
     return (
       <div className="blog-docker-b">
-        <h1>docker(2): 又想装一个tomcat了</h1>
-        <article style={{ fontSize: `${fontSize}px` }}>
 
           <h2 id="docker-2-1">1. 拉镜像</h2>
           <p>接下来我想在里面装一个tomcat，把我的axis服务部署在上面</p>
@@ -57,27 +47,9 @@ export class DockerB extends Component {
           <p>根据它提供的路径，进入webapps把我的war放进去,然后重启一下</p>
           <PreFormat content={codes[12]}/>
           <p>再访问一下，可以成功访问到我的服务了，棒！</p>
-        </article>
       </div>
     );
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(DockerB);
+export default DockerB;

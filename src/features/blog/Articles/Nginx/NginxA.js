@@ -1,26 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 import code from './code';
 
 export class NginxA extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
+    static propTypes = {};
 
   render() {
     const {
       transfer, brew, services, check, yum, tars, install, start, nginxConfig, listen,
     } = code;
-    const { fontSize } = this.props.blog;
     return (
       <div className="blog-nginx-a">
-        <h1>nginx(1)：搭建以及项目部署和转发</h1>
-        <article style={{ fontSize: `${fontSize}px` }}>
         <h2 id="nginx-1-1">1. 搭建nginx</h2>
         <h3 id="nginx-1-1-1">1.1. mac</h3>
         <p>我的机子是mac的，我本地装了homebrew，所以我本地的nginx使用homebrew安装的</p>
@@ -61,27 +51,9 @@ export class NginxA extends Component {
         <p>之前项目上有一个任务，是调接口的时候要做一个转发，因为生产服务器在内网，访问不了外网，要调用的服务在外网。</p>
         <p>需要从生产先发请求到中间区域，从中间区域接受请求转发到外网服务。</p>
         <PreFormat content={transfer}/>
-        </article>
       </div>
     );
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(NginxA);
+export default NginxA;

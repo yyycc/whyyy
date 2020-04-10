@@ -1,80 +1,75 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import zones from '../../../../images/git_zones.jpg';
 import status from '../../../../images/git_status.png';
 import transfer from '../../../../images/status_transfer.jpeg';
 import code from './code';
 import { PreFormat } from '../../Components/PreFormat/PreFormat';
+import { Link } from 'react-router-dom';
+import urls from './urls';
 
 export class GitB extends Component {
   static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
   };
 
   render() {
-    const { fontSize } = this.props.blog;
+    const { urlStates } = urls;
+    let leaveConfirm = true;
     const { codes, add, commit } = code;
     return (
       <div className="blog-git-b">
-        <h1>git(2): git的基本指令</h1>
-        <article style={{ fontSize: `${fontSize}px` }}>
-          <h2 id="git-1-1">1. command</h2>
-          <p>git的指令千千万，常用的也就那么几个，可以用git help看一下，每个指令的用处都可以看到，这个离线就可以看，非常方便。</p>
-          <p>你还可以git help -a 一下，所有的指令都可以看到。</p>
-          <p>这边的东西确实非常多，我竟不知道该用一个怎样的顺序来介绍。</p>
+        <h2 id="git-1-1">1. command</h2>
+        <p>git的指令千千万，常用的也就那么几个，可以用git help看一下，每个指令的用处都可以看到，这个离线就可以看，非常方便。</p>
+        <p>你还可以git help -a 一下，所有的指令都可以看到。</p>
+        <p>这边的东西确实非常多，我竟不知道该用一个怎样的顺序来介绍。</p>
 
-          <h3 id="git-1-1-1">1.1. git init</h3>
-          <p>那就先用我这个blog项目作为实验对象，用版本管理起来吧。</p>
+        <h3 id="git-1-1-1">1.1. git init</h3>
+        <p>那就先用我这个blog项目作为实验对象，用版本管理起来吧。</p>
 
-          <p>其实，之前在搭建的时候按照教程已经用了git，还上传了git hub，但之后push主题的时候一直报错。。。好像不支持我改配置。。。就很难受</p>
-          <p>但是，我这个要放到服务器上去的，每次都scp的话太麻烦了，所以还是得传到git hub上，到时候就可以用jenkins部署启动啦。</p>
-          <p>到需要git管理的目录下，我这边是 */Users/ever/lasting/ever-blog/public*，初始化git仓库。</p>
-          <PreFormat content={codes[5]}/>
+        <p>其实，之前在搭建的时候按照教程已经用了git，还上传了git hub，但之后push主题的时候一直报错。。。好像不支持我改配置。。。就很难受</p>
+        <p>但是，我这个要放到服务器上去的，每次都scp的话太麻烦了，所以还是得传到git hub上，到时候就可以用jenkins部署启动啦。</p>
+        <p>到需要git管理的目录下，我这边是 */Users/ever/lasting/ever-blog/public*，初始化git仓库。</p>
+        <PreFormat content={codes[5]}/>
 
-          <p>你会看到多了一个.git目录,之前提到的config配置文件就在这个目录里面，还有很多文件，文件夹，具体都是些啥，我们先不看。</p>
-          <p>init之后，你就可以在这个目录下执行git的众多指令啦。</p>
+        <p>你会看到多了一个.git目录,之前提到的config配置文件就在这个目录里面，还有很多文件，文件夹，具体都是些啥，我们先不看。</p>
+        <p>init之后，你就可以在这个目录下执行git的众多指令啦。</p>
 
-          <h3 id="git-1-1-2">1.2. git add</h3>
-          <p>当然init只是初始化，所有的文件还没有被git管理起来。用 git add 就可以实现对文件的跟踪啦。</p>
-          <PreFormat content={add}/>
+        <h3 id="git-1-1-2">1.2. git add</h3>
+        <p>当然init只是初始化，所有的文件还没有被git管理起来。用 git add 就可以实现对文件的跟踪啦。</p>
+        <PreFormat content={add}/>
 
-          <h3 id="git-1-1-3">1.3. git commit</h3>
-          <p>再用git commit 将文件提交到本地仓库</p>
-          <PreFormat content={commit}/>
+        <h3 id="git-1-1-3">1.3. git commit</h3>
+        <p>再用git commit 将文件提交到本地仓库</p>
+        <PreFormat content={commit}/>
 
-          <p>这边提一句git commit -am，省略了git add步骤，可以直接提交，但是如果是从未被git跟踪过的文件，是不行的，只有git add过的才行。</p>
+        <p>这边提一句git commit -am，省略了git add步骤，可以直接提交，但是如果是从未被git跟踪过的文件，是不行的，只有git add过的才行。</p>
 
-          <h3 id="git-1-1-4">1.4. 4个区和4种状态</h3>
-          <p>上边提到了暂存区、本地仓库，就涉及到了git的四个区：</p>
-          <p>工作区(workspace)、暂存区(Index/Stage)、本地仓库(Repository)、远程仓库(Remote)</p>
+        <h3 id="git-1-1-4">1.4. 4个区和4种状态</h3>
+        <p>上边提到了暂存区、本地仓库，就涉及到了git的四个区：</p>
+        <p>工作区(workspace)、暂存区(Index/Stage)、本地仓库(Repository)、远程仓库(Remote)</p>
 
-          <div className="blog-git-a-img">
-            <img src={zones} alt="git四大区"/>
-            <p>图1. git四大区</p>
-          </div>
+        <div className="blog-git-a-img">
+          <img src={zones} alt="git四大区"/>
+          <p>图1. git四大区</p>
+        </div>
 
-          <p>git中的文件也有多种状态：</p>
-          <p>未跟踪(Untracked)、已入库未修改(Unmodified)、已修改(Modified)、暂存(Staged)、已提交(Committed)</p>
-          <div className="blog-git-a-img">
-            <img src={status} alt="git文件四种状态"/>
-            <p>图2. git文件四种状态</p>
-          </div>
+        <p>git中的文件也有多种状态：</p>
+        <p>未跟踪(Untracked)、已入库未修改(Unmodified)、已修改(Modified)、暂存(Staged)、已提交(Committed)</p>
+        <div className="blog-git-a-img">
+          <img src={status} alt="git文件四种状态"/>
+          <p>图2. git文件四种状态</p>
+        </div>
 
-          <div className="blog-git-a-img">
-            <img src={transfer} alt="状态转变"/>
-            <p>图3. 状态转变</p>
-          </div>
+        <div className="blog-git-a-img">
+          <img src={transfer} alt="状态转变"/>
+          <p>图3. 状态转变</p>
+        </div>
 
-          <p>实际操作一下，就一目了然啦～</p>
-          <p>这边还没有远程仓库，就先到本地仓库为止。</p>
+        <p>实际操作一下，就一目了然啦～</p>
+        <p>这边还没有远程仓库，就先到本地仓库为止。</p>
 
-          <p>目前工作目录有文件index，未跟踪状态进行如下操作</p>
+        <p>目前工作目录有文件index，未跟踪状态进行如下操作</p>
 
-          {/*序号|状态(区)|指令/操作|状态(区)
+        {/*序号|状态(区)|指令/操作|状态(区)
         --|:--:|--:|--:
         1|Untracked(工作目录)|git add index|Staged(暂存区)
         2|Staged(暂存区)|git commit|Committed(本地仓库)
@@ -111,31 +106,26 @@ export class GitB extends Component {
         如果你想重命名某个文件，你可以rm再创建，或者
           <font color=#00FFFF> **git mv** </font>[old name] [new name]。*/}
 
-          <h3 id="git-1-1-5">1.5. git clone</h3>
-          <p>好像有点跑偏，赶紧拉回来，继续说指令</p>
-          <p>用git clone可以把远程项目拉到本地，比如下面是我的项目在github上的url，用git clone就可以拉到本地。</p>
-          <PreFormat content={codes[6]}/>
-        </article>
+        <h3 id="git-1-1-5">1.5. git clone</h3>
+        <p>好像有点跑偏，赶紧拉回来，继续说指令</p>
+        <p>用git clone可以把远程项目拉到本地，比如下面是我的项目在github上的url，用git clone就可以拉到本地。</p>
+        <PreFormat content={codes[6]}/>
+
+        {leaveConfirm && <p>
+          <Link to={urlStates[0]}>1.【Git】(1)---工作区、暂存区、版本库、远程仓库</Link><br/>
+          <Link to={urlStates[1]}>2. Git官网</Link><br/>
+        </p>}
+        {!leaveConfirm &&
+        <p>
+          <a href="https://www.cnblogs.com/qdhxhz/p/9757390.html" target="_blank" rel="noopener noreferrer">
+            1.【Git】(1)---工作区、暂存区、版本库、远程仓库</a><br/>
+          <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
+            2. Git官网</a><br/>
+        </p>
+        }
       </div>
     );
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(GitB);
+export default GitB;

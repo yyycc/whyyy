@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 import pack from '../../../../images/package.png';
@@ -10,19 +6,14 @@ import urls from './urls';
 import { Link } from 'react-router-dom';
 
 export class ReactA extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
+    static propTypes = {};
 
   render() {
     const { urlStates } = urls;
     const { codes, json, dependencies, scripts, json_server, json_route, less, rekit } = code;
-    const { fontSize, leaveConfirm } = this.props.blog;
+      let leaveConfirm = true;
     return (
       <div className="blog-react-a">
-        <h1>react(1): 利用rekit脚手架搭建react项目</h1>
-        <article style={{ fontSize: `${fontSize}px` }}>
           <p>2019年的最后一天。</p>
           <p>好久没写博客了，真的是从善如流，从恶如崩。</p>
           <p>今年最大的收获应该是学习了react吧，虽然才入了个门，不记录一下，可能过完年就忘光了。。。</p>
@@ -50,8 +41,8 @@ export class ReactA extends Component {
 
           <p>下面具体介绍一下，rekit项目的package.json文件,几个主要部分：dependencies，scripts，devDependencies等</p>
           <div className="blog-react-a-img">
-            <img src={pack} alt="package.json"/>
-            <p>图1. package.json</p>
+              <img src={pack} alt="package.json"/>
+              <p>图1. package.json</p>
           </div>
 
           <h4>dependencies</h4>
@@ -114,36 +105,18 @@ export class ReactA extends Component {
           <p>这是最重要的啦，之前说的feature就是他，features中就是项目的各个功能。</p>
           <h2 id="Z-参考">Z. 参考</h2>
           {leaveConfirm && <p>
-            <Link to={urlStates[0]}>1. 配置package.json 使一次npm run start 执行两个指令或者多个指令</Link><br/>
+              <Link to={urlStates[0]}>1. 配置package.json 使一次npm run start 执行两个指令或者多个指令</Link><br/>
           </p>}
           {!leaveConfirm &&
           <p>
-            <a href="https://blog.csdn.net/zhaofuqiangmycomm/article/details/78702125" target="_blank"
-               rel="noopener noreferrer">
-              1. 配置package.json 使一次npm run start 执行两个指令或者多个指令</a><br/>
+              <a href="https://blog.csdn.net/zhaofuqiangmycomm/article/details/78702125" target="_blank"
+                 rel="noopener noreferrer">
+                  1. 配置package.json 使一次npm run start 执行两个指令或者多个指令</a><br/>
           </p>
           }
-        </article>
       </div>
     );
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ReactA);
+export default ReactA;
