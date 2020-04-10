@@ -35,7 +35,7 @@ export default class FixDiv extends Component {
 
         <h2 id="css-1-4">4. transform</h2>
         <p>这样实现基本就ok，但是可能还会有一个问题。</p>
-        <p>即使如果className="blog-home-page-right-fix" 的div 的父亲有transform:translateX()(或者scale()和rotate()
+        <p>如果className="blog-home-page-right-fix" 的div 的父亲有transform:translateX()(或者scale()和rotate()
           未验证)，就会导致fix降级为absolute！！</p>
         <p>即: fixed跟transform不能共存！！！</p>
         <p>讲真，我刚刚发现transform这么美好，这么可爱，这么好用，你就给我当头一棒，告诉我他暗搓搓就把我各种渲染都给改变啦？！！</p>

@@ -11,6 +11,7 @@ import DrawerBar from '../Components/Drawer/DrawerBar';
 import MyDrawer from '../Components/Drawer/MyDrawer';
 import AnchorIndex from '../Components/AnchorIndex/AnchorIndex';
 import BlogDetail from '../Components/Drawer/BlogDetail';
+import ArticlesBrief from '../Components/Drawer/ArticlesBrief';
 
 /*
  * @name: layout
@@ -46,10 +47,13 @@ export class Layout extends Component {
     } else if (pathname === '/blog/articles') {
       id = 'articles';
       title = '文章介绍';
-    } else {
+    } else if (pathname.indexOf('/blog/articles') > -1) {
       id = 'article';
       title = '文章目录';
       anchor = true;
+    } else {
+      id = 'home';
+      title = '站内简介';
     }
     const from = 'right';
     return (
@@ -65,7 +69,8 @@ export class Layout extends Component {
         <Footer/>
         <MyDrawer id={id} from='right' title={title} action={this.props.actions} blog={this.props.blog}>
           {(id === 'article' && anchor) && <AnchorIndex/>}
-          {(id === 'home') && <BlogDetail/>}
+          {id === 'home' && <BlogDetail/>}
+          {id === 'articles' && <ArticlesBrief blog={this.props.blog}/>}
         </MyDrawer>
 
         <div className="blog-layout-right-bottom-fix" style={{ display: `${display}` }}>
