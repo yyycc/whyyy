@@ -8,8 +8,7 @@ import { Input } from 'antd';
  */
 
 export class Header extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
   change(changeMode) {
     let list = document.getElementsByTagName('body')[0].classList;
@@ -23,20 +22,20 @@ export class Header extends Component {
     }
   }
 
-  home(e, fuzzyQueryPosts) {
-    fuzzyQueryPosts('all');
-    e.props.history.push('/blog');
+  home(history, fuzzyQueryPosts, value) {
+    fuzzyQueryPosts(value);
+    history.push('/blog');
   }
 
   render() {
     const { Search } = Input;
-    const { fuzzyQueryPosts, changeMode } = this.props.props.actions;
+    const { fuzzyQueryPosts, changeMode } = this.props.actions;
     return (
       <header className="blog-header">
         <div className="blog-header-name"> whyyy his blog</div>
         {/*<div className="blog-header-motto"> |每天都努力地搬砖</div>*/}
         <div className="blog-header-home">
-          <div className="blog-header-home-page" onClick={() => this.home(this.props, fuzzyQueryPosts)}>
+          <div className="blog-header-home-page" onClick={() => this.home(this.props.history, fuzzyQueryPosts, 'all')}>
             <i className="fa fa-home"> </i>
             <a>首页</a>
             {/*<Link to="/blog">首页</Link>*/}
@@ -49,7 +48,7 @@ export class Header extends Component {
         <div className="blog-header-search">
           <Search
             placeholder="搜索文章标题"
-            onSearch={value => fuzzyQueryPosts(value)}
+            onSearch={value => this.home(this.props.history, fuzzyQueryPosts, value)}
             style={{ width: 200 }}
           />
         </div>

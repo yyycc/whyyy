@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 
 /*
  * @name: 归档
@@ -12,19 +8,19 @@ import * as actions from '../../redux/actions';
  */
 
 export class Collections extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
+  static propTypes = {};
 
   render() {
-    const { posts } = this.props.blog;
+    const { posts, international } = this.props.blog;
     const { queryPostsByDate, queryPostsByTag } = this.props.actions;
     const dates = posts.map((ele) => ele['date'].slice(0, 7)).sort(); // 获取年月
     let datesCount = {};
+    let typeCount = { 'frontEnd': 0, 'java': 0, 'linux': 0, 'database': 0, 'git': 0 };
     let lastDate = dates[0];
     let count = 1;
     let counts = dates.length;
+    let type = ['frontEnd', 'java', 'linux', 'database', 'git'];
+
     // 获取每个月份的blogs数量
     dates.forEach((ele, index) => {
       if (index > 0) {
@@ -48,8 +44,18 @@ export class Collections extends Component {
       }
       lastDate = ele;
     });
+    // 获取各种类型的blogs数量
+    type.forEach((ele, index) => {
+      posts.forEach((e, i) => {
+        if (e.tag.indexOf(ele) > -1) {
+          typeCount[ele]++;
+        }
+      });
+    });
     const datesList = Object.keys(datesCount);
     const countsList = Object.values(datesCount);
+    const typeList = Object.keys(typeCount);
+    const typeCountsList = Object.values(typeCount);
     return (
       <div className="blog-collections">
         <div className="blog-collections-titles">
@@ -70,18 +76,18 @@ export class Collections extends Component {
           <div className="blog-collections-lists-date">
             {
               datesList.map((ele, index) => {
-                const listName = ele.split('-')[0] + '年' + ele.split('-')[1] + '月(' + countsList[index] + ')';
+                let listName = ele.split('-')[0] + '年' + ele.split('-')[1] + '月(' + countsList[index] + ')';
                 return <li onClick={() => queryPostsByDate(ele)} key={index}>
                   <i className="fa fa-calendar"/>{listName}</li>;
               })
             }
           </div>
           <div className="blog-collections-lists-type">
-            <li onClick={() => queryPostsByTag('frontEnd')}><i className="fa fa-bookmark-o"/>前端(6)</li>
-            <li onClick={() => queryPostsByTag('java')}><i className="fa fa-bookmark-o"/>后端(1)</li>
-            <li onClick={() => queryPostsByTag('linux')}><i className="fa fa-bookmark-o"/>linux(3)</li>
-            <li onClick={() => queryPostsByTag('database')}><i className="fa fa-bookmark-o"/>数据库(2)</li>
-            <li onClick={() => queryPostsByTag('git')}><i className="fa fa-bookmark-o"/>版本管理(2)</li>
+            {typeList.map((ele, index) => {
+              let listName = international[ele] + '(' + typeCountsList[index] + ')';
+              return <li onClick={() => queryPostsByTag(ele)} key={index}>
+                <i className="fa fa-bookmark-o"/>{listName}</li>;
+            })}
           </div>
         </div>
       </div>
@@ -89,21 +95,4 @@ export class Collections extends Component {
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Collections);
+export default Collections;

@@ -49,3 +49,4 @@ export { default as Online } from './Notice/Online/Online';
 export { default as DrawerBar } from './Components/Drawer/DrawerBar';
 export { default as BlogDetail } from './Components/Drawer/BlogDetail';
 export { default as GitB } from './Articles/Git/GitB';
+export { default as FixDiv } from './Articles/Css/FixDiv';

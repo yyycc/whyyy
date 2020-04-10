@@ -1,6 +1,5 @@
 import Luffy from '../../../../images/index.png';
 import linux from '../../../../images/index-linux.jpg';
-import javaScript from '../../../../images/index-js.png';
 import react from '../../../../images/react-1.png';
 
 const images = [Luffy, linux, react];

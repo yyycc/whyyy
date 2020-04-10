@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import { Link } from 'react-router-dom';
-// import array from '../../../../images/array.jpeg';
-// import linux from '../../../../images/linux.jpeg';
-// import git from '../../../../images/git.jpg';
-// import oracle from '../../../../images/oracle.png';
-
 import array from '../../../../images/tree.png';
 import linux from '../../../../images/cute-penguin.png';
 import linux2 from '../../../../images/scraf-penguin.png';
@@ -16,10 +7,7 @@ import git from '../../../../images/snow-cat.png';
 import oracle from '../../../../images/underline.png';
 
 export class RecommendedPost extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
+  static propTypes = {};
 
   render() {
     const images = [git, array, linux, linux2, git, oracle];
@@ -51,21 +39,4 @@ export class RecommendedPost extends Component {
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(RecommendedPost);
+export default RecommendedPost;

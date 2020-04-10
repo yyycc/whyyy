@@ -18,7 +18,7 @@ const codes = [
   'content: "\\f2b9"',
   'npm install --save font-awesome',
   '@import \'～/node_modules/font-awesome/css/font-awesome.min.css\';',
-
+  'window.addEventListener(\'scroll\', this.scroll);',
 ];
 
 const link = '<head>\n' +
@@ -38,6 +38,36 @@ const i = '<li>\n' +
   '  <i>&#xf2b9;</i>\n' +
   '</li>';
 
+const fixDiv = '<div className="blog-home-page">\n' +
+  '  <div className="blog-home-page-top">\n' +
+  '  </div>\n' +
+  '  <div className="blog-home-page-bottom">\n' +
+  '    <div className="blog-home-page-left">\n' +
+  '      ...\n' +
+  '    </div>\n' +
+  '    <div className="blog-home-page-right">\n' +
+  '      <div>...</div>\n' +
+  '      <div>...</div>\n' +
+  '      <div className="blog-home-page-right-fix">\n' +
+  '        <div>...</div>\n' +
+  '      </div>\n' +
+  '    </div>\n' +
+  '  </div>\n' +
+  '</div>';
+
+const scroll = 'scroll() {\n' +
+  '  let a = document.getElementsByClassName(\'blog-home-page-right-fix\')[0];\n' +
+  '  if (!!a) {\n' +
+  '    if (window.scrollY > 440) {\n' +
+  '      a.style.position = \'fixed\';\n' +
+  '      a.style.top = \'34px\';\n' +
+  '      a.style.width = \'inherit\';\n' +
+  '    } else {\n' +
+  '      a.style.position = \'static\';\n' +
+  '    }\n' +
+  '  }\n' +
+  '}';
+
 const code = {
   div,
   p,
@@ -46,6 +76,8 @@ const code = {
   codes,
   link,
   i,
+  fixDiv,
+  scroll,
 };
 
 export default code;

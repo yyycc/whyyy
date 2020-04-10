@@ -94,6 +94,12 @@ const initialState = {
   tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', 'docker', 'git'],
   posts: [
     {
+      title: 'css(3): div滚动到一定程度后固定',
+      date: '2020-04-10', tag: ['frontEnd', 'css'], route: '/blog/articles/css/div-fix',
+      summary: '如何在react中实现滚动轮播',
+      key: 21,
+    },
+    {
       title: 'git(2): git的基本指令',
       date: '2020-04-09', tag: ['git'], route: '/blog/articles/git/commands',
       summary: 'git多种指令及其功能介绍',
@@ -147,7 +153,7 @@ const initialState = {
     {
       title: 'linux指令(1): vi、cp、tail指令扩展',
       date: '2020-01-07', tag: ['linux'], route: '/blog/articles/linux/vi',
-      summary: 'linux指令万万千，用一个百度一个，百度一个忘一个。。。',
+      summary: 'linux指令vi、cp、tail介绍',
       recommended: true,
       key: 12,
     },
@@ -170,8 +176,7 @@ const initialState = {
       title: 'react(1): 利用rekit脚手架搭建react项目',
       date: '2019-12-31', tag: ['frontEnd', 'react'], route: '/blog/articles/react/rekit',
       summary: '2019年的最后一天。\n' +
-        '好久没写博客了，真的是从善如流，从恶如崩。\n' +
-        '今年最大的收获应该是学习了react吧，虽然才入了个门，不记录一下，可能过完年就忘光了。。。',
+        '好久没写博客了，真的是从善如流，从恶如崩。今年最大的收获应该是学习了react吧，虽然才入了个门，不记录一下，可能过完年就忘光了。。。',
       key: 9,
     },
     {
@@ -250,6 +255,10 @@ const initialState = {
     'about': '关于',
     'fLinks': '友链',
     'articles': '文章',
+    'frontEnd': '前端',
+    'java': 'java',
+    'git': '版本管理',
+
   },
   fontSize: 14,
   leaveConfirm: true,

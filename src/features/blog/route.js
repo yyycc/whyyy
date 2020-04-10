@@ -31,6 +31,7 @@ import {
   Sentences,
   Online,
   HomePage,
+  FixDiv,
 } from './';
 import { PageNotFound } from '../common';
 
@@ -50,6 +51,7 @@ export default {
 
         { path: 'css/fontAwesome', name: 'css', component: CssB, isIndex: false },
         { path: 'css/img-center', name: 'css', component: CssA, isIndex: false },
+        { path: 'css/div-fix', name: 'css', component: FixDiv, isIndex: false },
 
         { path: 'linux/commands', name: 'linux', component: LinuxB, isIndex: false },
         { path: 'linux/vi', name: 'linux', component: LinuxA, isIndex: false },

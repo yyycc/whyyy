@@ -27,7 +27,8 @@ export class LeaveConfirm extends Component {
             <h3>即将离开whyyy的博客</h3>
             <p>常肥来看看~~</p>
             <p>{this.props.location.state}</p>
-            <a href={this.props.location.state} target="_blank" rel="noopener norefferrer">
+            <a onClick={() => this.goBack(this.props)} href={this.props.location.state} target="_blank"
+               rel="noopener norefferrer">
               继续访问</a>
             <a onClick={() => this.goBack(this.props)}>
               返回上一层</a>

@@ -39,7 +39,6 @@ export class Articles extends Component {
         <div className="blog-articles">
           <img className="blog-articles-img" src={willow} alt=""/>
           <ChangeFont actions={this.props.actions}/>
-          {/*{this.props.children}*/}
           <div className="blog-articles-content">
             <h1>{articleTitle}</h1>
             <article style={{ fontSize: `${fontSize}px` }}>
