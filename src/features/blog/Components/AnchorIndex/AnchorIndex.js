@@ -16,7 +16,7 @@ export class AnchorIndex extends Component {
     const h3 = Array.prototype.slice.call(document.getElementsByTagName('h3'));
     return (
       <div className="blog-anchor-index">
-        <Anchor affix={false}>
+        <Anchor affix={false} offsetTop={60}>
           {h2.map((ele, index) => {
             let href = '#' + ele.id;
             return <Link key={index} href={href} title={ele.innerText}>

@@ -29,7 +29,9 @@ export class Layout extends Component {
     let { changeDrawer } = this.props.actions;
     this.props.history.listen((e) => {
       console.log(e);
-      changeDrawer(false);
+      // 如果是文章内部定位，则不能关闭抽屉
+      if (e.hash === '')
+        changeDrawer(false);
     });
   }
 
