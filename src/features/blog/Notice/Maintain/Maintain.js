@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import world from '../../../../images/new-world.jpeg';
 
 export class Maintain extends Component {
 
@@ -6,7 +7,15 @@ export class Maintain extends Component {
     return (
       <div className="blog-maintain">
         <h1>维护公告</h1>
-        <p>不定期维护</p>
+        <article>
+          <br/>
+          <p>本站会进行不定期维护</p>
+          <p>维护时间一般在深夜</p>
+          <p>如果无法访问</p>
+          <p>请睡醒后继续尝试</p>
+          <p>谢谢～～</p>
+          <img src={world} alt=''/>
+        </article>
       </div>
     );
   }
