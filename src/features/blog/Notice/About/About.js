@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import luffy from '../../../../images/luffy.jpg';
 
 export class About extends Component {
   static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
   };
 
   render() {
-    const { fontSize } = this.props.blog;
     return (
       <div className="blog-about">
         <h1>关于</h1>
-        <article style={{ fontSize: `${fontSize}px` }}>
+        <article>
           <h2>关于博主</h2>
           <p>程序员一名</p>
           <p>资深小白</p>
@@ -46,21 +39,4 @@ export class About extends Component {
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(About);
+export default About;
