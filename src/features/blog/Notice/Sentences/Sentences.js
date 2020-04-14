@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
 import scroll from '../../../blog/Components/ScrollText/scroll';
+import flower from '../../../../images/floating-flowers.png';
 
 export class Sentences extends Component {
   static propTypes = {
@@ -16,13 +17,22 @@ export class Sentences extends Component {
     return (
       <div className="blog-sentences">
         <div className="blog-sentences-list-bg">
-          <ol className="blog-sentences-list-bg-ol">
-            {
-              sentences.map((ele, index) => {
-                return <li key={index}>{ele}</li>;
-              })
-            }
-          </ol>
+          <h1>everyday sentences</h1>
+          <div className="blog-sentences-list-img">
+            <img src={flower} alt=''/>
+            <img src={flower} alt=''/>
+            <img src={flower} alt=''/>
+            <img src={flower} alt=''/>
+          </div>
+          <div className="blog-sentences-list-ol">
+            <ol className="blog-sentences-list-bg-ol">
+              {
+                sentences.map((ele, index) => {
+                  return <li key={index}>{ele}</li>;
+                })
+              }
+            </ol>
+          </div>
         </div>
       </div>
     );

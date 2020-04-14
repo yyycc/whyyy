@@ -4,7 +4,7 @@ const start = 'docker start oracle\n' +
 const dba = 'select * from v$version;        // 查数据库版本\n' +
   '$ select * from dba_directories;  // 查出数据库的DATA_PUMP_DIR\n' +
   '$ select * from dba_users; \t   // 查出所有用户\n' +
-  '$ select default_tablespace from dba_users where username=‘登录用户’;   // 查看该用户的默认表空间\n';
+  '$ select default_tablespace from dba_users where username=\'登录用户\';   // 查看该用户的默认表空间';
 
 const occupy = 'select a.tablespace_name,a.total,b.free from( select tablespace_name,sum(bytes)/1024/1024 || \'M\'\n' +
   '        total from dba_data_files\n' +
@@ -58,7 +58,7 @@ const excel = 'set linesize 1000 pagesize 0 echo off termout off trimout on trim
   'exit';
 
 const oracle = 'shutdown immediat;\n' +
-  'startup';
+  'startup;';
 
 const sqls = [
   'su - oracle',
@@ -74,7 +74,21 @@ const sqls = [
 
 const listen = 'lsnrctl stop;\n' +
   'lsnrctl start;\n' +
-  'lsnrctl status;\n';
+  'lsnrctl status;';
+
+const compile = 'declare\n' +
+  '    objowner varchar2(50) := \'nw_dev\';\n' +
+  'begin\n' +
+  '    for obj in (select * from all_objects where status = \'INVALID\' and object_type in (\'PROCEDURE\', \'FUNCTION\', \'VIEW\', \'TRIGGER\') and owner=upper(objowner))\n' +
+  '    loop\n' +
+  '        begin\n' +
+  '            execute immediate \'alter \' ||obj.object_type|| \' \' ||obj.object_name || \' compile\';\n' +
+  '        exception\n' +
+  '            when others then\n' +
+  '                dbms_output.put_line(sqlerrm);\n' +
+  '        end;\n' +
+  '    end loop;\n' +
+  'end;';
 
 const code = {
   start,
@@ -88,6 +102,7 @@ const code = {
   oracle,
   sqls,
   listen,
+  compile,
 };
 
 export default code;
