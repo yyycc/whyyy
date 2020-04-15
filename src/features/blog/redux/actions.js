@@ -15,3 +15,4 @@ export { onDrawerClose } from './onDrawerClose';
 export { changeAnchor } from './changeAnchor';
 export { changeDrawer } from './changeDrawer';
 export { changeMode } from './changeMode';
+export { changeSentences } from './changeSentences';

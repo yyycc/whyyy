@@ -13,12 +13,33 @@ export class Header extends Component {
   change(changeMode) {
     let list = document.getElementsByTagName('body')[0].classList;
     let nightMode = 'reader-night-mode';
-    if (list.contains('reader-night-mode')) {
-      list.remove(nightMode);
+    let orangeMode = 'reader-orange-mode';
+    if (list.contains(nightMode)) {
+      for (let i = 0; i < list.length; i++) {
+        list.remove(list[i]);
+      }
       changeMode('day');
     } else {
       list.add(nightMode);
+      list.add(orangeMode);
       changeMode('night');
+    }
+  }
+
+  changeColor(color) {
+    let list = document.getElementsByTagName('body')[0].classList;
+    let mode = 'reader-' + color + '-mode';
+    if (list.contains(mode)) {
+      list.remove(mode);
+    } else {
+      list.add(mode);
+    }
+    let nightMode = 'reader-night-mode';
+    let orangeMode = 'reader-orange-mode';
+    if (list.contains(nightMode)) {
+      list.remove(orangeMode);
+      list.remove(nightMode);
+      list.add(nightMode);
     }
   }
 
@@ -53,6 +74,9 @@ export class Header extends Component {
           />
         </div>
         <div className="blog-header-menu">
+          <div className="blog-header-menu-mode" style={{ display: 'none' }} onClick={() => this.changeColor('green')}>
+            <i className="fa fa-code-fork"> </i>
+          </div>
           <div className="blog-header-menu-mode" onClick={() => this.change(changeMode)}>
             <i className="fa fa-moon-o"> </i>
           </div>

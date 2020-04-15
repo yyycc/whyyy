@@ -9,7 +9,7 @@
 import scroll from '../Components/ScrollText/scroll';
 import carousel from '../Components/CarouselIndex/carousel';
 
-const { texts, animate } = scroll;
+const { texts, animate, sentences } = scroll;
 const { imageIndex, images, imageRoutes } = carousel;
 const initialState = {
   h2: {
@@ -96,7 +96,7 @@ const initialState = {
     {
       title: 'css(3): div滚动到一定程度后固定',
       date: '2020-04-10', tag: ['frontEnd', 'css'], route: '/blog/articles/css/div-fix',
-      summary: '如何在react中实现滚动轮播',
+      summary: '实现div滚动到一定程度后在页面上固定',
       key: 21,
     },
     {
@@ -241,6 +241,10 @@ const initialState = {
   postsToDisplay: [],
   postsQueried: [],
   current: 1,
+  sentencesCurrent: 1,
+  sentencesToDisplay: [],
+  sentences: sentences,
+  sentencesSize: 20,
   images: images,
   imageRoutes: imageRoutes,
   imageIndex: imageIndex,

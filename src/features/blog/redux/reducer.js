@@ -24,6 +24,7 @@ import { reducer as onDrawerCloseReducer } from './onDrawerClose';
 import { reducer as changeAnchorReducer } from './changeAnchor';
 import { reducer as changeDrawerReducer } from './changeDrawer';
 import { reducer as changeModeReducer } from './changeMode';
+import { reducer as changeSentencesReducer } from './changeSentences';
 
 const reducers = [
   changePageReducer,
@@ -43,6 +44,7 @@ const reducers = [
   changeAnchorReducer,
   changeDrawerReducer,
   changeModeReducer,
+  changeSentencesReducer,
 ];
 
 export default function reducer(state = initialState, action) {

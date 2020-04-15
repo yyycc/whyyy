@@ -10,8 +10,8 @@ export default class Online extends Component {
         <h1>上线通知</h1>
         <article>
           <br/>
-          <p>上线啦</p>
-          <p>本站于20XX年0X月XX日正式上线</p>
+          <p>whyyy his blog 上线啦</p>
+          <p>本站于2020年04月14日正式上线</p>
           <img src={online} alt=''/>
         </article>
       </div>

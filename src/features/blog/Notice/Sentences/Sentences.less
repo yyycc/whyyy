@@ -1,24 +1,35 @@
 @import '../../../../styles/mixins';
 
-@keyframes flowerMove {
+@keyframes roll1 {
   0% {
-    margin-left: 0;
-  }
-  90% {
-    margin-left: -1000px;
+    left: 0;
+    top: 0;
   }
   100% {
-    margin-left: 0px;
+    left: 100%;
+    top: 0;
+  }
+}
+
+@keyframes roll2 {
+  0% {
+    left: -100%;
+    top: 0;
+  }
+  100% {
+    left: 0;
+    top: 0;
   }
 }
 
 .blog-sentences {
+  margin: 0 80px;
   min-height: 800px;
   background: -webkit-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(4, 158, 196, 0.9) 80%);
-  //background: url("../../../../images/floating-flowers.png") repeat;
   background-size: 1000px;
 
   .blog-sentences-list-bg-ol {
+    font-size: 16px;
     li {
       padding: 3px 0;
       transition: all .5s;
@@ -42,22 +53,53 @@
   }
 
   .blog-sentences-list-bg {
+    position: relative;
 
     .blog-sentences-list-ol {
-      margin-top: -740px;
+      position: absolute;
+      margin-top: 10px;
+    }
+
+    .blog-sentences-list-pagination {
+      position: absolute;
+      top: 750px;
+      left: 10px
     }
 
     .blog-sentences-list-img {
       display: flex;
       overflow: hidden;
       width: 100%;
+      height: 750px;
+      position: absolute;
+
+      img {
+        width: 100%;
+        height: 750px;
+        position: absolute;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: 15s;
+      }
+
+      .blog-sentences-list-img-1 {
+        animation-name: roll1;
+      }
+
+      .blog-sentences-list-img-2 {
+        animation-name: roll2;
+      }
     }
 
-    img {
-      width: 1000px;
-      height: 750px;
-      animation: flowerMove 30s linear infinite;
-      -webkit-animation: flowerMove 30s linear infinite;
-    }
   }
+}
+
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+  background: none;
+}
+
+.ant-pagination-simple .ant-pagination-simple-pager input {
+  padding: 0;
+  border: none !important;
+  background-color: rgba(4, 158, 196, 0.9);
 }
