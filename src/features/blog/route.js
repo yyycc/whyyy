@@ -5,33 +5,23 @@ import {
   Layout,
   Articles,
   Promote,
-  DockerA,
-  DockerB,
+  DockerA, DockerB,
   Array,
-  WebServiceA,
-  WebServiceB,
+  WebServiceA, WebServiceB,
   NginxA,
   OracleA,
   SecureShellA,
   MysqlA,
   SpringA,
-  CssA,
-  CssB,
+  Css, CssA, CssB, CssC, FixDiv,
   ReactA,
   Ntfs,
-  LinuxA,
-  LinuxB,
-  GitA,
-  GitB,
-  About,
-  FLinks,
-  Maintain,
+  LinuxA, LinuxB,
+  GitA, GitB,
+  About, FLinks, Maintain, Sentences, Online,
   ScrollBanner,
   ArticlesList,
-  Sentences,
-  Online,
   HomePage,
-  FixDiv,
 } from './';
 import { PageNotFound } from '../common';
 
@@ -49,9 +39,12 @@ export default {
         { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
         { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
 
+        { path: 'css', name: 'css', component: Css, isIndex: false },
         { path: 'css/fontAwesome', name: 'css', component: CssB, isIndex: false },
         { path: 'css/img-center', name: 'css', component: CssA, isIndex: false },
         { path: 'css/div-fix', name: 'css', component: FixDiv, isIndex: false },
+        { path: 'css/css', name: 'css', component: CssC, isIndex: false },
+        { path: 'css/scroll', name: 'scroll', component: ScrollBanner, isIndex: false },
 
         { path: 'linux/commands', name: 'linux', component: LinuxB, isIndex: false },
         { path: 'linux/vi', name: 'linux', component: LinuxA, isIndex: false },
@@ -68,8 +61,6 @@ export default {
         { path: 'webService/cxf', name: 'webService', component: WebServiceA, isIndex: false },
 
         { path: 'java/spring/propagation', name: 'spring', component: SpringA, isIndex: false },
-
-        { path: 'scroll', name: 'scroll', component: ScrollBanner, isIndex: false },
 
         { path: 'mac/ntfs', name: 'ntfs', component: Ntfs, isIndex: false },
 

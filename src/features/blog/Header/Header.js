@@ -15,8 +15,9 @@ export class Header extends Component {
     let nightMode = 'reader-night-mode';
     let orangeMode = 'reader-orange-mode';
     if (list.contains(nightMode)) {
-      for (let i = 0; i < list.length; i++) {
-        list.remove(list[i]);
+      let length = list.length;
+      for (let i = 0; i < length; i++) {
+        list.remove(list[0]);
       }
       changeMode('day');
     } else {
@@ -51,6 +52,7 @@ export class Header extends Component {
   render() {
     const { Search } = Input;
     const { fuzzyQueryPosts, changeMode } = this.props.actions;
+    const mode = this.props.mode;
     return (
       <header className="blog-header">
         <div className="blog-header-name"> whyyy his blog</div>
@@ -77,7 +79,8 @@ export class Header extends Component {
           <div className="blog-header-menu-mode" style={{ display: 'none' }} onClick={() => this.changeColor('green')}>
             <i className="fa fa-code-fork"> </i>
           </div>
-          <div className="blog-header-menu-mode" onClick={() => this.change(changeMode)}>
+          <div title={mode === 'day' ? '夜间模式' : '日间模式'} className="blog-header-menu-mode"
+               onClick={() => this.change(changeMode)}>
             <i className="fa fa-moon-o"> </i>
           </div>
           <div className="blog-header-menu-about">

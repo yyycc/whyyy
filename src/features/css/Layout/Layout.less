@@ -1,0 +1,64 @@
+@import '../../../styles/mixins';
+
+.css-layout {
+  .css-layout-head {
+    .css-layout-head-blog-title {
+      font-family: fantasy;
+      font-size: 30px;
+      padding: 15px 0 10px 40px;
+      margin: 0;
+      background-color: #f0f0ff;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .css-layout-head-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 5px 0;
+      margin: 0;
+      background-color: #e0f0ff;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .css-layout-body {
+    display: flex;
+
+    h3 {
+      line-height: 30px;
+      margin: 0;
+      font-size: 15px;
+      background: #f0f3f9;
+      padding-left: 10px;
+      border-bottom: 1px solid #ededed;
+      color: #4e4e4e;
+      text-shadow: 0 1px 0 white;
+    }
+
+    .css-layout-body-code {
+      width: 50%;
+      border-right: 3px solid #eee;
+      border-bottom: 3px solid #eee;
+
+      .css-layout-body-code-content {
+        padding: 20px;
+      }
+    }
+
+    .css-layout-body-effect {
+      width: 50%;
+      border-bottom: 2px solid #eee;
+
+      .css-layout-body-code-effect {
+        padding: 20px;
+      }
+    }
+  }
+}

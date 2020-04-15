@@ -19,6 +19,7 @@ const codes = [
   'npm install --save font-awesome',
   '@import \'～/node_modules/font-awesome/css/font-awesome.min.css\';',
   'window.addEventListener(\'scroll\', this.scroll);',
+  'margin: auto',
 ];
 
 const link = '<head>\n' +
@@ -67,6 +68,7 @@ const scroll = 'scroll() {\n' +
   '    }\n' +
   '  }\n' +
   '}';
+
 
 const code = {
   div,

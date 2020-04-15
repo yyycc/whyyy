@@ -17,6 +17,7 @@
   margin-bottom: 40px;
 }
 
+// 文章样式
 article {
   padding: 10px 20px 10px 20px;
 
@@ -31,18 +32,48 @@ article {
   pre, table {
     margin-left: 10px;
   }
+
+  .fa {
+    padding-left: 10px;
+  }
+
+  .fa:hover {
+    transform: translateX(-8px);
+    transition: all 0.5s;
+  }
 }
 
 h1 {
-  //background-color: #f8f8f8;
   text-align: center;
   padding-top: 4px;
   padding-bottom: 4px;
-  //border-right: 5px solid #c40000;
-  //border-left: 5px solid #c40000;
   margin-bottom: 0;
 }
 
 img {
   margin: 5px auto;
+}
+
+// ol列表样式
+ol {
+  li {
+    padding: 3px 0;
+    transition: all .5s;
+  }
+
+  li:hover {
+    transform: translateX(30px);
+  }
+
+  li:hover {
+    color: #c40000;
+
+    a {
+      color: #c40000;
+    }
+  }
+
+  a {
+    color: #404040;
+  }
 }

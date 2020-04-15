@@ -51,3 +51,5 @@ export { default as BlogDetail } from './Components/Drawer/BlogDetail';
 export { default as GitB } from './Articles/Git/GitB';
 export { default as FixDiv } from './Articles/Css/FixDiv';
 export { default as ArticlesBrief } from './Components/Drawer/ArticlesBrief';
+export { default as CssC } from './Articles/Css/CssC';
+export { default as Css } from './Articles/Topic/Css';

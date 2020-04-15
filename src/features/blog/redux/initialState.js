@@ -91,10 +91,16 @@ const initialState = {
     { title: 'server', name: '服务端', menu: [] }],
   tabFixed: false,
   top: 0, // 面包屑的margin-top
-  tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', 'docker', 'git'],
+  tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', 'docker', 'git', 'css'],
   posts: [
     {
-      title: 'css(3): div滚动到一定程度后固定',
+      title: 'css(5): css介绍',
+      date: '2020-04-10', tag: ['frontEnd', 'css'], route: '/blog/articles/css/css',
+      summary: '关于使用css实现你想要的UI效果',
+      key: 21,
+    },
+    {
+      title: 'css(4): div滚动到一定程度后固定',
       date: '2020-04-10', tag: ['frontEnd', 'css'], route: '/blog/articles/css/div-fix',
       summary: '实现div滚动到一定程度后在页面上固定',
       key: 21,
@@ -107,8 +113,8 @@ const initialState = {
       key: 20,
     },
     {
-      title: 'react(2): react实现文字公告滚动轮播',
-      date: '2020-04-01', tag: ['frontEnd', 'javascript', 'css', 'react'], route: '/blog/articles/scroll',
+      title: 'css(3): 文字公告滚动轮播',
+      date: '2020-04-01', tag: ['frontEnd', 'javascript', 'css', 'react'], route: '/blog/articles/css/scroll',
       summary: '如何在react中实现滚动轮播',
       key: 19,
     },
