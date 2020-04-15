@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { DefaultPage } from '../../../src/features/home/DefaultPage';
+import DefaultPage from '../../../src/features/home/DefaultPage';
 
 describe('blog/DefaultPage', () => {
   it('renders node with correct class name', () => {
@@ -9,11 +9,11 @@ describe('blog/DefaultPage', () => {
       actions: {},
     };
     const renderedComponent = shallow(
-      <DefaultPage {...props} />
+      <DefaultPage {...props} />,
     );
 
     expect(
-      renderedComponent.find('.blog-default-page').length
+      renderedComponent.find('.blog-default-page').length,
     ).toBe(1);
   });
 });

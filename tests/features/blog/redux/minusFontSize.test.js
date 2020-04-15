@@ -22,7 +22,7 @@ describe('blog/redux/minusFontSize', () => {
     expect(state).not.toBe(prevState);
 
     // TODO: use real case expected value instead of {}.
-    const expectedState = {};
+    const expectedState = { fontSize: state.fontSize - 1 };
     expect(state).toEqual(expectedState);
   });
 });

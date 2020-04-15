@@ -12,17 +12,17 @@ describe('blog/redux/autoChangeImages', () => {
     expect(autoChangeImages()).toHaveProperty('type', BLOG_AUTO_CHANGE_IMAGES);
   });
 
-  it('handles action type BLOG_AUTO_CHANGE_IMAGES correctly', () => {
+  it('handles action type BLOG_AUTO_CHANGE_IMAGES correctly', (max) => {
     const prevState = {};
     const state = reducer(
       prevState,
-      { type: BLOG_AUTO_CHANGE_IMAGES },
+      { type: BLOG_AUTO_CHANGE_IMAGES, max: max - 1 },
     );
     // Should be immutable
     expect(state).not.toBe(prevState);
 
     // TODO: use real case expected value instead of {}.
-    const expectedState = {};
+    const expectedState = { imageIndex: state.imageIndex === max ? 0 : ++state.imageIndex };
     expect(state).toEqual(expectedState);
   });
 });

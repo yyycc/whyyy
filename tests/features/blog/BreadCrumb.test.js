@@ -6,7 +6,6 @@ describe('blog/BreadCrumb', () => {
   it('renders node with correct class name', () => {
     const props = {
       blog: {},
-      actions: {},
     };
     const renderedComponent = shallow(
       <BreadCrumb {...props} />

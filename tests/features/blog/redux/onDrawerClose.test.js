@@ -22,7 +22,7 @@ describe('blog/redux/onDrawerClose', () => {
     expect(state).not.toBe(prevState);
 
     // TODO: use real case expected value instead of {}.
-    const expectedState = {};
+    const expectedState = { visible: false };
     expect(state).toEqual(expectedState);
   });
 });

@@ -12,17 +12,26 @@ describe('blog/redux/queryPostsByDate', () => {
     expect(queryPostsByDate()).toHaveProperty('type', BLOG_QUERY_POSTS_BY_DATE);
   });
 
-  it('handles action type BLOG_QUERY_POSTS_BY_DATE correctly', () => {
+  it('handles action type BLOG_QUERY_POSTS_BY_DATE correctly', (date) => {
     const prevState = {};
     const state = reducer(
       prevState,
-      { type: BLOG_QUERY_POSTS_BY_DATE },
+      { type: BLOG_QUERY_POSTS_BY_DATE, date: date },
     );
     // Should be immutable
     expect(state).not.toBe(prevState);
 
     // TODO: use real case expected value instead of {}.
-    const expectedState = {};
+    const expectedState = {
+      ...state,
+      current: 1,
+      postsQueried: state.posts.filter((ele) => {
+        return ele.date.slice(0, 7).indexOf(date) > -1;
+      }),
+      postsToDisplay: state.posts.filter((ele) => {
+        return ele.date.slice(0, 7).indexOf(date) > -1;
+      }).slice(0, 10),
+    };
     expect(state).toEqual(expectedState);
   });
 });
