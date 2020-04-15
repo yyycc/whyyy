@@ -43,6 +43,10 @@ export class Layout extends Component {
             </div>
           </div>
         </div>
+        <div className="css-layout-footer">
+          <p>Designed & Powerd by whyyy<br/>
+            Copyright © 2020 yyycc</p>
+        </div>
       </div>
     );
   }

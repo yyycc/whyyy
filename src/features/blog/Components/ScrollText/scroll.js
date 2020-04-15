@@ -6,6 +6,9 @@ const sentences =
     'You\'re going to the top of this mountain, broken legs and all.',
     'Some of the best lessons are learned from past mistakes.',
     'The minute you settle for less than you deserve, you get even less than you settled for. ',
+    'There are far, far better things ahead than any we leave behind.',
+
+    'Hope for the best and plan for the worst.',
   ];
 const texts =
   [
@@ -13,7 +16,7 @@ const texts =
     { route: '/blog/maintain', content: '维护公告' },
     {
       route: '/blog/sentences',
-      content: '每日一句: The minute you settle for less than you deserve, you get even less than you settled for.',
+      content: '每日一句: There are far, far better things ahead than any we leave behind.',
     },
   ];
 

@@ -10,8 +10,6 @@ export default class DefaultPage extends Component {
     return (
       <div className="home-default-page">
         <header className="app-header">
-          {/*<img src={reactLogo} className="app-logo" alt="logo" />*/}
-          {/*<img src={rekitLogo} className="rekit-logo" alt="logo" />*/}
           <h1 className="app-title">Welcome to Whyyy His Blog</h1>
         </header>
         <div className="app-intro">
