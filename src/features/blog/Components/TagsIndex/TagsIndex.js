@@ -4,7 +4,7 @@ export class TagsIndex extends Component {
   static propTypes = {};
 
   render() {
-    const { international posts } = this.props.blog;
+    const { international, posts } = this.props.blog;
     let tags = [];
     posts.forEach((ele) =>
       tags = tags.concat(ele.tag),
