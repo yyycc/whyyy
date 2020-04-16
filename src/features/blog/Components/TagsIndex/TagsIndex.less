@@ -14,6 +14,14 @@
     .blog-tags-index-div {
       float: left;
       margin: 5px 4px 15px 10px;
+      -webkit-transition: -webkit-transform 0.5s; // 逐渐恢复
+    }
+
+    .blog-tags-index-div:hover {
+      color: #fff !important;
+      background: #c40000;
+      transform: scale(1.1); //缩小
+      transition: all 0.1s ease-in 0s;
     }
 
     li {

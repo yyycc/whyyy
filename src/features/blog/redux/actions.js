@@ -1,6 +1,5 @@
 export { changePage } from './changePage';
 export { changeImage } from './changeImage';
-export { changeTabsPosition } from './changeTabsPosition';
 export { queryPostsByTag } from './queryPostsByTag';
 export { queryPostsByDate } from './queryPostsByDate';
 export { addFontSize } from './addFontSize';
@@ -11,7 +10,6 @@ export { autoChangeImages } from './autoChangeImages';
 export { scrollBanner } from './scrollBanner';
 export { showDrawer } from './showDrawer';
 export { onDrawerClose } from './onDrawerClose';
-export { changeAnchor } from './changeAnchor';
 export { changeDrawer } from './changeDrawer';
 export { changeMode } from './changeMode';
 export { changeSentences } from './changeSentences';

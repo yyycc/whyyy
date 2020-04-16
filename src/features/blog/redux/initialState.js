@@ -8,90 +8,13 @@
 
 import scroll from '../Components/ScrollText/scroll';
 import carousel from '../Components/CarouselIndex/carousel';
+import sentencesList from '../Notice/Sentences/sentencesList';
 
-const { texts, animate, sentences } = scroll;
+const { texts, animate } = scroll;
+const { sentences, sentencesCurrent, sentencesToDisplay, sentencesSize } = sentencesList;
 const { imageIndex, images, imageRoutes } = carousel;
 const initialState = {
-  h2: {
-    scroll: [
-      ['1. html', '2. css', '3. js'],
-    ],
-    javaScript: [
-      ['1. 初始化', '2. 实例方法'],
-      ['1. 运行结果', '2. 提升', '3. react中使用'],
-    ],
-    css: [
-      ['1. 问题', '2. 解决办法一', '3. 解决办法二', '4. 解决办法三'],
-      ['1. 问题', '2. 解决', '3. react中使用'],
-    ],
-    docker: [
-      ['1. docker中启动数据库', '2. 进入容器', '3. 配置ssh免密登录', '4. docker cp'],
-      ['1. 拉镜像', '2. 运行', '3. 端口映射', '4. 进入容器'],
-    ],
-    linux: [
-      ['1. vi', '2. cp', '3. tail'],
-      ['1. netstat', '2. find', '3. env', '4. whereis', '5. which', '6. lsnrctl', '7. tar', '8. >', '9. echo'],
-    ],
-    git: [
-      ['1. mumbling', '2. preparation',
-        ['3. config',
-          ['3.1. user', '3.2. core', '3.3. alias', '3.4 diff & merge'], true],
-        ['4. command',
-          ['4.1. git init', '4.2. git add', '4.3 git commit', '4.4. 4个区和4种状态', '4.5. git clone'], true],
-      ],
-    ],
-    react: [
-      ['1. 环境',
-        ['2. 目录结构', [
-          '2.1. package.json', '2.2. /src'], true],
-      ],
-    ],
-    webService: [
-      ['1. 准备',
-        ['2. 搭建',
-          ['2.1. 创建maven项目', '2.2. 导入jar包', '2.3. 接口类', '2.4. 注解', '2.5. 配置web.xml', '2.6. 配置cxf', '2.7. 部署启动'], true]],
-      [
-        ['1. 问题描述',
-          ['1.1. 命名空间', '1.2. 节点要求', '1.3. header'], true],
-        ['2. 解决方法',
-          ['2.1. 命名空间', '2.2. 节点要求', '2.3. header'], true],
-        ['3. 拦截器',
-          ['3.1 定义', '3.2 输入阶段', '3.3 输入拦截器', '3.4 输出阶段', '3.5 输出拦截器'], true],
-      ],
-    ],
-    ntfs: [
-      ['1. 问题', '2. 原因', '3. 解决', '4. NTFS'],
-    ],
-    spring: [
-      ['1. 启动', '2. 注意事项', '3. Propagation'],
-    ],
-    ssh: [
-      ['1. 配置文件', '2. 生成ssh key', '3. 将公钥导入认证文件', '4. 本地配置'],
-    ],
-    mysql: [
-      ['1. yum源', '2. 安装mysql', '3. 开机自启', '4. 访问mysql', '5. 初始密码', '6. 修改密码', '7. 创建数据库', '8. 远程连接'],
-    ],
-    oracle: [
-      ['1. 启动', '2. 连接数据库', '3. 一些sql', '4. 数据的导入导出', '5. 创建表空间、用户', '6. 授权', '7. 删除用户、表空间', '8. 表备份'
-        , '9. 执行脚本文件', '10. sql结果导入excel', '11. 实例启动', '12. 监听'],
-    ],
-    nginx: [
-      [
-        ['1. 搭建nginx',
-          ['1.1. mac', '1.2. centos', '1.3. RedHat 6'], true],
-        '2. nginx部署前端项目',
-        '3. 转发'],
-    ],
-  },
   title: 'whyyy his blog',
-  titles: [{ title: 'javaScript', name: 'javaScript', menu: [] },
-    { title: 'database', name: '数据库', menu: [] },
-    { title: 'webService', name: 'webService', menu: [] },
-    { title: 'linux', name: 'linux', menu: [] },
-    { title: 'server', name: '服务端', menu: [] }],
-  tabFixed: false,
-  top: 0, // 面包屑的margin-top
-  tags: ['javaScript', 'linux', 'webService', 'database', 'spring', 'service', 'docker', 'git', 'css'],
   posts: [
     {
       title: 'css(5): css介绍',
@@ -247,13 +170,16 @@ const initialState = {
   postsToDisplay: [],
   postsQueried: [],
   current: 1,
-  sentencesCurrent: 1,
-  sentencesToDisplay: [],
+
+  sentencesCurrent: sentencesCurrent,
+  sentencesToDisplay: sentencesToDisplay,
   sentences: sentences,
-  sentencesSize: 20,
+  sentencesSize: sentencesSize,
+
   images: images,
   imageRoutes: imageRoutes,
   imageIndex: imageIndex,
+
   international: {
     'blog': '首页',
     'javaScript': 'javaScript',
@@ -268,17 +194,15 @@ const initialState = {
     'frontEnd': '前端',
     'java': 'java',
     'git': '版本管理',
-
   },
+
   fontSize: 14,
-  leaveConfirm: true,
   texts: texts,
   animate: animate,
-  visible: false,
+  visible: false, // 抽屉是否可见
   dayNightColor: {},
   drawer: false,
   mode: 'day',
-  anchorTitle: '',
 };
 
 export default initialState;

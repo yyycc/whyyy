@@ -9,7 +9,6 @@
 import initialState from './initialState';
 import { reducer as changePageReducer } from './changePage';
 import { reducer as changeImageReducer } from './changeImage';
-import { reducer as changeTabsPositionReducer } from './changeTabsPosition';
 import { reducer as queryPostsByTagReducer } from './queryPostsByTag';
 import { reducer as queryPostsByDateReducer } from './queryPostsByDate';
 import { reducer as addFontSizeReducer } from './addFontSize';
@@ -20,7 +19,6 @@ import { reducer as autoChangeImagesReducer } from './autoChangeImages';
 import { reducer as scrollBannerReducer } from './scrollBanner';
 import { reducer as showDrawerReducer } from './showDrawer';
 import { reducer as onDrawerCloseReducer } from './onDrawerClose';
-import { reducer as changeAnchorReducer } from './changeAnchor';
 import { reducer as changeDrawerReducer } from './changeDrawer';
 import { reducer as changeModeReducer } from './changeMode';
 import { reducer as changeSentencesReducer } from './changeSentences';
@@ -28,7 +26,6 @@ import { reducer as changeSentencesReducer } from './changeSentences';
 const reducers = [
   changePageReducer,
   changeImageReducer,
-  changeTabsPositionReducer,
   queryPostsByTagReducer,
   queryPostsByDateReducer,
   addFontSizeReducer,
@@ -39,7 +36,6 @@ const reducers = [
   scrollBannerReducer,
   showDrawerReducer,
   onDrawerCloseReducer,
-  changeAnchorReducer,
   changeDrawerReducer,
   changeModeReducer,
   changeSentencesReducer,

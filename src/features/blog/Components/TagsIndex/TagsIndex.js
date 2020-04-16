@@ -4,7 +4,12 @@ export class TagsIndex extends Component {
   static propTypes = {};
 
   render() {
-    const { tags, international } = this.props.blog;
+    const { international posts } = this.props.blog;
+    let tags = [];
+    posts.forEach((ele) =>
+      tags = tags.concat(ele.tag),
+    );
+    tags = Array.from(new Set(tags));
     const { queryPostsByTag } = this.props.actions;
     return (
       <div className="blog-tags-index">

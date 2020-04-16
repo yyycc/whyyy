@@ -11,7 +11,7 @@ export default class Online extends Component {
         <article>
           <br/>
           <p>whyyy his blog 上线啦</p>
-          <p>本站于2020年04月14日正式上线</p>
+          <p>本站于2020年04月16日正式上线</p>
           <img src={online} alt=''/>
         </article>
       </div>

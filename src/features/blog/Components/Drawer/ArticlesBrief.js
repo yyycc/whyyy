@@ -6,7 +6,12 @@ export default class ArticlesBrief extends Component {
   static propTypes = {};
 
   render() {
-    const { posts, tags } = this.props.blog;
+    const { posts } = this.props.blog;
+    let tags = [];
+    posts.forEach((ele) =>
+      tags = tags.concat(ele.tag),
+    );
+    tags = Array.from(new Set(tags));
     return (
       <div className="blog-articles-brief">
         <p><img src={tag} alt=''/></p>

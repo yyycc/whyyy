@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export class Post extends Component {
 
   render() {
-    const { title, date, tag, summary, route, key } = this.props.post;
+    const { title, date, tag, summary, route, key } = this.props.posts;
     const { queryPostsByTag } = this.props.actions;
     const urlStates = {
       pathname: route,

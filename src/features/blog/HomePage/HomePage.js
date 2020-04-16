@@ -24,8 +24,14 @@ export class HomePage extends Component {
 
   scroll() {
     let a = document.getElementsByClassName('blog-home-page-right-fix')[0];
-    if (!!a) {
-      if (window.scrollY > 440) {
+    let tag = document.getElementsByClassName('blog-tags-index')[0];
+    let col = document.getElementsByClassName('blog-collections')[0];
+    let top = 0;
+    if (tag && col) {
+      top = tag.offsetHeight + col.offsetHeight + 60;
+    }
+    if (!!a && top > 0) {
+      if (window.scrollY > top) {
         a.style.position = 'fixed';
         a.style.top = '34px';
         a.style.width = 'inherit';
@@ -64,7 +70,7 @@ export class HomePage extends Component {
             <div className="blog-home-page-lists">
               {
                 postsToDisplay.map((ele, index) => {
-                  return <Post key={index} post={ele} actions={this.props.actions}/>;
+                  return <Post key={index} posts={ele} actions={this.props.actions}/>;
                 })
               }
               {/*分页*/}

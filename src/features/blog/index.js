@@ -1,7 +1,6 @@
 export { default as Header } from './Header/Header';
 export { default as Layout } from './Layout/Layout';
 export { default as Footer } from './Footer/Footer';
-export { default as Tabs } from './Tabs/Tabs';
 export { default as Promote } from './Articles/JavaScript/Promote';
 export { default as HomePage } from './HomePage/HomePage';
 export { default as CarouselIndex } from './Components/CarouselIndex/CarouselIndex';
