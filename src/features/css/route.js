@@ -3,7 +3,7 @@
 
 import {
   DefaultPage,
-  CssA,
+  CssA, CssC,
   Layout,
 } from './';
 
@@ -15,5 +15,6 @@ export default {
     { path: '/', name: 'Default page', component: DefaultPage, isIndex: true },
 
     { path: 'center', name: 'center', component: CssA, isIndex: false },
+    { path: 'half', name: 'half', component: CssC, isIndex: false },
   ],
 };

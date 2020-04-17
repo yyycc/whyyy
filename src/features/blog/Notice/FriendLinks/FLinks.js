@@ -17,7 +17,7 @@ export class FLinks extends Component {
           <ul>
             <li>
               <span>
-                <a href="https://lovesy.org.cn/" target="_blank" rel="noopener noreferrer">儿女意向来痴</a>
+                <a href="https://ferry.org.cn/" target="_blank" rel="noopener noreferrer">儿女意向来痴</a>
               </span>
             </li>
             <li>

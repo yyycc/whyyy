@@ -31,9 +31,13 @@ export class Layout extends Component {
             <h3>代码</h3>
             <div className="css-layout-body-code-content">
               <h4>css代码</h4>
-              <pre>{css}</pre>
+              <pre><code className="css">
+                {css}
+              </code></pre>
               <h4>html代码</h4>
-              <pre>{html}</pre>
+              <pre><code className="html">
+                {html}
+              </code></pre>
             </div>
           </div>
           <div className="css-layout-body-effect">

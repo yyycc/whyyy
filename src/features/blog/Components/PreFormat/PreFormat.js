@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
+import Highlight from 'react-highlight';
 
 export class PreFormat extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
   /*
    * @name: 代码
@@ -15,21 +15,10 @@ export class PreFormat extends Component {
 
   render() {
     const content = this.props.content;
-    const contents = content.split('\n');
-    const lastLine = contents.length - 1;
+    const className = this.props.className;
     return (
       <div className="blog-pre-format">
-        {
-          contents.map((ele, index) => {
-            if (index === 0 && index === lastLine) {
-              return <pre key={index}
-                          className='only-class'>{ele}<br/></pre>;
-            }
-            return <pre key={index}
-                        className={[index === 0 ? 'first-class' : null, index === lastLine ? 'last-class' : null].join(' ')}>{ele}<br/>
-            </pre>;
-          })
-        }
+        <Highlight className={className}>{content}</Highlight>
       </div>
     );
   }

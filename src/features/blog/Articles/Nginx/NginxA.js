@@ -35,12 +35,13 @@ export class NginxA extends Component {
         <p>这个跟用yum安装是一样的</p>
         <p>可以配置成系统服务启动</p>
         <PreFormat content={start}/>
+
         <h2 id="nginx-1-2">2. nginx部署前端项目</h2>
         <p>安装完了，就来说使用吧，nginx搭建非常的容易，用他来实现各种代理，主要就是写配置文件nginx.conf</p>
         <p>我的blog就是部署在nginx上的，之前搭的vue项目，也部署在nginx上，这样我们就不需要在控制台运行项目啦。</p>
         <p>配置文件主要是这么一个结构</p>
         <p>这个配置问题，一定记得加分号，每次都是因为忘记;然后就报错。。。</p>
-        <PreFormat content={nginxConfig}/>
+        <PreFormat content={nginxConfig} className='xml'/>
         <p>listen是监听的端口，配多个server就可以监听多个端口，server_name是服务名，可以随意取。</p>
         <p>我本地的nginx是监听了8091端口，部署了blog，8092端口会显示cyy.html。配置分别如下</p>
         <PreFormat content={listen}/>

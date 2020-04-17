@@ -20,6 +20,8 @@ const codes = [
   '@import \'～/node_modules/font-awesome/css/font-awesome.min.css\';',
   'window.addEventListener(\'scroll\', this.scroll);',
   'margin: auto',
+  'height: 0.5px;',
+  'background-image: linear-gradient(0deg, transparent 50%, #000000 50%);',
 ];
 
 const link = '<head>\n' +
@@ -69,6 +71,19 @@ const scroll = 'scroll() {\n' +
   '  }\n' +
   '}';
 
+const scaleYCss = '.css-css-c-line{\n' +
+  '  position: relative;\n' +
+  '  top: 10px;\n' +
+  '  width: 200px;\n' +
+  '  height: 1px;\n' +
+  '  background-color: #000000;\n' +
+  '  transform: scaleY(.5);\n' +
+  '}';
+
+const scaleYHtml = '<div style="display: flex">\n' +
+  '  <p>0.5px的线</p>\n' +
+  '  <div className="css-css-c-line"/>\n' +
+  '</div>';
 
 const code = {
   div,
@@ -80,6 +95,8 @@ const code = {
   i,
   fixDiv,
   scroll,
+  scaleYCss,
+  scaleYHtml,
 };
 
 export default code;

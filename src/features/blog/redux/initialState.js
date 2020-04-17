@@ -17,10 +17,10 @@ const initialState = {
   title: 'whyyy his blog',
   posts: [
     {
-      title: 'css(5): css介绍',
+      title: 'css(5): 如何画出一条0.5px的线',
       date: '2020-04-10', tag: ['frontEnd', 'css'], route: '/blog/articles/css/css',
-      summary: '关于使用css实现你想要的UI效果',
-      key: 21,
+      summary: '0.5px的线以及边框的实现方法',
+      key: 22,
     },
     {
       title: 'css(4): div滚动到一定程度后固定',
