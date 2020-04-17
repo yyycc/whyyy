@@ -22,6 +22,7 @@ const codes = [
   'margin: auto',
   'height: 0.5px;',
   'background-image: linear-gradient(0deg, transparent 50%, #000000 50%);',
+  'transform:scale(0.5,0.5);',
 ];
 
 const link = '<head>\n' +
