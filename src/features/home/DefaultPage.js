@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Y from '../../images/Y.png';
+import Y from '../../images/Y.jpg';
 
 export default class DefaultPage extends Component {
   static propTypes = {

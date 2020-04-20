@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import tag from '../../../../images/Y.png';
+import tag from '../../../../images/Y.jpg';
 import weChat from '../../../../images/wechat-2.png';
 
 export default class ArticlesBrief extends Component {

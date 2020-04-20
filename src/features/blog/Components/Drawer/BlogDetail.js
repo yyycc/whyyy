@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
-import y from '../../../../images/Y.png';
+import y from '../../../../images/Y.jpg';
 
 export class BlogDetail extends Component {
   static propTypes = {
