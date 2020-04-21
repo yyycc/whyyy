@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import windbell from '../../../../images/windbell.png';
-import lotus from '../../../../images/lotus.png';
 
 export class MyDrawer extends Component {
   static propTypes = {};
@@ -31,7 +30,7 @@ export class MyDrawer extends Component {
               </div>
               {this.props.children}
               <div className="blog-my-drawer-content-body-image-bottom" style={{ display: `${display}` }}>
-                <img src={lotus} alt=''/>
+                {/*<img src={lotus} alt=''/>*/}
               </div>
             </div>
             <div className="blog-my-drawer-content-close">

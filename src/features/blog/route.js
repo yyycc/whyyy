@@ -22,6 +22,7 @@ import {
   ScrollBanner,
   ArticlesList,
   HomePage,
+  Interview, ViewOne,
 } from './';
 import { PageNotFound } from '../common';
 
@@ -38,6 +39,9 @@ export default {
 
         { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
         { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
+
+        { path: 'interview', name: 'interview', component: Interview, isIndex: false },
+        { path: 'interview/one', name: 'interview', component: ViewOne, isIndex: false },
 
         { path: 'css', name: 'css', component: Css, isIndex: false },
         { path: 'css/fontAwesome', name: 'css', component: CssB, isIndex: false },

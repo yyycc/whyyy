@@ -194,6 +194,7 @@ const initialState = {
     'frontEnd': '前端',
     'java': 'java',
     'git': '版本管理',
+    'interview': '面试',
   },
 
   fontSize: 14,

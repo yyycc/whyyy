@@ -34,6 +34,11 @@ export class Articles extends Component {
       articleTitle = '站内地图';
     } else if (pathname === '/blog/articles/css') {
       articleTitle = 'css';
+    } else if (pathname === '/blog/articles/interview') {
+      articleTitle = '面试准备';
+    }
+    if (!articleTitle) {
+      articleTitle = this.props.location.state;
     }
     return (
       <div>

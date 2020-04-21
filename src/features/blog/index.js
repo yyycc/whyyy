@@ -52,3 +52,5 @@ export { default as FixDiv } from './Articles/Css/FixDiv';
 export { default as ArticlesBrief } from './Components/Drawer/ArticlesBrief';
 export { default as CssC } from './Articles/Css/CssC';
 export { default as Css } from './Articles/Topic/Css';
+export { default as Interview } from './Articles/Topic/Interview';
+export { default as ViewOne } from './Articles/Interview/ViewOne';

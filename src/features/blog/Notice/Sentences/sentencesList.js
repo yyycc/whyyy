@@ -10,6 +10,7 @@ const sentences =
     'Hope for the best and plan for the worst.',
     'You may not control all the events that happen to you, but you can decide not to be reduced by them.',
     '总有人懂你的奇奇怪怪，陪你可可爱爱。',
+    'Success is not final, failure is not fatal: it is the courage to continue that counts.',
   ];
 
 const sentencesCurrent = 1;
