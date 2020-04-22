@@ -1,0 +1,40 @@
+@import '../../../styles/mixins';
+
+.css-float {
+
+  .css-float-two-a,
+  .css-float-one-a {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+  }
+
+  .css-float-two-b,
+  .css-float-one-b {
+    height: 50px;
+    width: 50px;
+    background-color: lightblue;
+  }
+
+  .css-float-one-c,
+  .css-float-two-c {
+    height: 50px;
+    width: 200px;
+    background-color: green;
+  }
+
+  .css-float-two-a,
+  .css-float-two-b {
+    float: left;
+  }
+
+  .css-float-div:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+
+  .css-float-div {
+    *zoom: 1; /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+  }
+}

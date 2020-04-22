@@ -22,7 +22,7 @@ export class HomePage extends Component {
     actions: PropTypes.object.isRequired,
   };
 
-  scroll() {
+  scroll(blog) {
     let a = document.getElementsByClassName('blog-home-page-right-fix')[0];
     let tag = document.getElementsByClassName('blog-tags-index')[0];
     let col = document.getElementsByClassName('blog-collections')[0];
@@ -31,7 +31,7 @@ export class HomePage extends Component {
       top = tag.offsetHeight + col.offsetHeight + 60;
     }
     if (!!a && top > 0) {
-      if (window.scrollY > top) {
+      if (window.scrollY > top && !blog.drawer) {
         a.style.position = 'fixed';
         a.style.top = '34px';
         a.style.width = 'inherit';
@@ -42,7 +42,12 @@ export class HomePage extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.scroll);
+    window.addEventListener('scroll', () => this.scroll(this.props.blog));
+  }
+
+  // 移除监听，否则会造成内存泄漏
+  componentWillUnmount() {
+    window.removeEventListener('scroll', () => this.scroll(this.props.blog));
   }
 
   render() {

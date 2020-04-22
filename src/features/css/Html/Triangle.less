@@ -1,0 +1,126 @@
+@import '../../../styles/mixins';
+
+.css-triangle {
+  .css-triangle-two {
+    margin-top: 50px;
+  }
+
+  .css-triangle-one,
+  .css-triangle-two {
+    display: flex;
+
+    .css-triangle-column,
+    .css-triangle-column-two {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .css-triangle-column-two {
+      margin-left: 70px;
+    }
+
+    .css-triangle-a {
+      width: 0;
+      height: 0;
+      border-width: 50px;
+      border-style: solid;
+      border-color: transparent #0099CC transparent transparent;
+      transform: rotate(90deg); /*顺时针旋转90°*/
+    }
+
+    .css-triangle-b {
+      width: 0;
+      height: 0;
+      border-bottom: 50px solid red;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+    }
+
+    .css-square-a {
+      width: 0;
+      height: 0;
+      border-width: 50px;
+      border-style: solid;
+      border-color: red yellow green blue;
+    }
+
+    .css-square-b {
+      width: 0;
+      height: 0;
+      border-bottom: 50px solid red;
+      border-left: 50px solid green;
+      border-right: 50px solid green;
+    }
+  }
+}
+
+/*.box-one {
+  box-sizing: border-box;
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  border: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.box-two {
+  box-sizing: content-box;
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  border: 10px;
+  padding: 10px;
+  margin: 10px;
+}*/
+
+// 五角星
+/*#star-five {
+   margin: 50px 0;
+   position: relative;
+   display: block;
+   color: red;
+   width: 0px;
+   height: 0px;
+   border-right:  100px solid transparent;
+   border-bottom: 70px  solid red;
+    border-left:   100px solid transparent;
+    -moz-transform:    rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    -ms-transform:     rotate(35deg);
+    -o-transform:      rotate(35deg);
+ }
+ #star-five:before {
+    border-bottom: 80px solid red;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: -45px;
+    left: -65px;
+    display: block;
+    content: '';
+    -webkit-transform: rotate(-35deg);
+    -moz-transform:    rotate(-35deg);
+    -ms-transform:     rotate(-35deg);
+    -o-transform:      rotate(-35deg);
+
+ }
+ #star-five:after {
+    position: absolute;
+    display: block;
+    color: red;
+    top: 3px;
+    left: -105px;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid red;
+    border-left: 100px solid transparent;
+    -webkit-transform: rotate(-70deg);
+    -moz-transform:    rotate(-70deg);
+    -ms-transform:     rotate(-70deg);
+    -o-transform:      rotate(-70deg);
+    content: '';
+ }*/

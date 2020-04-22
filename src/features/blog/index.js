@@ -54,3 +54,4 @@ export { default as CssC } from './Articles/Css/CssC';
 export { default as Css } from './Articles/Topic/Css';
 export { default as Interview } from './Articles/Topic/Interview';
 export { default as ViewOne } from './Articles/Interview/ViewOne';
+export { default as ViewTwo } from './Articles/Interview/ViewTwo';

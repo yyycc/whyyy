@@ -8,7 +8,6 @@ export { defaultFontSize } from './defaultFontSize';
 export { fuzzyQueryPosts } from './fuzzyQueryPosts';
 export { autoChangeImages } from './autoChangeImages';
 export { scrollBanner } from './scrollBanner';
-export { showDrawer } from './showDrawer';
 export { onDrawerClose } from './onDrawerClose';
 export { changeDrawer } from './changeDrawer';
 export { changeMode } from './changeMode';

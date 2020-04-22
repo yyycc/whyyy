@@ -8,8 +8,7 @@ import React, { Component } from 'react';
  */
 
 export class CarouselIndex extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
   jump(e, route) {
     e.props.history.push('/blog/' + route);
@@ -39,11 +38,13 @@ export class CarouselIndex extends Component {
     const { imageIndex, images, imageRoutes } = this.props.blog;
     const src = images[imageIndex];
     let translate = 'translate3d(-' + 800 * imageIndex + 'px, 0px, 0px)';
+    let width = 800 * images.length;
     const { changeImage } = this.props.actions;
     return (
       <div className="blog-carousel-index">
         <div className="blog-carousel-index-images">
-          <div style={{ transform: `${translate}` }} className="blog-carousel-index-images-overflow">
+          <div style={{ transform: `${translate}`, width: `${width}px` }}
+               className="blog-carousel-index-images-overflow">
             {images.map((ele, i) => {
               return <img key={i} className="blog-carousel-index-img" src={images[i]} alt='pictures'
                           onClick={() => this.jump(this.props, imageRoutes[imageIndex])}

@@ -17,7 +17,6 @@ import { reducer as defaultFontSizeReducer } from './defaultFontSize';
 import { reducer as fuzzyQueryPostsReducer } from './fuzzyQueryPosts';
 import { reducer as autoChangeImagesReducer } from './autoChangeImages';
 import { reducer as scrollBannerReducer } from './scrollBanner';
-import { reducer as showDrawerReducer } from './showDrawer';
 import { reducer as onDrawerCloseReducer } from './onDrawerClose';
 import { reducer as changeDrawerReducer } from './changeDrawer';
 import { reducer as changeModeReducer } from './changeMode';
@@ -34,7 +33,6 @@ const reducers = [
   fuzzyQueryPostsReducer,
   autoChangeImagesReducer,
   scrollBannerReducer,
-  showDrawerReducer,
   onDrawerCloseReducer,
   changeDrawerReducer,
   changeModeReducer,

@@ -23,7 +23,7 @@ export class Articles extends Component {
     const pathname = this.props.location.pathname;
     const { posts, fontSize } = this.props.blog;
     let articleTitle = '';
-    const display = posts.some((ele) => {
+    let display = posts.some((ele) => {
       if (ele.route === pathname) {
         articleTitle = ele.title;
         return true;

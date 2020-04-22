@@ -3,7 +3,7 @@
 
 import {
   DefaultPage,
-  CssA, CssC,
+  CssA, CssC, Triangle, Float,
   Layout,
 } from './';
 
@@ -16,5 +16,7 @@ export default {
 
     { path: 'center', name: 'center', component: CssA, isIndex: false },
     { path: 'half', name: 'half', component: CssC, isIndex: false },
+    { path: 'triangle', name: 'triangle', component: Triangle, isIndex: false },
+    { path: 'float', name: 'float', component: Float, isIndex: false },
   ],
 };

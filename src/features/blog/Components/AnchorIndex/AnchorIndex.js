@@ -21,7 +21,8 @@ export class AnchorIndex extends Component {
             let href = '#' + ele.id;
             return <Link key={index} href={href} title={ele.innerText}>
               {h3.map((e, i) => {
-                if (e.id.indexOf(ele.id) > -1) {
+                // 加上-，否则a-10-1就放到a-1下面去了。。。
+                if ((e.id).indexOf(ele.id + '-') > -1) {
                   href = '#' + e.id;
                   return <Link key={i} href={href} title={e.innerText}/>;
                 } else {
