@@ -4,7 +4,7 @@ const texts =
     { route: '/blog/maintain', content: '维护公告' },
     {
       route: '/blog/sentences',
-      content: '每日一句: Success is not final, failure is not fatal: it is the courage to continue that counts.',
+      content: '每日一句: I have no special talent. I am only passionately curious. ',
     },
   ];
 

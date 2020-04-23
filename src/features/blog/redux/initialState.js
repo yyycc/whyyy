@@ -17,6 +17,12 @@ const initialState = {
   title: 'whyyy his blog',
   posts: [
     {
+      title: 'oracle(2): 如何用oracle请求web service',
+      date: '2020-04-10', tag: ['database', 'oracle'], route: '/blog/articles/database/oracle-service',
+      summary: '用oracle(sql developer)请求web service',
+      key: 23,
+    },
+    {
       title: 'css(5): 如何画出一条0.5px的线',
       date: '2020-04-10', tag: ['frontEnd', 'css'], route: '/blog/articles/css/css',
       summary: '0.5px的线以及边框的实现方法',

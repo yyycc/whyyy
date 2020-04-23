@@ -15,6 +15,10 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://www.cnblogs.com/html55/p/10164914.html',
   },
+  {
+    pathname: '/common/leave',
+    state: 'https://www.jianshu.com/p/a77d8928c5c9',
+  },
 ];
 
 const urls = {

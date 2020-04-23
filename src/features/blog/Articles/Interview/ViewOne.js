@@ -35,6 +35,7 @@ export default class ViewOne extends Component {
           <h2 id="view-3">3. 闭包</h2>
           <p>当函数可以 记住 并 访问 其(定义时的)作用域，就产生了闭包。</p>
           <p>闭包使得函数在其词法作用域之外执行时，可以访问其作用域内的数据</p>
+          <p>函数 A 内部有一个函数 B，函数 B 可以访问到函数 A 中的变量，那么函数 B 就是闭包</p>
 
           <h2 id="view-4">4. link和@import的区别</h2>
         <p>link和@import主要都是为了引入css</p>
@@ -149,11 +150,13 @@ export default class ViewOne extends Component {
           <p>mouseover和mouseout处理起来要注意。</p>
           <p>focus，blur之类没有冒泡特性的就不适用。</p>
 
+          <h2 id="Z-参考">Z. 参考</h2>
           {leaveConfirm && <p>
               <Link to={urlStates[0]}>1. 纯CSS画的基本图形（矩形、圆形、三角形、多边形、爱心、八卦等）</Link><br/>
               <Link to={urlStates[1]}>2. 清除浮动的最常用的四种方法，以及优缺点</Link><br/>
               <Link to={urlStates[2]}>3. 2020前端面试(一面面试题）</Link><br/>
               <Link to={urlStates[3]}>4. JS中的事件委托（事件代理）</Link><br/>
+              <Link to={urlStates[4]}>5. 简述JS中的事件委托和事件代理</Link><br/>
           </p>}
           {!leaveConfirm &&
           <p>
@@ -165,8 +168,10 @@ export default class ViewOne extends Component {
               <a href="https://blog.csdn.net/h_qingyi/article/details/81269667" target="_blank"
                  rel="noopener noreferrer">
                   3. 2020前端面试(一面面试题）</a><br/>
-              <a href="http://localhost:6075/blog/articles/interview/one" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.cnblogs.com/html55/p/10164914.html" target="_blank" rel="noopener noreferrer">
                   4. JS中的事件委托（事件代理）</a><br/>
+              <a href="https://www.jianshu.com/p/a77d8928c5c9" target="_blank" rel="noopener noreferrer">
+                  5. 简述JS中的事件委托和事件代理</a><br/>
           </p>
           }
       </div>

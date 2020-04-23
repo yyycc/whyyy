@@ -90,6 +90,38 @@ const compile = 'declare\n' +
   '    end loop;\n' +
   'end;';
 
+const codes = [
+  'grant all on utl_http to nw_dev;',
+];
+
+const acl = 'begin\n' +
+  '  dbms_network_acl_admin.create_acl\n' +
+  '    (acl         => \'/sys/acls/utl_http.xml\', -- 命名\n' +
+  '     description => \'request\',           -- 描述\n' +
+  '     principal   => \'NW_DEV\',                   -- 要赋权限的用户\n' +
+  '     is_grant    => true,                     -- true表示赋权，false表示取消赋权\n' +
+  '     privilege   => \'connect\');               -- 权限限制\n' +
+  'end;\n' +
+  '\n' +
+  'begin\n' +
+  '  dbms_network_acl_admin.assign_acl\n' +
+  '    (acl        => \'/sys/acls/utl_http.xml\', -- 命名\n' +
+  '     host       => \'127.0.0.1\',          -- 服务器地址\n' +
+  '     lower_port => 1,                       -- 端口从\n' +
+  '     upper_port => 10000);                  -- 端口到\n' +
+  'end;\n' +
+  '\n' +
+  'begin\n' +
+  '  dbms_network_acl_admin.add_privilege\n' +
+  '  (acl       => \'/sys/acls/utl_http.xml\',\n' +
+  '   principal => \'NW_DEV\',\n' +
+  '   is_grant  => TRUE,\n' +
+  '   privilege => \'connect\');\n' +
+  '   end;';
+
+const request = 'v_http_req := utl_http.begin_request(g_url_test,\n' +
+  '                                     \'POST\',\n' +
+  '                                     utl_http.http_version_1_1);';
 const code = {
   start,
   dba,
@@ -103,6 +135,9 @@ const code = {
   sqls,
   listen,
   compile,
+  codes,
+  acl,
+  request,
 };
 
 export default code;

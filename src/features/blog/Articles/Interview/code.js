@@ -19,6 +19,7 @@ const codes = [
   'clear: both',
   'text-align: center',
   'margin: 0 auto',
+  'width: calc(100% - 80px);',
 ];
 
 const flex = 'display: flex; \n' +
@@ -44,6 +45,29 @@ const after = '.css-float-div:after {\n' +
 const bfc = '.css-float-div{\n' +
   '    overflow: hidden;\n' +
   '}';
+
+const support = '@supports (display: flex) {\n' +
+  '  div {\n' +
+  '    display: flex;\n' +
+  '  }\n' +
+  '}';
+
+const supportNot = '@supports not (display: flex) {\n' +
+  '  div {\n' +
+  '    float: right;\n' +
+  '  }\n' +
+  '}';
+
+const media = 'body {\n' +
+  '    background-color:lightgreen;\n' +
+  '}\n' +
+  '\n' +
+  '@media screen and (max-width: 1000px) {\n' +
+  '    body {\n' +
+  '        background-color:lightblue;\n' +
+  '    }\n' +
+  '}';
+
 const code = {
   border,
   square,
@@ -56,6 +80,9 @@ const code = {
   left,
   flexItem,
   top,
+  support,
+  supportNot,
+  media,
 };
 
 export default code;
