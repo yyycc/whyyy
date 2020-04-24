@@ -101,7 +101,7 @@ const initialState = {
     },
     {
       title: 'web service(2): spring + cxf 发布web service相关问题解决',
-      date: '2020-01-03',
+      date: '2020-01-03', lastUpdatedDate: '2020-04-24',
       tag: ['webService', 'cxf'],
       route: '/blog/articles/webService/interceptor',
       summary: '这个项目的接口，断断续续做了3个月了，从一开始的一脸懵逼，到现在的一知半解。。。',

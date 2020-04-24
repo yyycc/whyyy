@@ -20,6 +20,9 @@ const codes = [
   'text-align: center',
   'margin: 0 auto',
   'width: calc(100% - 80px);',
+  ' Array.from(new Set(a))',
+  '[...new Set(a)]',
+  'Origin: http://localhost:6075',
 ];
 
 const flex = 'display: flex; \n' +
@@ -68,6 +71,24 @@ const media = 'body {\n' +
   '    }\n' +
   '}';
 
+const access = 'response.setHeader("Access-Control-Allow-Origin", "*");\n' +
+  'response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");\n' +
+  'response.setHeader("Access-Control-Max-Age", "3600");\n' +
+  'response.setHeader("Access-Control-Allow-Headers", "x-requested-with, Content-Type, token, Accept");\n' +
+  'response.setHeader("Access-Control-Allow-Credentials", "true");';
+
+const exportDefault = '// export default\n' +
+  'export default function test() { // 输出\n' +
+  '  // ...\n' +
+  '}\n' +
+  'import test from \'test\'; // 输入\n' +
+  ' \n' +
+  '// export\n' +
+  'export function test() { // 输出\n' +
+  '  // ...\n' +
+  '};\n' +
+  'import {test} from \'test\'; // 输入';
+
 const code = {
   border,
   square,
@@ -83,6 +104,8 @@ const code = {
   support,
   supportNot,
   media,
+  access,
+  exportDefault,
 };
 
 export default code;

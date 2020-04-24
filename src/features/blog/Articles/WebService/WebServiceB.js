@@ -11,7 +11,7 @@ export class WebServiceB extends Component {
 
   render() {
     const {
-      commandReport, generatedReport, packageInfo,
+      commandReport, generatedReport, packageInfo, soapBinding,
       interceptorDefinition, inPreProtocolInterceptor, inReceiveInterceptor, outPreStreamInterceptor,
     } = code;
     const {
@@ -56,8 +56,13 @@ export class WebServiceB extends Component {
         <p>但是必须每个都加，才能实现每个节点都有</p><br/>
         <p>或者FunctionNameRequest对象目录下新增文件 package-info.java</p>
         <PreFormat content={packageInfo}/>
+
         <h3 id="webService-2-2-2">2.2. 节点要求</h3>
         <p>。。。失败了</p>
+        <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-04-24</p>
+        <p>时隔3个多月，今天，这个问题解决了！！</p>
+        <p>在接口方法上加上这个注解就可以了(和@WebService平级)</p>
+        <PreFormat content={soapBinding}/>
         <h3 id="webService-2-2-3">2.3. header</h3>
         <p>在请求接口方法中添加</p>
         <p>@XmlElement(required = true) @WebParam(name = "security", header = true) InHeaderMessage

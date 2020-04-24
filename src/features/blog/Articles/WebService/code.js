@@ -329,6 +329,9 @@ const outPreStreamInterceptor = 'public class ServiceOutPreStreamInterceptor ext
   '        }\n' +
   '    }\n' +
   '}';
+
+const soapBinding = '@SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)';
+
 const code = {
   pom,
   dependency,
@@ -343,6 +346,7 @@ const code = {
   inReceiveInterceptor,
   interceptorDefinition,
   outPreStreamInterceptor,
+  soapBinding,
 };
 
 export default code;

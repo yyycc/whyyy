@@ -19,6 +19,18 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://www.jianshu.com/p/a77d8928c5c9',
   },
+  {
+    pathname: '/common/leave',
+    state: 'http://www.ruanyifeng.com/blog/2016/04/cors.html',
+  },
+  {
+    pathname: '/common/leave',
+    state: 'https://blog.csdn.net/liouswll/article/details/80698619',
+  },
+  {
+    pathname: '/common/leave',
+    state: 'https://www.cnblogs.com/mengfangui/p/9073459.html',
+  },
 ];
 
 const urls = {

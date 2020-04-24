@@ -38,6 +38,10 @@ export class SpringA extends Component {
         <h2 id="spring-1-3">3. Propagation</h2>
         <SimpleTable titles={propagationTitles} data={propagation} name={propagationName}/>
 
+        <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-03-23</p>
+        <p>说一下这个REQUIRES_NEW(因为今天用到了。。。)</p>
+        <p>我是在什么情况下用到的呢，就是父事务是要回滚的，但是其中有一个子事务不能回滚，无论如何都得执行，那么就给这个子事务加上REQUIRES_NEW。</p>
+        <p>新起一个事务，就不受原事务的影响了。</p>
         <h2 id="Z-参考">Z. 参考</h2>
         {leaveConfirm && <p>
           <Link to={urlStates[0]}>1. Spring中propagation的7种事务配置</Link><br/>
