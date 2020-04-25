@@ -31,9 +31,18 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://www.cnblogs.com/mengfangui/p/9073459.html',
   },
+  {
+    pathname: '/common/leave',
+    state: 'https://www.zhihu.com/question/28586791',
+  },
+  {
+    pathname: '/common/leave',
+    state: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export',
+  },
 ];
 
 const urls = {
   urlStates,
 };
+
 export default urls;

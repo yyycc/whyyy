@@ -10,6 +10,7 @@ import TagsIndex from '../Components/TagsIndex/TagsIndex';
 import Collections from '../Components/CollectionsIndex/Collections';
 import RecommendedPost from '../Components/RecommendIndex/RecommendedPost';
 import ScrollText from '../Components/ScrollText/ScrollText';
+import Axios from 'axios';
 
 /*
  * @name: 首页
@@ -42,6 +43,12 @@ export class HomePage extends Component {
   }
 
   componentDidMount() {
+    /*Axios.get('http://localhost:8070/' + 'cyy', {params: {cyy: 'ever'}}).then(
+      function (res) {
+        this.task = res;
+      }, function (e) {
+        alert('请求失败');
+      });*/
     window.addEventListener('scroll', () => this.scroll(this.props.blog));
   }
 

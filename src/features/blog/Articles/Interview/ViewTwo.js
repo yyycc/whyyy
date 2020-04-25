@@ -4,11 +4,14 @@ import { PreFormat } from '../../Components/PreFormat/PreFormat';
 import urls from './urls';
 import { Link } from 'react-router-dom';
 import cors from './cors.jpg';
+import tableCode from './tableCode';
+import SimpleTable from '../../Components/SimpleTable/SimpleTable';
 
 export default class ViewTwo extends Component {
   static propTypes = {};
 
   render() {
+      const { request, requestName, requestTitle } = tableCode;
       const { urlStates } = urls;
       let leaveConfirm = true;
       const { support, supportNot, media, codes, access, exportDefault } = code;
@@ -71,9 +74,11 @@ export default class ViewTwo extends Component {
           <h2 id="view-4">4. export和export default的区别</h2>
           <p>export与export default均可用于导出常量、函数、文件、模块等</p>
           <p>一个文件中export和import可以有多个，但是export default只能有一个</p>
+          <p>export导出时要加大括号，export default导出时不用加大括号</p>
           <p>export导出的，在导入时要加大括号，export default导出的，导入时不用加大括号</p>
           <PreFormat content={exportDefault}/>
           <p>export default导出的在导入的时候尽量不要用大括号，之前遇到过它默认给我加括号就出了一点问题</p>
+
 
           <h2 id="view-5">5. 数组去重</h2>
           <h3 id="view-5-1">5.1. 方法一</h3>
@@ -91,6 +96,7 @@ export default class ViewTwo extends Component {
 
 
           <h2 id="view-6">6. get、post的区别</h2>
+          <SimpleTable titles={requestTitle} data={request} name={requestName}/>
 
 
           <h2 id="view-7">7. http的响应码及含义</h2>
@@ -122,51 +128,26 @@ export default class ViewTwo extends Component {
           <h3 id="view-9-2">9.2. 区分(?)</h3>
           <p>这些类型的区分方式有很多</p>
 
+          <h3 id="view-9-3">9.3. 值</h3>
+          <p>如果一个变量是基本数据类型，那么在它被赋值之后，这个值就是不可变的</p>
+
 
           <h2 id="view-10">10. JS中如何复制一个值</h2>
-
-          <p>下列哪个样式定义后,内联(非块状)元素可以定义宽度和高度</p>
-          <p>onload</p>
-
-          {/*function Foo() {
-        var i = 0;
-        return function() {
-        console.log(i++);
-      }
-      }
-
-        var f1 = Foo(),
-        f2 = Foo();
-        f1();
-        f1();
-        f2();
-
-
-        var bb = 1;
-        function aa(bb) {
-        bb = 2;
-        alert(bb);
-      };
-        aa(bb);
-        alert(bb);
-
-
-        - .col-xs- 超小屏幕 手机 <768px
-- .col-sm- 小屏幕 平板  >=768px
-- .col-md- 中等屏幕  >=992px
-- .col-lg- 大屏幕  >1200px
-
-*/}
-          <p>https://www.cnblogs.com/sunyan-blog/p/10885982.html</p>
-          <p>ruanyifeng.com/blog/2016/04/cors.html</p>
+          <p>首先，如果是基本数据类型，那就直接赋值就可以了。</p>
+          <p>如果是引用数据类型：对象、数组、函数，那么就有深拷贝和浅拷贝。</p>
+          <p>引用数据类型保存在堆内存中，然后在栈内存中保存了一个对堆内存中实际对象的引用，即数据在堆内存中的地址，
+              JS对引用数据类型的操作都是操作对象的引用而不是实际的对象。</p>
+          <p>浅拷贝只拷贝对象的第一层，你如果操作复制出来的对象，原对象也会一起变，因为他们指向相同。</p>
+          <p>而深拷贝是拷贝多层，每一层的数据都会拷贝出来</p>
+          <p>...</p>
 
           <h2 id="Z-参考">Z. 参考</h2>
           {leaveConfirm && <p>
               <Link to={urlStates[5]}>1. 跨域资源共享 CORS 详解</Link><br/>
               <Link to={urlStates[6]}>2. http常见的状态码，400,401,403状态码分别代表什么？</Link><br/>
-              <Link to={urlStates[2]}>3. export default 和 export 区别）</Link><br/>
-              <Link to={urlStates[3]}>4. JS中的事件委托（事件代理）</Link><br/>
-              <Link to={urlStates[4]}>5. 简述JS中的事件委托和事件代理</Link><br/>
+              <Link to={urlStates[7]}>3. export default 和 export 区别</Link><br/>
+              <Link to={urlStates[8]}>4. GET 和 POST 到底有什么区别？</Link><br/>
+              <Link to={urlStates[9]}>5. export</Link><br/>
           </p>}
           {!leaveConfirm &&
           <p>
@@ -177,11 +158,13 @@ export default class ViewTwo extends Component {
                   2. http常见的状态码，400,401,403状态码分别代表什么？</a><br/>
               <a href="https://www.cnblogs.com/mengfangui/p/9073459.html" target="_blank"
                  rel="noopener noreferrer">
-                  3. export default 和 export 区别）</a><br/>
-              <a href="https://www.cnblogs.com/html55/p/10164914.html" target="_blank" rel="noopener noreferrer">
-                  4. JS中的事件委托（事件代理）</a><br/>
-              <a href="https://www.jianshu.com/p/a77d8928c5c9" target="_blank" rel="noopener noreferrer">
-                  5. 简述JS中的事件委托和事件代理</a><br/>
+                  3. export default 和 export 区别</a><br/>
+              <a href="https://www.zhihu.com/question/28586791" target="_blank" rel="noopener noreferrer">
+                  4. GET 和 POST 到底有什么区别？</a><br/>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                  5. export</a><br/>
           </p>
           }
       </div>
