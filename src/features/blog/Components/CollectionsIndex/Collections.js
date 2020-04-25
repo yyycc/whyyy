@@ -14,14 +14,14 @@ export class Collections extends Component {
     const { posts, international } = this.props.blog;
     const { queryPostsByDate, queryPostsByTag } = this.props.actions;
     const dates = posts.map((ele) => ele['date'].slice(0, 7)).sort(); // 获取年月
-    let datesCount = {};
     let typeCount = { 'frontEnd': 0, 'java': 0, 'linux': 0, 'database': 0, 'git': 0 };
-    let lastDate = dates[0];
-    let count = 1;
-    let counts = dates.length;
     let type = ['frontEnd', 'java', 'linux', 'database', 'git'];
 
     // 获取每个月份的blogs数量
+
+    /*let lastDate = dates[0];
+    let count = 1;
+    let counts = dates.length;
     dates.forEach((ele, index) => {
       if (index > 0) {
         if (ele !== lastDate) {
@@ -43,7 +43,18 @@ export class Collections extends Component {
         }
       }
       lastDate = ele;
-    });
+    });*/
+
+    // 所以之前为什么会写这么复杂的方法呢
+    let datesCount = {};
+    for (let i = 0; i < dates.length; i++) {
+      if (!datesCount[dates[i]]) {
+        datesCount[dates[i]] = 1;
+      } else {
+        datesCount[dates[i]]++;
+      }
+    }
+
     // 获取各种类型的blogs数量
     type.forEach((ele, index) => {
       posts.forEach((e, i) => {

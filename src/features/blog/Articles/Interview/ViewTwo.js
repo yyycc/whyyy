@@ -73,7 +73,7 @@ export default class ViewTwo extends Component {
           <p>一个文件中export和import可以有多个，但是export default只能有一个</p>
           <p>export导出的，在导入时要加大括号，export default导出的，导入时不用加大括号</p>
           <PreFormat content={exportDefault}/>
-          <p>export default导出的在导入的时候尽量不要用大括号，之前遇到过它默认给我加入到括号就出了一点问题</p>
+          <p>export default导出的在导入的时候尽量不要用大括号，之前遇到过它默认给我加括号就出了一点问题</p>
 
           <h2 id="view-5">5. 数组去重</h2>
           <h3 id="view-5-1">5.1. 方法一</h3>
@@ -107,9 +107,20 @@ export default class ViewTwo extends Component {
 
 
           <h2 id="view-8">8. HTML5的新特性</h2>
-
+          <p>语义化标签</p>
+          <p>audio、video标签</p>
+          <p>canvas、svg绘图</p>
+          <p></p>
 
           <h2 id="view-9">9. JS的类型</h2>
+
+          <h3 id="view-9-1">9.1. 类型</h3>
+          <p>js数据类型可以分为原始数据类型和引用数据勒烯</p>
+          <p>原始数据类型包括null、undefined、布尔值(boolean)、字符串(string)、数值(number)、以及es6新增的symbol，表示独一无二的值</p>
+          <p>引用数据类型包括对象(object)、函数(function)、数组(array)</p>
+
+          <h3 id="view-9-2">9.2. 区分(?)</h3>
+          <p>这些类型的区分方式有很多</p>
 
 
           <h2 id="view-10">10. JS中如何复制一个值</h2>
@@ -137,7 +148,15 @@ export default class ViewTwo extends Component {
         alert(bb);
       };
         aa(bb);
-        alert(bb);*/}
+        alert(bb);
+
+
+        - .col-xs- 超小屏幕 手机 <768px
+- .col-sm- 小屏幕 平板  >=768px
+- .col-md- 中等屏幕  >=992px
+- .col-lg- 大屏幕  >1200px
+
+*/}
           <p>https://www.cnblogs.com/sunyan-blog/p/10885982.html</p>
           <p>ruanyifeng.com/blog/2016/04/cors.html</p>
 

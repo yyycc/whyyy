@@ -8,6 +8,7 @@ const array = [
   ['reduce()', '累计', 'function (a, b, index, arr) {}', '起始值', '起始值&数组成员累计值'],
   ['some()', '一真', 'function (elem, index, arr) {}', '起始值', '一个true就返回true'],
   ['every()', '全真', 'function (elem, index, arr) {}', '起始值', '全是true才返回true'],
+  ['indexOf()', '位置', '元素', '--', '元素第一次出现的位置/-1'],
   ['改变原数组'],
   ['push()<sup>[3.1]</sup>', '添加', '多个各种类型值', '--', '添加元素后数组的长度'],
   ['pop()<sup>[4.1]</sup>', '删除', '--', '--', '删除的元素'],
@@ -17,7 +18,6 @@ const array = [
   ['splice()', '删除&添加', 'start(从0开始)', '删除个数(后面的参数都是添加的元素)', '删除的元素组成的数组'],
   ['sort()<sup>[5]</sup>', '排序', 'function (a, b) {}', '--', '排序后的数组'],
   ['forEach<sup>[6]</sup>', '遍历', 'function (elem, index, arr) {}', '绑定参数函数内部的this变量'],
-  ['indexOf()', '位置', '元素', '--', '元素第一次出现的位置/-1'],
 ];
 
 const arrayName = '表1. array的实例方法';
