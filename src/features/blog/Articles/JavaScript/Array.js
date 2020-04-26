@@ -29,6 +29,7 @@ export class Array extends Component {
         <p>[4.2]. shift: 删除第一个元素。</p>
         <p>[5]. 默认按照字典顺序排序，所以如果要按数字大小，则要写function，并且最好返回数值</p>
         <p>[6]. forEach方法只能改变数组里的对象，而不能改变数组中的基本数据类型值！！！</p>
+        <p>ES6还新增了fill、entries、keys、values、includes、flat、flatMap等方法</p>
         <br/>
         <p>最后再提一下for…in和for…of</p>
         <p>for…in会遍历所有可枚举属性，所以适合对象，不适合数组</p>

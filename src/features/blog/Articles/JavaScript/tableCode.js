@@ -18,6 +18,9 @@ const array = [
   ['splice()', '删除&添加', 'start(从0开始)', '删除个数(后面的参数都是添加的元素)', '删除的元素组成的数组'],
   ['sort()<sup>[5]</sup>', '排序', 'function (a, b) {}', '--', '排序后的数组'],
   ['forEach<sup>[6]</sup>', '遍历', 'function (elem, index, arr) {}', '绑定参数函数内部的this变量'],
+  ['更新于2020-04-26,es6新增的实例方法'],
+  ['find', '定位(第一个)', 'function(ele, index, arr) {}', '绑定参数函数内部的this变量', '返回第一个找到的成员值/undefined'],
+  ['findIndex', '定位(第一个)', 'function(ele, index, arr) {}', '绑定参数函数内部的this变量', '返回第一个找到的成员的位置/undefined'],
 ];
 
 const arrayName = '表1. array的实例方法';

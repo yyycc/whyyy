@@ -24,6 +24,14 @@ const views = {
       recommended: true,
       key: 2,
     },
+    {
+      title: '面试题收集(3)',
+      date: '2020-04-22', tag: ['interview'],
+      route: '/blog/articles/interview/three',
+      summary: '面试题',
+      recommended: true,
+      key: 2,
+    },
   ],
 };
 

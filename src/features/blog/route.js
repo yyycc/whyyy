@@ -22,7 +22,7 @@ import {
   ScrollBanner,
   ArticlesList,
   HomePage,
-  Interview, ViewOne, ViewTwo,
+  Interview, ViewOne, ViewTwo, ViewFour, ViewThree,
 } from './';
 import { PageNotFound } from '../common';
 
@@ -43,6 +43,8 @@ export default {
         { path: 'interview', name: 'interview', component: Interview, isIndex: false },
         { path: 'interview/one', name: 'interview', component: ViewOne, isIndex: false },
         { path: 'interview/two', name: 'interview', component: ViewTwo, isIndex: false },
+        { path: 'interview/three', name: 'interview', component: ViewThree, isIndex: false },
+        { path: 'interview/four', name: 'interview', component: ViewFour, isIndex: false },
 
         { path: 'css', name: 'css', component: Css, isIndex: false },
         { path: 'css/fontAwesome', name: 'css', component: CssB, isIndex: false },
