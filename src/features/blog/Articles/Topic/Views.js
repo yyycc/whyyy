@@ -30,7 +30,15 @@ const views = {
       route: '/blog/articles/interview/three',
       summary: '面试题',
       recommended: true,
-      key: 2,
+      key: 3,
+    },
+    {
+      title: '面试题收集(4)',
+      date: '2020-04-29', tag: ['interview'],
+      route: '/blog/articles/interview/four',
+      summary: '面试题',
+      recommended: true,
+      key: 3,
     },
   ],
 };

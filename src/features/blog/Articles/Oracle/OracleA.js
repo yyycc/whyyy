@@ -8,7 +8,10 @@ export class OracleA extends Component {
   static propTypes = {};
 
   render() {
-      const { start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls, listen, compile, lock, unlock } = code;
+      const {
+          start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls,
+          listen, compile, lock, unlock, sequence, increment, dropSequence, selectCur, selectNext,
+      } = code;
     const { urlStates } = url;
     let leaveConfirm = true;
     return (
@@ -82,16 +85,37 @@ export class OracleA extends Component {
           <p>杀掉锁表进程：</p>
           <p>记录下SID和serial# ，分别替换掉下面的1155,39095，即可解除锁表</p>
           <PreFormat content={unlock}/>
+          <h2 id="oracle-1-15">15. 序列</h2>
+          <p>新建</p>
+          <PreFormat content={sequence}/>
+          <p>删除</p>
+          <PreFormat content={dropSequence}/>
+          <p>更新步长</p>
+          <PreFormat content={increment}/>
+          <p>获取当前/下一个序列值</p>
+          <PreFormat content={selectCur}/>
+          <PreFormat content={selectNext}/>
+
+          <h2 id="oracle-1-16">16. 同义词</h2>
+          <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-04-29</p>
+          <p>昨天业务小哥重置了一个序列A_S，结果发现另一个序列B_S也被重置了，然后我就去找，但是咋都找不到这个序列。</p>
+          <p>.nextval可以取到值，但是drop不了，说不存在这个序列，但是create又说对象被占用。。。</p>
+          <p>我找啊找，终于在同义词里面找到了它。</p>
+          <p>这两个序列其实都是同义词，他们有同一个BASE_OBJECT(序列C_S)</p>
 
         <h2 id="Z-参考">Z. 参考</h2>
         {leaveConfirm && <p>
           <Link to={urlStates[0]}>1. Oracle对象批量编译</Link><br/>
+            <Link to={urlStates[3]}>2. Oracle中创建、修改、删除序列</Link><br/>
         </p>}
         {!leaveConfirm &&
         <p>
           <a href="https://blog.csdn.net/WMSOK/article/details/78891457" target="_blank"
              rel="noopener noreferrer">
             1. Oracle对象批量编译</a><br/>
+            <a href="https://www.cnblogs.com/nicholas_f/articles/1525585.html" target="_blank"
+               rel="noopener noreferrer">
+                2. Oracle中创建、修改、删除序列</a><br/>
         </p>
         }
       </div>

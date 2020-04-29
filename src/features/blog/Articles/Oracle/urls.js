@@ -11,6 +11,10 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://www.cnblogs.com/agileai/p/6030612.html',
   },
+  {
+    pathname: '/common/leave',
+    state: 'https://www.cnblogs.com/nicholas_f/articles/1525585.html',
+  },
 ];
 
 const urls = {

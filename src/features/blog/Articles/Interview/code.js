@@ -89,6 +89,9 @@ const exportDefault = '// export default\n' +
   '};\n' +
   'import {test} from \'test\'; // 输入';
 
+const inline = 'display: inline';
+const block = 'display: block';
+
 const code = {
   border,
   square,
@@ -106,6 +109,8 @@ const code = {
   media,
   access,
   exportDefault,
+  inline,
+  block,
 };
 
 export default code;

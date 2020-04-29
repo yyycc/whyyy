@@ -127,6 +127,15 @@ const lock = 'select * from v$session t1, v$locked_object t2 where t1.sid = t2.S
 
 const unlock = 'alter system kill session \'1155,39095\';';
 
+const sequence = 'CREATE SEQUENCE  "TEST_S"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 181 CACHE 20 NOORDER  NOCYCLE ;';
+
+const increment = 'alter sequence TEST_S increment by 100;';
+
+const dropSequence = 'drop TEST_S;';
+
+const selectNext = 'select TEST_S.nextval from dual';
+const selectCur = 'select TEST_S.currval from dual';
+
 const code = {
   start,
   dba,
@@ -145,6 +154,11 @@ const code = {
   request,
   lock,
   unlock,
+  sequence,
+  increment,
+  dropSequence,
+  selectNext,
+  selectCur,
 };
 
 export default code;

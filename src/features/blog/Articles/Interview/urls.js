@@ -43,6 +43,15 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context',
   },
+  // 11
+  {
+    pathname: '/common/leave',
+    state: 'https://www.cnblogs.com/stfei/p/9084915.html',
+  },
+  {
+    pathname: '/common/leave',
+    state: 'https://www.nowcoder.com/test/question/done?tid=33089519&qid=55728#summary',
+  },
 ];
 
 const urls = {
