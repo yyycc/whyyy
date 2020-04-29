@@ -8,7 +8,7 @@ export class OracleA extends Component {
   static propTypes = {};
 
   render() {
-    const { start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls, listen, compile } = code;
+      const { start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls, listen, compile, lock, unlock } = code;
     const { urlStates } = url;
     let leaveConfirm = true;
     return (
@@ -76,6 +76,12 @@ export class OracleA extends Component {
         <h2 id="oracle-1-13">13. 批量编译</h2>
         <p>当数据库重新导入，新导入的过程、视图等会存在无效的状态，需要重新编译，下面是一个批量重新编译的sql</p>
         <PreFormat content={compile}/>
+          <h2 id="oracle-1-14">14. 锁</h2>
+          <p>查看锁表进程</p>
+          <PreFormat content={lock}/>
+          <p>杀掉锁表进程：</p>
+          <p>记录下SID和serial# ，分别替换掉下面的1155,39095，即可解除锁表</p>
+          <PreFormat content={unlock}/>
 
         <h2 id="Z-参考">Z. 参考</h2>
         {leaveConfirm && <p>

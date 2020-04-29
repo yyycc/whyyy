@@ -10,7 +10,6 @@ import TagsIndex from '../Components/TagsIndex/TagsIndex';
 import Collections from '../Components/CollectionsIndex/Collections';
 import RecommendedPost from '../Components/RecommendIndex/RecommendedPost';
 import ScrollText from '../Components/ScrollText/ScrollText';
-import Axios from 'axios';
 
 /*
  * @name: 首页

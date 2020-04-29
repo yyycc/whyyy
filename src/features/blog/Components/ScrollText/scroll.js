@@ -4,7 +4,7 @@ const texts =
     { route: '/blog/maintain', content: '维护公告' },
     {
       route: '/blog/sentences',
-      content: '每日一句: I have no special talent. I am only passionately curious. ',
+      content: '每日一句: I have spent my entire life putting off things that I thought there’d be time for later.',
     },
   ];
 

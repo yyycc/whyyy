@@ -121,7 +121,7 @@ export default class ViewTwo extends Component {
           <h2 id="view-9">9. JS的类型</h2>
 
           <h3 id="view-9-1">9.1. 类型</h3>
-          <p>js数据类型可以分为原始数据类型和引用数据勒烯</p>
+            <p>js数据类型可以分为原始数据类型和引用数据类型</p>
           <p>原始数据类型包括null、undefined、布尔值(boolean)、字符串(string)、数值(number)、以及es6新增的symbol，表示独一无二的值</p>
           <p>引用数据类型包括对象(object)、函数(function)、数组(array)</p>
 

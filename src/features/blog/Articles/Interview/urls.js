@@ -39,6 +39,10 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export',
   },
+  {
+    pathname: '/common/leave',
+    state: 'https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context',
+  },
 ];
 
 const urls = {

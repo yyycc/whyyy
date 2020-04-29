@@ -17,34 +17,6 @@ export class Collections extends Component {
     let typeCount = { 'frontEnd': 0, 'java': 0, 'linux': 0, 'database': 0, 'git': 0 };
     let type = ['frontEnd', 'java', 'linux', 'database', 'git'];
 
-    // 获取每个月份的blogs数量
-
-    /*let lastDate = dates[0];
-    let count = 1;
-    let counts = dates.length;
-    dates.forEach((ele, index) => {
-      if (index > 0) {
-        if (ele !== lastDate) {
-          let obj = {};
-          obj[lastDate] = count;
-          Object.assign(datesCount, obj);
-          count = 1;
-          if (index === counts - 1) {
-            let obj = {};
-            obj[ele] = 1;
-            Object.assign(datesCount, obj);
-          }
-        } else if (index === counts - 1) {
-          let obj = {};
-          obj[ele] = ++count;
-          Object.assign(datesCount, obj);
-        } else {
-          count++;
-        }
-      }
-      lastDate = ele;
-    });*/
-
     // 所以之前为什么会写这么复杂的方法呢
     let datesCount = {};
     for (let i = 0; i < dates.length; i++) {

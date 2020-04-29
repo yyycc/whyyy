@@ -12,6 +12,7 @@ const sentences =
     '总有人懂你的奇奇怪怪，陪你可可爱爱。',
     'Success is not final, failure is not fatal: it is the courage to continue that counts.',
     'I have no special talent. I am only passionately curious. ',
+    'I have spent my entire life putting off things that I thought there’d be time for later.',
   ];
 
 const sentencesCurrent = 1;

@@ -122,6 +122,11 @@ const acl = 'begin\n' +
 const request = 'v_http_req := utl_http.begin_request(g_url_test,\n' +
   '                                     \'POST\',\n' +
   '                                     utl_http.http_version_1_1);';
+
+const lock = 'select * from v$session t1, v$locked_object t2 where t1.sid = t2.SESSION_ID;';
+
+const unlock = 'alter system kill session \'1155,39095\';';
+
 const code = {
   start,
   dba,
@@ -138,6 +143,8 @@ const code = {
   codes,
   acl,
   request,
+  lock,
+  unlock,
 };
 
 export default code;

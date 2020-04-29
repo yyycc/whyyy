@@ -22,7 +22,6 @@ export class SimpleTable extends Component {
               if (tr.length === 1) {
                 return <tr key={index}>
                   <td style={{ color: '#c40000', fontWeight: 'bold' }}>{tr[0]}</td>
-                  <td></td>
                 </tr>;
               }
               return <tr key={index}>

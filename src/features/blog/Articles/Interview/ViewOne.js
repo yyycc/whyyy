@@ -105,7 +105,7 @@ export default class ViewOne extends Component {
         <h3 id="view-8-1">8.1. 方法一</h3>
         <PreFormat content={codes[0]}/>
         <h3 id="view-8-2">8.2. 方法二</h3>
-        <p>BFC(?)清除浮动</p>
+          <p>BFC(见/three)清除浮动</p>
         <p>创建父级 BFC(overflow:hidden)</p>
         <p>父级设置高度</p>
         <PreFormat content={bfc}/>
@@ -138,7 +138,7 @@ export default class ViewOne extends Component {
         <p>3、将dom树和CSSOM合并为渲染树</p>
         <p>4、根据CSSOM将渲染树的节点布局计算</p>
         <p>5、将渲染树节点样式绘制到页面上</p>
-        <p>// 注意在渲染的过程中是自上而下渲染， js会阻塞页面的渲染，优先等js执行完成如果在渲染的过程中改变了样式，会造成回流需要重新渲染</p>
+          <p>注意在渲染的过程中是自上而下渲染， js会阻塞页面的渲染，优先等js执行完成如果在渲染的过程中改变了样式，会造成回流需要重新渲染</p>
 
         <h2 id="view-10">10. 事件代理</h2>
         <h3 id="view-10-1">10.1. 原理</h3>
