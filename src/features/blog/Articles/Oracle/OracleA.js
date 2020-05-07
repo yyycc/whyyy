@@ -103,10 +103,20 @@ export class OracleA extends Component {
           <p>我找啊找，终于在同义词里面找到了它。</p>
           <p>这两个序列其实都是同义词，他们有同一个BASE_OBJECT(序列C_S)</p>
 
+          <h2 id="oracle-1-17">17. 密码期限</h2>
+          <p>检查显示信息中历史库用户对应的profile。一般都为DEFAULT</p>
+          <PreFormat content={sqls[9]}/>
+          <p>检查概要文件（默认为default）的密码有效期设置。</p>
+          <PreFormat content={sqls[10]}/>
+          <p>如果limit列有数字值，那就是有期限的，如果是unlimited，就是没有期限</p>
+          <p>执行如下指令就可以改成无期限的：</p>
+          <PreFormat content={sqls[11]}/>
+
         <h2 id="Z-参考">Z. 参考</h2>
         {leaveConfirm && <p>
           <Link to={urlStates[0]}>1. Oracle对象批量编译</Link><br/>
             <Link to={urlStates[3]}>2. Oracle中创建、修改、删除序列</Link><br/>
+            <Link to={urlStates[4]}>3. Oracle数据库密码有效期参数</Link><br/>
         </p>}
         {!leaveConfirm &&
         <p>
@@ -116,6 +126,9 @@ export class OracleA extends Component {
             <a href="https://www.cnblogs.com/nicholas_f/articles/1525585.html" target="_blank"
                rel="noopener noreferrer">
                 2. Oracle中创建、修改、删除序列</a><br/>
+            <a href="https://www.cnblogs.com/xgxhellboy/archive/2013/06/14/3135005.html" target="_blank"
+               rel="noopener noreferrer">
+                3. Oracle数据库密码有效期参数</a><br/>
         </p>
         }
       </div>

@@ -13,6 +13,7 @@ export default class ViewFour extends Component {
     let leaveConfirm = true;
     return (
       <div className="blog-view-four">
+
         <h2 id="view-1">1. 行内元素&块级元素</h2>
         <h3 id="view-1-1">1. 区别</h3>
         <p>块级元素：</p>
@@ -49,6 +50,8 @@ export default class ViewFour extends Component {
         <PreFormat content={inline}/>
         <p>变成块级元素</p>
         <PreFormat content={block}/>
+
+
         <h2 id="view-2">2. js内置对象</h2>
         <p>JS中，可以将对象分为“内部对象”、“宿主对象”和“自定义对象”三种。</p>
         <p>1，内部对象</p>
@@ -59,6 +62,13 @@ export default class ViewFour extends Component {
         <p>浏览器对象有很多，如Window和Documen，Element，form，image，等等。</p>
         <p>3.自定义对象</p>
         <p>顾名思义，就是开发人员自己定义的对象。JS允许使用自定义对象，使JS应用及功能得到扩充</p>
+
+        <h2 id="view-3">3. 继承属性</h2>
+        <p>可以继承的属性很少，只有颜色，文字，字体间距行高对齐方式，和列表的样式可以继承。</p>
+        <p>所有元素可继承：visibility和cursor。</p>
+        <p>内联元素可继承：letter-spacing、word-spacing、white-space、line-height、color、font、font-family、font-size、font-style、font-variant、font-weight、text-decoration、text-transform、direction。</p>
+        <p>终端块状元素可继承：text-indent和text-align。</p>
+        <p>列表元素可继承：list-style、list-style-type、list-style-position、list-style-image。</p>
 
         <h2 id="Z-参考">Z. 参考</h2>
         {leaveConfirm && <p>

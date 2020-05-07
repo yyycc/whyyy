@@ -70,6 +70,9 @@ const sqls = [
   'CREATE TABLESPACE userName DATAFILE \'/u01/app/oracle/admin/XE/dpdump/userName.dbf\' SIZE 500M AUTOEXTEND ON;',
   'create user name identified by pwd default tablespace userName;',
   'create table sys_user_bak/sys_user_20200114 as select * from sys_user;',
+  'select username,profile from dba_users; ',
+  'select * from dba_profiles s where s.profile=\'DEFAULT\' and resource_name=\'PASSWORD_LIFE_TIME\'; ',
+  'alter profile default limit password_life_time unlimited; ',
 ];
 
 const listen = 'lsnrctl stop;\n' +
