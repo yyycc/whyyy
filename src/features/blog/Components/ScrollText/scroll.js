@@ -4,7 +4,7 @@ const texts =
     { route: '/blog/maintain', content: '维护公告' },
     {
       route: '/blog/sentences',
-      content: '每日一句: Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present.',
+      content: '每日一句: If there is any kind of magic in the world, it must be the attempt of understanding someone or sharing something. ',
     },
   ];
 

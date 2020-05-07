@@ -14,6 +14,7 @@ const sentences =
     'I have no special talent. I am only passionately curious. ',
     'I have spent my entire life putting off things that I thought there’d be time for later.',
     'Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present.',
+    'If there is any kind of magic in the world, it must be the attempt of understanding someone or sharing something. ',
   ];
 
 const sentencesCurrent = 1;
