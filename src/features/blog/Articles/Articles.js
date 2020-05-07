@@ -41,7 +41,7 @@ export class Articles extends Component {
       articleTitle = this.props.location.state;
     }
     return (
-      <div>
+      <div className="blog-articles-overall">
         <BreadCrumb props={this.props}/>
         <div className="blog-articles">
           <img className="blog-articles-img" src={willow} alt=""/>

@@ -37,6 +37,7 @@ export class HomePage extends Component {
         a.style.width = 'inherit';
       } else {
         a.style.position = 'static';
+        a.style.width = '100%';
       }
     }
   }

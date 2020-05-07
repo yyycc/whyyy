@@ -1,19 +1,18 @@
 @import '../../../styles/mixins';
 
 .blog-layout {
-  height: 100%;
 
   // 实现主体内容平易效果
   .blog-layout-container-drawer-open-right {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    transform: translateX(-120px);
+    transform: translateX(-10%);
   }
 
   .blog-layout-container-drawer-open-left {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    transform: translateX(170px);
+    transform: translateX(12%);
   }
 
   .blog-layout-container-drawer-close {
@@ -23,9 +22,8 @@
   }
 
   .blog-layout-container {
-    min-height: 96%;
-    margin: 55px 150px 0 150px;
-    padding: 20px 100px 20px 50px;
+    margin-top: 55px;
+    padding: 20px 0;
 
     .ant-anchor-wrapper {
       padding-right: 14px;
@@ -74,8 +72,8 @@
   .blog-layout-right-bottom-fix {
     position: fixed;
     z-index: 999;
-    right: 40px;
-    bottom: 100px;
+    right: 3%;
+    bottom: 10%;
     width: 32px;
 
     .fa {
@@ -134,3 +132,26 @@
     }
   }
 }
+
+@media screen and (max-width: 1500px) {
+  .blog-layout {
+    .blog-layout-container-drawer-open-right,
+    .blog-layout-container-drawer-open-left {
+      transform: translateX(0);
+    }
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .blog-layout {
+    .blog-layout-right-bottom-fix {
+      display: none !important;
+    }
+
+    .blog-layout-container {
+      padding-top: 0;
+    }
+  }
+}
+

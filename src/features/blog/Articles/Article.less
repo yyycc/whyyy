@@ -1,15 +1,32 @@
 @import '../../../styles/mixins';
 
-.blog-articles {
-  position: relative;
-  background-color: white;
+.blog-articles-overall {
+  width: 1200px;
+  margin: 0 auto;
 
-  .blog-articles-img {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    right: 0;
-    margin: 0;
+  .blog-articles {
+    position: relative;
+    background-color: white;
+
+    .blog-articles-img {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      right: 0;
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-articles-overall {
+    width: 98%;
+
+    .blog-articles {
+      .blog-articles-img {
+        display: none;
+      }
+    }
   }
 }
 

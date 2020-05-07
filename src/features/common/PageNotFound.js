@@ -32,7 +32,7 @@ export default class PageNotFound extends PureComponent {
             </div>
           </div>
         </div>
-        <div>
+        <div className="common-page-not-found-pic">
           <img className="common-page-not-found-img" src={lost}
                alt="page error"/>
         </div>

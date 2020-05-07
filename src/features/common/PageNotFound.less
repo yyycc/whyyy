@@ -3,7 +3,7 @@
 .common-page-not-found {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 10%;
   background-color: white;
 
   .common-page-not-found-tip {
@@ -11,7 +11,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 384px;
 
     h1 {
       font-size: 50px;
@@ -52,5 +51,19 @@
 
   a:hover {
     color: #c40000;
+  }
+}
+
+@media screen and (max-height: 600px) {
+
+  .common-page-not-found {
+    margin-top: 0;
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .common-page-not-found-pic {
+    display: none;
   }
 }

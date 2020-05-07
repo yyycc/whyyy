@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 10px 80px;
+  padding: 0px 80px;
   display: flex;
   border-bottom: 1px solid #f0f0f0;
   height: 55px;
@@ -17,9 +17,15 @@
   .blog-header-name {
     font-family: fantasy;
     font-size: 30px;
+    line-height: 55px;
+  }
+
+  .blog-header-bars {
+    display: none;
   }
 
   .blog-header-motto {
+    line-height: 55px;
     margin-top: 12px;
     margin-left: 10px;
     font-family: cursive;
@@ -27,6 +33,7 @@
   }
 
   .blog-header-search {
+    line-height: 55px;
     margin-left: 40px;
 
     .ant-input-affix-wrapper {
@@ -45,6 +52,7 @@
   }
 
   .blog-header-home {
+    line-height: 55px;
     font-size: 18px;
     display: flex;
     margin-left: 100px;
@@ -62,9 +70,9 @@
   }
 
   .blog-header-menu {
+    line-height: 55px;
     display: flex;
     margin-left: auto;
-    margin-right: 40px;
 
 
     .blog-header-menu-mode {
@@ -93,3 +101,39 @@
     }
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  .blog-header-search {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .blog-header {
+    padding: 0 20px;
+    height: 40px;
+
+    .blog-header-name {
+      font-family: fantasy;
+      font-size: 20px;
+      line-height: 40px;
+    }
+
+    .blog-header-bars {
+      display: flex;
+      line-height: 40px;
+      margin-left: auto;
+
+      .blog-header-bars-bar {
+        margin-right: 20px;
+      }
+    }
+
+    .blog-header-home,
+    .blog-header-search,
+    .blog-header-menu {
+      display: none;
+    }
+  }
+}
+

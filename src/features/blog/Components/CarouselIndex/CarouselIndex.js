@@ -35,10 +35,17 @@ export class CarouselIndex extends Component {
   }
 
   render() {
+    let left = document.getElementsByClassName('blog-home-page-left')[0];
+    let leftWidth;
+    if (!!left) {
+      leftWidth = left.offsetWidth;
+    } else {
+      leftWidth = 800;
+    }
     const { imageIndex, images, imageRoutes } = this.props.blog;
     const src = images[imageIndex];
-    let translate = 'translate3d(-' + 800 * imageIndex + 'px, 0px, 0px)';
-    let width = 800 * images.length;
+    let translate = 'translate3d(-' + leftWidth * imageIndex + 'px, 0px, 0px)';
+    let width = leftWidth * images.length;
     const { changeImage } = this.props.actions;
     return (
       <div className="blog-carousel-index">

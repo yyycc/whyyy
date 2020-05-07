@@ -56,9 +56,11 @@ export class Header extends Component {
     return (
       <header className="blog-header">
         <div className="blog-header-name"> whyyy his blog</div>
-        {/*<div className="blog-header-motto"> |每天都努力地搬砖</div>*/}
+
+        {/*屏幕大于1200时显示*/}
         <div className="blog-header-home">
-          <div className="blog-header-home-page" onClick={() => this.home(this.props.history, fuzzyQueryPosts, 'all')}>
+          <div className="blog-header-home-page"
+               onClick={() => this.home(this.props.history, fuzzyQueryPosts, 'all')}>
             <i className="fa fa-home"> </i>
             <a>首页</a>
             {/*<Link to="/blog">首页</Link>*/}
@@ -76,7 +78,8 @@ export class Header extends Component {
           />
         </div>
         <div className="blog-header-menu">
-          <div className="blog-header-menu-mode" style={{ display: 'none' }} onClick={() => this.changeColor('green')}>
+          <div className="blog-header-menu-mode" style={{ display: 'none' }}
+               onClick={() => this.changeColor('green')}>
             <i className="fa fa-code-fork"> </i>
           </div>
           <div title={mode === 'day' ? '夜间模式' : '日间模式'} className="blog-header-menu-mode"
@@ -90,6 +93,17 @@ export class Header extends Component {
           <div className="blog-header-menu-links">
             <i className="fa fa-handshake-o"> </i>
             <Link to="/blog/fLinks">友链</Link>
+          </div>
+        </div>
+        {/*屏幕小于1200时显示*/}
+        <div className="blog-header-bars">
+          <div className="blog-header-bars-bar"
+               onClick={() => this.changeColor('green')}>
+            <i className="fa fa-bars"> </i>
+          </div>
+          <div className="blog-header-bars-search"
+               onClick={() => this.changeColor('green')}>
+            <i className="fa fa-search"> </i>
           </div>
         </div>
       </header>
