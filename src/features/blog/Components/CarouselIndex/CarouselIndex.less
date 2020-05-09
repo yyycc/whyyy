@@ -8,9 +8,15 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 300px;
+    height: 100%;
+
+    img {
+      width: 25%;
+      height: 100%;
+    }
 
     .blog-carousel-index-images-overflow {
+      height: 100%;
       position: absolute;
       overflow: hidden;
       transition-duration: 0.3s;
@@ -95,9 +101,14 @@
       transition: all 0.5s;
     }
   }
+}
 
-  img {
-    height: 300px;
-    width: 100%;
+
+@media screen and (max-width: 900px) {
+
+  .blog-carousel-index {
+    .blog-carousel-index-images {
+      //height: 150px;
+    }
   }
 }

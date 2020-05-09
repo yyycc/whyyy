@@ -42,15 +42,17 @@ export class CarouselIndex extends Component {
     } else {
       leftWidth = 800;
     }
+    let height = leftWidth / 8 * 3;
     const { imageIndex, images, imageRoutes } = this.props.blog;
     const src = images[imageIndex];
-    let translate = 'translate3d(-' + leftWidth * imageIndex + 'px, 0px, 0px)';
-    let width = leftWidth * images.length;
+    let translate = 'translate3d(-' + 100 * imageIndex / images.length + '%, 0px, 0px)';
+    // let width = leftWidth * images.length;
+    let width = 100 * images.length;
     const { changeImage } = this.props.actions;
     return (
       <div className="blog-carousel-index">
-        <div className="blog-carousel-index-images">
-          <div style={{ transform: `${translate}`, width: `${width}px` }}
+        <div className="blog-carousel-index-images" style={{ height: `${height}px` }}>
+          <div style={{ transform: `${translate}`, width: `${width}%` }}
                className="blog-carousel-index-images-overflow">
             {images.map((ele, i) => {
               return <img key={i} className="blog-carousel-index-img" src={images[i]} alt='pictures'

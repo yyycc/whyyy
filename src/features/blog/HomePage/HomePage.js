@@ -34,10 +34,8 @@ export class HomePage extends Component {
       if (window.scrollY > top && !blog.drawer) {
         a.style.position = 'fixed';
         a.style.top = '34px';
-        a.style.width = 'inherit';
       } else {
         a.style.position = 'static';
-        a.style.width = '100%';
       }
     }
   }

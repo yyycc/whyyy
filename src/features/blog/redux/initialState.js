@@ -43,7 +43,7 @@ const initialState = {
     },
     {
       title: 'css(3): 文字公告滚动轮播',
-      date: '2020-04-01', tag: ['frontEnd', 'javascript', 'css', 'react'], route: '/blog/articles/css/scroll',
+      date: '2020-04-01', tag: ['frontEnd', 'javaScript', 'css', 'react'], route: '/blog/articles/css/scroll',
       summary: '如何在react中实现滚动轮播',
       key: 19,
     },
@@ -207,6 +207,7 @@ const initialState = {
   texts: texts,
   animate: animate,
   visible: false, // 抽屉是否可见
+  searchVisible: false, //搜索框是否可见
   dayNightColor: {},
   drawer: false,
   mode: 'day',

@@ -39,24 +39,32 @@ export default class ViewThree extends Component {
 
         <h2 id="view-3">3. reflow和repaint</h2>
         <p>https://blog.csdn.net/HU_YEWEN/article/details/84790690</p>
+        <p>重绘repaint：</p>
+        <p>一般只改变dom元素的视觉效果，而不改变任何布局排版的时候触发</p>
+        <p>比如修改颜色、text-align、hover修改颜色、visibility: hidden等</p>
+        <p>重绘只针对触发视觉变化的元素，所以开销不大</p>
+        <p>回流reflow：</p>
+        <p>某一个dom元素的位置变动就会触发reflow，他会重新计算所有dom的位置以及所占面积，会影响子节点、祖先节点、兄弟节点</p>
+        <p>比如display：none、width/height/border/margin/padding的修改、scroll页面，改变字体大小等等</p>
+        <p>reflow一般是针对整个页面，进行重新渲染，所以开销很大</p>
 
-        
+
         <h2 id="view-4">4. html5语义化标签</h2>
         <p>https://www.cnblogs.com/freeyiyi1993/p/3615179.html</p>
         <p>article、header、footer、section、aside、nav、</p>
         <p>1、什么是HTML语义化？
           基本上都是围绕着几个主要的标签，像标题（H1~H6）、列表（li）、强调（strong em）等等
-          根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。
-          2、为什么要语义化？ 为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构:为了裸奔时好看； 用户体验：
+          根据内容的结构化（内容语义化），选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析。</p>
+        <p>2、为什么要语义化？ 为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构:为了裸奔时好看； 用户体验：
           例如title、alt用于解释名词或解释图片信息、label标签的活用； 有利于SEO ：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：
           爬虫依赖于标签来确定上下文和各个关键字的权重； 方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；
-          便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。
-          3、写HTML代码时应注意什么？ 尽可能少的使用无语义的标签div和span； 在语义不明显时，既可以使用div或者p时，尽量用p,
+          便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。</p>
+        <p> 3、写HTML代码时应注意什么？ 尽可能少的使用无语义的标签div和span； 在语义不明显时，既可以使用div或者p时，尽量用p,
           因为p在默认情况下有上下间距，对兼容特殊终端有利； 不要使用纯样式标签，如：b、font、u等，改用css设置。
           需要强调的文本，可以包含在strong或者em标签中（浏览器预设样式，能用CSS指定就不用他们），strong默认样式是加粗（不要用b），em是斜体（不用i）；
           使用表格时，标题要用caption，表头用thead，主体部分用tbody包围，尾部用tfoot包围。表头和一般单元格要区分开，表头用th，单元格用td；
           表单域要用fieldset标签包起来，并用legend标签说明表单的用途； 每个input标签对应的说明文本都需要使用label标签，并且通过为input设置id属性，
-          在lable标签中设置for=someld来让说明文本和相对应的input关联起来。 http://www.cnblogs.com/freeyiyi1993/p/3615179.html
+          在lable标签中设置for=someld来让说明文本和相对应的input关联起来。
         </p>
         <h2 id="view-5">5. 浏览器内核</h2>
         <p>主流浏览器：chrome、safari、Firefox、IE、Opera</p>
@@ -89,6 +97,8 @@ export default class ViewThree extends Component {
           <Link to={urlStates[2]}>3. 2020前端面试(一面面试题）</Link><br/>
           <Link to={urlStates[3]}>4. JS中的事件委托（事件代理）</Link><br/>
           <Link to={urlStates[4]}>5. 简述JS中的事件委托和事件代理</Link><br/>
+          <Link to={urlStates[14]}>6. 简述reflow和repaint</Link><br/>
+          <Link to={urlStates[15]}>7. 理解HTML语义化</Link><br/>
         </p>}
         {!leaveConfirm &&
         <p>
@@ -105,6 +115,10 @@ export default class ViewThree extends Component {
             4. JS中的事件委托（事件代理）</a><br/>
           <a href="https://www.jianshu.com/p/a77d8928c5c9" target="_blank" rel="noopener noreferrer">
             5. 简述JS中的事件委托和事件代理</a><br/>
+          <a href="https://blog.csdn.net/HU_YEWEN/article/details/84790690" target="_blank" rel="noopener noreferrer">
+            6. 简述reflow和repaint</a><br/>
+          <a href="https://www.cnblogs.com/freeyiyi1993/p/3615179.html" target="_blank" rel="noopener noreferrer">
+            7. 理解HTML语义化</a><br/>
         </p>
         }
       </div>

@@ -24,7 +24,7 @@ export default class CssC extends Component {
         <PreFormat content={scaleYHtml}/>
         <p>这里transform的scale缩放方法，在Y轴上缩小为原来的0.5，实现0.5px的效果，粗细还是挺明显的。</p>
         <h3 id="css-1-1-3">1.3. 渐变</h3>
-        <p>利用background的linear-gradiend属性</p>
+        <p>利用background的linear-gradient属性</p>
         <PreFormat content={codes[6]}/>
         <p>第一个参数是渐变的方向，后面的都是颜色,transparent表示完全透明，就得到了一个1px，但是一是看不见的0.5px的线</p>
         <a href='/css/half' target="_blank" rel="noopener norefferrer">看具体效果请戳这里<i

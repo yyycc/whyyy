@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Input } from 'antd';
+import { Input, Menu, Dropdown, Modal } from 'antd';
 
 /*
  * @name: 页眉
@@ -49,10 +49,38 @@ export class Header extends Component {
     history.push('/blog');
   }
 
+  handleOk = (changeModal, fuzzyQueryPosts) => {
+    let value = document.getElementById('header-search-title').value;
+    fuzzyQueryPosts(value);
+    changeModal(false);
+  };
+
+  handleCancel = (changeModal) => {
+    changeModal(false);
+  };
+
+
   render() {
     const { Search } = Input;
-    const { fuzzyQueryPosts, changeMode } = this.props.actions;
+    const { fuzzyQueryPosts, changeMode, changeModal } = this.props.actions;
     const mode = this.props.mode;
+    const searchVisible = this.props.searchVisible;
+    const menu = (
+      <Menu>
+        <Menu.Item>
+          <a onClick={() => this.home(this.props.history, fuzzyQueryPosts, 'all')}>首页</a>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/blog/articles">站内地图</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/blog/about">关于</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/blog/fLinks">友链</Link>
+        </Menu.Item>
+      </Menu>
+    );
     return (
       <header className="blog-header">
         <div className="blog-header-name"> whyyy his blog</div>
@@ -97,13 +125,28 @@ export class Header extends Component {
         </div>
         {/*屏幕小于1200时显示*/}
         <div className="blog-header-bars">
-          <div className="blog-header-bars-bar"
-               onClick={() => this.changeColor('green')}>
-            <i className="fa fa-bars"> </i>
+          <div title={mode === 'day' ? '夜间模式' : '日间模式'} className="blog-header-bars-mode"
+               onClick={() => this.change(changeMode)}>
+            <i className="fa fa-moon-o"> </i>
           </div>
-          <div className="blog-header-bars-search"
-               onClick={() => this.changeColor('green')}>
-            <i className="fa fa-search"> </i>
+          <div className="blog-header-bars-bar">
+            {/*<i className="fa fa-bars"> </i>*/}
+            <Dropdown overlay={menu} trigger={['click']}>
+              <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                <i className="fa fa-bars"> </i>
+              </a>
+            </Dropdown>
+          </div>
+          <div className="blog-header-bars-search">
+            <i className="fa fa-search" onClick={() => changeModal(true)}> </i>
+            <Modal
+              title="搜索文章标题"
+              visible={searchVisible}
+              onOk={() => this.handleOk(changeModal, fuzzyQueryPosts)}
+              onCancel={() => this.handleCancel(changeModal)}
+            >
+              <input id="header-search-title"/>
+            </Modal>
           </div>
         </div>
       </header>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import friends from '../../../../images/friends.jpg';
+import links from './Links';
 
 export class FLinks extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
   render() {
+    const { linkNames } = links;
     return (
       <div className="blog-f-links">
         <h1>友请链接</h1>
@@ -13,7 +14,7 @@ export class FLinks extends Component {
           <p>链接都在这儿了，自己看吧</p>
           <p><img src={friends} alt='friends'/></p>
         </article>
-        <div style={{ backgroundColor: 'white', marginTop: '20px' }}>
+        {/*<div style={{ backgroundColor: 'white', marginTop: '20px' }}>
           <ul>
             <li>
               <span>
@@ -26,6 +27,19 @@ export class FLinks extends Component {
               </span>
             </li>
           </ul>
+        </div>*/}
+
+        <div className="blog-f-links-lists">
+          {
+            linkNames.map((ele, index) => {
+              // const name = international[ele] ? international[ele] : ele;
+              return <div key={index} className="blog-f-links-lists-div">
+                <li className="blog-f-links-lists-li">
+                  <a href={ele['link']} target="_blank" rel="noopener noreferrer">{ele['name']}</a>
+                </li>
+              </div>;
+            })
+          }
         </div>
       </div>
     );

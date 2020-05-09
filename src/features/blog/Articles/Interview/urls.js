@@ -52,6 +52,18 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://www.nowcoder.com/test/question/done?tid=33089519&qid=55728#summary',
   },
+  {
+    pathname: '/common/leave',
+    state: 'https://www.runoob.com/w3cnote/css-style-priority.html',
+  },
+  {
+    pathname: '/common/leave',
+    state: 'https://blog.csdn.net/HU_YEWEN/article/details/84790690',
+  },
+  {
+    pathname: '/common/leave',
+    state: 'https://www.cnblogs.com/freeyiyi1993/p/3615179.html',
+  },
 ];
 
 const urls = {

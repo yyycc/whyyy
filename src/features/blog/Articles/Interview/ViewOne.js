@@ -20,19 +20,19 @@ export default class ViewOne extends Component {
         <p>javaSript是有垃圾回收机制的，他会去判断内存将来是否会再使用，如果不用就回收</p>
         <p>而不需要的引用就导致了内存泄漏</p>
         <h3 id="view-2-1">2.1. 意外的全局变量</h3>
-          <p>比如说，你在方法a里定义了一个变量aa，但是你声明的的时候忘记了关键词var，就导致这个变量成为了全局变量。</p>
-          <p>本来在方法调用结束后接回自动回收这个变量aa，但是现在它变成了全局变量，就不会回收了。</p>
-          <h3 id="view-2-2">2.2. 计数器、监听</h3>
-          <p>计数器要在不用的时候clear，监听要在不用的时候remove</p>
-          <p>比如react中，我在componentDidMount中写了计时器以及监听，那么就一定要在componentWillUnmount中clear计时器，remove监听。</p>
-          <p>不然就会造成内存泄漏，而且可以直观的看到，如果你在第一个页面绑定了scroll监听，如果在卸载的时候不remove，那么到了另一个页面</p>
-          <p>还是会继续触发监听函数，就造成了不必要的浪费。</p>
+        <p>比如说，你在方法a里定义了一个变量aa，但是你声明的的时候忘记了关键词var，就导致这个变量成为了全局变量。</p>
+        <p>本来在方法调用结束后接回自动回收这个变量aa，但是现在它变成了全局变量，就不会回收了。</p>
+        <h3 id="view-2-2">2.2. 计数器、监听</h3>
+        <p>计数器要在不用的时候clear，监听要在不用的时候remove</p>
+        <p>比如react中，我在componentDidMount中写了计时器以及监听，那么就一定要在componentWillUnmount中clear计时器，remove监听。</p>
+        <p>不然就会造成内存泄漏，而且可以直观的看到，如果你在第一个页面绑定了scroll监听，如果在卸载的时候不remove，那么到了另一个页面</p>
+        <p>还是会继续触发监听函数，就造成了不必要的浪费。</p>
         <h3 id="view-2-3">2.3. 脱离dom的引用</h3>
         <p></p>
         <p></p>
         <h3 id="view-2-4">2.4. 闭包</h3>
-          <p>闭包可以维持函数内部的局部变量</p>
-          <p>所以闭包中，作用域中没有用的属性可以删除以减少内存消耗</p>
+        <p>闭包可以维持函数内部的局部变量</p>
+        <p>所以闭包中，作用域中没有用的属性可以删除以减少内存消耗</p>
 
         <h2 id="view-3">3. 闭包</h2>
         <p>当函数可以 记住 并 访问 其(定义时的)作用域，就产生了闭包。</p>
@@ -50,7 +50,9 @@ export default class ViewOne extends Component {
         <h3 id="view-4-3">4.3. 兼容性</h3>
         <p>@import只有IE5以上才支持</p>
         <p>link不存在兼容性问题</p>
-        <h3 id="view-4-4">4.4. 操作dom</h3>
+        <h3 id="view-4-4">4.4. 权重</h3>
+        <p>link方式样式的权重高于@import</p>
+        <h3 id="view-4-5">4.5. 操作dom</h3>
         <p>link可以通过js插入操作dom，@import 不可以！</p>
 
         <h2 id="view-5">5. view水平、垂直居中的写法</h2>
@@ -107,7 +109,7 @@ export default class ViewOne extends Component {
         <h3 id="view-8-1">8.1. 方法一</h3>
         <PreFormat content={codes[0]}/>
         <h3 id="view-8-2">8.2. 方法二</h3>
-          <p>BFC(见/three)清除浮动</p>
+        <p>BFC(见/three)清除浮动</p>
         <p>创建父级 BFC(overflow:hidden)</p>
         <p>父级设置高度</p>
         <PreFormat content={bfc}/>
@@ -140,7 +142,7 @@ export default class ViewOne extends Component {
         <p>3、将dom树和CSSOM合并为渲染树</p>
         <p>4、根据CSSOM将渲染树的节点布局计算</p>
         <p>5、将渲染树节点样式绘制到页面上</p>
-          <p>注意在渲染的过程中是自上而下渲染， js会阻塞页面的渲染，优先等js执行完成如果在渲染的过程中改变了样式，会造成回流需要重新渲染</p>
+        <p>注意在渲染的过程中是自上而下渲染， js会阻塞页面的渲染，优先等js执行完成如果在渲染的过程中改变了样式，会造成回流需要重新渲染</p>
 
         <h2 id="view-10">10. 事件代理</h2>
         <h3 id="view-10-1">10.1. 原理</h3>
