@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import Y from '../../images/Y.png';
 
 export default class DefaultPage extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
   render() {
     return (

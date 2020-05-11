@@ -35,23 +35,14 @@ export class CarouselIndex extends Component {
   }
 
   render() {
-    let left = document.getElementsByClassName('blog-home-page-left')[0];
-    let leftWidth;
-    if (!!left) {
-      leftWidth = left.offsetWidth;
-    } else {
-      leftWidth = 800;
-    }
-    let height = leftWidth / 8 * 3;
     const { imageIndex, images, imageRoutes } = this.props.blog;
     const src = images[imageIndex];
-    let translate = 'translate3d(-' + 100 * imageIndex / images.length + '%, 0px, 0px)';
-    // let width = leftWidth * images.length;
-    let width = 100 * images.length;
+    let translate = 'translate3d(-' + 100 * imageIndex / images.length + '%, 0px, 0px)'; // 每次移动一张图片宽度的距离
+    let width = 100 * images.length;  // 几张图片就多少100%宽度
     const { changeImage } = this.props.actions;
     return (
       <div className="blog-carousel-index">
-        <div className="blog-carousel-index-images" style={{ height: `${height}px` }}>
+        <div className="blog-carousel-index-images">
           <div style={{ transform: `${translate}`, width: `${width}%` }}
                className="blog-carousel-index-images-overflow">
             {images.map((ele, i) => {
@@ -62,14 +53,16 @@ export class CarouselIndex extends Component {
             })}
           </div>
         </div>
-        <ul className="blog-carousel-index-dots">
-          {images.map((ele, index) => {
-            const className = ele === src ? 'blog-carousel-index-dots-active' : '';
-            return <li key={index} className={className}>
-              <button onMouseOver={() => changeImage(index)}>{index}</button>
-            </li>;
-          })}
-        </ul>
+        <div className="blog-carousel-index-other">
+          <ul className="blog-carousel-index-dots">
+            {images.map((ele, index) => {
+              const className = ele === src ? 'blog-carousel-index-dots-active' : '';
+              return <li key={index} className={className}>
+                <button onMouseOver={() => changeImage(index)}>{index}</button>
+              </li>;
+            })}
+          </ul>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import theEnd from '../../../../images/theEnd.png';
-import theEndNight from '../../../../images/theEndNight.jpg';
+import theEndNight from '../../../../images/theEndNight.png';
 import { Link } from 'react-router-dom';
 
 /*

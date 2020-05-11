@@ -49,6 +49,10 @@ export class Header extends Component {
     history.push('/blog');
   }
 
+  index(history) {
+    history.push('/');
+  }
+
   handleOk = (changeModal, fuzzyQueryPosts) => {
     let value = document.getElementById('header-search-title').value;
     fuzzyQueryPosts(value);
@@ -83,7 +87,7 @@ export class Header extends Component {
     );
     return (
       <header className="blog-header">
-        <div className="blog-header-name"> whyyy his blog</div>
+        <div className="blog-header-name" onClick={() => this.index(this.props.history)}> whyyy his blog</div>
 
         {/*屏幕大于1200时显示*/}
         <div className="blog-header-home">

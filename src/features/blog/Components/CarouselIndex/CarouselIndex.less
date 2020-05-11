@@ -1,29 +1,33 @@
 @import '../../../../styles/mixins';
 
 .blog-carousel-index {
-  position: relative;
+  height: 100%;
 
   .blog-carousel-index-images {
     // 实现图片横向排列，溢出隐藏
-    position: relative;
     overflow: hidden;
     width: 100%;
     height: 100%;
 
     img {
       width: 25%;
-      height: 100%;
+      height: auto;
+      border-radius: 3px;
     }
 
     .blog-carousel-index-images-overflow {
       height: 100%;
-      position: absolute;
       overflow: hidden;
       transition-duration: 0.3s;
       backface-visibility: hidden;
       left: 0;
       opacity: 1
     }
+  }
+
+  .blog-carousel-index-other {
+    margin-top: -25px;
+    margin-bottom: 40px;
   }
 
   .blog-carousel-index-span {
@@ -40,7 +44,6 @@
   }
 
   .blog-carousel-index-dots {
-    position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
@@ -104,11 +107,11 @@
 }
 
 
-@media screen and (max-width: 900px) {
-
+@media screen and (max-width: 600px) {
   .blog-carousel-index {
-    .blog-carousel-index-images {
-      //height: 150px;
+    .blog-carousel-index-other {
+      margin-top: -25px;
+      margin-bottom: 30px;
     }
   }
 }

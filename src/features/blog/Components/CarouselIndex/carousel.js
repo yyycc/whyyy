@@ -1,7 +1,7 @@
-import Luffy from '../../../../images/index.png';
-import linux from '../../../../images/index-linux.jpg';
-import react from '../../../../images/react-1.png';
-import css from '../../../../images/css.png';
+import Luffy from '../../../../images/carousel/carousel-luffy.png';
+import linux from '../../../../images/carousel/carousel-linux.png';
+import react from '../../../../images/carousel/carousel-react.png';
+import css from '../../../../images/carousel/carousel-css.png';
 
 const images = [Luffy, linux, react, css];
 const imageRoutes = ['luffy', 'linux', 'react', 'articles/css'];
