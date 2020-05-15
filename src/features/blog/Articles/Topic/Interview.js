@@ -6,7 +6,6 @@ export class Interview extends Component {
   static propTypes = {};
 
   render() {
-    debugger;
     const { posts } = Views;
     const urlStates = [];
     const interview = posts.filter((ele) => {

@@ -19,7 +19,7 @@ const sentences =
 
 const sentencesCurrent = 1;
 const sentencesToDisplay = [];
-const sentencesSize = 20;
+const sentencesSize = 12;
 
 const sentencesList = {
   sentences,

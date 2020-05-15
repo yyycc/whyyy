@@ -11,6 +11,7 @@ export class AnchorIndex extends Component {
   static propTypes = {};
 
   render() {
+    const id = this.props.id;
     const { Link } = Anchor;
     const h2 = Array.prototype.slice.call(document.getElementsByTagName('h2'));
     const h3 = Array.prototype.slice.call(document.getElementsByTagName('h3'));
@@ -20,7 +21,7 @@ export class AnchorIndex extends Component {
           {h2.map((ele, index) => {
             let href = '#' + ele.id;
             return <Link key={index} href={href} title={ele.innerText}>
-              {h3.map((e, i) => {
+              {!id && h3.map((e, i) => {
                 // 加上-，否则a-10-1就放到a-1下面去了。。。
                 if ((e.id).indexOf(ele.id + '-') > -1) {
                   href = '#' + e.id;

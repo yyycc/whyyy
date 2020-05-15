@@ -20,7 +20,6 @@ export class Sentences extends Component {
   };
 
   render() {
-    debugger;
     const { sentences, sentencesSize, sentencesCurrent } = this.props.blog;
     let { sentencesToDisplay } = this.props.blog;
     const { changeSentences } = this.props.actions;

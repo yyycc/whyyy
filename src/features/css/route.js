@@ -6,6 +6,8 @@ import {
   CssA, CssC, Triangle, Float,
   Layout,
 } from './';
+import Focus from './Html/Focus';
+import InlineBlock from './Html/InlineBlock';
 
 export default {
   path: 'css',
@@ -18,5 +20,7 @@ export default {
     { path: 'half', name: 'half', component: CssC, isIndex: false },
     { path: 'triangle', name: 'triangle', component: Triangle, isIndex: false },
     { path: 'float', name: 'float', component: Float, isIndex: false },
+    { path: 'focus', name: 'focus', component: Focus, isIndex: false },
+    { path: 'inlineBlock', name: 'inline-block', component: InlineBlock, isIndex: false },
   ],
 };

@@ -36,6 +36,8 @@ export class Articles extends Component {
       articleTitle = 'css';
     } else if (pathname === '/blog/articles/interview') {
       articleTitle = '面试准备';
+    } else if (pathname === '/blog/articles/interview/all') {
+      articleTitle = '面试题汇总';
     }
     if (!articleTitle) {
       articleTitle = this.props.location.state;

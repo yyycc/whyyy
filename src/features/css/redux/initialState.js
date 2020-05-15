@@ -197,6 +197,69 @@ const initialState = {
         '  <div className="css-float-two-c"/>\n' +
         '</div>',
     },
+    focus: {
+      title: 'html元素获取焦点实例页面',
+      css: '.css-focus {\n' +
+        '  a:focus {\n' +
+        '    color: red;\n' +
+        '  }\n' +
+        '}',
+      html: '<div className="css-focus">\n' +
+        '  <div contentEditable="true">\n' +
+        '    contentEditable是true就可以编辑啦\n' +
+        '  </div>\n' +
+        '  <p tabIndex="-1">不能获取焦点</p>\n' +
+        '  <p tabIndex="0">获取焦点</p>\n' +
+        '  <p tabIndex="66">获取焦点的优先级更高</p>\n' +
+        '  <p tabIndex="33">获取焦点的优先级更高(我是第一个获得到焦点的哦)</p>\n' +
+        '  <a>没有href</a>\n' +
+        '  <br/>\n' +
+        '  <br/>\n' +
+        '  <a href="">有href</a>\n' +
+        '  <br/>\n' +
+        '  <br/>\n' +
+        '  <input type="text" placeholder="我是input框呀"/>\n' +
+        '</div>',
+    },
+    inlineBlock: {
+      title: '行块级元素实例页面',
+      css: '.css-inline-block {\n' +
+        '  .css-inline-block-set {\n' +
+        '    button, input, img, textarea, select {\n' +
+        '      width: 50px;\n' +
+        '      height: 50px;\n' +
+        '    }\n' +
+        '  }\n' +
+        '  .css-inline-block-set {\n' +
+        '    button, input, img, textarea, select {\n' +
+        '      margin-left: 5px;\n' +
+        '    }\n' +
+        '  }\n' +
+        '}',
+      html: '<div className="css-inline-block">\n' +
+        '  <div className="css-inline-block-auto">\n' +
+        '    <p>他们都不会自动换行，有自己的内在尺寸</p>\n' +
+        '    <button>button</button>\n' +
+        '    <input placeholder=\'input\'/>\n' +
+        '    <select>\n' +
+        '      <option value="select1">1</option>\n' +
+        '    </select>\n' +
+        '    <img alt=\'img\' src={img}/>\n' +
+        '    <textarea placeholder=\'textarea\'/>\n' +
+        '  </div>\n' +
+        '  <br/><br/><br/>\n' +
+        '  <div className="css-inline-block-set">\n' +
+        '    <p>他们都可以设置宽高</p>\n' +
+        '    <button>button</button>\n' +
+        '    <input placeholder=\'input\'/>\n' +
+        '    <select>\n' +
+        '      <option value="select1">1</option>\n' +
+        '    </select>\n' +
+        '    <img alt=\'img\' src={img}/>\n' +
+        '    <textarea placeholder=\'textarea\'/>\n' +
+        '  </div>\n' +
+        '</div>',
+    },
   },
 };
 

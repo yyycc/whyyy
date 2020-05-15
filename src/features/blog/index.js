@@ -58,3 +58,4 @@ export { default as ViewTwo } from './Articles/Interview/ViewTwo';
 export { default as OracleB } from './Articles/Oracle/OracleB';
 export { default as ViewThree } from './Articles/Interview/ViewThree';
 export { default as ViewFour } from './Articles/Interview/ViewFour';
+export { default as ViewAll } from './Articles/Interview/ViewAll';

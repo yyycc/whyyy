@@ -23,7 +23,8 @@
 }
 
 .blog-sentences {
-  margin: 0 80px;
+  width: 1200px;
+  margin: 0 auto;
   min-height: 800px;
   background: -webkit-linear-gradient(top, rgba(248, 248, 248, 1) 0%, rgba(4, 158, 196, 0.9) 80%);
   background-size: 1000px;
@@ -82,4 +83,17 @@
   padding: 0;
   border: none !important;
   background-color: rgba(4, 158, 196, 0.9);
+}
+
+@media screen and (max-width: 1200px) {
+  .blog-sentences {
+    width: 98%;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .blog-sentences {
+    //min-height: auto;
+    //height: 80%;
+  }
 }

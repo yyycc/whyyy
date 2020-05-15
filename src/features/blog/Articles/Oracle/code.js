@@ -73,6 +73,7 @@ const sqls = [
   'select username,profile from dba_users; ',
   'select * from dba_profiles s where s.profile=\'DEFAULT\' and resource_name=\'PASSWORD_LIFE_TIME\'; ',
   'alter profile default limit password_life_time unlimited; ',
+  'set long 40000;',
 ];
 
 const listen = 'lsnrctl stop;\n' +
@@ -139,6 +140,47 @@ const dropSequence = 'drop TEST_S;';
 const selectNext = 'select TEST_S.nextval from dual';
 const selectCur = 'select TEST_S.currval from dual';
 
+const extractValue = 'select extractValue(xmltype(\'\n' +
+  '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\n' +
+  '  <soapenv:Body>\n' +
+  '    <soapenv:Fault>\n' +
+  '      <faultcode>Server</faultcode>\n' +
+  '      <faultstring>错误信息</faultstring>\n' +
+  '    </soapenv:Fault>\n' +
+  '  </soapenv:Body>\n' +
+  '</soapenv:Envelope>\n' +
+  '\'),\'/soapenv:Envelope/soapenv:Body/soapenv:Fault/faultstring\',\'xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/\') a from dual;';
+
+const extract = 'select extract(xmltype(\'\n' +
+  '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\n' +
+  '  <soapenv:Body>\n' +
+  '    <soapenv:Fault>\n' +
+  '      <faultcode>Server</faultcode>\n' +
+  '      <faultstring>错误信息</faultstring>\n' +
+  '    </soapenv:Fault>\n' +
+  '  </soapenv:Body>\n' +
+  '</soapenv:Envelope>\n' +
+  '\'),\'/soapenv:Envelope/soapenv:Body/soapenv:Fault/faultstring\',\'xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/\') a from dual;';
+
+const extractValue2 = 'select extractValue(xmltype(\'\n' +
+  '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">\n' +
+  ' <soapenv:Body>\n' +
+  '    <soapenv:Fault>\n' +
+  '      <faultcode>soapenv:Server</faultcode>\n' +
+  '      <faultstring/>\n' +
+  '      <detail>\n' +
+  '        <ns1:Fault xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">\n' +
+  '          <faultcode>ns1:Server</faultcode>\n' +
+  '          <faultstring>错误信息</faultstring>\n' +
+  '        </ns1:Fault>\n' +
+  '      </detail>\n' +
+  '    </soapenv:Fault>\n' +
+  '  </soapenv:Body>\n' +
+  '</soapenv:Envelope>\n' +
+  '\'),\n' +
+  '\'/soapenv:Envelope/soapenv:Body/soapenv:Fault/detail/ns1:Fault/faultstring\',\n' +
+  '\'xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/ xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/\') a from dual;';
+
 const code = {
   start,
   dba,
@@ -162,6 +204,9 @@ const code = {
   dropSequence,
   selectNext,
   selectCur,
+  extract,
+  extractValue,
+  extractValue2,
 };
 
 export default code;

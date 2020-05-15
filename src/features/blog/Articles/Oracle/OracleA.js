@@ -3,15 +3,17 @@ import { PreFormat } from '../../Components/PreFormat/PreFormat';
 import code from './code';
 import url from './urls';
 import { Link } from 'react-router-dom';
+import extractValueImg from '../../../../images/extractvalue.gif';
 
 export class OracleA extends Component {
   static propTypes = {};
 
   render() {
-      const {
-          start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls,
-          listen, compile, lock, unlock, sequence, increment, dropSequence, selectCur, selectNext,
-      } = code;
+    const {
+      start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls,
+      listen, compile, lock, unlock, sequence, increment, dropSequence, selectCur, selectNext,
+      extract, extractValue, extractValue2,
+    } = code;
     const { urlStates } = url;
     let leaveConfirm = true;
     return (
@@ -70,6 +72,10 @@ export class OracleA extends Component {
         <h2 id="oracle-1-10">10. sql结果导入excel</h2>
         <PreFormat content={excel}/>
         <p>可以直接放进一个sql脚本中执行，当前目录下就会生成一个test.xls文件。</p>
+        <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-05-12</p>
+        <p>如果内容输出不全，比如有clob字段，可以加上一句</p>
+        <PreFormat content={sqls[12]}/>
+
         <h2 id="oracle-1-11">11. 实例启动</h2>
         <p>数据库实例的启动、结束指令</p>
         <PreFormat content={oracle}/>
@@ -79,56 +85,89 @@ export class OracleA extends Component {
         <h2 id="oracle-1-13">13. 批量编译</h2>
         <p>当数据库重新导入，新导入的过程、视图等会存在无效的状态，需要重新编译，下面是一个批量重新编译的sql</p>
         <PreFormat content={compile}/>
-          <h2 id="oracle-1-14">14. 锁</h2>
-          <p>查看锁表进程</p>
-          <PreFormat content={lock}/>
-          <p>杀掉锁表进程：</p>
-          <p>记录下SID和serial# ，分别替换掉下面的1155,39095，即可解除锁表</p>
-          <PreFormat content={unlock}/>
-          <h2 id="oracle-1-15">15. 序列</h2>
-          <p>新建</p>
-          <PreFormat content={sequence}/>
-          <p>删除</p>
-          <PreFormat content={dropSequence}/>
-          <p>更新步长</p>
-          <PreFormat content={increment}/>
-          <p>获取当前/下一个序列值</p>
-          <PreFormat content={selectCur}/>
-          <PreFormat content={selectNext}/>
+        <h2 id="oracle-1-14">14. 锁</h2>
+        <p>查看锁表进程</p>
+        <PreFormat content={lock}/>
+        <p>杀掉锁表进程：</p>
+        <p>记录下SID和serial# ，分别替换掉下面的1155,39095，即可解除锁表</p>
+        <PreFormat content={unlock}/>
+        <h2 id="oracle-1-15">15. 序列</h2>
+        <p>新建</p>
+        <PreFormat content={sequence}/>
+        <p>删除</p>
+        <PreFormat content={dropSequence}/>
+        <p>更新步长</p>
+        <PreFormat content={increment}/>
+        <p>获取当前/下一个序列值</p>
+        <PreFormat content={selectCur}/>
+        <PreFormat content={selectNext}/>
 
-          <h2 id="oracle-1-16">16. 同义词</h2>
-          <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-04-29</p>
-          <p>昨天业务小哥重置了一个序列A_S，结果发现另一个序列B_S也被重置了，然后我就去找，但是咋都找不到这个序列。</p>
-          <p>.nextval可以取到值，但是drop不了，说不存在这个序列，但是create又说对象被占用。。。</p>
-          <p>我找啊找，终于在同义词里面找到了它。</p>
-          <p>这两个序列其实都是同义词，他们有同一个BASE_OBJECT(序列C_S)</p>
+        <h2 id="oracle-1-16">16. 同义词</h2>
+        <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-04-29</p>
+        <p>昨天业务小哥重置了一个序列A_S，结果发现另一个序列B_S也被重置了，然后我就去找，但是咋都找不到这个序列。</p>
+        <p>.nextval可以取到值，但是drop不了，说不存在这个序列，但是create又说对象被占用。。。</p>
+        <p>我找啊找，终于在同义词里面找到了它。</p>
+        <p>这两个序列其实都是同义词，他们有同一个BASE_OBJECT(序列C_S)</p>
 
-          <h2 id="oracle-1-17">17. 密码期限</h2>
-          <p>检查显示信息中历史库用户对应的profile。一般都为DEFAULT</p>
-          <PreFormat content={sqls[9]}/>
-          <p>检查概要文件（默认为default）的密码有效期设置。</p>
-          <PreFormat content={sqls[10]}/>
-          <p>如果limit列有数字值，那就是有期限的，如果是unlimited，就是没有期限</p>
-          <p>执行如下指令就可以改成无期限的：</p>
-          <PreFormat content={sqls[11]}/>
+        <h2 id="oracle-1-17">17. 密码期限</h2>
+        <p>检查显示信息中历史库用户对应的profile。一般都为DEFAULT</p>
+        <PreFormat content={sqls[9]}/>
+        <p>检查概要文件（默认为default）的密码有效期设置。</p>
+        <PreFormat content={sqls[10]}/>
+        <p>如果limit列有数字值，那就是有期限的，如果是unlimited，就是没有期限</p>
+        <p>执行如下指令就可以改成无期限的：</p>
+        <PreFormat content={sqls[11]}/>
+
+        <h2 id="oracle-1-18">18. xmltype</h2>
+        <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-05-12</p>
+        <p>做接口的时候，把报文都存在了类型行XMLTYPE的字段里</p>
+        <p>存的时候很开心(java存的)，取的时候就很糟心，这个报文要怎么解析呢</p>
+        <p>可以用extract和extractValue函数</p>
+        <PreFormat content={extract}/>
+        <p>这个方法可以获取到整个faultstring节点信息： &lt;faultstring&gt;错误信息&lt;/faultstring&gt;</p>
+        <p>查出来的值还是xmltype类型的</p>
+        <PreFormat content={extractValue}/>
+        <p>这个方法可以获取到faultstring节点值： 错误信息</p>
+        <p>这个方法查出来的值是就是基础类型</p>
+        <p>两个方法都有三个参数</p>
+        <p>第一个就是xmltype的数据</p>
+        <p>第二个是XPath参数，它有点像节点树，从根节点一直枚举到你要查询的节点</p>
+        <p>第三个参数官方文档(参考5)里一开始没找到，是在参考4里面看到的，这个参数是命名空间，你在第二个参数中枚举的节点中如果有命名空间就要在这个参数里面列举出来，中间用空格分开。</p>
+        <PreFormat content={extractValue2}/>
+        <p>soapenv:Envelope和ns1:Fault节点都有命名空间，所以把两个都写在参数3里面，这样就可以解析出faultString节点的值啦。</p>
+        <p>后来看到了这张图，嗯，虽然没给例子，但是确实告诉你可以有第三个参数了。。。</p>
+        <div className="blog-oracle-a-img">
+          <img src={extractValueImg} alt="EXTRACTVALUE语法"/>
+          <br/>
+          <p>图1. EXTRACTVALUE语法</p>
+        </div>
+
 
         <h2 id="Z-参考">Z. 参考</h2>
         {leaveConfirm && <p>
           <Link to={urlStates[0]}>1. Oracle对象批量编译</Link><br/>
-            <Link to={urlStates[3]}>2. Oracle中创建、修改、删除序列</Link><br/>
-            <Link to={urlStates[4]}>3. Oracle数据库密码有效期参数</Link><br/>
+          <Link to={urlStates[3]}>2. Oracle中创建、修改、删除序列</Link><br/>
+          <Link to={urlStates[4]}>3. Oracle数据库密码有效期参数</Link><br/>
+          <Link to={urlStates[5]}>4. oracle解析xml，带命令空间的节点获取</Link><br/>
+          <Link to={urlStates[5]}>5. XMLType操作</Link><br/>
         </p>}
         {!leaveConfirm &&
         <p>
           <a href="https://blog.csdn.net/WMSOK/article/details/78891457" target="_blank"
              rel="noopener noreferrer">
             1. Oracle对象批量编译</a><br/>
-            <a href="https://www.cnblogs.com/nicholas_f/articles/1525585.html" target="_blank"
-               rel="noopener noreferrer">
-                2. Oracle中创建、修改、删除序列</a><br/>
-            <a href="https://www.cnblogs.com/xgxhellboy/archive/2013/06/14/3135005.html" target="_blank"
-               rel="noopener noreferrer">
-                3. Oracle数据库密码有效期参数</a><br/>
+          <a href="https://www.cnblogs.com/nicholas_f/articles/1525585.html" target="_blank"
+             rel="noopener noreferrer">
+            2. Oracle中创建、修改、删除序列</a><br/>
+          <a href="https://www.cnblogs.com/xgxhellboy/archive/2013/06/14/3135005.html" target="_blank"
+             rel="noopener noreferrer">
+            3. Oracle数据库密码有效期参数</a><br/>
+          <a href="https://blog.csdn.net/liu22985342/article/details/54669490" target="_blank"
+             rel="noopener noreferrer">
+            4. oracle解析xml，带命令空间的节点获取</a><br/>
+          <a href="https://docs.oracle.com/cd/B19306_01/appdev.102/b14259/xdb04cre.htm#BABDGFFH" target="_blank"
+             rel="noopener noreferrer">
+            5. XMLType操作</a><br/>
         </p>
         }
       </div>

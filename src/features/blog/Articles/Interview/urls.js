@@ -64,6 +64,10 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://www.cnblogs.com/freeyiyi1993/p/3615179.html',
   },
+  {
+    pathname: '/common/leave',
+    state: 'https://www.cnblogs.com/shenggao/p/12382060.html',
+  },
 ];
 
 const urls = {

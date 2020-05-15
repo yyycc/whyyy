@@ -47,6 +47,10 @@ export class Layout extends Component {
     } else if (pathname === '/blog/articles') {
       id = 'articles';
       title = '文章介绍';
+    } else if (pathname === '/blog/articles/interview/all') {
+      id = 'interview';
+      title = '面试题汇总';
+      anchor = true;
     } else if (pathname.indexOf('/blog/articles') > -1) {
       id = 'article';
       title = '文章目录';
@@ -70,6 +74,7 @@ export class Layout extends Component {
         <Footer/>
         <MyDrawer id={id} from='right' title={title} action={this.props.actions} blog={this.props.blog}>
           {(id === 'article' && anchor) && <AnchorIndex/>}
+          {(id === 'interview' && anchor) && <AnchorIndex id='interview'/>}
           {id === 'home' && <BlogDetail/>}
           {id === 'articles' && <ArticlesBrief blog={this.props.blog}/>}
         </MyDrawer>
