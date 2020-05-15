@@ -108,6 +108,11 @@ export default class ViewFour extends Component {
         <a href='/css/focus' target="_blank" rel="noopener norefferrer">看具体效果请戳这里<i
           className='fa fa-arrow-left'> </i></a>
 
+        <h2 id="view-four-6">6. JavaScript实现继承</h2>
+        <p>JavaScript实现继承共6种方式：
+          原型链继承、借用构造函数继承、组合继承、原型式继承、寄生式继承、寄生组合式继承。</p>
+        <p>https://www.nowcoder.com/test/question/done?tid=33408632&qid=323515#summary</p>
+
         <h2 id="Z-four-参考">Z. 参考</h2>
         {leaveConfirm && <p>
           <Link to={urlStates[11]}>1. 块级元素和行内元素</Link><br/>
