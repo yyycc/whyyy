@@ -10,8 +10,7 @@ import { Link } from 'react-router-dom';
  */
 
 export class PostFooter extends Component {
-  static propTypes = {
-  };
+  static propTypes = {};
 
   render() {
     let up = '<上一篇', upTitle, upRoute;
@@ -68,15 +67,23 @@ export class PostFooter extends Component {
       <div className="blog-post-footer">
         <p><img className="blog-post-footer-img" src={mode === 'day' ? theEnd : theEndNight} alt="The End"/></p>
         <div className="blog-post-footer-page-turn">
-          <Link to={urlStatesUp}>
+          {!upPoint && <a>
             <div style={{ cursor: upPoint ? 'pointer' : 'auto' }}
                  className="blog-post-footer-page-up">
               <p>{up}
                 <br/>{upTitle}
               </p>
             </div>
-          </Link>
-          <Link to={urlStatesDown}>
+          </a>}
+          {upPoint && <Link to={urlStatesUp}>
+            <div style={{ cursor: upPoint ? 'pointer' : 'auto' }}
+                 className="blog-post-footer-page-up">
+              <p>{up}
+                <br/>{upTitle}
+              </p>
+            </div>
+          </Link>}
+          {!downPoint && <a>
             <div
               style={{ cursor: downPoint ? 'pointer' : 'auto' }}
               className="blog-post-footer-page-down">
@@ -84,7 +91,16 @@ export class PostFooter extends Component {
                 <br/>{downTitle}
               </p>
             </div>
-          </Link>
+          </a>}
+          {downPoint && <Link to={urlStatesDown}>
+            <div
+              style={{ cursor: downPoint ? 'pointer' : 'auto' }}
+              className="blog-post-footer-page-down">
+              <p>{down}
+                <br/>{downTitle}
+              </p>
+            </div>
+          </Link>}
         </div>
       </div>
     );

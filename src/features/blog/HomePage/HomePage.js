@@ -40,6 +40,11 @@ export class HomePage extends Component {
     }
   }
 
+  changePageAndScroll(changePage, page, pageSize) {
+    window.scrollTo(0, 0);
+    changePage(page, pageSize);
+  }
+
   componentDidMount() {
     /*Axios.get('http://localhost:8070/' + 'cyy', {params: {cyy: 'ever'}}).then(
       function (res) {
@@ -85,7 +90,9 @@ export class HomePage extends Component {
               }
               {/*分页*/}
               <div className="blog-home-page-lists-pagination">
-                <Pagination size='small' current={current} onChange={changePage} total={postsQueried.length}/>
+                <Pagination size='small' current={current}
+                            onChange={(page, pageSize) => this.changePageAndScroll(changePage, page, pageSize)}
+                            total={postsQueried.length}/>
                 <p>共{postsQueried.length}条</p>
               </div>
             </div>
