@@ -62,7 +62,7 @@ const oracle = 'shutdown immediat;\n' +
 
 const sqls = [
   'su - oracle',
-  'sqlplus / nolog',
+  'sqlplus /nolog',
   'sqlplus / as sysdba',
   'conn sys as sysdba',
   'expdp userName/pwd@ip:1521/orcl directory=DATA_PUMP_DIR dumpfile=name.DMP logfile=DATA_PUMP_DIR:name.log',
@@ -71,9 +71,11 @@ const sqls = [
   'create user name identified by pwd default tablespace userName;',
   'create table sys_user_bak/sys_user_20200114 as select * from sys_user;',
   'select username,profile from dba_users; ',
+  // 10
   'select * from dba_profiles s where s.profile=\'DEFAULT\' and resource_name=\'PASSWORD_LIFE_TIME\'; ',
   'alter profile default limit password_life_time unlimited; ',
   'set long 40000;',
+  'sqlplus user/password',
 ];
 
 const listen = 'lsnrctl stop;\n' +
@@ -181,6 +183,12 @@ const extractValue2 = 'select extractValue(xmltype(\'\n' +
   '\'/soapenv:Envelope/soapenv:Body/soapenv:Fault/detail/ns1:Fault/faultstring\',\n' +
   '\'xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/ xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/\') a from dual;';
 
+const formats =
+  ['select to_char(sysdate,\'yyyy"年"mm"月"dd"日" hh24:mi:ss\') from dual;   //2020年05月20日 03:40:09',
+    'select to_char(sysdate,\'yyyy-mm-dd hh24:mi:ss\') from dual;   //2020-05-20 03:40:09',
+    'select to_char(123456789.09,\'FM999,999,999,999,999.00\') from dual;   //123,456,789.09',
+  ];
+
 const code = {
   start,
   dba,
@@ -207,6 +215,7 @@ const code = {
   extract,
   extractValue,
   extractValue2,
+  formats,
 };
 
 export default code;

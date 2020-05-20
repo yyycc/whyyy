@@ -17,6 +17,12 @@ const initialState = {
   title: 'whyyy his blog',
   posts: [
     {
+      title: 'javaScript(3): RGBA色与16进制色互转',
+      date: '2020-05-18', tag: ['frontEnd', 'javaScript', 'css'], route: '/blog/articles/javaScript/color',
+      summary: '用oracle(sql developer)请求web service',
+      key: 24,
+    },
+    {
       title: 'oracle(2): 如何用oracle请求web service',
       date: '2020-04-10', tag: ['database', 'oracle'], route: '/blog/articles/database/oracle-service',
       summary: '用oracle(sql developer)请求web service',

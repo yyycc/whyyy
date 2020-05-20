@@ -3,7 +3,7 @@
 
 import {
   DefaultPage,
-  CssA, CssC, Triangle, Float,
+  CssA, CssC, Triangle, Float, Color,
   Layout,
 } from './';
 import Focus from './Html/Focus';
@@ -22,5 +22,6 @@ export default {
     { path: 'float', name: 'float', component: Float, isIndex: false },
     { path: 'focus', name: 'focus', component: Focus, isIndex: false },
     { path: 'inlineBlock', name: 'inline-block', component: InlineBlock, isIndex: false },
+    { path: 'color', name: 'color', component: Color, isIndex: false },
   ],
 };

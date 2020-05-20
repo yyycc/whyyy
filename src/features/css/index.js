@@ -6,3 +6,4 @@ export { default as Triangle } from './Html/Triangle';
 export { default as Float } from './Html/Float';
 export { default as Focus } from './Html/Focus';
 export { default as InlineBlock } from './Html/InlineBlock';
+export { default as Color } from './Html/Color';

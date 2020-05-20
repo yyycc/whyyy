@@ -4,9 +4,8 @@
 import {
   Layout,
   Articles,
-  Promote,
   DockerA, DockerB,
-  Array,
+  Array, Color, Promote,
   WebServiceA, WebServiceB,
   NginxA,
   OracleA, OracleB,
@@ -23,6 +22,7 @@ import {
   ArticlesList,
   HomePage,
   Interview, ViewOne, ViewTwo, ViewFour, ViewThree, ViewAll,
+  Canvas,
 } from './';
 import { PageNotFound } from '../common';
 
@@ -32,6 +32,7 @@ export default {
   component: Layout,
   childRoutes: [
     { path: '/', name: 'homePage', component: HomePage, isIndex: true },
+    { path: 'canvas', name: 'canvas', component: Canvas },
     {
       path: 'articles', name: 'articles', component: Articles, isIndex: false,
       childRoutes: [
@@ -39,6 +40,7 @@ export default {
 
         { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
         { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
+        { path: 'javaScript/color', name: 'color', component: Color, isIndex: false },
 
         { path: 'interview', name: 'interview', component: Interview, isIndex: false },
         { path: 'interview/one', name: 'interview', component: ViewOne, isIndex: false },

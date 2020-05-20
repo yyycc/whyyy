@@ -61,7 +61,7 @@ export class WebServiceB extends Component {
         <p>。。。失败了</p>
         <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-04-24</p>
         <p>时隔3个多月，今天，这个问题解决了！！</p>
-        <p>在接口方法上加上这个注解就可以了(和@WebService平级)</p>
+        <p>在接口方法上加上这个注解(和@WebService平级)就可以把方法名节点去掉了</p>
         <PreFormat content={soapBinding}/>
         <h3 id="webService-2-2-3">2.3. header</h3>
         <p>在请求接口方法中添加</p>

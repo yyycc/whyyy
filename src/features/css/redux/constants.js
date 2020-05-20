@@ -1,0 +1,1 @@
+export const CSS_CHANGE_COLOR = 'CSS_CHANGE_COLOR';

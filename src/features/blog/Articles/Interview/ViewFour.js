@@ -9,7 +9,7 @@ export default class ViewFour extends Component {
 
   render() {
     const { urlStates } = urls;
-    const { inline, block } = code;
+    const { inline, block, func, funcs } = code;
     let leaveConfirm = true;
     return (
       <div className="blog-view-four">
@@ -113,12 +113,36 @@ export default class ViewFour extends Component {
           原型链继承、借用构造函数继承、组合继承、原型式继承、寄生式继承、寄生组合式继承。</p>
         <p>https://www.nowcoder.com/test/question/done?tid=33408632&qid=323515#summary</p>
 
+        <h2 id="view-four-7">7. 立即执行函数</h2>
+        <h3 id="view-four-7-1">7.1. 定义</h3>
+        <p>声明一个匿名函数然后马上调用他，就叫做立即执行函数</p>
+        <h3 id="view-four-7-2">7.2. 写法</h3>
+        <p>因为function 这个关键字，既可以当做语句，也可以当做表达式</p>
+        <p>为了避免解析上的歧义，JS引擎规定，如果function出现在行首，一律解析成语句。</p>
+        <p>JS引擎看到行首是function关键字以后，认为这一段都是函数定义，不应该以圆括号结尾，会报错。</p>
+        <p>所以需要把function放进圆括号里面，比如下面两种写法：</p>
+        <PreFormat content={func}/>
+        <p>还有一些其他的写法（加一些小东西，不让解析成语句就可以）,比如下边：</p>
+        <PreFormat content={funcs}/>
+        <h3 id="view-four-7-3">7.3. 作用</h3>
+        <p>立即执行函数会形成一个单独的作用域，我们可以封装一些临时变量或者局部变量，避免污染全局变量</p>
+        <h3 id="view-four-7-1">7.1. user</h3>
+        <p></p>
+        <h3 id="view-four-7-1">7.1. user</h3>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+
+
         <h2 id="Z-four-参考">Z. 参考</h2>
         {leaveConfirm && <p>
           <Link to={urlStates[11]}>1. 块级元素和行内元素</Link><br/>
           <Link to={urlStates[12]}>2. 最讨厌晚上9点半，钉钉响起的声音(js对象分类)</Link><br/>
           <Link to={urlStates[13]}>3. CSS 样式优先级</Link><br/>
           <Link to={urlStates[16]}>4. 深入理解 vertical-align 属性</Link><br/>
+          <Link to={urlStates[17]}>5. 什么是立即执行函数，它有什么作用？</Link><br/>
         </p>}
         {!leaveConfirm &&
         <p>
@@ -133,6 +157,9 @@ export default class ViewFour extends Component {
           <a href="https://www.cnblogs.com/shenggao/p/12382060.html" target="_blank"
              rel="noopener noreferrer">
             4. 深入理解 vertical-align 属性</a><br/>
+          <a href="https://www.jianshu.com/p/b10b6e93ddec" target="_blank"
+             rel="noopener noreferrer">
+            5. 什么是立即执行函数，它有什么作用？</a><br/>
         </p>
         }
       </div>

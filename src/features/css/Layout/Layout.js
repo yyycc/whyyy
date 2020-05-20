@@ -16,6 +16,7 @@ export class Layout extends Component {
     let title = example[pathname]['title'];
     let css = example[pathname]['css'];
     let html = example[pathname]['html'];
+    let isColor = pathname === 'color';
     return (
       <div className="css-layout">
         <div className="css-layout-head">
@@ -26,7 +27,7 @@ export class Layout extends Component {
             <p>{title}</p>
           </div>
         </div>
-        <div className="css-layout-body">
+        {!isColor && <div className="css-layout-body">
           <div className="css-layout-body-code">
             <h3>代码</h3>
             <div className="css-layout-body-code-content">
@@ -46,7 +47,10 @@ export class Layout extends Component {
               {this.props.children}
             </div>
           </div>
-        </div>
+        </div>}
+        {!!isColor && <div className="css-layout-body">
+          {this.props.children}
+        </div>}
         <div className="css-layout-footer">
           <p>Designed & Powerd by whyyy<br/>
             Copyright © 2020 yyycc</p>

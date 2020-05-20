@@ -10,7 +10,7 @@ export class OracleA extends Component {
 
   render() {
     const {
-      start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls,
+        start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls, formats,
       listen, compile, lock, unlock, sequence, increment, dropSequence, selectCur, selectNext,
       extract, extractValue, extractValue2,
     } = code;
@@ -18,7 +18,7 @@ export class OracleA extends Component {
     let leaveConfirm = true;
     return (
       <div className="blog-oracle-a">
-        <h2 id="oracle-1-1">1. 启动</h2>
+          <h2 id="oracle-1-1">1. docker中启动数据库</h2>
         <p>我的oracle是安装在docker容器里面的，所以。。。</p>
         <PreFormat content={start}/>
         <p>偷偷记下来密码：admin</p>
@@ -27,10 +27,13 @@ export class OracleA extends Component {
         <PreFormat content={sqls[0]}/>
         <p>不以任何用户登录(nolog)，之后再输用户名、密码。或者直接sqlplus就行。</p>
         <PreFormat content={sqls[1]}/>
+          <p>用户登录</p>
+          <PreFormat content={sqls[13]}/>
         <p>不要密码的dba登录</p>
         <PreFormat content={sqls[2]}/>
         <p>或者nolog之后</p>
         <PreFormat content={sqls[3]}/>
+          <p>我本地这样会报错：ORA-01031: insufficient privileges</p>
 
         <h2 id="oracle-1-3">3. 一些sql</h2>
         <p>我喜欢用Navicat，no feeling for sql developer什么的，所以很多东西没有可视化</p>
@@ -141,6 +144,13 @@ export class OracleA extends Component {
           <br/>
           <p>图1. EXTRACTVALUE语法</p>
         </div>
+          <h2 id="oracle-1-19">19. sql格式化</h2>
+          <p>写sql的时候经常碰到，日期/数字格式化</p>
+          <p>一般都是：tochar([字段], [format格式])</p>
+          <p>这边列举一下常用的</p>
+          <PreFormat content={formats[0]}/>
+          <PreFormat content={formats[1]}/>
+          <PreFormat content={formats[2]} classNmae=''/>
 
 
         <h2 id="Z-参考">Z. 参考</h2>

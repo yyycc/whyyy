@@ -68,6 +68,10 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://www.cnblogs.com/shenggao/p/12382060.html',
   },
+  {
+    pathname: '/common/leave',
+    state: 'https://www.jianshu.com/p/b10b6e93ddec',
+  },
 ];
 
 const urls = {

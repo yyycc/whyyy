@@ -92,6 +92,19 @@ const exportDefault = '// export default\n' +
 const inline = 'display: inline';
 const block = 'display: block';
 
+const func = '(function (){alert("我是匿名函数")}()}())\n' +
+  '\n' +
+  '(function (){alert("我是匿名函数")}()})()';
+
+const funcs = '(function () {alert("我是匿名函数")}())   //用括号把整个表达式包起来\n' +
+  '(function () {alert("我是匿名函数")})()  //用括号把函数包起来\n' +
+  '!function () {alert("我是匿名函数")}()  //求反，我们不在意值是多少，只想通过语法检查\n' +
+  '+function () {alert("我是匿名函数")}() \n' +
+  '-function () {alert("我是匿名函数")}() \n' +
+  '~function () {alert("我是匿名函数")}() \n' +
+  'void function () {alert("我是匿名函数")}() \n' +
+  'new function () {alert("我是匿名函数")}() ';
+
 const code = {
   border,
   square,
@@ -111,6 +124,8 @@ const code = {
   exportDefault,
   inline,
   block,
+  func,
+  funcs,
 };
 
 export default code;

@@ -59,3 +59,5 @@ export { default as OracleB } from './Articles/Oracle/OracleB';
 export { default as ViewThree } from './Articles/Interview/ViewThree';
 export { default as ViewFour } from './Articles/Interview/ViewFour';
 export { default as ViewAll } from './Articles/Interview/ViewAll';
+export { default as Canvas } from './Layout/Canvas';
+export { default as Color } from './Articles/Color/Color';

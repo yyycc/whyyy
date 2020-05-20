@@ -1,0 +1,1 @@
+export { changeColor } from './changeColor';
