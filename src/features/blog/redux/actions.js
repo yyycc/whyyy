@@ -13,3 +13,4 @@ export { changeDrawer } from './changeDrawer';
 export { changeMode } from './changeMode';
 export { changeSentences } from './changeSentences';
 export { changeModal } from './changeModal';
+export { initPost } from './initPost';

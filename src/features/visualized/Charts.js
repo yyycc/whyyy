@@ -9,7 +9,6 @@ import {
   Axis,
   Tooltip,
   Legend,
-  Shape,
 } from 'bizcharts';
 import TestCyy from './TestCyy';
 

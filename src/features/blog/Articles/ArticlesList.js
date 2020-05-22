@@ -27,6 +27,9 @@ export class ArticlesList extends Component {
                 return <li key={index}><Link to={ele.route}>{ele.title}</Link></li>;
               })
             }
+            {
+              posts.length === 0 && <p>暂无</p>
+            }
           </ol>
         </div>
       </div>

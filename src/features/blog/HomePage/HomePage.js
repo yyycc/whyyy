@@ -47,18 +47,17 @@ export class HomePage extends Component {
   }
 
   componentDidMount() {
-    /*Axios.get('http://localhost:8070/' + 'cyy', {params: {cyy: 'ever'}}).then(
-      function (res) {
-        this.task = res;
-      }, function (e) {
-        alert('请求失败');
-      });*/
-    Axios.get('http://localhost:3000/users/getUserInfo', { params: { id: '1' } }).then(
-      function(res) {
-        console.log(res['data']['data']['name']);
-      }, function(e) {
-        alert('请求失败');
-      });
+    let init = this.props.actions.initPost;
+    let posts = this.props.blog.posts;
+    let url = this.props.blog.queryAllBlogs;
+    if (posts.length === 0) {
+      Axios.get(url).then(
+        function(res) {
+          init(res.data.data);
+        }, function(e) {
+          init([]);
+        });
+    }
     window.addEventListener('scroll', () => this.scroll(this.props.blog));
   }
 
