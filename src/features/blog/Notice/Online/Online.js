@@ -5,7 +5,7 @@ export default class Online extends Component {
   static propTypes = {};
 
   render() {
-    const days = Math.parseInt((new Date() - new Date('2020-04-16')) / 1000 / 60 / 60 / 24);
+    const days = parseInt((new Date() - new Date('2020-04-16')) / 1000 / 60 / 60 / 24, 10);
     return (
       <div className="blog-online">
         <h1>上线通知</h1>

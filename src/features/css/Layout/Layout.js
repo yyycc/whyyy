@@ -13,9 +13,12 @@ export class Layout extends Component {
   render() {
     const { example } = this.props.css;
     const pathname = this.props.location.pathname.replace('/css/', '');
-    let title = example[pathname]['title'];
-    let css = example[pathname]['css'];
-    let html = example[pathname]['html'];
+    let css, html, title;
+    if (example[pathname]) {
+      title = example[pathname]['title'];
+      css = example[pathname]['css'];
+      html = example[pathname]['html'];
+    }
     let isColor = pathname === 'color';
     return (
       <div className="css-layout">

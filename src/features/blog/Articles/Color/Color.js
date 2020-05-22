@@ -6,7 +6,7 @@ export default class Color extends Component {
   static propTypes = {};
 
   render() {
-    const { toHex, toRgb } = code;
+    const { toHex } = code;
     return (
       <div className="blog-color">
         <h2 id="js-1">1. css颜色</h2>

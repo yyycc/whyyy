@@ -4,6 +4,7 @@ import homeReducer from '../features/home/redux/reducer';
 import commonReducer from '../features/common/redux/reducer';
 import blogReducer from '../features/blog/redux/reducer';
 import cssReducer from '../features/css/redux/reducer';
+import visualizedReducer from '../features/visualized/redux/reducer';
 
 // NOTE 1: DO NOT CHANGE the 'reducerMap' name and the declaration pattern.
 // This is used for Rekit cmds to register new features, remove features, etc.
@@ -16,6 +17,7 @@ const reducerMap = {
   common: commonReducer,
   blog: blogReducer,
   css: cssReducer,
+  visualized: visualizedReducer,
 };
 
 export default combineReducers(reducerMap);
