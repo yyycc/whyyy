@@ -187,6 +187,7 @@ const formats =
   ['select to_char(sysdate,\'yyyy"年"mm"月"dd"日" hh24:mi:ss\') from dual;   //2020年05月20日 03:40:09',
     'select to_char(sysdate,\'yyyy-mm-dd hh24:mi:ss\') from dual;   //2020-05-20 03:40:09',
     'select to_char(123456789.09,\'FM999,999,999,999,999.00\') from dual;   //123,456,789.09',
+    'select to_char(0.00,\'FM999,999,999,999,990.00\') from dual;   //0.00',
   ];
 
 const code = {

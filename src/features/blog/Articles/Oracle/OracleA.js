@@ -151,6 +151,8 @@ export class OracleA extends Component {
           <PreFormat content={formats[0]}/>
           <PreFormat content={formats[1]}/>
           <PreFormat content={formats[2]} classNmae=''/>
+        <PreFormat content={formats[3]}/>
+        <p>如果采用...999.00结果就是.00</p>
 
 
         <h2 id="Z-参考">Z. 参考</h2>
