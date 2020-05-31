@@ -105,6 +105,14 @@ const funcs = '(function () {alert("我是匿名函数")}())   //用括号把整
   'void function () {alert("我是匿名函数")}() \n' +
   'new function () {alert("我是匿名函数")}() ';
 
+const head = '<head>\n' +
+  '   <meta charSet="UTF-8">\n' +
+  '   <title></title>\n' +
+  '   <style></style>\n' +
+  '   <link rel="stylesheet" href="">\n' +
+  '   <script></script>\n' +
+  '</head>';
+
 const code = {
   border,
   square,
@@ -126,6 +134,7 @@ const code = {
   block,
   func,
   funcs,
+  head,
 };
 
 export default code;

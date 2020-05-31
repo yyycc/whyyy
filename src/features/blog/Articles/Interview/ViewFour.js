@@ -9,7 +9,7 @@ export default class ViewFour extends Component {
 
   render() {
     const { urlStates } = urls;
-    const { inline, block, func, funcs } = code;
+    const { inline, block, func, funcs, head } = code;
     let leaveConfirm = true;
     return (
       <div className="blog-view-four">
@@ -135,6 +135,8 @@ export default class ViewFour extends Component {
         <p></p>
         <p></p>
 
+
+        <PreFormat content={head}/>
 
         <h2 id="Z-four-参考">Z. 参考</h2>
         {leaveConfirm && <p>
