@@ -138,6 +138,8 @@ export default class ViewFour extends Component {
 
         <PreFormat content={head}/>
 
+        <p> 7 个全局函数escape( )、eval( )、isFinite( )、isNaN( )、parseFloat( )、parseInt( )、unescape( )</p>
+
         <h2 id="Z-four-参考">Z. 参考</h2>
         {leaveConfirm && <p>
           <Link to={urlStates[11]}>1. 块级元素和行内元素</Link><br/>

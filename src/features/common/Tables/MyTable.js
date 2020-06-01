@@ -45,6 +45,9 @@ const EditableCell = ({
     try {
       const values = await form.validateFields();
       toggleEdit();
+      if (record[Object.keys(values)[0]] != values[Object.keys(values)[0]] && !record._status) {
+        record._status = 'UPDATE';
+      }
       handleSave({ ...record, ...values });
     } catch (errInfo) {
       console.log('Save failed:', errInfo);
@@ -111,6 +114,7 @@ export default class MyTable extends Component {
   handleDelete = key => {
     const dataSource = [...this.state.dataSource];
     this.setState({
+      selectedRowKeys: [],
       dataSource: dataSource.map(item => {
         if (item.key === key) {
           item._status = 'DELETE';
@@ -122,18 +126,8 @@ export default class MyTable extends Component {
 
   handleAdd = () => {
     const { count, dataSource } = this.state;
-    const today = new Date().toLocaleDateString().replace('/', '-').replace('/', '-');
-    const time = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
     const newData = {
       key: count,
-      name: '',
-      gender: '',
-      password: '',
-      role: 'VISITOR',
-      mail_address: '',
-      phone_number: '',
-      age: null,
-      creation_date: today + ' ' + time,
       _status: 'ADD',
     };
     this.setState({
@@ -143,17 +137,52 @@ export default class MyTable extends Component {
   };
 
   handleSaveData = () => {
-    const newData = [...this.state.dataSource];
+    console.log(this);
+    const newData = [...(this.state.dataSource.filter(item => !!item._status))];
+    // 没有_status的字段不传输
     for (let i = 0; i < newData.length; i++) {
       delete newData[i].key;
-      if (newData[i].age === '') {
-        newData[i].age = null;
-      }
     }
     let url = this.state.urls['save'];
     Axios.post(url, newData).then(
       function(res) {
         alert(res.data.msg);
+      }, function(e) {
+        alert(e);
+      });
+  };
+
+  handleDeleteData = (selectedRowKeys) => {
+    if (!selectedRowKeys || selectedRowKeys.length === 0) {
+      alert('请勾选!');
+      return false;
+    }
+    const that = this;
+    const deleteData = [...(this.state.dataSource.filter(item => selectedRowKeys.indexOf(item.key) > -1))];
+    let ids = [];
+    deleteData.forEach((ele) => {
+      if (!!ele.id) {
+        ids.push(ele.id);
+      }
+    });
+    if (ids.length === 0) {
+      alert('删除成功');
+      const dataSource = [...that.state.dataSource];
+      that.setState({
+        selectedRowKeys: [],
+        dataSource: dataSource.filter(item => selectedRowKeys.indexOf(item.key) < 0),
+      });
+      return false;
+    }
+    let url = this.state.urls['deleteByIds'] + '?ids=' + ids.join(',');
+    Axios.get(url, deleteData).then(
+      function(res) {
+        alert(res.data.msg);
+        const dataSource = [...that.state.dataSource];
+        that.setState({
+          selectedRowKeys: [],
+          dataSource: dataSource.filter(item => selectedRowKeys.indexOf(item.key) < 0),
+        });
       }, function(e) {
         alert(e);
       });
@@ -170,28 +199,25 @@ export default class MyTable extends Component {
     this.setState({ dataSource: newData });
   };
 
-  change(editing, setEditing) {
-    setEditing(!editing);
-  }
-
   fresh(that) {
     let url = this.state.urls['query'];
     Axios.get(url).then(
       function(res) {
         let dataSource = res.data.data;
-        // 获取最大的id
+        // 获取数据数目
         dataSource.forEach((ele, index) => {
           ele.key = index;
-          ele._status = 'UPDATE';
-          const today = new Date(ele.creation_date).toLocaleDateString().replace('/', '-').replace('/', '-');
-          const time = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
-          ele.creation_date = today + ' ' + time;
         });
         that.setState({ dataSource: dataSource, count: dataSource.length });
       }, function(e) {
         that.setState({ dataSource: [], count: 0 });
       });
   }
+
+  onSelectChange = selectedRowKeys => {
+    console.log('selectedRowKeys changed: ', selectedRowKeys);
+    this.setState({ selectedRowKeys });
+  };
 
   componentDidMount() {
     this.fresh(this);
@@ -207,6 +233,11 @@ export default class MyTable extends Component {
         row: EditableRow,
         cell: EditableCell,
       },
+    };
+    const { selectedRowKeys } = this.state;
+    const rowSelection = {
+      selectedRowKeys,
+      onChange: this.onSelectChange,
     };
     const columns = this.state.columns.map(col => {
       if (!col.editable) {
@@ -232,8 +263,12 @@ export default class MyTable extends Component {
         <Button onClick={this.handleSaveData} type="primary" style={{ marginBottom: 16 }}>
           save
         </Button>
-        <Table rowClassName={() => 'editable-row'}
-               bordered
+        <Button onClick={() => this.handleDeleteData(this.state.selectedRowKeys)} type="primary"
+                style={{ marginBottom: 16 }}>
+          delete
+        </Button>
+        <Table rowClassName={() => 'editable-row'} pagination='false'
+               bordered rowSelection={rowSelection}
                dataSource={this.state.dataSource ? this.state.dataSource.filter(item => item._status !== 'DELETE') : this.state.dataSource}
                columns={columns} components={components}/>
       </div>

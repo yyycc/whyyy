@@ -72,8 +72,9 @@ export class UsersManage extends Component {
     const { dataSource, columns } = this.state;
     const urls = {
       query: 'http://localhost:8880/users/queryAll',
-      insert: 'http://localhost:8880/users/insert',
+      insert: 'http://localhost:8880/users/insertSelective',
       save: 'http://localhost:8880/users/batchUpdate',
+      deleteByIds: 'http://localhost:8880/users/deleteByIds',
     };
     return (
       <div className="common-users-manage">

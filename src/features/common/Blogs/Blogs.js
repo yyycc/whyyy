@@ -1,83 +1,75 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../redux/actions';
-import Axios from 'axios';
-import { Table } from 'antd';
 import { Link } from 'react-router-dom';
+import MyTable from '../Tables/MyTable';
 
 export class Blogs extends Component {
-  static propTypes = {
-    common: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
-
-  componentDidMount() {
-    let init = this.props.actions.setUsers;
-    let users = this.props.common.users;
-    // let url = this.props.blog.queryAllUsers;
-    let url = 'http://localhost:8880/blog/queryAll';
-    if (users.length === 0) {
-      Axios.get(url).then(
-        function(res) {
-          init(res.data.data);
-        }, function(e) {
-          init([]);
-        });
-    }
-  }
-
-  render() {
-    const columns = [
+  constructor(props) {
+    super(props);
+    let columns = [
       {
         title: '博文',
-        dataIndex: 'title',
-        key: 'title',
+        dataIndex: 'blog_title',
+        key: 'blog_title',
+        width: '20%',
+        editable: true,
+        required: true,
       },
       {
         title: '日期',
-        dataIndex: 'date',
-        key: 'date',
+        dataIndex: 'blog_updated_date',
+        key: 'blog_updated_date',
+        width: '10%',
+        editable: true,
+        required: true,
       },
       {
         title: '分类',
-        dataIndex: 'tag',
-        key: 'tag',
+        dataIndex: 'blog_tags',
+        key: 'blog_tags',
+        width: '10%',
+        editable: true,
+        required: true,
+      },
+      {
+        title: '简介',
+        dataIndex: 'blog_description',
+        key: 'blog_description',
+        width: '30%',
+        editable: true,
+        required: true,
       },
       {
         title: '路径',
-        dataIndex: 'route',
-        key: 'route',
+        dataIndex: 'blog_route',
+        key: 'blog_route',
+        editable: true,
+        required: true,
         render: val => {
-          return <Link to={val}>{val}</Link>;
+          if (!!val) {
+            return <Link to={val}>{val}</Link>;
+          }
         },
       },
     ];
-    const { users: dataSource } = this.props.common;
+    this.state = {
+      columns: columns,
+    };
+  }
+
+  render() {
+    const { dataSource, columns } = this.state;
+    const urls = {
+      query: 'http://localhost:8880/blog/queryAll',
+      insert: 'http://localhost:8880/blog/insertSelective',
+      save: 'http://localhost:8880/blog/batchUpdate',
+      deleteByIds: 'http://localhost:8880/blog/deleteByIds',
+    };
     return (
       <div className="common-blogs">
-        <Table dataSource={dataSource} columns={columns}/>
+        <MyTable dataSource={dataSource} columns={columns} urls={urls}/>
       </div>
     );
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    common: state.common,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Blogs);
+export default Blogs;

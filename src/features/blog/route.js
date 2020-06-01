@@ -23,6 +23,7 @@ import {
   HomePage,
   Interview, ViewOne, ViewTwo, ViewFour, ViewThree, ViewAll,
   Canvas,
+  NodeA,
 } from './';
 import { PageNotFound } from '../common';
 
@@ -41,6 +42,8 @@ export default {
         { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
         { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
         { path: 'javaScript/color', name: 'color', component: Color, isIndex: false },
+
+        { path: 'node/one', name: 'node', component: Node, isIndex: false },
 
         { path: 'interview', name: 'interview', component: Interview, isIndex: false },
         { path: 'interview/one', name: 'interview', component: ViewOne, isIndex: false },
