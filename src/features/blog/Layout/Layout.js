@@ -63,6 +63,7 @@ export class Layout extends Component {
     return (
       <div className="blog-layout">
         <Header actions={this.props.actions} history={this.props.history} mode={this.props.blog.mode}
+                blog={this.props.blog}
                 searchVisible={this.props.blog.searchVisible}/>
         <div
           className={['blog-layout-container', drawer ? 'blog-layout-container-drawer-open-' + from : 'blog-layout-container-drawer-close'].join(' ')}>

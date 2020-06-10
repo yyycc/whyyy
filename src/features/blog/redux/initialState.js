@@ -16,7 +16,7 @@ const { imageIndex, images, imageRoutes } = carousel;
 const initialState = {
   title: 'whyyy his blog',
   posts: [],
-  queryAllBlogs: 'http://localhost:8880/blog/queryAll',
+  queryAllBlogs: 'http://whyyy.net:8880/blog/queryAll',
   postsToDisplay: [],
   postsQueried: [],
   current: 1,

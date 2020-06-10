@@ -71,10 +71,10 @@ export class UsersManage extends Component {
   render() {
     const { dataSource, columns } = this.state;
     const urls = {
-      query: 'http://localhost:8880/users/queryAll',
-      insert: 'http://localhost:8880/users/insertSelective',
-      save: 'http://localhost:8880/users/batchUpdate',
-      deleteByIds: 'http://localhost:8880/users/deleteByIds',
+      query: 'http://whyyy.net:8880/users/queryAll',
+      insert: 'http://whyyy.net:8880/users/insertSelective',
+      save: 'http://whyyy.net:8880/users/batchUpdate',
+      deleteByIds: 'http://whyyy.net:8880/users/deleteByIds',
     };
     return (
       <div className="common-users-manage">

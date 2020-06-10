@@ -54,6 +54,9 @@ export class HomePage extends Component {
       Axios.get(url).then(
         function(res) {
           init(res.data.data);
+          if (!window.localStorage.posts) {
+            window.localStorage.setItem('posts', JSON.stringify(res.data.data));
+          }
         }, function(e) {
           init([]);
         });
