@@ -17,7 +17,7 @@ export class Post extends Component {
           <h2><Link to={urlStates}>{title}</Link></h2>
         </div>
         <div className="blog-post-info">
-          <p>{date}</p>
+          <p>{date.slice(0, 10)}</p>
           <div className="blog-post-info-tag">
             {
               tag.map((ele, index) => {

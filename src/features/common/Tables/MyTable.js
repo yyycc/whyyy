@@ -146,7 +146,7 @@ export default class MyTable extends Component {
     let url = this.state.urls['save'];
     Axios.post(url, newData).then(
       function(res) {
-        alert(res.data.msg);
+        alert(res.data.data);
       }, function(e) {
         alert(e);
       });

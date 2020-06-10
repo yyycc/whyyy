@@ -27,10 +27,26 @@ const arrayName = '表1. array的实例方法';
 
 const arrayTitle = ['方法', '描述', '参数1', '参数2', '返回'];
 
+const number = [
+  ['Math.trunc()', '去除一个数的小数部分，返回整数部分', ''],
+  ['Math.sign()', '判断一个数到底是正数、负数、还是零', '正数(+1)/负数(-1)/0(0)/-0(-0)/其他(NaN)'],
+  ['Math.cbrt()', '立方根'],
+  ['Math.clz32()', '转成32位无符号数，然后返回这个 32 位值里面有多少个前导 0'],
+  ['Math.imul()', '返回两个数以 32 位带符号整数形式相乘的结果，返回的也是一个 32 位的带符号整数'],
+  ['', ''],
+];
+
+const numberName = '表1. Math的实例方法';
+
+const numberTitle = ['方法', '作用', '说明'];
+
 const tableCode = {
   array,
   arrayName,
   arrayTitle,
+  number,
+  numberName,
+  numberTitle,
 };
 
 export default tableCode;

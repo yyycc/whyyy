@@ -62,3 +62,5 @@ export { default as ViewAll } from './Articles/Interview/ViewAll';
 export { default as Canvas } from './Layout/Canvas';
 export { default as Color } from './Articles/Color/Color';
 export { default as NodeA } from './Articles/Node/NodeA';
+export { default as RegExp } from './Articles/JavaScript/RegExp';
+export { default as Number } from './Articles/JavaScript/Number';

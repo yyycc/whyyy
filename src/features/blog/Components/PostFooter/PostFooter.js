@@ -24,7 +24,7 @@ export class PostFooter extends Component {
     if (!order) {
       for (let i = 0; i < postsInOrder.length; i++) {
         if (location.pathname === postsInOrder[i].route) {
-          order = postsInOrder[i].key;
+          order = postsInOrder[i].blog_id;
           break;
         }
       }
