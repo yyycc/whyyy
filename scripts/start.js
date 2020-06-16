@@ -3,6 +3,7 @@
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
+process.env.BASE_URI = 'http://localhost:8881';
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
@@ -62,7 +63,7 @@ if (process.env.HOST) {
 
 // Start Rekit Studio
 const studioPort = require(paths.appPackageJson).rekit.studioPort;
-startRekitStudio(studioPort).then(() => 
+startRekitStudio(studioPort).then(() =>
   // We attempt to use the default port but if it is busy, we offer the user to
   // run on a different port. `choosePort()` Promise resolves to the next free port.
   choosePort(HOST, DEFAULT_PORT)
