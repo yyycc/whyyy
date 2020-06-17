@@ -3,7 +3,7 @@ import axios from 'axios';
 // 创建一个axios实例
 let instance = axios.create({
   headers: {
-    'content-type': 'application/x-www-form-urlencoded',
+    'content-type': 'application/json',
   },
 });
 

@@ -64,3 +64,4 @@ export { default as Color } from './Articles/Color/Color';
 export { default as NodeA } from './Articles/Node/NodeA';
 export { default as RegExp } from './Articles/JavaScript/RegExp';
 export { default as Number } from './Articles/JavaScript/Number';
+export { default as Async } from './Articles/JavaScript/Async';

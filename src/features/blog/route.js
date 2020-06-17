@@ -5,7 +5,7 @@ import {
   Layout,
   Articles,
   DockerA, DockerB,
-  Array, Color, Promote, RegExp, Number,
+  Array, Color, Promote, RegExp, Number, Async,
   WebServiceA, WebServiceB,
   NginxA,
   OracleA, OracleB,
@@ -44,6 +44,7 @@ export default {
         { path: 'javaScript/color', name: 'color', component: Color, isIndex: false },
         { path: 'javaScript/regExp', name: 'regExp', component: RegExp, isIndex: false },
         { path: 'javaScript/number', name: 'number', component: Number, isIndex: false },
+        { path: 'javaScript/async', name: 'async', component: Async, isIndex: false },
 
         { path: 'node/A', name: 'node', component: NodeA, isIndex: false },
 

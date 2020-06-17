@@ -135,6 +135,17 @@ export default class ViewFour extends Component {
         <p></p>
         <p></p>
 
+        <h2 id="view-four-8">8. ES6新特性</h2>
+        let const
+        字符串、数值、Symbol
+        函数、
+        数组、对象(结构赋值)
+        数据结构Set、Map
+        Proxy、Reflect
+        Promise、generator、async
+        Iterator、for...of
+        Class、Module
+
 
         <PreFormat content={head}/>
 

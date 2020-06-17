@@ -10,7 +10,7 @@ import TagsIndex from '../Components/TagsIndex/TagsIndex';
 import Collections from '../Components/CollectionsIndex/Collections';
 import RecommendedPost from '../Components/RecommendIndex/RecommendedPost';
 import ScrollText from '../Components/ScrollText/ScrollText';
-import Axios from 'axios';
+import instance from '../../../interceptors';
 
 /*
  * @name: 首页
@@ -51,7 +51,7 @@ export class HomePage extends Component {
     let posts = this.props.blog.posts;
     let url = this.props.blog.queryAllBlogs;
     if (posts.length === 0) {
-      Axios.get(url).then(
+      instance.get(url).then(
         function(res) {
           init(res.data.data);
           if (!window.localStorage.posts) {

@@ -16,6 +16,7 @@ function renderApp(app) {
   );
 }
 
+console.log('url:' + process.env.BASE_URI);
 renderApp(<Root store={store} routeConfig={routeConfig} />);
 
 // Hot Module Replacement API

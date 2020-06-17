@@ -4,6 +4,7 @@
 process.env.BABEL_ENV = 'development';
 process.env.NODE_ENV = 'development';
 process.env.BASE_URI = 'http://localhost:8881';
+// process.env.BASE_URI = 'https://localhost:8880';
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will

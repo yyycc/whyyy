@@ -1,6 +1,6 @@
 import React, { Component, useContext, useEffect, useRef, useState } from 'react';
 import { Table, Button, Form, Input, Popconfirm } from 'antd';
-import Axios from 'axios';
+import instance from '../../../interceptors';
 
 const EditableContext = React.createContext();
 
@@ -144,7 +144,7 @@ export default class MyTable extends Component {
       delete newData[i].key;
     }
     let url = this.state.urls['save'];
-    Axios.post(url, newData).then(
+    instance.post(url, newData).then(
       function(res) {
         alert(res.data.data);
       }, function(e) {
@@ -175,7 +175,7 @@ export default class MyTable extends Component {
       return false;
     }
     let url = this.state.urls['deleteByIds'] + '?ids=' + ids.join(',');
-    Axios.get(url, deleteData).then(
+    instance.get(url, deleteData).then(
       function(res) {
         alert(res.data.msg);
         const dataSource = [...that.state.dataSource];
@@ -201,7 +201,7 @@ export default class MyTable extends Component {
 
   fresh(that) {
     let url = this.state.urls['query'];
-    Axios.get(url).then(
+    instance.get(url).then(
       function(res) {
         let dataSource = res.data.data;
         // 获取数据数目
@@ -267,7 +267,7 @@ export default class MyTable extends Component {
                 style={{ marginBottom: 16 }}>
           delete
         </Button>
-        <Table rowClassName={() => 'editable-row'} pagination='false'
+        <Table rowClassName={() => 'editable-row'} pagination={{ pageSize: 999 }}
                bordered rowSelection={rowSelection}
                dataSource={this.state.dataSource ? this.state.dataSource.filter(item => item._status !== 'DELETE') : this.state.dataSource}
                columns={columns} components={components}/>

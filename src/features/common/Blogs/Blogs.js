@@ -59,10 +59,10 @@ export class Blogs extends Component {
   render() {
     const { dataSource, columns } = this.state;
     const urls = {
-      query: 'http://whyyy.net:8880/blog/queryAll',
-      insert: 'http://whyyy.net:8880/blog/insertSelective',
-      save: 'http://whyyy.net:8880/blog/batchUpdate',
-      deleteByIds: 'http://whyyy.net:8880/blog/deleteByIds',
+      query: '/blog/queryAll',
+      insert: '/blog/insertSelective',
+      save: '/blog/batchUpdate',
+      deleteByIds: '/blog/deleteByIds',
     };
     return (
       <div className="common-blogs">
