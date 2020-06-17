@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 
-export default class Async extends Component {
+export default class AsyncSugar extends Component {
   static propTypes = {};
 
   render() {
