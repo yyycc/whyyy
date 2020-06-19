@@ -30,13 +30,32 @@ const yum = 'apt-get update\n' +
 
 const rm = 'docker rm  <container ID/name>   // 加不加container都可以\n' +
   'docker container rm  <container ID/name>';
+
+const rpm = [
+  'rpm -Uvh *.rpm --nodeps --force',
+  'rpm -Uvh container-selinux-2.9-4.el7.noarch.rpm',
+  'rpm -Uvh docker-ce-18.03.1.ce-1.el7.centos.x86_64.rpm',
+  'systemctl start docker',
+  'docker ps',
+  'docker save gautamsaggar/oracle11g -o  oracle_11g.tar',
+];
+
+const docker_codes = [
+  'docker pull gautamsaggar/oracle11g:',
+  'docker images',
+  'docker save gautamsaggar/oracle11g -o  oracle_11g.tar',
+  'docker load -i oracle_11g.tar',
+  'docker run -d --name oracle -p 49160:22 -p 1521:1521 -p  {IMAGE ID}',
+];
+
 const code = {
   docker,
   ssh,
   codes,
   yum,
   rm,
-
+  rpm,
+  docker_codes,
 };
 
 export default code;

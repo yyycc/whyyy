@@ -31,6 +31,7 @@ export default class AsyncSugar extends Component {
         <h2 id="async-3">3. 异步编程</h2>
         <p>这边先封装一个ajax请求(jQuery的ajax，url是本地写好的一个请求)</p>
         <PreFormat content={ajax}/>
+        <p>最基本的就是回调函数。</p>
         <h3 id="async-3-1">3.1. 回调函数</h3>
         <PreFormat content={callBack}/>
         <h3 id="async-3-2">3.2. 事件</h3>

@@ -65,3 +65,5 @@ export { default as NodeA } from './Articles/Node/NodeA';
 export { default as RegExp } from './Articles/JavaScript/RegExp';
 export { default as Number } from './Articles/JavaScript/Number';
 export { default as AsyncSugar } from './Articles/JavaScript/AsyncSugar';
+export { default as Topic } from './Articles/Topic/Topic';
+export { default as DockerC } from './Articles/Docker/DockerC';

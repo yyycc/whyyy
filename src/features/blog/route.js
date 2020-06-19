@@ -4,7 +4,8 @@
 import {
   Layout,
   Articles,
-  DockerA, DockerB,
+  Topic,
+  DockerA, DockerB, DockerC,
   Array, Color, Promote, RegExp, Number, AsyncSugar,
   WebServiceA, WebServiceB,
   NginxA,
@@ -38,6 +39,11 @@ export default {
       path: 'articles', name: 'articles', component: Articles, isIndex: false,
       childRoutes: [
         { path: '/', name: 'article', component: ArticlesList, isIndex: true },
+        { path: 'javaScript', name: 'list', component: Topic, isIndex: false },
+        { path: 'git', name: 'list', component: Topic, isIndex: false },
+        { path: 'node', name: 'list', component: Topic, isIndex: false },
+        { path: 'linux', name: 'list', component: Topic, isIndex: false },
+        { path: 'docker', name: 'list', component: Topic, isIndex: false },
 
         { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
         { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
@@ -67,6 +73,7 @@ export default {
 
         { path: 'docker/tomcat', name: 'docker', component: DockerB, isIndex: false },
         { path: 'docker/oracle', name: 'docker', component: DockerA, isIndex: false },
+        { path: 'docker/off', name: 'docker', component: DockerC, isIndex: false },
 
         { path: 'react/rekit', name: 'react', component: ReactA, isIndex: false },
 

@@ -29,7 +29,6 @@ export class Css extends Component {
   }
 }
 
-
 function mapStateToProps(state) {
   return {
     posts: state.blog.posts,
