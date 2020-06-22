@@ -1,6 +1,13 @@
 @import '../../../styles/mixins';
 
 .blog-layout {
+  .blog-layout-progress {
+    position: fixed;
+    background-color: #1890ff;
+    height: 3px;
+    top: 55px;
+    z-index: 999;
+  }
 
   // 实现主体内容平易效果
   .blog-layout-container-drawer-open-right {
@@ -146,6 +153,10 @@
   .blog-layout {
     .blog-layout-right-bottom-fix {
       display: none !important;
+    }
+
+    .blog-layout-progress {
+      top: 40px;
     }
 
     .blog-layout-container {

@@ -14,3 +14,4 @@ export { changeMode } from './changeMode';
 export { changeSentences } from './changeSentences';
 export { changeModal } from './changeModal';
 export { initPost } from './initPost';
+export { changeProgress } from './changeProgress';

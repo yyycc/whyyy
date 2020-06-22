@@ -22,14 +22,14 @@ const initialState = {
   postsQueried: [],
   current: 1,
 
-  sentencesCurrent: sentencesCurrent,
-  sentencesToDisplay: sentencesToDisplay,
-  sentences: sentences,
-  sentencesSize: sentencesSize,
+  sentencesCurrent,
+  sentencesToDisplay,
+  sentences,
+  sentencesSize,
 
-  images: images,
-  imageRoutes: imageRoutes,
-  imageIndex: imageIndex,
+  images,
+  imageRoutes,
+  imageIndex,
 
   international: {
     'blog': '首页',
@@ -49,13 +49,14 @@ const initialState = {
   },
 
   fontSize: 14,
-  texts: texts,
-  animate: animate,
+  texts,
+  animate,
   visible: false, // 抽屉是否可见
   searchVisible: false, //搜索框是否可见
   dayNightColor: {},
   drawer: false,
   mode: 'day',
+  width: 0,
 };
 
 export default initialState;

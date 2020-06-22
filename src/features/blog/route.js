@@ -3,10 +3,12 @@
 
 import {
   Layout,
+  HomePage,
   Articles,
+  ArticlesList,
   Topic,
   DockerA, DockerB, DockerC,
-  Array, Color, Promote, RegExp, Number, AsyncSugar,
+  Array, Color, Promote, RegExp, Number, AsyncSugar, Proxy,
   WebServiceA, WebServiceB,
   NginxA,
   OracleA, OracleB,
@@ -20,11 +22,9 @@ import {
   GitA, GitB,
   About, FLinks, Maintain, Sentences, Online,
   ScrollBanner,
-  ArticlesList,
-  HomePage,
-  Interview, ViewOne, ViewTwo, ViewFour, ViewThree, ViewAll,
   Canvas,
-  NodeA,
+  Interview, ViewOne, ViewTwo, ViewFour, ViewThree, ViewAll,
+  NodeA, Pm2,
 } from './';
 import { PageNotFound } from '../common';
 
@@ -39,11 +39,6 @@ export default {
       path: 'articles', name: 'articles', component: Articles, isIndex: false,
       childRoutes: [
         { path: '/', name: 'article', component: ArticlesList, isIndex: true },
-        { path: 'javaScript', name: 'list', component: Topic, isIndex: false },
-        { path: 'git', name: 'list', component: Topic, isIndex: false },
-        { path: 'node', name: 'list', component: Topic, isIndex: false },
-        { path: 'linux', name: 'list', component: Topic, isIndex: false },
-        { path: 'docker', name: 'list', component: Topic, isIndex: false },
 
         { path: 'javaScript/promote', name: 'promote', component: Promote, isIndex: false },
         { path: 'javaScript/array', name: 'array', component: Array, isIndex: false },
@@ -51,8 +46,10 @@ export default {
         { path: 'javaScript/regExp', name: 'regExp', component: RegExp, isIndex: false },
         { path: 'javaScript/number', name: 'number', component: Number, isIndex: false },
         { path: 'javaScript/async', name: 'async', component: AsyncSugar, isIndex: false },
+        { path: 'javaScript/proxy', name: 'proxy', component: Proxy, isIndex: false },
 
         { path: 'node/A', name: 'node', component: NodeA, isIndex: false },
+        { path: 'node/pm2', name: 'pm2', component: Pm2, isIndex: false },
 
         { path: 'interview', name: 'interview', component: Interview, isIndex: false },
         { path: 'interview/one', name: 'interview', component: ViewOne, isIndex: false },
@@ -70,6 +67,7 @@ export default {
 
         { path: 'linux/commands', name: 'linux', component: LinuxB, isIndex: false },
         { path: 'linux/vi', name: 'linux', component: LinuxA, isIndex: false },
+        { path: 'linux/ssh', name: 'ssh', component: SecureShellA, isIndex: false },
 
         { path: 'docker/tomcat', name: 'docker', component: DockerB, isIndex: false },
         { path: 'docker/oracle', name: 'docker', component: DockerA, isIndex: false },
@@ -87,12 +85,14 @@ export default {
 
         { path: 'mac/ntfs', name: 'ntfs', component: Ntfs, isIndex: false },
 
-        { path: 'database/mysql', name: 'mysql', component: MysqlA, isIndex: false },
         { path: 'nginx', name: 'nginx', component: NginxA, isIndex: false },
+
+        { path: 'database/mysql', name: 'mysql', component: MysqlA, isIndex: false },
         { path: 'database/oracle', name: 'oracle', component: OracleA, isIndex: false },
         { path: 'database/oracle-service', name: 'oracle', component: OracleB, isIndex: false },
-        { path: 'linux/ssh', name: 'ssh', component: SecureShellA, isIndex: false },
-        { path: '*', name: 'Page not found', component: ArticlesList },
+
+        { path: '*', name: 'other topics', component: Topic },
+
       ],
     },
     { path: 'about', name: 'about', component: About, isIndex: false },

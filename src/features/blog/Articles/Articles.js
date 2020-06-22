@@ -42,6 +42,9 @@ export class Articles extends Component {
     if (!articleTitle) {
       articleTitle = this.props.location.state;
     }
+    if (!articleTitle && pathname.includes('/blog/articles/')) {
+      articleTitle = pathname.replace('/blog/articles/', '');
+    }
     return (
       <div className="blog-articles-overall">
         <BreadCrumb props={this.props}/>

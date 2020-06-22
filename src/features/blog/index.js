@@ -67,3 +67,5 @@ export { default as Number } from './Articles/JavaScript/Number';
 export { default as AsyncSugar } from './Articles/JavaScript/AsyncSugar';
 export { default as Topic } from './Articles/Topic/Topic';
 export { default as DockerC } from './Articles/Docker/DockerC';
+export { default as Proxy } from './Articles/JavaScript/Proxy';
+export { default as Pm2 } from './Articles/Node/Pm2';

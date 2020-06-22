@@ -24,7 +24,6 @@ function renderRouteConfigV3(routes, contextPath) {
       history.listen((location) => {
         setTimeout(() => {
           window.scrollTo(0, 0);
-          console.log('Back to top', location);
         });
       });
       children.push(

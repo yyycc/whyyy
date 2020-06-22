@@ -24,21 +24,37 @@ export class Layout extends Component {
     actions: PropTypes.object.isRequired,
   };
 
+  progress(changeProgress) {
+    let pageHeight = document.body.scrollHeight || document.documentElement.scrollHeight; // 页面总高度
+    let windowHeight = document.documentElement.clientHeight || document.body.clientHeight; // 浏览器视口高度
+    let scrollAvail = pageHeight - windowHeight; // 可滚动的高度
+    let width = window.scrollY / scrollAvail * 100;
+    changeProgress(width);
+  }
+
   componentDidMount() {
     // 监听路由变化
     // 当路由变换时，把抽屉关掉(我也不想关的，但是我又不知道怎么重新渲染anchor。。。只能暂时先关一关了，呜)//TODO
     let { changeDrawer } = this.props.actions;
     this.props.history.listen((e) => {
-      console.log(e);
+      console.log('cyy:' + e);
       // 如果是文章内部定位，则不能关闭抽屉
       if (e.hash === '')
         changeDrawer(false);
     });
+
+    // width变化不连续，效果不好
+    // TODO
+    // window.addEventListener('scroll', () => this.progress(this.props.actions.changeProgress));
+  }
+
+  componentWillUnmount() {
+    // window.removeEventListener('scroll', () => this.progress(this.props.actions.changeProgress));
   }
 
   render() {
     const pathname = this.props.location.pathname;
-    const { drawer } = this.props.blog;
+    const { drawer, width = 0 } = this.props.blog;
     let id, title, display, anchor;
     display = drawer ? 'none' : 'block';
     if (pathname === '/blog') {
@@ -65,6 +81,7 @@ export class Layout extends Component {
         <Header actions={this.props.actions} history={this.props.history} mode={this.props.blog.mode}
                 blog={this.props.blog}
                 searchVisible={this.props.blog.searchVisible}/>
+        <div className="blog-layout-progress" style={{ width: `${width}%` }}/>
         <div
           className={['blog-layout-container', drawer ? 'blog-layout-container-drawer-open-' + from : 'blog-layout-container-drawer-close'].join(' ')}>
           {this.props.children}

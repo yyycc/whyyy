@@ -257,20 +257,24 @@ export default class MyTable extends Component {
     });
     return (
       <div className="common-my-table">
-        <Button onClick={this.handleAdd} type="primary" style={{ marginBottom: 16 }}>
-          add
-        </Button>
-        <Button onClick={this.handleSaveData} type="primary" style={{ marginBottom: 16 }}>
-          save
-        </Button>
-        <Button onClick={() => this.handleDeleteData(this.state.selectedRowKeys)} type="primary"
-                style={{ marginBottom: 16 }}>
-          delete
-        </Button>
-        <Table rowClassName={() => 'editable-row'} pagination={{ pageSize: 999 }}
-               bordered rowSelection={rowSelection}
-               dataSource={this.state.dataSource ? this.state.dataSource.filter(item => item._status !== 'DELETE') : this.state.dataSource}
-               columns={columns} components={components}/>
+        <div className="common-my-table-button">
+          <Button onClick={this.handleAdd} type="primary" style={{ marginBottom: 16 }}>
+            add
+          </Button>
+          <Button onClick={this.handleSaveData} type="primary" style={{ marginBottom: 16 }}>
+            save
+          </Button>
+          <Button onClick={() => this.handleDeleteData(this.state.selectedRowKeys)} type="primary"
+                  style={{ marginBottom: 16 }}>
+            delete
+          </Button>
+        </div>
+        <div className="common-my-table-table">
+          <Table rowClassName={() => 'editable-row'} pagination={{ pageSize: 999 }}
+                 bordered rowSelection={rowSelection}
+                 dataSource={this.state.dataSource ? this.state.dataSource.filter(item => item._status !== 'DELETE') : this.state.dataSource}
+                 columns={columns} components={components}/>
+        </div>
       </div>
     );
   }
