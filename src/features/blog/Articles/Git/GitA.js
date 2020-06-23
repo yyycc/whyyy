@@ -7,7 +7,6 @@ import { SimpleTable } from '../../Components/SimpleTable/SimpleTable';
 import { Link } from 'react-router-dom';
 
 export class GitA extends Component {
-  static propTypes = {};
 
   render() {
     const { urlStates } = urls;

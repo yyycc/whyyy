@@ -68,11 +68,12 @@ export class Header extends Component {
     const { Search } = Input;
     const { fuzzyQueryPosts, changeMode, changeModal } = this.props.actions;
     const mode = this.props.mode;
+    const history = this.props.history;
     const searchVisible = this.props.searchVisible;
     const menu = (
       <Menu>
         <Menu.Item>
-          <a onClick={() => this.home(this.props.history, fuzzyQueryPosts, 'all')}>首页</a>
+          <a onClick={() => this.home(history, fuzzyQueryPosts, 'all')}>首页</a>
         </Menu.Item>
         <Menu.Item>
           <Link to="/blog/articles">站内地图</Link>
@@ -87,12 +88,12 @@ export class Header extends Component {
     );
     return (
       <header className="blog-header">
-        <div className="blog-header-name" onClick={() => this.index(this.props.history)}> whyyy his blog</div>
+        <div className="blog-header-name" onClick={() => this.index(history)}> whyyy his blog</div>
 
         {/*屏幕大于1200时显示*/}
         <div className="blog-header-home">
           <div className="blog-header-home-page"
-               onClick={() => this.home(this.props.history, fuzzyQueryPosts, 'all')}>
+               onClick={() => this.home(history, fuzzyQueryPosts, 'all')}>
             <i className="fa fa-home"> </i>
             <a>首页</a>
             {/*<Link to="/blog">首页</Link>*/}
@@ -105,7 +106,7 @@ export class Header extends Component {
         <div className="blog-header-search">
           <Search
             placeholder="搜索文章标题"
-            onSearch={value => this.home(this.props.history, fuzzyQueryPosts, value)}
+            onSearch={value => this.home(history, fuzzyQueryPosts, value)}
             style={{ width: 200 }}
           />
         </div>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import promote from '../../../../images/promote.png';
 
 export class Promote extends Component {
-  static propTypes = {};
 
   render() {
     return (

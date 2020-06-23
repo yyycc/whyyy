@@ -6,12 +6,17 @@ import linux2 from '../../../../images/scraf-penguin.png';
 import git from '../../../../images/snow-cat.png';
 import oracle from '../../../../images/underline.png';
 
+/*
+ * @name:         推荐
+ * @description:  首页显示推荐博客
+ * @arg1:         posts  博客
+ */
+
 export class RecommendedPost extends Component {
-  static propTypes = {};
 
   render() {
     const images = [git, array, linux, linux2, git, oracle];
-    const { posts } = this.props.blog;
+    const posts = this.props.posts;
     const recommendedPosts = posts.filter((ele) => ele.recommended === 'Y');
     return (
       <div className="blog-recommended-post">

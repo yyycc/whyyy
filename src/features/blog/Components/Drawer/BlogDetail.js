@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions';
 import y from '../../../../images/Y.png';
 
+/*
+ * @name:         站内简介
+ * @description:  首页右侧弹出窗口
+ */
+
 export class BlogDetail extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
 
   render() {
     return (
@@ -32,21 +29,4 @@ export class BlogDetail extends Component {
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(BlogDetail);
+export default BlogDetail;

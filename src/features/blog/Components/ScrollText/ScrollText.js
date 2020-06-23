@@ -8,17 +8,14 @@ import { Link } from 'react-router-dom';
  * @arg1: tests   [{route:'', content: ''}] {跳转路由,公告内容}
  * @arg2: animate: 动画class
  */
-export class ScrollText extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
+
+export default class ScrollText extends Component {
 
   componentDidMount() {
     this.interval = setInterval((props) => {
-        props.actions.scrollBanner('animate');
+        props.scrollBanner('animate');
         setTimeout(() => {
-          props.actions.scrollBanner('scroll', props.blog);
+          props.scrollBanner('scroll', props.blog);
         }, 500);
       }
       , 5000, this.props);
@@ -34,9 +31,9 @@ export class ScrollText extends Component {
 
   unMount() {
     this.interval = setInterval((props) => {
-      props.actions.scrollBanner('animate');
+      props.scrollBanner('animate');
       setTimeout(() => {
-        props.actions.scrollBanner('scroll', props.blog);
+        props.scrollBanner('scroll', props.blog);
       }, 500);
     }, 5000, this.props);
   }
@@ -66,5 +63,3 @@ export class ScrollText extends Component {
     );
   }
 }
-
-export default ScrollText;

@@ -9,8 +9,8 @@ export class MyDrawer extends Component {
   }
 
   render() {
-    const { changeDrawer } = this.props.action;
-    const { drawer } = this.props.blog;
+    const changeDrawer = this.props.changeDrawer;
+    const drawer = this.props.drawer;
     const id = this.props.id;
     const from = this.props.from;
     const title = this.props.title;

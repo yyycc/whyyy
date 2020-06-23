@@ -3,7 +3,6 @@ import PreFormat from '../../Components/PreFormat/PreFormat';
 import code from './code';
 
 export class NginxA extends Component {
-    static propTypes = {};
 
   render() {
     const {

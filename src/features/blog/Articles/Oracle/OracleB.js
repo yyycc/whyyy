@@ -5,7 +5,6 @@ import { PreFormat } from '../../Components/PreFormat/PreFormat';
 import { Link } from 'react-router-dom';
 
 export default class OracleB extends Component {
-  static propTypes = {};
 
   render() {
     const { codes, acl, request } = code;

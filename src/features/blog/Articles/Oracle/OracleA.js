@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import extractValueImg from '../../../../images/extractvalue.gif';
 
 export class OracleA extends Component {
-  static propTypes = {};
 
   render() {
     const {

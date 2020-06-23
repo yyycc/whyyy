@@ -8,7 +8,6 @@ import tableCode from './tableCode';
 import SimpleTable from '../../Components/SimpleTable/SimpleTable';
 
 export default class ViewTwo extends Component {
-  static propTypes = {};
 
   render() {
     const { request, requestName, requestTitle, html, htmlName, htmlTitle } = tableCode;

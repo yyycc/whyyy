@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -9,15 +8,11 @@ import { Link } from 'react-router-dom';
  */
 
 export class ArticlesList extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-  };
 
   render() {
-    const { posts } = this.props.blog;
-    let postsInOrder = posts.concat();
-    postsInOrder.sort((cur, last) =>
-      cur.key - last.key);
+    const posts = this.props.posts;
+    let postsInOrder = [...posts];
+    postsInOrder.sort((cur, last) => cur.key - last.key);
     return (
       <div className="blog-articles-list">
         <div className="blog-articles-list-bg">
@@ -40,7 +35,7 @@ export class ArticlesList extends Component {
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
-    blog: state.blog,
+    posts: state.blog.posts,
   };
 }
 

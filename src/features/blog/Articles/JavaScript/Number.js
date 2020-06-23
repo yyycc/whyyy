@@ -3,7 +3,6 @@ import tableCode from './tableCode';
 import SimpleTable from '../../Components/SimpleTable/SimpleTable';
 
 export default class Number extends Component {
-  static propTypes = {};
 
   render() {
     const { number, numberTitle, numberName } = tableCode;

@@ -5,7 +5,6 @@ import PreFormat from '../../Components/PreFormat/PreFormat';
 import { Link } from 'react-router-dom';
 
 export class LinuxB extends Component {
-  static propTypes = {};
 
   render() {
     const { codes } = code;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 export default class NodeA extends Component {
-  static propTypes = {};
 
   render() {
     return (

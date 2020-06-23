@@ -6,7 +6,6 @@ import urls from './urls';
 import { Link } from 'react-router-dom';
 
 export class ReactA extends Component {
-    static propTypes = {};
 
   render() {
     const { urlStates } = urls;

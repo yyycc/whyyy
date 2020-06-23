@@ -5,7 +5,6 @@ import urls from './urls';
 import { Link } from 'react-router-dom';
 
 export default class ViewOne extends Component {
-  static propTypes = {};
 
   render() {
     const { urlStates } = urls;

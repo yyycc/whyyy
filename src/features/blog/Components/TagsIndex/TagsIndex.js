@@ -5,12 +5,12 @@ export class TagsIndex extends Component {
 
   render() {
     const { international, posts } = this.props.blog;
+    const queryPostsByTag = this.props.queryPostsByTag;
     let tags = [];
     posts.forEach((ele) =>
       tags = tags.concat(ele.tag),
     );
     tags = Array.from(new Set(tags));
-    const { queryPostsByTag } = this.props.actions;
     return (
       <div className="blog-tags-index">
         <h3>

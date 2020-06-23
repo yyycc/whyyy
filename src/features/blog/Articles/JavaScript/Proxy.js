@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import urls from './urls';
 
 export default class Proxy extends Component {
-  static propTypes = {};
 
   render() {
     let leaveConfirm = true;

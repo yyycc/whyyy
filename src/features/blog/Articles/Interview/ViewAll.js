@@ -5,7 +5,6 @@ import ViewThree from './ViewThree';
 import ViewFour from './ViewFour';
 
 export default class ViewAll extends Component {
-  static propTypes = {};
 
   render() {
     return (

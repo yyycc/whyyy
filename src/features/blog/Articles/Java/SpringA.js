@@ -7,7 +7,6 @@ import urls from '../WebService/urls';
 import { Link } from 'react-router-dom';
 
 export class SpringA extends Component {
-  static propTypes = {};
 
   render() {
     const { codes } = code;

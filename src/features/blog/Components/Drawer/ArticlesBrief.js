@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import tag from '../../../../images/Y.png';
 import weChat from '../../../../images/wechat-2.png';
 
+/*
+ * @name:         文章介绍
+ * @description:  站内地图右侧弹出窗口
+ * @arg1:         posts  博客
+ */
+
 export default class ArticlesBrief extends Component {
-  static propTypes = {};
 
   render() {
-    const { posts } = this.props.blog;
+    const posts = this.props.posts;
     let tags = [];
     posts.forEach((ele) =>
       tags = tags.concat(ele.tag),

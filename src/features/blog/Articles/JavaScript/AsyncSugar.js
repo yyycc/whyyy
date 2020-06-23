@@ -5,7 +5,6 @@ import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 
 export default class AsyncSugar extends Component {
-  static propTypes = {};
 
   render() {
     const { ajax, callBack, event, promise, generate, async } = code;

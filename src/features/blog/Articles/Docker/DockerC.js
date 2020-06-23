@@ -5,7 +5,6 @@ import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 
 export default class DockerC extends Component {
-  static propTypes = {};
 
   render() {
     const { rpm, docker_codes } = code;

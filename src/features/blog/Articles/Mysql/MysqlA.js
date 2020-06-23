@@ -3,7 +3,6 @@ import code from './code';
 import { PreFormat } from '../../Components/PreFormat/PreFormat';
 
 export class MysqlA extends Component {
-    static propTypes = {};
 
   render() {
     const { codes, systemctl, firewall } = code;

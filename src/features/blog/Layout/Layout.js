@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../redux/actions';
+import { changeDrawer, fuzzyQueryPosts, changeMode, changeModal } from '../redux/actions';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import ScrollTop from '../Components/Scroll/ScrollTop';
@@ -54,7 +54,8 @@ export class Layout extends Component {
 
   render() {
     const pathname = this.props.location.pathname;
-    const { drawer, width = 0 } = this.props.blog;
+    const { drawer, width = 0, posts, mode, searchVisible } = this.props.blog;
+    const { changeDrawer, fuzzyQueryPosts, changeMode, changeModal } = this.props.actions;
     let id, title, display, anchor;
     display = drawer ? 'none' : 'block';
     if (pathname === '/blog') {
@@ -78,9 +79,8 @@ export class Layout extends Component {
     const from = 'right';
     return (
       <div className="blog-layout">
-        <Header actions={this.props.actions} history={this.props.history} mode={this.props.blog.mode}
-                blog={this.props.blog}
-                searchVisible={this.props.blog.searchVisible}/>
+        <Header actions={{ fuzzyQueryPosts, changeMode, changeModal }} history={this.props.history} mode={mode}
+                searchVisible={searchVisible}/>
         <div className="blog-layout-progress" style={{ width: `${width}%` }}/>
         <div
           className={['blog-layout-container', drawer ? 'blog-layout-container-drawer-open-' + from : 'blog-layout-container-drawer-close'].join(' ')}>
@@ -90,16 +90,16 @@ export class Layout extends Component {
           <Tabs/>
         </div>*/}
         <Footer/>
-        <MyDrawer id={id} from='right' title={title} action={this.props.actions} blog={this.props.blog}>
+        <MyDrawer id={id} from='right' title={title} changeDrawer={changeDrawer} drawer={drawer}>
           {(id === 'article' && anchor) && <AnchorIndex/>}
           {(id === 'interview' && anchor) && <AnchorIndex id='interview'/>}
           {id === 'home' && <BlogDetail/>}
-          {id === 'articles' && <ArticlesBrief blog={this.props.blog}/>}
+          {id === 'articles' && <ArticlesBrief posts={posts}/>}
         </MyDrawer>
 
         <div className="blog-layout-right-bottom-fix" style={{ display: `${display}` }}>
           <ScrollTop/>
-          <DrawerBar action={this.props.actions}/>
+          <DrawerBar changeDrawer={changeDrawer}/>
           <ScrollBottom/>
         </div>
       </div>
@@ -117,7 +117,7 @@ function mapStateToProps(state) {
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ ...actions }, dispatch),
+    actions: bindActionCreators({ changeDrawer, fuzzyQueryPosts, changeMode, changeModal }, dispatch),
   };
 }
 

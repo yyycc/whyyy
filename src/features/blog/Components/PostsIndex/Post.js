@@ -5,7 +5,7 @@ export class Post extends Component {
 
   render() {
     const { title, date, tag, summary, route, key } = this.props.posts;
-    const { queryPostsByTag } = this.props.actions;
+    const queryPostsByTag = this.props.queryPostsByTag;
     const urlStates = {
       pathname: route,
       state: key,

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import urls from './urls';
 
 export default class Pm2 extends Component {
-  static propTypes = {};
 
   render() {
     let leaveConfirm = true;

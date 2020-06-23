@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 /*
- * @name: 字体选择
- * @description: 可增大缩小、显示默认字体
- * @args: 方法：addFontSize, minusFontSize, defaultFontSize
+ * @name:           字体选择
+ * @description:    可增大缩小、显示默认字体
+ * @args:           方法：addFontSize, minusFontSize, defaultFontSize
  */
 
 export class ChangeFont extends Component {

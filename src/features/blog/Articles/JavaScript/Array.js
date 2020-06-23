@@ -5,7 +5,6 @@ import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 
 export class Array extends Component {
-  static propTypes = {};
 
   render() {
     const { array, arrayTitle, arrayName } = tableCode;

@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 import urls from './urls';
 
 export class GitB extends Component {
-  static propTypes = {
-  };
 
   render() {
     const { urlStates } = urls;

@@ -8,7 +8,7 @@ export class DrawerBar extends Component {
   }
 
   render() {
-    const { changeDrawer } = this.props.action;
+    const changeDrawer = this.props.changeDrawer;
     return (
       <div className="blog-drawer-bar">
         <a className="blog-my-drawer-a" onClick={() => this.openDrawer(changeDrawer)}>

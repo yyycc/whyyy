@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 
 export class Ntfs extends Component {
-  static propTypes = {};
 
   render() {
     let leaveConfirm = true;

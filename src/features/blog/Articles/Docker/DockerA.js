@@ -3,7 +3,6 @@ import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 
 export class DockerA extends Component {
-    static propTypes = {};
 
   render() {
     const { docker, ssh, codes, yum } = code;

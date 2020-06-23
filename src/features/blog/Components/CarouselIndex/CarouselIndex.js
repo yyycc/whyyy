@@ -8,11 +8,6 @@ import React, { Component } from 'react';
  */
 
 export class CarouselIndex extends Component {
-  static propTypes = {};
-
-  jump(e, route) {
-    e.props.history.push('/blog/' + route);
-  }
 
   componentDidMount() {
     this.interval = setInterval((props) => {
@@ -35,11 +30,12 @@ export class CarouselIndex extends Component {
   }
 
   render() {
+    const jump = (history, route) => history.push('/blog/' + route);
     const { imageIndex, images, imageRoutes } = this.props.blog;
+    const { changeImage } = this.props.actions;
     const src = images[imageIndex];
     let translate = 'translate3d(-' + 100 * imageIndex / images.length + '%, 0px, 0px)'; // 每次移动一张图片宽度的距离
     let width = 100 * images.length;  // 几张图片就多少100%宽度
-    const { changeImage } = this.props.actions;
     return (
       <div className="blog-carousel-index">
         <div className="blog-carousel-index-images">
@@ -47,7 +43,7 @@ export class CarouselIndex extends Component {
                className="blog-carousel-index-images-overflow">
             {images.map((ele, i) => {
               return <img key={i} className="blog-carousel-index-img" src={images[i]} alt='pictures'
-                          onClick={() => this.jump(this.props, imageRoutes[imageIndex])}
+                          onClick={() => jump(this.props.history, imageRoutes[imageIndex])}
                           onMouseOver={() => this.mount()}
                           onMouseOut={() => this.unMount()}/>;
             })}

@@ -3,7 +3,6 @@ import urls from './urls';
 import { Link } from 'react-router-dom';
 
 export default class ViewThree extends Component {
-  static propTypes = {};
 
   render() {
     const { urlStates } = urls;

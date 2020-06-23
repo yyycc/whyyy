@@ -5,7 +5,6 @@ import SimpleTable from '../../Components/SimpleTable/SimpleTable';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 
 export class LinuxA extends Component {
-  static propTypes = {};
 
   render() {
     const { codes } = code;
