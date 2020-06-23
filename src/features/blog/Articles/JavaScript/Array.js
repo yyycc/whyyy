@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import tableCode from './tableCode';
 import SimpleTable from '../../Components/SimpleTable/SimpleTable';
+import code from './code';
+import PreFormat from '../../Components/PreFormat/PreFormat';
 
 export class Array extends Component {
   static propTypes = {};
 
   render() {
     const { array, arrayTitle, arrayName } = tableCode;
+    const { reduce, reducer, proxy } = code;
     return (
       <div className="blog-array">
         <h2 id="javaScript-1-1">1. 初始化</h2>
@@ -36,6 +39,37 @@ export class Array extends Component {
         <p>for…in遍历值是键名</p>
         <p>for…of只遍历数组元素</p>
         <p>for…of遍历值是键值</p>
+        <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-06-23</p>
+        <h2 id="javaScript-1-3">3. 举例</h2>
+        <p>画个表格显然是不够的，把用到的都举例详述一下。</p>
+
+        <h2 id="javaScript-1-3-1">3.1. reduce</h2>
+        <p>reduce意为减少，缩小。reduce()一般用来求和(可能是什么引申义吧，我猜)。</p>
+        <p>reduce方法(从左至右)依次处理数组成员，接收两个参数，第一个是一个函数。</p>
+        <p>这个函数接收以下四个参数</p>
+        <ol>
+          <li>累积变量，默认为数组的第一个成员(之后都是上一轮的返回值)</li>
+          <li>当前变量，默认为数组的第二个成员</li>
+          <li>当前位置（从0开始）</li>
+          <li>原数组</li>
+        </ol>
+        <p>前两个必须，后两个可选</p>
+        <p>第二个参数(可选)是积累变量的初值。</p>
+        <p>先来一个常用的求和例子</p>
+        <PreFormat content={reduce}/>
+        <p>(这个箭头函数写起来真的很爽，但是看代码的时候总会有点磕绊，不大适应，需要提醒自己有个return。)</p>
+        <p>这边这个积累变量a的初始值就是10，之后一次是11，13，16，20</p>
+        <p>(我之前一直以为a是1，3，5。。。也不细想，真的是蠢。。。)</p>
+        <p>再看一个react的例子</p>
+        <PreFormat content={reducer}/>
+        <p>reducers是reducer的集合，newState是state初始值</p>
+        <p>所以这个方法就是每个reducer执行reducer(state, action)，这个方法返回新的state作为下一轮的state参数一直到最后得到最终state。</p>
+        <p>这么看来这个reduce用在这里简直完美。</p>
+        <p>又想起来，前两天看proxy时候也看到reduce这个方法，当时还一脸懵逼不知所以然。</p>
+        <PreFormat content={proxy}/>
+        <p>现在看就很明了了，value是初始值3，挨个执行funcStack数组里面的方法，将方法执行后的值返回作为下一轮的参数val的值，所以就是(3*2)的平方再reverse。</p>
+
+
       </div>
     );
   }

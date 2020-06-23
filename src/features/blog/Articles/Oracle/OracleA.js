@@ -12,8 +12,9 @@ export class OracleA extends Component {
     const {
         start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls, formats,
       listen, compile, lock, unlock, sequence, increment, dropSequence, selectCur, selectNext,
-      extract, extractValue, extractValue2,
-    } = code;
+        extract, extractValue, extractValue2, packages, synonym, synonym_delete, user,
+    }
+      = code;
     const { urlStates } = url;
     let leaveConfirm = true;
     return (
@@ -59,6 +60,10 @@ export class OracleA extends Component {
 
         <h2 id="oracle-1-7">7. 删除用户、表空间</h2>
         <PreFormat content={drop}/>
+          <p>经常出现"无法删除当前已连接的用户"，又不知道还有什么地方连着这个用户</p>
+          <p>查出进程把他们kill调</p>
+          <PreFormat content="select sid, serial# from v$session where username='用户名';"/>
+          <PreFormat content="alter system kill session '151, 51';"/>
 
         <h2 id="oracle-1-8">8. 表备份</h2>
         <p>表名 sys_user</p>
@@ -153,6 +158,18 @@ export class OracleA extends Component {
           <PreFormat content={formats[2]} classNmae=''/>
         <PreFormat content={formats[3]}/>
         <p>如果采用...999.00结果就是.00</p>
+          <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-06-22</p>
+          <h2 id="oracle-1-20">20. WM_CONCAT</h2>
+          <p>因为项目上用到了这个函数，这个坑我真的是踩了一万遍了，记录一下。。。</p>
+          <p>首先创建wmsys用户</p>
+          <PreFormat content={user}/>
+          <p>登录wmsys用户创建包，包体和函数</p>
+          <PreFormat content={packages}/>
+          <p>创建同义词并授权</p>
+          <PreFormat content={synonym}/>
+          <p>如果要删除同义词(创建错了要删除的话)</p>
+          <PreFormat content={synonym_delete}/>
+          <p>就ok啦</p>
 
 
         <h2 id="Z-参考">Z. 参考</h2>

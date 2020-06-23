@@ -120,6 +120,33 @@ const async = 'let query = async () => {\n' +
   '  query().then(console.log(\'ok\'))\n' +
   '}';
 
+const reduce = '[1,2,3,4,5].reduce((a, b) => a + b, 10)';
+
+const reducer = 'reducers.reduce((s, r) => r(s, action), newState)';
+
+const proxy = 'var pipe = function (value) {\n' +
+  '  var funcStack = [];\n' +
+  '  var oproxy = new Proxy({} , {\n' +
+  '    get : function (pipeObject, fnName) {\n' +
+  '      if (fnName === \'get\') {\n' +
+  '        return funcStack.reduce(function (val, fn) {\n' +
+  '          return fn(val);\n' +
+  '        },value);\n' +
+  '      }\n' +
+  '      funcStack.push(window[fnName]);\n' +
+  '      return oproxy;\n' +
+  '    }\n' +
+  '  });\n' +
+  '\n' +
+  '  return oproxy;\n' +
+  '}\n' +
+  '\n' +
+  'var double = n => n * 2;\n' +
+  'var pow    = n => n * n;\n' +
+  'var reverseInt = n => n.toString().split("").reverse().join("") | 0;\n' +
+  '\n' +
+  'pipe(3).double.pow.reverseInt.get; // 63';
+
 const code = {
   ajax,
   codes,
@@ -128,6 +155,9 @@ const code = {
   promise,
   generate,
   async,
+  reduce,
+  reducer,
+  proxy,
 };
 
 export default code;

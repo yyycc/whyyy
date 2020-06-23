@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../redux/actions';
+import { addFontSize, minusFontSize, defaultFontSize } from '../redux/actions';
 import ChangeFont from '../Components/ChangeFont/ChangeFont';
 import PostFooter from '../Components/PostFooter/PostFooter';
 import BreadCrumb from '../BreadCrumb/BreadCrumb';
@@ -12,7 +12,6 @@ import willow from '../../../images/willow.png';
  * @name: 文章layout
  * @description: 显示改编字体、右上角图片、翻页等组件
  */
-
 export class Articles extends Component {
   static propTypes = {
     blog: PropTypes.object.isRequired,
@@ -76,7 +75,7 @@ function mapStateToProps(state) {
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ ...actions }, dispatch),
+    actions: bindActionCreators({ addFontSize, minusFontSize, defaultFontSize }, dispatch),
   };
 }
 

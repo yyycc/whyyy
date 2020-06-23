@@ -69,3 +69,4 @@ export { default as Topic } from './Articles/Topic/Topic';
 export { default as DockerC } from './Articles/Docker/DockerC';
 export { default as Proxy } from './Articles/JavaScript/Proxy';
 export { default as Pm2 } from './Articles/Node/Pm2';
+export { default as ReactB } from './Articles/React/ReactB';

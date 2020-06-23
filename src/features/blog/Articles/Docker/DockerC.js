@@ -55,6 +55,8 @@ export default class DockerC extends Component {
         <PreFormat content={rpm[2]}/>
         <p>启动docker</p>
         <PreFormat content={rpm[3]}/>
+        <p>设置开机自启动</p>
+        <PreFormat content='systemctl enable docker'/>
         <p>查看docker启动容器列表</p>
         <PreFormat content={rpm[4]}/>
         <p>到此为止，docker就安装并且成功启动啦～</p>
@@ -78,6 +80,7 @@ export default class DockerC extends Component {
         <p>运行容器</p>
         <PreFormat content={docker_codes[4]}/>
         <p>把22端口和1521端口映射出来，22端口使得我们可以通过ssh访问容器，1521是oracle的端口</p>
+        <PreFormat content={docker_codes[5]}/>
         <p>到此为止，oracle就装好啦</p>
 
         <h2 id="Z-参考">Z. 参考</h2>
@@ -86,7 +89,7 @@ export default class DockerC extends Component {
           <Link to={urlStates[1]}>2. Docker镜像保存save、加载load</Link><br/>
           <Link to={urlStates[2]}>3. CentOS7使用docker安装Oracle</Link><br/>
           <Link to={urlStates[3]}>4. docker 无网络环境下使用docker加载镜像</Link><br/>
-          <Link to={urlStates[3]}>5. gautamsaggar/oracle11g</Link><br/>
+          <Link to={urlStates[4]}>5. gautamsaggar/oracle11g</Link><br/>
         </p>}
         {!leaveConfirm &&
         <p>

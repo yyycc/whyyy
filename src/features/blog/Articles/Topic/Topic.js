@@ -11,7 +11,7 @@ export class Topic extends Component {
     const posts = this.props.posts;
     const list = posts.filter((ele) => {
       return ele.tag.indexOf(type) > -1;
-    }).reverse();
+    });
     return (
       <div className="blog-topic">
         <p></p>

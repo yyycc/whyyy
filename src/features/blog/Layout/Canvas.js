@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 export default class Canvas extends Component {
   static propTypes = {};
 
+  // 显示定义constructor时，必须调用super();
+  // 且只有调用super()后才能使用this
+  // super调用父类的构造函数返回子类的实例
   constructor() {
     super();
     this.canvas = React.createRef();

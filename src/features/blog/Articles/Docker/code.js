@@ -45,7 +45,8 @@ const docker_codes = [
   'docker images',
   'docker save gautamsaggar/oracle11g -o  oracle_11g.tar',
   'docker load -i oracle_11g.tar',
-  'docker run -d --name oracle -p 49160:22 -p 1521:1521 -p  {IMAGE ID}',
+  'docker run -d --name oracle -p 49160:22 -p 1521:1521  {IMAGE ID}',
+  'ssh root@localhost -p 49160 or ssh root@ -p 49160',
 ];
 
 const code = {

@@ -16,7 +16,7 @@ import {
   MysqlA,
   SpringA,
   Css, CssA, CssB, CssC, FixDiv,
-  ReactA,
+  ReactA, ReactB,
   Ntfs,
   LinuxA, LinuxB,
   GitA, GitB,
@@ -74,6 +74,7 @@ export default {
         { path: 'docker/off', name: 'docker', component: DockerC, isIndex: false },
 
         { path: 'react/rekit', name: 'react', component: ReactA, isIndex: false },
+        { path: 'react/redux', name: 'react', component: ReactB, isIndex: false },
 
         { path: 'git/config', name: 'git', component: GitA, isIndex: false },
         { path: 'git/commands', name: 'git', component: GitB, isIndex: false },
@@ -85,7 +86,7 @@ export default {
 
         { path: 'mac/ntfs', name: 'ntfs', component: Ntfs, isIndex: false },
 
-        { path: 'nginx', name: 'nginx', component: NginxA, isIndex: false },
+        { path: 'nginx/A', name: 'nginx', component: NginxA, isIndex: false },
 
         { path: 'database/mysql', name: 'mysql', component: MysqlA, isIndex: false },
         { path: 'database/oracle', name: 'oracle', component: OracleA, isIndex: false },

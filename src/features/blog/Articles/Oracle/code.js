@@ -190,6 +190,103 @@ const formats =
     'select to_char(0.00,\'FM999,999,999,999,990.00\') from dual;   //0.00',
   ];
 
+const packages = 'CREATE OR REPLACE TYPE WM_CONCAT_IMPL AS OBJECT\n' +
+  '-- AUTHID CURRENT_USER AS OBJECT\n' +
+  '(\n' +
+  'CURR_STR VARCHAR2(32767), \n' +
+  'STATIC FUNCTION ODCIAGGREGATEINITIALIZE(SCTX IN OUT WM_CONCAT_IMPL) RETURN NUMBER,\n' +
+  'MEMBER FUNCTION ODCIAGGREGATEITERATE(SELF IN OUT WM_CONCAT_IMPL,\n' +
+  'P1 IN VARCHAR2) RETURN NUMBER,\n' +
+  'MEMBER FUNCTION ODCIAGGREGATETERMINATE(SELF IN WM_CONCAT_IMPL,\n' +
+  'RETURNVALUE OUT VARCHAR2,\n' +
+  'FLAGS IN NUMBER)\n' +
+  'RETURN NUMBER,\n' +
+  'MEMBER FUNCTION ODCIAGGREGATEMERGE(SELF IN OUT WM_CONCAT_IMPL,\n' +
+  'SCTX2 IN WM_CONCAT_IMPL) RETURN NUMBER\n' +
+  ');\n' +
+  '/\n' +
+  ' \n' +
+  '-- 定义类型body:\n' +
+  'CREATE OR REPLACE TYPE BODY WM_CONCAT_IMPL\n' +
+  'IS\n' +
+  'STATIC FUNCTION ODCIAGGREGATEINITIALIZE(SCTX IN OUT WM_CONCAT_IMPL)\n' +
+  'RETURN NUMBER\n' +
+  'IS\n' +
+  'BEGIN\n' +
+  'SCTX := WM_CONCAT_IMPL(NULL) ;\n' +
+  'RETURN ODCICONST.SUCCESS;\n' +
+  'END;\n' +
+  'MEMBER FUNCTION ODCIAGGREGATEITERATE(SELF IN OUT WM_CONCAT_IMPL,\n' +
+  'P1 IN VARCHAR2)\n' +
+  'RETURN NUMBER\n' +
+  'IS\n' +
+  'BEGIN\n' +
+  'IF(CURR_STR IS NOT NULL) THEN\n' +
+  'CURR_STR := CURR_STR || \',\' || P1;\n' +
+  'ELSE\n' +
+  'CURR_STR := P1;\n' +
+  'END IF;\n' +
+  'RETURN ODCICONST.SUCCESS;\n' +
+  'END;\n' +
+  'MEMBER FUNCTION ODCIAGGREGATETERMINATE(SELF IN WM_CONCAT_IMPL,\n' +
+  'RETURNVALUE OUT VARCHAR2,\n' +
+  'FLAGS IN NUMBER)\n' +
+  'RETURN NUMBER\n' +
+  'IS\n' +
+  'BEGIN\n' +
+  'RETURNVALUE := CURR_STR ;\n' +
+  'RETURN ODCICONST.SUCCESS;\n' +
+  'END;\n' +
+  'MEMBER FUNCTION ODCIAGGREGATEMERGE(SELF IN OUT WM_CONCAT_IMPL,\n' +
+  'SCTX2 IN WM_CONCAT_IMPL)\n' +
+  'RETURN NUMBER\n' +
+  'IS\n' +
+  'BEGIN\n' +
+  'IF(SCTX2.CURR_STR IS NOT NULL) THEN\n' +
+  'SELF.CURR_STR := SELF.CURR_STR || \',\' || SCTX2.CURR_STR ;\n' +
+  'END IF;\n' +
+  'RETURN ODCICONST.SUCCESS;\n' +
+  'END;\n' +
+  'END;\n' +
+  '/\n' +
+  '--自定义行变列函数:\n' +
+  'CREATE OR REPLACE FUNCTION wm_concat(P1 VARCHAR2)\n' +
+  'RETURN VARCHAR2 AGGREGATE USING WM_CONCAT_IMPL ;\n' +
+  '/';
+
+const synonym = 'create public synonym WM_CONCAT_IMPL for wmsys.WM_CONCAT_IMPL\n' +
+  '/\n' +
+  'create public synonym wm_concat for wmsys.wm_concat\n' +
+  '/\n' +
+  ' \n' +
+  'grant execute on WM_CONCAT_IMPL to public\n' +
+  '/\n' +
+  'grant execute on wm_concat to public\n' +
+  '/';
+
+const synonym_delete = 'drop public synonym WM_CONCAT_IMPL;';
+
+const user = 'CREATE TABLESPACE wmsys DATAFILE \'/u01/app/oracle/oradata/XE/wmsys.dbf\' SIZE 500M AUTOEXTEND ON;\n' +
+  'create user wmsys identified by wmsys default tablespace wmsys;\n' +
+  'grant dba to wmsys;\n' +
+  'grant connect to wmsys;\n' +
+  'grant alter session to wmsys;\n' +
+  'grant create any context to wmsys;\n' +
+  'grant create procedure to wmsys;\n' +
+  'grant create sequence to wmsys;\n' +
+  'grant create session to wmsys;\n' +
+  'grant create synonym to wmsys;\n' +
+  'grant create table to wmsys;\n' +
+  'grant create type to wmsys;\n' +
+  'grant create user to wmsys;\n' +
+  'grant create view to wmsys;\n' +
+  'grant create any table to wmsys;\n' +
+  'grant DEBUG CONNECT SESSION to wmsys;\n' +
+  'grant query rewrite to wmsys;\n' +
+  'grant select any dictionary to wmsys;\n' +
+  'grant unlimited tablespace to wmsys;\n' +
+  'grant read,write on directory DATA_PUMP_DIR to wmsys;\n';
+
 const code = {
   start,
   dba,
@@ -217,6 +314,10 @@ const code = {
   extractValue,
   extractValue2,
   formats,
+  packages,
+  synonym,
+  synonym_delete,
+  user,
 };
 
 export default code;
