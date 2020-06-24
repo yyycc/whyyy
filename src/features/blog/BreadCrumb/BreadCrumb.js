@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 export class BreadCrumb extends Component {
-  static propTypes = {
-    blog: PropTypes.object.isRequired,
-  };
-
-  componentDidUpdate() {
-    // 修改title
-  }
 
   render() {
-    const props = this.props.props;
-    const route = props.location.pathname;
-    const { international } = this.props.blog;
+    const { top, pathname: route, international } = this.props.bread;
     let routes = route.split('/');
     routes.shift();
     return (
-      <div className="blog-bread-crumb" style={{ marginTop: `${this.props.blog.top}px` }}>
+      <div className="blog-bread-crumb" style={{ marginTop: `${top}px` }}>
         <div>
           <li>
             <i className="fa fa-home"/>
@@ -41,13 +30,4 @@ export class BreadCrumb extends Component {
   }
 }
 
-/* istanbul ignore next */
-function mapStateToProps(state) {
-  return {
-    blog: state.blog,
-  };
-}
-
-export default connect(
-  mapStateToProps,
-)(BreadCrumb);
+export default BreadCrumb;

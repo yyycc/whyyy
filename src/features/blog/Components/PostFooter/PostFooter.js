@@ -15,11 +15,10 @@ export class PostFooter extends Component {
   render() {
     let up = '<上一篇', upTitle, upRoute;
     let down = '下一篇>', downTitle, downRoute;
-    const { posts, mode } = this.props.props.blog;
+    const { posts, mode, location } = this.props.blog;
     let postsInOrder = posts.concat();
     postsInOrder.sort((cur, last) =>
       cur.key - last.key);
-    const location = this.props.props.location;
     let order = location.state; // 如果直接用路径访问，就会获取不到order
     if (!order) {
       for (let i = 0; i < postsInOrder.length; i++) {

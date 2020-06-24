@@ -14,13 +14,14 @@ import willow from '../../../images/willow.png';
  */
 export class Articles extends Component {
   static propTypes = {
-    blog: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
   render() {
     const pathname = this.props.location.pathname;
-    const { posts, fontSize } = this.props.blog;
+    const { posts, fontSize, mode, top, international } = this.props;
+    const location = this.props.location;
+    const { addFontSize, minusFontSize, defaultFontSize } = this.props.actions;
     let articleTitle = '';
     let display = posts.some((ele) => {
       if (ele.route === pathname) {
@@ -46,10 +47,10 @@ export class Articles extends Component {
     }
     return (
       <div className="blog-articles-overall">
-        <BreadCrumb props={this.props}/>
+        <BreadCrumb bread={{ top, pathname, international }}/>
         <div className="blog-articles">
           <img className="blog-articles-img" src={willow} alt=""/>
-          <ChangeFont actions={this.props.actions}/>
+          <ChangeFont actions={{ addFontSize, minusFontSize, defaultFontSize }}/>
           <div className="blog-articles-content">
             <h1>{articleTitle}</h1>
             <article style={{ fontSize: `${fontSize}px` }}>
@@ -58,7 +59,7 @@ export class Articles extends Component {
           </div>
         </div>
         {display && <div className="blog-articles-footer">
-          <PostFooter props={this.props}/>
+          <PostFooter blog={{ mode, location, posts }}/>
         </div>}
       </div>
     );
@@ -68,7 +69,11 @@ export class Articles extends Component {
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
-    blog: state.blog,
+    posts: state.blog.posts,
+    fontSize: state.blog.fontSize,
+    mode: state.blog.mode,
+    top: state.blog.top,
+    international: state.blog.international,
   };
 }
 

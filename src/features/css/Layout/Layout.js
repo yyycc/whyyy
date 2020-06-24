@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../redux/actions';
 
 export class Layout extends Component {
-  static propTypes = {
-    css: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
-  };
 
   render() {
-    const { example } = this.props.css;
+    const example = this.props.example;
     const pathname = this.props.location.pathname.replace('/css/', '');
     let css, html, title;
     if (example[pathname]) {
@@ -66,18 +59,10 @@ export class Layout extends Component {
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
-    css: state.css,
-  };
-}
-
-/* istanbul ignore next */
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators({ ...actions }, dispatch),
+    example: state.css.example,
   };
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
 )(Layout);

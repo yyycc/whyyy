@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../redux/actions';
+import { changeColor } from '../redux/actions';
 
 export class Color extends Component {
   static propTypes = {
-    css: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
@@ -103,9 +102,9 @@ export class Color extends Component {
   }
 
   render() {
-    let { color, js } = this.props.css;
+    let color = this.props.color;
+    let js = this.props.js;
     const { changeColor } = this.props.actions;
-    debugger;
     return (
       <div className="css-color">
 
@@ -178,14 +177,15 @@ export class Color extends Component {
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
-    css: state.css,
+    color: state.css.color,
+    js: state.css.js,
   };
 }
 
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ ...actions }, dispatch),
+    actions: bindActionCreators({ changeColor }, dispatch),
   };
 }
 
