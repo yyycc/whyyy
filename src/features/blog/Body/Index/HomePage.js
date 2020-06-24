@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions';
-import { CarouselIndex } from './CarouselIndex/CarouselIndex';
+import CarouselIndex from './CarouselIndex/CarouselIndex';
 import { Post } from './ListsIndex/Post';
 import { Pagination } from 'antd';
 
