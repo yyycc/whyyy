@@ -185,7 +185,8 @@ function mapStateToProps(state) {
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ changeColor }, dispatch),
+    // actions: bindActionCreators({changeColor} , dispatch),
+    actions: { changeColor: bindActionCreators(changeColor, dispatch) },
   };
 }
 
