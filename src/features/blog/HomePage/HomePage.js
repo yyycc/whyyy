@@ -9,6 +9,7 @@ import {
   queryPostsByTag,
   changeImage,
   autoChangeImages,
+  initPost,
 } from '../redux/actions';
 import CarouselIndex from '../Components/CarouselIndex/CarouselIndex';
 import Post from '../Components/PostsIndex/Post';
@@ -143,6 +144,7 @@ function mapDispatchToProps(dispatch) {
       queryPostsByTag,
       changeImage,
       autoChangeImages,
+      initPost,
     }, dispatch),
   };
 }

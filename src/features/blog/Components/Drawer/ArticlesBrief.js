@@ -11,12 +11,19 @@ import weChat from '../../../../images/wechat-2.png';
 export default class ArticlesBrief extends Component {
 
   render() {
-    const posts = this.props.posts;
+    const posts = [...this.props.posts];
     let tags = [];
     posts.forEach((ele) =>
       tags = tags.concat(ele.tag),
     );
     tags = Array.from(new Set(tags));
+    posts.sort((a, b) => {
+      if (a.date > b.date) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
     let last_update_date = posts[0] ? posts[0].date : '';
     return (
       <div className="blog-articles-brief">

@@ -147,6 +147,12 @@ const proxy = 'var pipe = function (value) {\n' +
   '\n' +
   'pipe(3).double.pow.reverseInt.get; // 63';
 
+const sort = '// bad\n' +
+  '[1, 4, 2, 6, 0, 6, 2, 6].sort((a, b) => a > b)\n' +
+  '\n' +
+  '// good\n' +
+  '[1, 4, 2, 6, 0, 6, 2, 6].sort((a, b) => a - b)';
+
 const code = {
   ajax,
   codes,
@@ -158,6 +164,7 @@ const code = {
   reduce,
   reducer,
   proxy,
+  sort,
 };
 
 export default code;

@@ -67,6 +67,103 @@ const less = '// index is the entry for all styles.\n' +
   '@import \'../features/examples/style\';\n' +
   '@import \'../features/blog/style\';\n' +
   '@import \'../features/log/style\';';
+
+const bindActionCreator = 'function bindActionCreator(actionCreator, dispatch) {\n' +
+  '  return function() {\n' +
+  '    return dispatch(actionCreator.apply(this, arguments))\n' +
+  '  }\n' +
+  '}';
+
+const bindActionCreators = 'export default function bindActionCreators(actionCreators, dispatch) {\n' +
+  '  if (typeof actionCreators === \'function\') {\n' +
+  '    return bindActionCreator(actionCreators, dispatch)\n' +
+  '  }\n' +
+  '\n' +
+  '  if (typeof actionCreators !== \'object\' || actionCreators === null) {\n' +
+  '    throw new Error(\n' +
+  '      `bindActionCreators expected an object or a function, instead received ${\n' +
+  '        actionCreators === null ? \'null\' : typeof actionCreators\n' +
+  '      }. ` +\n' +
+  '        `Did you write "import ActionCreators from" instead of "import * as ActionCreators from"?`\n' +
+  '    )\n' +
+  '  }\n' +
+  '\n' +
+  '  const keys = Object.keys(actionCreators)\n' +
+  '  const boundActionCreators = {}\n' +
+  '  for (let i = 0; i < keys.length; i++) {\n' +
+  '    const key = keys[i]\n' +
+  '    const actionCreator = actionCreators[key]\n' +
+  '    if (typeof actionCreator === \'function\') {\n' +
+  '      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch)\n' +
+  '    }\n' +
+  '  }\n' +
+  '  return boundActionCreators\n' +
+  '}';
+
+const connect = 'import React from \'react\';\n' +
+  'import {createStore, bindActionCreators} from \'redux\';\n' +
+  'import {Provider, connect} from \'react-redux\';\n' +
+  '\n' +
+  'const initialState = {count: 0};\n' +
+  '\n' +
+  'const counter = (state = initialState, action) => {\n' +
+  '    switch (action.type) {\n' +
+  '        case \'PLUS_ONE\':\n' +
+  '            return {count: state.count + 1};\n' +
+  '        case \'MINUS_ONE\':\n' +
+  '            return {count: state.count - 1};\n' +
+  '        default:\n' +
+  '            break;\n' +
+  '    }\n' +
+  '    return state;\n' +
+  '};\n' +
+  '\n' +
+  'const store = createStore(counter);\n' +
+  '\n' +
+  'function minusOne() {\n' +
+  '    return {type: \'MINUS_ONE\'};\n' +
+  '}\n' +
+  '\n' +
+  'function plusOne() {\n' +
+  '    return {type: \'PLUS_ONE\'};\n' +
+  '}\n' +
+  '\n' +
+  'export class CounterRedux extends React.Component {\n' +
+  '    render() {\n' +
+  '        const { count, minusOne, plusOne } = this.props;\n' +
+  '        return (\n' +
+  '            <div>\n' +
+  '                <button onClick={minusOne}>-</button>\n' +
+  '                <p style={{display: \'inline-block\', margin: \'0px 10px\'}}>{count}</p>\n' +
+  '                <button onClick={plusOne}>+</button>\n' +
+  '            </div>\n' +
+  '        );\n' +
+  '    }\n' +
+  '}\n' +
+  '\n' +
+  'function mapStateToProps(state) {\n' +
+  '    return {\n' +
+  '        count: state.count\n' +
+  '    }\n' +
+  '}\n' +
+  '\n' +
+  'function mapDispatchToProps(dispatch) {\n' +
+  '    return bindActionCreators({plusOne, minusOne}, dispatch);\n' +
+  '}\n' +
+  '\n' +
+  'const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(CounterRedux);\n' +
+  '\n' +
+  'export default class CounterSample extends React.Component{\n' +
+  '    render() {\n' +
+  '        return (\n' +
+  '            <Provider store={store}>\n' +
+  '                <ConnectedCounter />\n' +
+  '            </Provider>\n' +
+  '        );\n' +
+  '    }\n' +
+  '\n' +
+  '}\n';
+
 const code = {
   codes,
   json,
@@ -76,6 +173,8 @@ const code = {
   rekit,
   json_route,
   less,
+  bindActionCreator, bindActionCreators,
+  connect,
 };
 
 export default code;

@@ -3,12 +3,20 @@ import tableCode from './tableCode';
 import SimpleTable from '../../Components/SimpleTable/SimpleTable';
 import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
+import Reference from '../../Components/Reference/Reference';
 
 export class Array extends Component {
 
   render() {
     const { array, arrayTitle, arrayName } = tableCode;
-    const { reduce, reducer, proxy } = code;
+    const { reduce, reducer, proxy, sort } = code;
+    const urlStates = [
+      {
+        pathname: '/common/leave',
+        state: 'https://wangdoc.com/javascript/stdlib/array.html',
+      },
+    ];
+    const titles = ['1. Array对象'];
     return (
       <div className="blog-array">
         <h2 id="javaScript-1-1">1. 初始化</h2>
@@ -42,7 +50,7 @@ export class Array extends Component {
         <h2 id="javaScript-1-3">3. 举例</h2>
         <p>画个表格显然是不够的，把用到的都举例详述一下。</p>
 
-        <h2 id="javaScript-1-3-1">3.1. reduce</h2>
+        <h3 id="javaScript-1-3-1">3.1. reduce</h3>
         <p>reduce意为减少，缩小。reduce()一般用来求和(可能是什么引申义吧，我猜)。</p>
         <p>reduce方法(从左至右)依次处理数组成员，接收两个参数，第一个是一个函数。</p>
         <p>这个函数接收以下四个参数</p>
@@ -67,6 +75,13 @@ export class Array extends Component {
         <p>又想起来，前两天看proxy时候也看到reduce这个方法，当时还一脸懵逼不知所以然。</p>
         <PreFormat content={proxy}/>
         <p>现在看就很明了了，value是初始值3，挨个执行funcStack数组里面的方法，将方法执行后的值返回作为下一轮的参数val的值，所以就是(3*2)的平方再reverse。</p>
+
+        <h3 id="javaScript-1-3-2">3.2. sort</h3>
+        <p>sort的参数函数接收两个参数，如果该函数返回值>0，则第一个成员排在第二个成员后面，否则第一个成员排在第二个成员前面。</p>
+        <p>函数不推荐返回布尔值，应该返回数值。</p>
+        <PreFormat content={sort}/>
+
+        <Reference reference={{ urlStates, titles }}/>
 
 
       </div>
