@@ -81,6 +81,17 @@ export class Array extends Component {
         <p>函数不推荐返回布尔值，应该返回数值。</p>
         <PreFormat content={sort}/>
 
+        <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-06-28</p>
+        <h3 id="javaScript-1-3-3">3.3. slice</h3>
+        <p>上面提到的。</p>
+        <p>将类数组转化为真正的数组: Array.prototype.slice.call(document.querySelectorAll("div"));</p>
+        <PreFormat content='Array.prototype.slice.call(document.querySelectorAll("div"));'/>
+        <p>顺便提一下其它方式</p>
+        <PreFormat content='[...document.querySelectorAll("div")]'/>
+        <PreFormat content='Array.from(document.querySelectorAll("div"))'/>
+        <p>slice方法还可以接收负数作为参数，表示倒数计算的位置，-1表示倒数第一个位置。那么获取最后n位数据就可以用</p>
+        <PreFormat content='[1,2,3,4,5,6,7,8].slice(-n)'/>
+
         <Reference reference={{ urlStates, titles }}/>
 
 
