@@ -2,6 +2,11 @@ import React from 'react';
 import code from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 
+/*
+ * @name: RGBA色与16进制色互转
+ * @description: RGBA色与16进制色转换原理、方法、快速转换
+ * @route: /blog/articles/javaScript/color
+ */
 export default function Color() {
   const { toHex } = code;
   return (
