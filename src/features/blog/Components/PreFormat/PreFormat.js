@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Highlight from 'react-highlight';
 import ReactClipboard from 'react-clipboardjs-copy';
+import PropTypes from 'prop-types';
 
 export class PreFormat extends Component {
-  static propTypes = {};
+  static propTypes = {
+    content: PropTypes.object.isRequired, // 加了这个，当你调用的时候，这个属性会自己蹦出来的
+  };
 
   /**
    * @name: 代码

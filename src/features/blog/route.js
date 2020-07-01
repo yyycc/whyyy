@@ -20,11 +20,11 @@ import {
   Ntfs,
   LinuxA, LinuxB,
   GitA, GitB,
-  About, FLinks, Maintain, Sentences, Online,
+  About, FLinks, Maintain, Sentences, Online, CollectionsDetail,
   ScrollBanner,
   Canvas,
   Interview, ViewOne, ViewTwo, ViewFour, ViewThree, ViewAll,
-  NodeA, Pm2,
+  NodeA, Pm2, File,
 } from './';
 import { PageNotFound } from '../common';
 
@@ -50,6 +50,7 @@ export default {
 
         { path: 'node/A', name: 'node', component: NodeA, isIndex: false },
         { path: 'node/pm2', name: 'pm2', component: Pm2, isIndex: false },
+        { path: 'node/file', name: 'file', component: File, isIndex: false },
 
         { path: 'interview', name: 'interview', component: Interview, isIndex: false },
         { path: 'interview/one', name: 'interview', component: ViewOne, isIndex: false },
@@ -97,6 +98,7 @@ export default {
       ],
     },
     { path: 'about', name: 'about', component: About, isIndex: false },
+    { path: 'collections', name: 'collections', component: CollectionsDetail, isIndex: false },
     { path: 'fLinks', name: 'links', component: FLinks, isIndex: false },
     { path: 'maintain', name: 'maintain', component: Maintain, isIndex: false },
     { path: 'online', name: 'online', component: Online, isIndex: false },

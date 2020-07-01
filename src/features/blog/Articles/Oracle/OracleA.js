@@ -9,16 +9,16 @@ export class OracleA extends Component {
 
   render() {
     const {
-        start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls, formats,
+      start, dba, occupy, grand, drop, sql, pkg, excel, oracle, sqls, formats,
       listen, compile, lock, unlock, sequence, increment, dropSequence, selectCur, selectNext,
-        extract, extractValue, extractValue2, packages, synonym, synonym_delete, user,
+      extract, extractValue, extractValue2, packages, synonym, synonym_delete, user,
     }
       = code;
     const { urlStates } = url;
     let leaveConfirm = true;
     return (
       <div className="blog-oracle-a">
-          <h2 id="oracle-1-1">1. docker中启动数据库</h2>
+        <h2 id="oracle-1-1">1. docker中启动数据库</h2>
         <p>我的oracle是安装在docker容器里面的，所以。。。</p>
         <PreFormat content={start}/>
         <p>偷偷记下来密码：admin</p>
@@ -27,13 +27,13 @@ export class OracleA extends Component {
         <PreFormat content={sqls[0]}/>
         <p>不以任何用户登录(nolog)，之后再输用户名、密码。或者直接sqlplus就行。</p>
         <PreFormat content={sqls[1]}/>
-          <p>用户登录</p>
-          <PreFormat content={sqls[13]}/>
+        <p>用户登录</p>
+        <PreFormat content={sqls[13]}/>
         <p>不要密码的dba登录</p>
         <PreFormat content={sqls[2]}/>
         <p>或者nolog之后</p>
         <PreFormat content={sqls[3]}/>
-          <p>我本地这样会报错：ORA-01031: insufficient privileges</p>
+        <p>我本地这样会报错：ORA-01031: insufficient privileges</p>
 
         <h2 id="oracle-1-3">3. 一些sql</h2>
         <p>我喜欢用Navicat，no feeling for sql developer什么的，所以很多东西没有可视化</p>
@@ -59,10 +59,10 @@ export class OracleA extends Component {
 
         <h2 id="oracle-1-7">7. 删除用户、表空间</h2>
         <PreFormat content={drop}/>
-          <p>经常出现"无法删除当前已连接的用户"，又不知道还有什么地方连着这个用户</p>
-          <p>查出进程把他们kill调</p>
-          <PreFormat content="select sid, serial# from v$session where username='用户名';"/>
-          <PreFormat content="alter system kill session '151, 51';"/>
+        <p>经常出现"无法删除当前已连接的用户"，又不知道还有什么地方连着这个用户</p>
+        <p>查出进程把他们kill调</p>
+        <PreFormat content="select sid, serial# from v$session where username='用户名';"/>
+        <PreFormat content="alter system kill session '151, 51';"/>
 
         <h2 id="oracle-1-8">8. 表备份</h2>
         <p>表名 sys_user</p>
@@ -148,28 +148,54 @@ export class OracleA extends Component {
           <br/>
           <p>图1. EXTRACTVALUE语法</p>
         </div>
-          <h2 id="oracle-1-19">19. sql格式化</h2>
-          <p>写sql的时候经常碰到，日期/数字格式化</p>
-          <p>一般都是：tochar([字段], [format格式])</p>
-          <p>这边列举一下常用的</p>
-          <PreFormat content={formats[0]}/>
-          <PreFormat content={formats[1]}/>
-          <PreFormat content={formats[2]} classNmae=''/>
+        <h2 id="oracle-1-19">19. sql格式化</h2>
+        <p>写sql的时候经常碰到，日期/数字格式化</p>
+        <p>一般都是：tochar([字段], [format格式])</p>
+        <p>这边列举一下常用的</p>
+        <PreFormat content={formats[0]}/>
+        <PreFormat content={formats[1]}/>
+        <PreFormat content={formats[2]} classNmae=''/>
         <PreFormat content={formats[3]}/>
         <p>如果采用...999.00结果就是.00</p>
-          <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-06-22</p>
-          <h2 id="oracle-1-20">20. WM_CONCAT</h2>
-          <p>因为项目上用到了这个函数，这个坑我真的是踩了一万遍了，记录一下。。。</p>
-          <p>首先创建wmsys用户</p>
-          <PreFormat content={user}/>
-          <p>登录wmsys用户创建包，包体和函数</p>
-          <PreFormat content={packages}/>
-          <p>创建同义词并授权</p>
-          <PreFormat content={synonym}/>
-          <p>如果要删除同义词(创建错了要删除的话)</p>
-          <PreFormat content={synonym_delete}/>
-          <p>就ok啦</p>
+        <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-06-22</p>
 
+        <h2 id="oracle-1-20">20. WM_CONCAT</h2>
+        <p>因为项目上用到了这个函数，这个坑我真的是踩了一万遍了，记录一下。。。</p>
+        <p>首先创建wmsys用户</p>
+        <PreFormat content={user}/>
+        <p>登录wmsys用户创建包，包体和函数</p>
+        <PreFormat content={packages}/>
+        <p>创建同义词并授权</p>
+        <PreFormat content={synonym}/>
+        <p>如果要删除同义词(创建错了要删除的话)</p>
+        <PreFormat content={synonym_delete}/>
+        <p>就ok啦</p>
+
+        <h2 id="oracle-1-21">21. 中文乱码</h2>
+        <p>sqlplus执行sql时,会有中文乱码。</p>
+        <p>查看Oracle服务端的字符集</p>
+        <PreFormat content="select userenv('language') from dual;"/>
+        <p>AMERICAN_AMERICA.AL32UTF8</p>
+        <p>设置环境变量</p>
+        <PreFormat content="export NLS_LANG=AMERICAN_AMERICA.AL32UTF8"/>
+        <p>再执行sql就ok啦</p>
+        <p>但是export设置环境变量是一时的，登出就没有了，要永久生效得把环境变量写进配置文件里。</p>
+        <p>在/etc/profile文件最下面加上export NLS_LANG=AMERICAN_AMERICA.AL32UTF8，保存。</p>
+        <p>执行source /etc/profile 使配置文件生效。</p>
+
+        <h2 id="oracle-1-22">21. 日期处理</h2>
+        <p>当月最后一天</p>
+        <PreFormat content='lastday(sysdate)'/>
+        <p>下月第一天</p>
+        <PreFormat content='lastday(sysdate) + 1'/>
+        <p>如果时分秒要0就加个trunc函数</p>
+        <PreFormat content='trunc(lastday(sysdate) + 1)'/>
+        <p>本月第一天</p>
+        <PreFormat content="trunc(sysdate, 'mm')"/>
+        <p>本周第一天(周一，不加1就是周日)</p>
+        <PreFormat content="trunc(sysdate, 'd') + 1"/>
+        <p>本年第一天</p>
+        <PreFormat content="trunc(sysdate, 'yyyy')"/>
 
         <h2 id="Z-参考">Z. 参考</h2>
         {leaveConfirm && <p>
@@ -177,7 +203,8 @@ export class OracleA extends Component {
           <Link to={urlStates[3]}>2. Oracle中创建、修改、删除序列</Link><br/>
           <Link to={urlStates[4]}>3. Oracle数据库密码有效期参数</Link><br/>
           <Link to={urlStates[5]}>4. oracle解析xml，带命令空间的节点获取</Link><br/>
-          <Link to={urlStates[5]}>5. XMLType操作</Link><br/>
+          <Link to={urlStates[6]}>5. XMLType操作</Link><br/>
+          <Link to={urlStates[7]}>6. 使用sqlplus执行sql时，发现有中文有乱码解决方法</Link><br/>
         </p>}
         {!leaveConfirm &&
         <p>
@@ -196,6 +223,9 @@ export class OracleA extends Component {
           <a href="https://docs.oracle.com/cd/B19306_01/appdev.102/b14259/xdb04cre.htm#BABDGFFH" target="_blank"
              rel="noopener noreferrer">
             5. XMLType操作</a><br/>
+          <a href="https://blog.csdn.net/fyyinjing/article/details/77877239" target="_blank"
+             rel="noopener noreferrer">
+            6. 使用sqlplus执行sql时，发现有中文有乱码解决方法</a><br/>
         </p>
         }
       </div>

@@ -27,6 +27,10 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://docs.oracle.com/cd/B19306_01/appdev.102/b14259/xdb04cre.htm#BABDGFFH',
   },
+  {
+    pathname: '/common/leave',
+    state: 'https://blog.csdn.net/fyyinjing/article/details/77877239',
+  },
 ];
 
 const urls = {

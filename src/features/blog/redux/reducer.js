@@ -47,8 +47,8 @@ const reducers = [
 
 export default function reducer(state = initialState, action) {
   // 读浏览器缓存
-  if (state.posts.length === 0 && !!window.localStorage.getItem('posts')) {
-    state.posts = JSON.parse(window.localStorage.getItem('posts'));
+  if (state.posts.length === 0 && !!window.sessionStorage.getItem('posts')) {
+    state.posts = JSON.parse(window.sessionStorage.getItem('posts'));
   }
   let newState;
   switch (action.type) {

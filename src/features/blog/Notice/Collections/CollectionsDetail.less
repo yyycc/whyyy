@@ -1,0 +1,31 @@
+@import '../../../../styles/mixins';
+
+.blog-collections-detail {
+  background-color: white;
+  width: 1200px;
+  margin: 0 auto;
+
+  .blog-collections-detail-lists {
+    padding: 20px;
+
+    i {
+      cursor: pointer;
+    }
+
+    ol {
+      font-size: 18px;
+    }
+
+    ol li {
+      margin-top: 5px;
+      margin-left: 40px;
+      font-size: 16px;
+    }
+
+    // 伪元素(没效果？)
+    ol ::marker,
+    li ::marker {
+      font-size: 26px;
+    }
+  }
+}

@@ -71,3 +71,5 @@ export { default as Proxy } from './Articles/JavaScript/Proxy';
 export { default as Pm2 } from './Articles/Node/Pm2';
 export { default as ReactB } from './Articles/React/ReactB';
 export { default as Reference } from './Components/Reference/Reference';
+export { default as CollectionsDetail } from './Notice/Collections/CollectionsDetail';
+export { default as File } from './Articles/Node/File';

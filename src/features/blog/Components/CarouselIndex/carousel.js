@@ -4,7 +4,7 @@ import react from '../../../../images/carousel/carousel-react.png';
 import css from '../../../../images/carousel/carousel-css.png';
 
 const images = [Luffy, linux, react, css];
-const imageRoutes = ['luffy', 'linux', 'react', 'articles/css'];
+const imageRoutes = ['luffy', 'articles/linux', 'articles/react', 'articles/css'];
 
 const imageIndex = 0;// 当前图片序号
 

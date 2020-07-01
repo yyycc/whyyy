@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 /*
  * @name: 归档
  * @description: 按月份统计、按归类统计
  * @arg1: posts  所有博客
  * @arg2: 方法  queryPostsByDate, queryPostsByTag 根据日期/标签查询文章
+ * @update: 归档只显示最近6个月的，之前的缩略
  */
 
 export class Collections extends Component {
@@ -35,7 +37,10 @@ export class Collections extends Component {
         }
       });
     });
-    const datesList = Object.keys(datesCount);
+    let datesList = Object.keys(datesCount);
+    if (datesList.length > 6) {
+      datesList = datesList.slice(-6);
+    }
     const countsList = Object.values(datesCount);
     const typeList = Object.keys(typeCount);
     const typeCountsList = Object.values(typeCount);
@@ -46,7 +51,7 @@ export class Collections extends Component {
             <li>
               <i className="fa fa-folder-open"/>
             </li>
-            归档
+            <Link to='/blog/collections'>归档</Link>
           </h3>
           <h3>
             <li>
