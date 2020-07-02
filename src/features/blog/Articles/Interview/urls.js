@@ -48,6 +48,7 @@ const urlStates = [
     pathname: '/common/leave',
     state: 'https://www.cnblogs.com/stfei/p/9084915.html',
   },
+  // 11
   {
     pathname: '/common/leave',
     state: 'https://www.nowcoder.com/test/question/done?tid=33089519&qid=55728#summary',
@@ -71,6 +72,10 @@ const urlStates = [
   {
     pathname: '/common/leave',
     state: 'https://www.jianshu.com/p/b10b6e93ddec',
+  },
+  {
+    pathname: '/common/leave',
+    state: 'https://es6.ruanyifeng.com/#docs/module',
   },
 ];
 

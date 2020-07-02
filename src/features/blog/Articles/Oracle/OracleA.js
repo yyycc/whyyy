@@ -83,7 +83,8 @@ export class OracleA extends Component {
         <p>如果内容输出不全，比如有clob字段，可以加上一句</p>
         <PreFormat content={sqls[12]}/>
 
-        <h2 id="oracle-1-11">11. 实例启动</h2>
+          <h2 id="oracle-1-11">11. 实例重启</h2>
+          <p>先以dba身份进入sqlplus</p>
         <p>数据库实例的启动、结束指令</p>
         <PreFormat content={oracle}/>
         <h2 id="oracle-1-12">12. 监听</h2>
@@ -124,6 +125,11 @@ export class OracleA extends Component {
         <p>如果limit列有数字值，那就是有期限的，如果是unlimited，就是没有期限</p>
         <p>执行如下指令就可以改成无期限的：</p>
         <PreFormat content={sqls[11]}/>
+
+          <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-07-02</p>
+          <p>最近本地数据库碰到这个问题，也这样做了，但是明明设置成了unlimit，还是一链接就说密码快过期。</p>
+          <p>于是就改了两回密码</p>
+          <PreFormat content='alter user nw_dev identified by ***;'/>
 
         <h2 id="oracle-1-18">18. xmltype</h2>
         <p style={{ color: '#c40000', fontSize: '12px', marginBottom: '1px' }}>更新于2020-05-12</p>
@@ -183,7 +189,7 @@ export class OracleA extends Component {
         <p>在/etc/profile文件最下面加上export NLS_LANG=AMERICAN_AMERICA.AL32UTF8，保存。</p>
         <p>执行source /etc/profile 使配置文件生效。</p>
 
-        <h2 id="oracle-1-22">21. 日期处理</h2>
+          <h2 id="oracle-1-22">22. 日期处理</h2>
         <p>当月最后一天</p>
         <PreFormat content='lastday(sysdate)'/>
         <p>下月第一天</p>
@@ -196,6 +202,18 @@ export class OracleA extends Component {
         <PreFormat content="trunc(sysdate, 'd') + 1"/>
         <p>本年第一天</p>
         <PreFormat content="trunc(sysdate, 'yyyy')"/>
+
+          <h2 id="oracle-1-23">23. 连接数</h2>
+          <p>今天突然就无法用dba链接数据库了，但是另一个用户链接就好好的。</p>
+          <p>用终端登录试了一下，报错了：maximum number of processes (100) exceeded </p>
+          <p>故名思意就是连接数太多了。查一下连接</p>
+          <PreFormat content="select sid,serial#,username,program,machine,status from v$session;"/>
+          <p>居然有九十多条。。。而看那个报错，目前设置的最大100，所以要改一下</p>
+          <PreFormat content="alter system set processes=500 scope = spfile;"/>
+          <PreFormat content="create pfile from spfile;"/>
+          <PreFormat content="show parameter processes;"/>
+          <p>改完了直接show发现没变化，需要重启书库(见11. 实例重启)，重启之后再show一下，变成500了，也可以正常连接数据库啦。</p>
+
 
         <h2 id="Z-参考">Z. 参考</h2>
         {leaveConfirm && <p>

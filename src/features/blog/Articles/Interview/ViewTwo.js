@@ -10,10 +10,10 @@ import SimpleTable from '../../Components/SimpleTable/SimpleTable';
 export default class ViewTwo extends Component {
 
   render() {
+    let leaveConfirm = true;
     const { request, requestName, requestTitle, html, htmlName, htmlTitle } = tableCode;
     const { urlStates } = urls;
-    let leaveConfirm = true;
-    const { support, supportNot, media, codes, access, exportDefault } = code;
+    const { support, supportNot, media, codes, access, exportDefault, export_1, export_2, export_3, import_as_whole } = code;
     return (
       <div className="blog-view-two">
 
@@ -71,12 +71,28 @@ export default class ViewTwo extends Component {
 
 
         <h2 id="view-two-4">4. export和export default的区别</h2>
+        <p>ES6引入了模块module的概念，一个模块就是一个独立的文件，该文件内部的所有变量，外部无法获取。如果你希望外部可以访问内部的某些变量，那就需要用export关键词输出变量。</p>
         <p>export与export default均可用于导出常量、函数、文件、模块等</p>
         <p>一个文件中export和import可以有多个，但是export default只能有一个</p>
-        <p>export导出时要加大括号，export default导出时不用加大括号</p>
-        <p>export导出的，在导入时要加大括号，export default导出的，导入时不用加大括号</p>
+        <p>export有两种写法</p>
+        <p>第一种，逐条定义、输出</p>
+        <PreFormat content={export_1}/>
+
+        <p>第二种，定义好后放在大括号里面一次性输出(注意，即便只有一个变量，也需要放进花括号才能输出)</p>
+        <PreFormat content={export_2}/>
+
+        <p>export输出的是本来的名字，可以用as来重命名</p>
+        <PreFormat content={export_3}/>
+        <p>重命名后这些变量可以用不同名字输出多次</p>
+        <p>export导出的，在import导入时要加大括号，可以用as重命名。</p>
+        <p>export default导出的，import导入时不用加大括号，并且可以任意指定导入的名字。</p>
         <PreFormat content={exportDefault}/>
-        <p>export default导出的在导入的时候尽量不要用大括号，之前遇到过它默认给我加括号就出了一点问题</p>
+        <p>import输入的变量都是只读的，他的本质是导入接口，也就是不允许在加载模块的脚本里修改接口。</p>
+        <p>import命令是编译阶段执行的，在代码运行之前。他是静态执行，所以不能是用表达式和变量，因为这些是只有运行时才能得到结果的语法结构。</p>
+        <p>export
+          default导出的在import导入的时候不要用大括号(因为它只会有唯一一个输出)，之前遇到过它默认给我加大括号就出了问题(关键是用还是可以用，但是会丢失一些信息，比如跟class平级的function)。</p>
+        <p>模块还可以整体加载，就不用在花括号里一一列出来，直接*就可以了，所有需要的都可以通过circle. 来获取。</p>
+        <PreFormat content={import_as_whole}/>
 
 
         <h2 id="view-two-5">5. 数组去重</h2>
@@ -104,7 +120,7 @@ export default class ViewTwo extends Component {
         <p>4XX：客户端错误</p>
         <p>5XX：服务器错误</p>
         <p>200：请求成功</p><br/>
-          <p>304：按F5刷新 304 表明此次请求为条件请求 判断出客户端缓存的资源是否是最新的,如果是的话,服务器就会返回HTTP/304 Not Modified响应头</p><br/>
+        <p>304：按F5刷新 304 表明此次请求为条件请求 判断出客户端缓存的资源是否是最新的,如果是的话,服务器就会返回HTTP/304 Not Modified响应头</p><br/>
         <p>400：请求有语法错误</p>
         <p>401：没有提供认证信息(一般提供了认证信息之后就可以访问)</p>
         <p>403：没有权限，服务器拒绝</p>
@@ -149,6 +165,7 @@ export default class ViewTwo extends Component {
           <Link to={urlStates[7]}>3. export default 和 export 区别</Link><br/>
           <Link to={urlStates[8]}>4. GET 和 POST 到底有什么区别？</Link><br/>
           <Link to={urlStates[9]}>5. export</Link><br/>
+          <Link to={urlStates[18]}>6. ECMAScript 6 入门</Link><br/>
         </p>}
         {!leaveConfirm &&
         <p>
@@ -166,6 +183,10 @@ export default class ViewTwo extends Component {
              target="_blank"
              rel="noopener noreferrer">
             5. export</a><br/>
+          <a href="https://es6.ruanyifeng.com/#docs/module"
+             target="_blank"
+             rel="noopener noreferrer">
+            6. ECMAScript 6 入门</a><br/>
         </p>
         }
       </div>

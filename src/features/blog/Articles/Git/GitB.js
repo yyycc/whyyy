@@ -6,7 +6,6 @@ import code from './code';
 import { PreFormat } from '../../Components/PreFormat/PreFormat';
 import { Link } from 'react-router-dom';
 import urls from './urls';
-
 export class GitB extends Component {
 
   render() {
@@ -110,68 +109,25 @@ export class GitB extends Component {
         <PreFormat content={codes[6]}/>
 
 
-          <h2 id="git-1-2">2. using</h2>
-          <h3 id="git-1-2-1">2.1. git tag</h3>
-          <p>新建tag</p>
-          <PreFormat content='git tag -a v1.0 -m "publish 1.0 version"'/>
-          <p>建好之后，/.git/refs目录下就会多一个tags目录，tags都存在这里边，现在里面有一个v1.0，看一下他的类型</p>
-          <PreFormat content='git cat-file -t v1.0'/>
-          <p>类型是tag(类型种类有blob, tree, commit, tag)</p>
-          <p>vi看一下内容，发现里面是一串commit ID</p>
+        <h2 id="git-1-2">2. using</h2>
+        <h3 id="git-1-2-1">2.1. git tag</h3>
+        <p>新建tag</p>
+        <PreFormat content='git tag -a v1.0 -m "publish 1.0 version"'/>
+        <p>建好之后，/.git/refs目录下就会多一个tags目录，tags都存在这里边，现在里面有一个v1.0，看一下他的类型</p>
+        <PreFormat content='git cat-file -t v1.0'/>
+        <p>类型是tag(类型种类有blob, tree, commit, tag)</p>
+        <p>vi看一下内容，发现里面是一串commit ID</p>
 
-          <p>推送到远程服务器</p>
-          <PreFormat content='git push origin --tags'/>
-          <p>查看所有tag</p>
-          <PreFormat content='git tag'/>
-          <p>删除tag</p>
-          <PreFormat content='git tag -d v1.0'/>
-          <p>推送到远程服务器</p>
-          <PreFormat content='git push origin :refs/tags/v1.0'/>
-          <p>查看tag详细信息</p>
-          <PreFormat content='git show v1.0'/>
-
-          <h2 id="git-1-3">3. git worktree</h2>
-          <p>在tag指令后面看到了一个名叫worktree的指令，研究了一番发现，是个好东东(再也不用克隆多个仓库啦)～</p>
-          <h3 id="git-1-3-1">3.1. description</h3>
-          <p>先做个简介(官网description部分的翻译)：</p>
-          <p>同一个仓库下，管理多个工作树。</p>
-          <p>一个git仓库支持多个工作树，它支持同时切多个分支。
-              通过 git worktree add 指令，仓库就会有一个新的工作树。
-              这个新的工作树被称为"被链接的工作树"，对应由 git init 或者 git clone产生的"主工作树"。
-              一个仓库只有一个"主工作树"(除非是裸仓库)以及0到多个"被链接的工作树"。当你不需要某个"被链接的工作树"，你可以通过 git worktree remove 把它删掉(主工作树不能被remove)。</p>
-          <p>如果"被链接的工作树"不是通过 git worktree remove 删掉的，那么跟他相关的仍留在仓库中文件最终会被自动移除，
-              或者你可以在任意工作树下执行 git worktree prune 指令来清理所有过时的文件。</p>
-          <p>如果"被链接的工作树"在不总是挂载的移动设备或者网络共享上，你可以通过 git worktree lock 指令阻止相关文件被清理，
-              执行这个指令的时候，可以加上 --reason 来说明为什么这个工作树要上锁。</p>
-          <h3 id="git-1-3-2">3.2. 应用场景</h3>
-          <p>上面是官网上对这个指令的描述，我翻译了一下，毕竟网页上的翻译可谓gpbt，看得我万分难受。下面说一下应用场景</p>
-          <p>之前在项目上也遇到过，多分支开发，比如我在dev分支进行开发工作，这个时候生产出了个bug，那么就需要从master切一个hot-fix出来改bug。</p>
-          <p>但是我本地的工作目录是脏的，我又不想提交，那就只能stash，就很麻烦，可能过一段时间我就把这个stash给忘了。</p>
-          <p>当时嫌麻烦，解决方案是再clone一个下来，开俩同时工作，通过远程分支来进行同步，我们一个项目文件大约2.5G，两个就是5G，要是分支更多。。。</p>
-          <p>worktree就是来解决这个问题的。</p>
-          <h3 id="git-1-3-3">3.3. 应用</h3>
-          <p>还是拿我的博客做例子，首先看一下我的worktree</p>
-          <PreFormat content="git worktree list"/>
-          <p>看一下结果，有一个working tree，这个是git init后自己生成的，上面提到过， git init 或者 git clone都会产生主工作树，除非是裸仓库。</p>
-          <p>16d751f 是这个工作树指向的commit ID，后面是分支。</p>
-          <PreFormat content="/Users/ever/2020/lasting/blog/whyyy  16d751f [master]"/>
-          <p>那么现在我切一个hot-fix出来改个bug，目录是必须给的，一般就跟当前项目平级，所以用../表示当前目录的父目录，后面还可以指定分支(可以切到已有分支，也可以新建一个分支)</p>
-          <p>如果是已经有的分支，直接加上分支名，如果是新分支需要加上 -b</p>
-          <PreFormat content="git worktree add ../whyyy_hot_fix -b hot_fix"/>
-          <p>在用list看一下，就会发现多出来了一个工作树</p>
-          <PreFormat content="/Users/ever/2020/lasting/blog/whyyy_hot_fix  16d751f [hot_fix]"/>
-          <p>在whyyy/.git目录下也多了一个worktrees文件夹，里面有一个whyyy_hot_fix文件夹(里面有一堆东西，还没细研究)。</p>
-          <p>我的blog目录下面多出来了一个whyyy_hot_fix文件夹，这个文件夹只有不到60M，我的原目录有600M(我试过另一个2.5G的项目，生成的工作树只有80M)。把它打开就得到了在hot_fix分支下一个干净的工作目录。</p>
-          <p>我就可以在这个干净的目录下改bug啦～</p>
-          <p>改完bug，提交代码，我不再需要这棵树了(这边用的是相对路径，所以必须在项目根目录下执行，也可以使用绝对路径，就是git worktree list指令看到的那个路径)</p>
-          <PreFormat content="git worktree remove ../whyyy_hot_fix"/>
-          <p>失败了，说它dirty，要加上 --force</p>
-          <PreFormat content="git worktree remove --force/-f ../whyyy_hot_fix"/>
-          <p>whyyy_hot_fix文件夹就没有了，.git目录下的worktrees也没有了</p>
-          <p>如果你手动删除了whyyy_hot_fix文件夹，可以再执行一下下面一个指令进行清理，当然也可以不，git会自动帮你清理的(我也不知道它啥时候清理)。</p>
-          <PreFormat content="git worktree prune"/>
-          <p>还有lock，unlock指令，等有场景要用了再记录吧～</p>
-          <p>总的来说，这个指令很棒，省去了我git clone的时间，还节约存储空间，就很nice。</p>
+        <p>推送到远程服务器</p>
+        <PreFormat content='git push origin --tags'/>
+        <p>查看所有tag</p>
+        <PreFormat content='git tag'/>
+        <p>删除tag</p>
+        <PreFormat content='git tag -d v1.0'/>
+        <p>推送到远程服务器</p>
+        <PreFormat content='git push origin :refs/tags/v1.0'/>
+        <p>查看tag详细信息</p>
+        <PreFormat content='git show v1.0'/>
 
         {leaveConfirm && <p>
           <Link to={urlStates[0]}>1.【Git】(1)---工作区、暂存区、版本库、远程仓库</Link><br/>

@@ -77,17 +77,35 @@ const access = 'response.setHeader("Access-Control-Allow-Origin", "*");\n' +
   'response.setHeader("Access-Control-Allow-Headers", "x-requested-with, Content-Type, token, Accept");\n' +
   'response.setHeader("Access-Control-Allow-Credentials", "true");';
 
-const exportDefault = '// export default\n' +
-  'export default function test() { // 输出\n' +
-  '  // ...\n' +
-  '}\n' +
-  'import test from \'test\'; // 输入\n' +
-  ' \n' +
-  '// export\n' +
+const export_1 = 'export var firstName = \'Michael\';\n' +
+  'export var lastName = \'Jackson\';\n' +
+  'export var year = 1958;';
+
+const export_2 = 'var firstName = \'Michael\';\n' +
+  'var lastName = \'Jackson\';\n' +
+  'var year = 1958;\n' +
+  '\n' +
+  'export { firstName, lastName, year };';
+
+const export_3 = 'var firstName = \'Michael\';\n' +
+  'var lastName = \'Jackson\';\n' +
+  'var year = 1958;\n' +
+  '\n' +
+  'export { firstName as a, lastName as b, year as c };';
+
+const import_as_whole = 'import * as circle from \'./circle\';';
+
+const exportDefault = '// export\n' +
   'export function test() { // 输出\n' +
   '  // ...\n' +
   '};\n' +
-  'import {test} from \'test\'; // 输入';
+  'import {test} from \'test\'; // 输入\n' +
+  '\n' +
+  '// export default\n' +
+  'export default function test() { // 输出\n' +
+  '  // ...\n' +
+  '}\n' +
+  'import test from \'test\'; // 输入\n';
 
 const inline = 'display: inline';
 const block = 'display: block';
@@ -130,6 +148,10 @@ const code = {
   media,
   access,
   exportDefault,
+  export_1,
+  export_2,
+  export_3,
+  import_as_whole,
   inline,
   block,
   func,

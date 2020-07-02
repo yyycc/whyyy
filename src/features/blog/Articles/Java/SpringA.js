@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import code from './code';
+import { codes } from './code';
 import PreFormat from '../../Components/PreFormat/PreFormat';
 import SimpleTable from '../../Components/SimpleTable/SimpleTable';
-import tableCode from './tableCode';
+import table from './tableCode';
 import urls from '../WebService/urls';
 import { Link } from 'react-router-dom';
 
 export class SpringA extends Component {
 
   render() {
-    const { codes } = code;
-    const { propagation, propagationName, propagationTitles } = tableCode;
+    debugger;
+    const { propagation, propagationName, propagationTitles } = table;
     let leaveConfirm = true;
     const { urlStates } = urls;
     return (

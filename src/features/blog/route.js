@@ -19,7 +19,7 @@ import {
   ReactA, ReactB,
   Ntfs,
   LinuxA, LinuxB,
-  GitA, GitB,
+  GitA, GitB, GitC,
   About, FLinks, Maintain, Sentences, Online, CollectionsDetail,
   ScrollBanner,
   Canvas,
@@ -79,6 +79,7 @@ export default {
 
         { path: 'git/config', name: 'git', component: GitA, isIndex: false },
         { path: 'git/commands', name: 'git', component: GitB, isIndex: false },
+        { path: 'git/commands_more', name: 'git', component: GitC, isIndex: false },
 
         { path: 'webService/interceptor', name: 'webService', component: WebServiceB, isIndex: false },
         { path: 'webService/cxf', name: 'webService', component: WebServiceA, isIndex: false },
