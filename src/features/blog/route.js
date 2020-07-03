@@ -8,7 +8,7 @@ import {
   ArticlesList,
   Topic,
   DockerA, DockerB, DockerC,
-  Array, Color, Promote, RegExp, Number, AsyncSugar, Proxy,
+  Array, Color, Promote, RegExp, Number, AsyncSugar, Proxy, Scope,
   WebServiceA, WebServiceB,
   NginxA,
   OracleA, OracleB,
@@ -47,6 +47,7 @@ export default {
         { path: 'javaScript/number', name: 'number', component: Number, isIndex: false },
         { path: 'javaScript/async', name: 'async', component: AsyncSugar, isIndex: false },
         { path: 'javaScript/proxy', name: 'proxy', component: Proxy, isIndex: false },
+        { path: 'javaScript/scope', name: 'scope', component: Scope, isIndex: false },
 
         { path: 'node/A', name: 'node', component: NodeA, isIndex: false },
         { path: 'node/pm2', name: 'pm2', component: Pm2, isIndex: false },

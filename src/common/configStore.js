@@ -34,6 +34,7 @@ export default function configureStore(initialState) {
 
   /* istanbul ignore if  */
   if (module.hot) {
+    // 热部署
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./rootReducer', () => {
       const nextRootReducer = require('./rootReducer').default; // eslint-disable-line

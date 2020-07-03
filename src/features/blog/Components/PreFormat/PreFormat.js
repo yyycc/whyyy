@@ -4,8 +4,14 @@ import ReactClipboard from 'react-clipboardjs-copy';
 import PropTypes from 'prop-types';
 
 export class PreFormat extends Component {
+  constructor() {
+    super();
+    this.state = {
+      opacity: 0,
+    };
+  }
   static propTypes = {
-    content: PropTypes.object.isRequired, // 加了这个，当你调用的时候，这个属性会自己蹦出来的
+    content: PropTypes.string.isRequired, // 加了这个，当你调用的时候，这个属性会自己蹦出来的
   };
 
   /**
@@ -17,12 +23,23 @@ export class PreFormat extends Component {
    */
 
   render() {
+    const success = () => {
+      this.setState({
+        opacity: 1,
+      });
+      setTimeout(() => {
+        this.setState({
+          opacity: 0,
+        });
+      }, 800);
+    };
     const { content, className } = this.props;
     return (
       <div className="blog-pre-format">
         {/*<button onClick={(ref) => copy(ref)}>复制</button>*/}
-        <ReactClipboard text={content}>
-          <span className="blog-pre-format-copy" title="复制" type="button"/>
+        <span className="blog-pre-format-copied" style={{ opacity: `${this.state.opacity}` }}>已复制</span>
+        <ReactClipboard text={content} onSuccess={() => success()}>
+          <span className="blog-pre-format-copy" type="button"/>
         </ReactClipboard>
         <Highlight className={className}>{content}</Highlight>
 

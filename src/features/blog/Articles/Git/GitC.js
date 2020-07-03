@@ -103,6 +103,29 @@ export default class GitC extends Component {
         <PreFormat content='git switch dev'/>
         <p>以后就用switch吧</p>
 
+        <h2 id="git-4">4. git restore</h2>
+        <p>说完switch就说restore吧，还是从官方文档说起。</p>
+        <p>首先，我看到这么一句</p>
+        <strong>THIS COMMAND IS EXPERIMENTAL. THE BEHAVIOR MAY CHANGE.</strong>
+        <p>忍不住竖起大拇指，夸一句nice。。。</p>
+        <p>我是用，还是不用呢？</p>
+        <p>先看看吧</p>
+
+        <h2 id="git-4-1">4.1. after add</h2>
+        <p>之前(git(2))里面提到过，git add之后文件就被staged了</p>
+        <p>可以利用restore来进行unstage，回到git add 之前的状态</p>
+        <PreFormat content='git restore --staged ever.js'/>
+
+        <h2 id="git-4-2">4.2. after commit</h2>
+        <p>如果不仅add，还commit了呢</p>
+        <PreFormat content='git restore  -s HEAD~1 ever.js'/>
+        <p>将版本回退到当前快照的前一个版本。这个时候ever.js就变成这次修改之前的样子。</p>
+        <p>但是注意哦，这并没有删掉commit，他还是存在的。</p>
+        <p>如果要删除commit，要用rebase，给要删除的commit的父commit的ID</p>
+        <PreFormat content='git rebase  -i [commit iD]'/>
+        <p>然后会弹出一个操作框，里面有很多注释，用drop [commit iD]，要删除的commit的ID。就可以吧这个commit删除啦(跑题了。。。)。</p>
+
+
         <Reference reference={{ urlStates, titles }}/>
       </div>
     );

@@ -153,6 +153,46 @@ const sort = '// bad\n' +
   '// good\n' +
   '[1, 4, 2, 6, 0, 6, 2, 6].sort((a, b) => a - b)';
 
+const for_let = '' +
+  'for(let i = 0; i < arr.length; i++) {\n' +
+  '    ...\n' +
+  '}';
+
+const let_1 = 'for (var i = 0; i < 4; i++) {\n' +
+  '  setTimeout(() => {console.log(i)}, 2000);\n' +
+  '}';
+
+const let_2 = 'for (let i = 0; i < 4; i++) {\n' +
+  '  setTimeout(() => {console.log(i)}, 2000);\n' +
+  '}';
+
+const let_3 = 'for (var i = 0; i < 4; i++) {\n' +
+  '  ~function(i) {\n' +
+  '    setTimeout(() => {console.log(i)}, 2000);\n' +
+  '  }(i)\n' +
+  '}';
+
+const global_var = 'function ever() {\n' +
+  '  b = \'bb\';\n' +
+  '  console.log(b);\n' +
+  '}\n' +
+  'ever();\n' +
+  'console.log(b);';
+
+const scope_chain = 'let a = 3;\n' +
+  'let b = 4;\n' +
+  'function c() {\n' +
+  '   let b = 9;\n' +
+  '   {\n' +
+  '      let a = 18;\n' +
+  '   }\n' +
+  '   console.log(a);\n' +
+  '   console.log(b);\n' +
+  '}\n' +
+  '> c()\n' +
+  ' 3\n' +
+  ' 9';
+
 const code = {
   ajax,
   codes,
@@ -165,6 +205,12 @@ const code = {
   reducer,
   proxy,
   sort,
+  for_let,
+  let_1,
+  let_2,
+  let_3,
+  global_var,
+  scope_chain,
 };
 
 export default code;

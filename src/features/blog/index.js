@@ -74,3 +74,4 @@ export { default as Reference } from './Components/Reference/Reference';
 export { default as CollectionsDetail } from './Notice/Collections/CollectionsDetail';
 export { default as File } from './Articles/Node/File';
 export { default as GitC } from './Articles/Git/GitC';
+export { default as Scope } from './Articles/JavaScript/Scope';
