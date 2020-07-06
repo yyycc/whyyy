@@ -38,7 +38,9 @@ export class Collections extends Component {
       });
     });
     let datesList = Object.keys(datesCount);
+    let start = 0;
     if (datesList.length > 6) {
+      start = datesList.length - 6;
       datesList = datesList.slice(-6);
     }
     const countsList = Object.values(datesCount);
@@ -64,7 +66,8 @@ export class Collections extends Component {
           <div className="blog-collections-lists-date">
             {
               datesList.map((ele, index) => {
-                let listName = ele.split('-')[0] + '年' + ele.split('-')[1] + '月(' + countsList[index] + ')';
+                let index_reverse = index + start;
+                let listName = ele.split('-')[0] + '年' + ele.split('-')[1] + '月(' + countsList[index_reverse] + ')';
                 return <li onClick={() => queryPostsByDate(ele)} key={index}>
                   <i className="fa fa-calendar"/>{listName}</li>;
               })
