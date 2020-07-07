@@ -76,3 +76,4 @@ export { default as File } from './Articles/Node/File';
 export { default as GitC } from './Articles/Git/GitC';
 export { default as Scope } from './Articles/JavaScript/Scope';
 export { default as InterviewFive } from './Articles/Interview/InterviewFive';
+export { default as FileManage } from './Components/File/FileManage';

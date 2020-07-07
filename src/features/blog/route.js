@@ -25,6 +25,7 @@ import {
   Canvas,
   Interview, ViewOne, ViewTwo, ViewFour, InterviewFive, ViewThree, ViewAll,
   NodeA, Pm2, File,
+  FileManage,
 } from './';
 import { PageNotFound } from '../common';
 
@@ -35,6 +36,7 @@ export default {
   childRoutes: [
     { path: '/', name: 'homePage', component: HomePage, isIndex: true },
     { path: 'canvas', name: 'canvas', component: Canvas },
+    { path: 'file', name: 'file', component: FileManage },
     {
       path: 'articles', name: 'articles', component: Articles, isIndex: false,
       childRoutes: [

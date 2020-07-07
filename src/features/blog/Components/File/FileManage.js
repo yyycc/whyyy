@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class File extends Component {
+export default class FileManage extends Component {
   constructor() {
     super();
+    this.state = {
+      width: 0,
+      opacity: 0,
+      percent: 0,
+    };
   }
 
   render() {
@@ -23,7 +28,6 @@ export default class File extends Component {
             res.data.data.last_update_date = '2020-07-06';
             axios.post('http://localhost:8871/file/insertSelective', res.data.data).then(
               function(res) {
-                debugger;
                 alert(res.data.success);
               }, function(e) {
                 alert(e);
@@ -35,23 +39,47 @@ export default class File extends Component {
     };
 
     const downLoad = (id) => {
-      id = 4;
+      id = 6;
       let url_download = 'http://localhost:8871/file/download?file_name=';
       let url_query = 'http://localhost:8871/file/queryById?id=' + id;
+      this.setState({
+        ...this.state,
+        opacity: 1,
+      });
       axios.get(url_query).then(
-        function(res) {
+        res => {
           let name = res.data.data[0].file_name;
           let path = res.data.data[0].file_path;
           let paths = path.split('/');
           let file_name = paths[paths.length - 1];
           url_download = url_download + file_name;
           axios.get(url_download, { responseType: 'blob' }).then(
-            function(res) {
+            res => {
               let blob = res.data;
               let reader = new FileReader();
               reader.readAsDataURL(blob); // 转换为base64，可以直接放入a标签href
-              reader.onload = function(e) {
+              /*reader.onprogress = (e) => {
+                // e 是一个 ProgressEvent.
+                if (e.lengthComputable) {
+                  let percentLoaded = Math.round((e.loaded / e.total) * 100);
+                  console.log(percentLoaded);
+                  // 更新进度条长度
+                  if (percentLoaded < 100) {
+                    this.setState({
+                      ...this.state,
+                      percent: percentLoaded,
+                      width: percentLoaded,
+                    });
+                  }
+                }
+              };*/
+              reader.onload = (e) => {
                 // 转换完成，创建一个a标签用于下载
+                /*this.setState({
+                  ...this.state,
+                  percent: 100,
+                  width: 100,
+                });*/
                 let a = document.createElement('a');
                 a.download = name;
                 a.href = e.target.result;
@@ -68,9 +96,16 @@ export default class File extends Component {
     const changeFile = (e) => {
       file = e.target.files[0];
     };
+
+    const width = this.state.width;
+    const opacity = this.state.opacity;
+    const percent = this.state.percent;
     return (
       <div className="blog-file">
         <p>封装一个文件上传下载的组件</p>
+        <div id="progress_bar" style={{ opacity: `${opacity}` }}>
+          <div className="percent" style={{ width: `${width}%` }}>{percent}%</div>
+        </div>
 
         <input type='file' id='file' name='file' onChange={changeFile}/>
         <button onClick={upload}>上传文件</button>
