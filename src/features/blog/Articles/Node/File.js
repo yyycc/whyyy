@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class File extends Component {
-  constructor() {
-    super();
-  }
 
   render() {
     let file;
@@ -84,7 +81,7 @@ export default class File extends Component {
           <input type="submit" value="上传文件"/>
         </form>
         {/*阻止提交跳转页面*/}
-        <iframe name="stop" style={{ display: 'none' }}></iframe>
+        <iframe title='stop' name="stop" style={{ display: 'none' }}></iframe>
       </div>
     );
   }

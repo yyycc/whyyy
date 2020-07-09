@@ -37,7 +37,6 @@ export class Layout extends Component {
     // 当路由变换时，把抽屉关掉(我也不想关的，但是我又不知道怎么重新渲染anchor。。。只能暂时先关一关了，呜)//TODO
     let { changeDrawer } = this.props.actions;
     this.props.history.listen((e) => {
-      console.log('cyy:' + e);
       // 如果是文章内部定位，则不能关闭抽屉
       if (e.hash === '')
         changeDrawer(false);

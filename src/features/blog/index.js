@@ -77,3 +77,4 @@ export { default as GitC } from './Articles/Git/GitC';
 export { default as Scope } from './Articles/JavaScript/Scope';
 export { default as InterviewFive } from './Articles/Interview/InterviewFive';
 export { default as FileManage } from './Components/File/FileManage';
+export { default as MyDialog } from './Components/Dialog/MyDialog';

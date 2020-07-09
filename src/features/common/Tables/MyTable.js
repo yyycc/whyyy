@@ -1,6 +1,7 @@
 import React, { Component, useContext, useEffect, useRef, useState } from 'react';
 import { Table, Button, Form, Input, Popconfirm } from 'antd';
 import instance from '../../../interceptors';
+import MyDialog from '../../blog/Components/Dialog/MyDialog';
 
 const EditableContext = React.createContext();
 
@@ -45,7 +46,7 @@ const EditableCell = ({
     try {
       const values = await form.validateFields();
       toggleEdit();
-      if (record[Object.keys(values)[0]] != values[Object.keys(values)[0]] && !record._status) {
+      if (record[Object.keys(values)[0]] + ',' !== values[Object.keys(values)[0]] && !record._status) {
         record._status = 'UPDATE';
       }
       handleSave({ ...record, ...values });
@@ -108,6 +109,7 @@ export default class MyTable extends Component {
       columns: props.columns,
       dataSource: props.dataSource,
       urls: props.urls,
+      show: 'none',
     };
   }
 
@@ -137,7 +139,6 @@ export default class MyTable extends Component {
   };
 
   handleSaveData = () => {
-    console.log(this);
     const newData = [...(this.state.dataSource.filter(item => !!item._status))];
     // 没有_status的字段不传输
     for (let i = 0; i < newData.length; i++) {
@@ -145,8 +146,12 @@ export default class MyTable extends Component {
     }
     let url = this.state.urls['save'];
     instance.post(url, newData).then(
-      function(res) {
+      res => {
         alert(res.data.data);
+        this.setState({
+          ...this.state,
+          show: 'display',
+        });
       }, function(e) {
         alert(e);
       });
@@ -215,7 +220,6 @@ export default class MyTable extends Component {
   }
 
   onSelectChange = selectedRowKeys => {
-    console.log('selectedRowKeys changed: ', selectedRowKeys);
     this.setState({ selectedRowKeys });
   };
 
@@ -234,7 +238,7 @@ export default class MyTable extends Component {
         cell: EditableCell,
       },
     };
-    const { selectedRowKeys } = this.state;
+    const { selectedRowKeys, show } = this.state;
     const rowSelection = {
       selectedRowKeys,
       onChange: this.onSelectChange,
@@ -255,8 +259,22 @@ export default class MyTable extends Component {
         }),
       };
     });
+
+    const success = (data) => {
+      this.setState({
+        ...this.state,
+        show: 'none',
+      });
+    };
+    const failure = (data) => {
+      this.setState({
+        ...this.state,
+        show: 'none',
+      });
+    };
     return (
       <div className="common-my-table">
+        {show === 'display' && <MyDialog success={success} failure={failure}/>}
         <div className="common-my-table-button">
           <Button onClick={this.handleAdd} type="primary" style={{ marginBottom: 16 }}>
             add
