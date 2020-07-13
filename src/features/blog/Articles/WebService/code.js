@@ -94,7 +94,7 @@ const web = '<?xml version="1.0" encoding="UTF-8"?>\n' +
   '    </servlet>\n' +
   '    <servlet-mapping>\n' +
   '        <servlet-name>CXFServlet</servlet-name>\n' +
-  '        <!--==这个设置很重要，那么我们的webservice的地址就是http://localhost:8080/yourProgramName/webservice/Greeting=== -->\n' +
+  '        <!--==这个设置很重要，那么我们的webservice的地址就是http://localhost:8080/yourProgramName/webservice/invoice=== -->\n' +
   '        <url-pattern>/webservice/*</url-pattern>\n' +
   '    </servlet-mapping>\n' +
   '</web-app>';
