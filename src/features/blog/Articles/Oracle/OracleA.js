@@ -149,11 +149,17 @@ export class OracleA extends Component {
         <PreFormat content={extractValue2}/>
         <p>soapenv:Envelope和ns1:Fault节点都有命名空间，所以把两个都写在参数3里面，这样就可以解析出faultString节点的值啦。</p>
         <p>后来看到了这张图，嗯，虽然没给例子，但是确实告诉你可以有第三个参数了。。。</p>
-        <div className="blog-oracle-a-img">
+          {/*<div className="blog-oracle-a-img">
           <img src={extractValueImg} alt="EXTRACTVALUE语法"/>
           <br/>
           <p>图1. EXTRACTVALUE语法</p>
-        </div>
+        </div>*/}
+          <figure className="blog-oracle-a-img">
+              <img src={extractValueImg} alt="EXTRACTVALUE语法"/>
+              <figcaption>图1. EXTRACTVALUE语法&nbsp;-
+                  <a href="https://docs.oracle.com/cd/B19306_01/appdev.102/b14259/xdb04cre.htm#BABDGFFH" target="_blank"
+                     rel="noopener noreferrer">来自</a></figcaption>
+          </figure>
         <h2 id="oracle-1-19">19. sql格式化</h2>
         <p>写sql的时候经常碰到，日期/数字格式化</p>
         <p>一般都是：tochar([字段], [format格式])</p>

@@ -15,10 +15,14 @@ export class ScrollBanner extends Component {
     return (
       <div className="blog-scroll-banner">
         <p>先上效果图</p>
-        <div className="blog-scroll-banner-img">
+        {/*<div className="blog-scroll-banner-img">
           <img src={scroll} alt="轮播效果图"/>
           <p>图1. 轮播效果图</p>
-        </div>
+        </div>*/}
+        <figure className="blog-scroll-banner-img">
+          <img src={scroll} alt="轮播效果图"/>
+          <figcaption>图1. 轮播效果图</figcaption>
+        </figure>
         <p>(小喇叭部分的代码没有贴出来)</p>
         <p>主要的实现逻辑是这样滴：</p>
         <p>1. 将每个公告放在li标签下，限制ul的高度使得只显示一个li，并且设置overflow为hidden，这样当ul动起来，浮出的部分也会隐藏。</p>
