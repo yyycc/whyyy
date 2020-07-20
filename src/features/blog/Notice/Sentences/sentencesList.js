@@ -15,6 +15,7 @@ const sentences =
     'I have spent my entire life putting off things that I thought there’d be time for later.',
     'Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present.',
     'If there is any kind of magic in the world, it must be the attempt of understanding someone or sharing something. ',
+    '写一本书是一场可怕的、令人筋疲力尽的斗争，就像生了一场大病。如果不是被某些我们既无法理解、又无力抵抗的恶魔驱使，谁也不会去做这样的事的。',
   ];
 
 const sentencesCurrent = 1;

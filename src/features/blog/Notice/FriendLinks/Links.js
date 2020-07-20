@@ -7,6 +7,10 @@ const linkNames = [
     link: 'http://www.zsythink.net/',
     name: '朱双印的个人博客',
   },
+  {
+    link: 'http://www.ruanyifeng.com/home.html',
+    name: '阮一峰的个人网站',
+  },
 ];
 
 const links = {

@@ -18,7 +18,7 @@ import {
   Css, CssA, CssB, CssC, FixDiv,
   ReactA, ReactB,
   Ntfs,
-  LinuxA, LinuxB,
+  LinuxA, LinuxB, LinuxC,
   GitA, GitB, GitC,
   About, FLinks, Maintain, Sentences, Online, CollectionsDetail,
   ScrollBanner,
@@ -72,6 +72,7 @@ export default {
 
         { path: 'linux/commands', name: 'linux', component: LinuxB, isIndex: false },
         { path: 'linux/vi', name: 'linux', component: LinuxA, isIndex: false },
+        { path: 'linux/file', name: 'linux', component: LinuxC, isIndex: false },
         { path: 'linux/ssh', name: 'ssh', component: SecureShellA, isIndex: false },
 
         { path: 'docker/tomcat', name: 'docker', component: DockerB, isIndex: false },
