@@ -105,9 +105,9 @@ export default class ViewTwo extends Component {
         <PreFormat content={codes[4]}/>
         <h3 id="view-two-5-3">5.3. 方法三</h3>
         <p>利用扩展运算符</p>
-        <h3 id="view-two-5-4">5.4. 方法四</h3>
+          <PreFormat content={codes[5]}/>
+          <h3 id="view-two-5-4">5.4. 方法四</h3>
         <p>利用数组下标，循环判断数组a.indexOf(a[i] == i)如果相等说明是第一次出现，则push进临时数组，如果不等说明是第n+1次出现，就continue。</p>
-        <PreFormat content={codes[5]}/>
 
 
         <h2 id="view-two-6">6. get、post的区别</h2>

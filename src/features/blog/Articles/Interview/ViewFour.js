@@ -19,7 +19,7 @@ export default class ViewFour extends Component {
         <p>块级元素(默认display属性是block)：</p>
         <ul>
           <li>独占一行</li>
-          <li>可设置款高，默认宽度是父级的100%</li>
+          <li>可设置宽高，默认宽度是父级的100%</li>
           <li>可设置margin、padding</li>
         </ul>
         <p>行内元素(默认display属性是inline)：</p>
