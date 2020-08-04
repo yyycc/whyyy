@@ -23,7 +23,7 @@ import {
   About, FLinks, Maintain, Sentences, Online, CollectionsDetail,
   ScrollBanner,
   Canvas,
-  Interview, ViewOne, ViewTwo, ViewFour, InterviewFive, ViewThree, ViewAll,
+  Interview, ViewOne, ViewTwo, ViewFour, InterviewFive, InterviewSix, ViewThree, ViewAll,
   NodeA, Pm2, File,
   FileManage,
 } from './';
@@ -61,6 +61,7 @@ export default {
         { path: 'interview/three', name: 'interview', component: ViewThree, isIndex: false },
         { path: 'interview/four', name: 'interview', component: ViewFour, isIndex: false },
         { path: 'interview/five', name: 'interview', component: InterviewFive, isIndex: false },
+        { path: 'interview/six', name: 'interview', component: InterviewSix, isIndex: false },
         { path: 'interview/all', name: 'interview', component: ViewAll, isIndex: false },
 
         { path: 'css', name: 'css', component: Css, isIndex: false },

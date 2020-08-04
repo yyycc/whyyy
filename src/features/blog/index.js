@@ -80,3 +80,4 @@ export { default as FileManage } from './Components/File/FileManage';
 export { default as MyDialog } from './Components/Dialog/MyDialog';
 export { default as MysqlB } from './Articles/Mysql/MysqlB';
 export { default as LinuxC } from './Articles/Linux/LinuxC';
+export { default as InterviewSix } from './Articles/Interview/InterviewSix';
