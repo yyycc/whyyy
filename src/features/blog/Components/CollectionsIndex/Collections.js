@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import FaTitle from '../Titles/FaTitle';
 
 /*
  * @name: 归档
@@ -49,18 +49,8 @@ export class Collections extends Component {
     return (
       <div className="blog-collections">
         <div className="blog-collections-titles">
-          <h3>
-            <li>
-              <i className="fa fa-folder-open"/>
-            </li>
-            <Link to='/blog/collections'>归档</Link>
-          </h3>
-          <h3>
-            <li>
-              <i className="fa fa-folder-open-o"/>
-            </li>
-            归类
-          </h3>
+          <FaTitle className='folder-open' title={['/blog/collections', '归档']} width='50'/>
+          <FaTitle className='folder-open-o' title='归类' width='50'/>
         </div>
         <div className="blog-collections-lists">
           <div className="blog-collections-lists-date">

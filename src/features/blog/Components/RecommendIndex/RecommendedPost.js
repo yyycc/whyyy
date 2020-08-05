@@ -5,6 +5,7 @@ import linux from '../../../../images/cute-penguin.png';
 import linux2 from '../../../../images/scraf-penguin.png';
 import git from '../../../../images/snow-cat.png';
 import oracle from '../../../../images/underline.png';
+import FaTitle from '../Titles/FaTitle';
 
 /*
  * @name:         推荐
@@ -20,12 +21,7 @@ export class RecommendedPost extends Component {
     const recommendedPosts = posts.filter((ele) => ele.recommended === 'Y');
     return (
       <div className="blog-recommended-post">
-        <h3>
-          <li>
-            <i className="fa fa-thumbs-up"/>
-          </li>
-          推荐
-        </h3>
+        <FaTitle className='thumbs-up' title='推荐'/>
         <div className="blog-recommended-post-lists">
           {
             recommendedPosts.map((ele, index) => {

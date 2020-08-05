@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FaTitle from '../Titles/FaTitle';
 
 export class TagsIndex extends Component {
   static propTypes = {};
@@ -10,15 +11,11 @@ export class TagsIndex extends Component {
     posts.forEach((ele) =>
       tags = tags.concat(ele.tag),
     );
-    tags = Array.from(new Set(tags));
+    // tags = Array.from(new Set(tags));
+    tags = [...new Set(tags)];
     return (
       <div className="blog-tags-index">
-        <h3>
-          <li>
-            <i className="fa fa-bars"/>
-          </li>
-          标签
-        </h3>
+        <FaTitle className='bars' title='标签'/>
         <div className="blog-tags-index-lists">
           {
             tags.map((ele, index) => {
