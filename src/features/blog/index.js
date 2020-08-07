@@ -82,3 +82,4 @@ export { default as MysqlB } from './Articles/Mysql/MysqlB';
 export { default as LinuxC } from './Articles/Linux/LinuxC';
 export { default as InterviewSix } from './Articles/Interview/InterviewSix';
 export { default as FaTitle } from './Components/Titles/FaTitle';
+export { default as PropTypes } from './Articles/React/PropTypes';

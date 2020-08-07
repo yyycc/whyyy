@@ -164,7 +164,61 @@ const connect = 'import React from \'react\';\n' +
   '\n' +
   '}\n';
 
-const code = {
+/*------------propTypes---------------*/
+
+const titles = ['1. react prop-types的使用讲解', '2. react中使用prop-types检测props数据类型'];
+const props = 'static propTypes = {\n' +
+  '    blog: PropTypes.object.isRequired,\n' +
+  '    actions: PropTypes.object.isRequired,\n' +
+  '};';
+const staticProp = 'static propTypes = {\n' +
+  '    blog: PropTypes.object.isRequired,\n' +
+  '    actions: PropTypes.object.isRequired,\n' +
+  '};';
+const old = '// 老写法\n' +
+  'class Foo {\n' +
+  '  // ...\n' +
+  '}\n' +
+  'Foo.prop = 1;';
+const types = 'static propTypes = {\n' +
+  '     optionalArray: PropTypes.array,//检测数组类型\n' +
+  '     optionalBool: PropTypes.bool,//检测布尔类型\n' +
+  '     optionalFunc: PropTypes.func,//检测函数（Function类型）\n' +
+  '     optionalNumber: PropTypes.number,//检测数字\n' +
+  '     optionalObject: PropTypes.object,//检测对象\n' +
+  '     optionalString: PropTypes.string,//检测字符串\n' +
+  '     optionalSymbol: PropTypes.symbol,//ES6新增的symbol类型\n' +
+  '}';
+const oneType = 'static propTypes = {\n ' +
+  ' title: PropTypes.oneOfType([PropTypes.string, PropTypes.number])\n' +
+  '}';
+
+const arrayOf = 'static propTypes = {\n' +
+  '     array:PropTypes.arrayOf(PropTypes.number)\n' +
+  '}\n';
+
+const shape = 'static propTypes = {\n' +
+  '   object:\n' +
+  '       PropTypes.shape({\n' +
+  '       name:PropTypes.string,\n' +
+  '       age:PropTypes.number\n' +
+  '       })\n' +
+  '}';
+const require = 'static propTypes = {\n' +
+  '    number:PropTypes.number.isRequired\n' +
+  '}';
+
+const fun = 'static propTypes = {\n' +
+  '     email:function(props,propName,componentName){\n' +
+  '            if(!/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(props[propName])){\n' +
+  '                  return new Error(\'组件\' + componentName+ \'里的属性\' + propName + \'不符合邮箱的格式\');\n' +
+  '                         }\n' +
+  '                }\n' +
+  '}';
+const propTypes = { titles, props, staticProp, old, types, oneType, arrayOf, shape, require, fun };
+/*------------propTypes---------------*/
+
+const code = Object.assign({
   codes,
   json,
   dependencies,
@@ -175,6 +229,6 @@ const code = {
   less,
   bindActionCreator, bindActionCreators,
   connect,
-};
+}, propTypes);
 
 export default code;

@@ -16,7 +16,7 @@ import {
   MysqlA,
   SpringA,
   Css, CssA, CssB, CssC, FixDiv,
-  ReactA, ReactB,
+  ReactA, ReactB, PropTypes,
   Ntfs,
   LinuxA, LinuxB, LinuxC,
   GitA, GitB, GitC,
@@ -82,6 +82,7 @@ export default {
 
         { path: 'react/rekit', name: 'react', component: ReactA, isIndex: false },
         { path: 'react/redux', name: 'react', component: ReactB, isIndex: false },
+        { path: 'react/propTypes', name: 'react', component: PropTypes, isIndex: false },
 
         { path: 'git/config', name: 'git', component: GitA, isIndex: false },
         { path: 'git/commands', name: 'git', component: GitB, isIndex: false },
